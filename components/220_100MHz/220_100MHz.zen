@@ -1,0 +1,20 @@
+"""
+220_100MHz
+
+Auto-generated using `pcb import`.
+"""
+
+P1 = io(Net)
+P2 = io(Net)
+
+Component(
+    name="220_100MHz",
+    properties={
+        "Footprint": "lena_b_string-gauge-daq_components_220_100MHz:R_0603_1608Metric",
+        "Value": "220 100MHz",
+        "schematic_description": "220 100MHz",
+    },
+    symbol=Symbol(library="220_100MHz.kicad_sym"),
+    pin_defs={"1": "1", "2": "2"},
+    pins={"1": P1, "2": P2},
+)

@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: cd649671-6d9f-5b45-a5a4-4c066b336285 (/cd649671-6d9f-5b45-a5a4-4c066b336285/)
+"""
+
+GND = io(Ground)
+VBUS = io(Power(voltage="4V to 5.5V"))
+
+_1UF_25V = Module("../../components/1uF_25V/1uF_25V.zen")
+
+_1UF_25V(name="C50", P1=VBUS, P2=GND)

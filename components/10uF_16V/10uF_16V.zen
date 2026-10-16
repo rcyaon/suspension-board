@@ -1,0 +1,20 @@
+"""
+10uF_16V
+
+Auto-generated using `pcb import`.
+"""
+
+P1 = io(Net)
+P2 = io(Net)
+
+Component(
+    name="10uF_16V",
+    properties={
+        "Footprint": "lena_b_string-gauge-daq_components_10uF_16V:C_0805_2012Metric",
+        "Value": "10uF 16V",
+        "schematic_description": "10uF 16V",
+    },
+    symbol=Symbol(library="10uF_16V.kicad_sym"),
+    pin_defs={"1": "1", "2": "2"},
+    pins={"1": P1, "2": P2},
+)

@@ -1,0 +1,20 @@
+"""
+1A_20V_Schottky_Rectifier
+
+Auto-generated using `pcb import`.
+"""
+
+A = io(Net)
+K = io(Net)
+
+Component(
+    name="1A_20V_Schottky_Rectifier",
+    properties={
+        "Footprint": "lena_b_string-gauge-daq_components_1A_20V_Schottky_Rectifier:D_SOD-123F",
+        "Value": "1A 20V Schottky Rectifier",
+        "schematic_description": "1A 20V Schottky Rectifier",
+    },
+    symbol=Symbol(library="1A_20V_Schottky_Rectifier.kicad_sym"),
+    pin_defs={"K": "1", "A": "2"},
+    pins={"K": K, "A": A},
+)

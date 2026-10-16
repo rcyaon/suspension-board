@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: dbfcf7c2-bf2a-51f8-9afe-17013f4e55be (/dbfcf7c2-bf2a-51f8-9afe-17013f4e55be/)
+"""
+
+CH0_HALF_MID = io(Net)
+CH0_IN_N = io(Net)
+
+COMPONENT = Module("../../components/component/component.zen")
+
+COMPONENT(name="JP5", P1=CH0_IN_N, P2=CH0_HALF_MID)

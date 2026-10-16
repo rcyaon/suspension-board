@@ -1,0 +1,15 @@
+"""
+suspension-load-daq sheet module: 46ead801-ab76-5db0-ad5a-53a8d3b41345 (/46ead801-ab76-5db0-ad5a-53a8d3b41345/)
+"""
+
+IMU_SPI_MISO = io(Net)
+V3V3 = io(Power(voltage="2.7V to 3.6V"))
+
+_10K = Module("../../components/10k/10k.zen")
+
+_10K(
+    name="R61",
+    dnp=True,
+    P1=IMU_SPI_MISO,
+    P2=V3V3,
+)

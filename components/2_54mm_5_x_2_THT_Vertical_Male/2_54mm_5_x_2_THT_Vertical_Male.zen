@@ -1,0 +1,50 @@
+"""
+2_54mm_5_x_2_THT_Vertical_Male
+
+Auto-generated using `pcb import`.
+"""
+
+PIN_1 = io(Net)
+PIN_10 = io(Net)
+PIN_2 = io(Net)
+PIN_3 = io(Net)
+PIN_4 = io(Net)
+PIN_5 = io(Net)
+PIN_6 = io(Net)
+PIN_7 = io(Net)
+PIN_8 = io(Net)
+PIN_9 = io(Net)
+
+Component(
+    name="2_54mm_5_x_2_THT_Vertical_Male",
+    properties={
+        "Footprint": "lena_b_string-gauge-daq_components_2_54mm_5_x_2_THT_Vertical_Male:PinHeader_2x05_P2.54mm_Vertical",
+        "Value": "2.54mm 5 x 2 THT Vertical Male",
+        "schematic_description": "2.54mm 5 x 2 THT Vertical Male",
+    },
+    symbol=Symbol(library="2_54mm_5_x_2_THT_Vertical_Male.kicad_sym"),
+    pin_defs={
+        "Pin_1": "1",
+        "Pin_10": "10",
+        "Pin_2": "2",
+        "Pin_3": "3",
+        "Pin_4": "4",
+        "Pin_5": "5",
+        "Pin_6": "6",
+        "Pin_7": "7",
+        "Pin_8": "8",
+        "Pin_9": "9",
+    },
+    pins={
+        "Pin_1": PIN_1,
+        "Pin_10": PIN_10,
+        "Pin_2": PIN_2,
+        "Pin_3": PIN_3,
+        "Pin_4": PIN_4,
+        "Pin_5": PIN_5,
+        "Pin_6": PIN_6,
+        "Pin_7": PIN_7,
+        "Pin_8": PIN_8,
+        "Pin_9": PIN_9,
+    },
+)

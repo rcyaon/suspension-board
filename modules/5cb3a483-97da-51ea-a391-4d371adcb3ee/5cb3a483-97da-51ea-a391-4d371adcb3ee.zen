@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 5cb3a483-97da-51ea-a391-4d371adcb3ee (/5cb3a483-97da-51ea-a391-4d371adcb3ee/)
+"""
+
+EXC_SET = io(Net)
+GND = io(Ground)
+
+_4_7UF_16V = Module("../../components/4_7uF_16V/4_7uF_16V.zen")
+
+_4_7UF_16V(name="C53", P1=EXC_SET, P2=GND)

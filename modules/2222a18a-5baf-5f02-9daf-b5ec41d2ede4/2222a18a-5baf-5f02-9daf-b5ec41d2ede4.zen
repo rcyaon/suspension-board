@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 2222a18a-5baf-5f02-9daf-b5ec41d2ede4 (/2222a18a-5baf-5f02-9daf-b5ec41d2ede4/)
+"""
+
+LED_PWR_A = io(Net)
+V3V3 = io(Power(voltage="2.7V to 3.6V"))
+
+_2_2K = Module("../../components/2_2k/2_2k.zen")
+
+_2_2K(name="R86", P1=V3V3, P2=LED_PWR_A)

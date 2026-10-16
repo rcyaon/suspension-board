@@ -1,0 +1,9 @@
+"""
+suspension-load-daq sheet module: ad59b617-d00b-58b2-b67e-c7ce8f44b245 (/ad59b617-d00b-58b2-b67e-c7ce8f44b245/)
+"""
+
+GND = io(Ground)
+
+TESTPOINT_SMALL = Module("../../components/TestPoint_Small/TestPoint_Small.zen")
+
+TESTPOINT_SMALL(name="TP4", P1=GND)

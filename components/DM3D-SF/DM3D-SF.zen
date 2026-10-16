@@ -1,0 +1,55 @@
+"""
+DM3D-SF
+
+Auto-generated using `pcb import`.
+"""
+
+CLK = io(Net)
+CMD = io(Net)
+DAT0 = io(Net)
+DAT1 = io(Net)
+DAT2 = io(Net)
+DAT3_CD = io(Net)
+DET_A = io(Net)
+# Card detect is a dry contact; shield may use chassis rather than logic ground.
+DET_B = io(Net)
+SHIELD = io(Net)
+# Conventional microSD card operating supply, not the connector's rating.
+VDD = io(Power(voltage="2.7V to 3.6V"))
+VSS = io(Ground)
+
+Component(
+    name="DM3D-SF",
+    properties={
+        "Footprint": "lena_b_string-gauge-daq_components_DM3D-SF:microSD_HC_Hirose_DM3D-SF",
+        "Value": "DM3D-SF",
+        "schematic_description": "Hirose DM3D-SF push-pull microSD card socket, right-angle SMT, with card-detect switch",
+    },
+    symbol=Symbol(library="DM3D-SF.kicad_sym"),
+    pin_defs={
+        "DAT2": "1",
+        "DET_A": "10",
+        "SHIELD": "11",
+        "DAT3/CD": "2",
+        "CMD": "3",
+        "VDD": "4",
+        "CLK": "5",
+        "VSS": "6",
+        "DAT0": "7",
+        "DAT1": "8",
+        "DET_B": "9",
+    },
+    pins={
+        "DAT2": DAT2,
+        "DET_A": DET_A,
+        "SHIELD": SHIELD,
+        "DAT3/CD": DAT3_CD,
+        "CMD": CMD,
+        "VDD": VDD,
+        "CLK": CLK,
+        "VSS": VSS,
+        "DAT0": DAT0,
+        "DAT1": DAT1,
+        "DET_B": DET_B,
+    },
+)

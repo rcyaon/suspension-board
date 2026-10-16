@@ -1,0 +1,37 @@
+"""
+suspension-load-daq sheet module: 8522ddad-ae9a-56b5-b069-4220863b1849 (/8522ddad-ae9a-56b5-b069-4220863b1849/)
+"""
+
+GND = io(Ground)
+IMU_INT1 = io(Net)
+IMU_INT2 = io(Net)
+IMU_SPI_CLK = io(Net)
+IMU_SPI_CS = io(Net)
+IMU_SPI_MISO = io(Net)
+IMU_SPI_MOSI = io(Net)
+V3V3 = io(Power(voltage="2.7V to 3.6V"))
+
+IMU_IMU_RESV_1_NC = Net("/IMU/IMU_RESV_1_NC")
+IMU_IMU_RESV_2_NC = Net("/IMU/IMU_RESV_2_NC")
+IMU_IMU_RESV_4_NC = Net("/IMU/IMU_RESV_4_NC")
+IMU_IMU_RESV_5_NC = Net("/IMU/IMU_RESV_5_NC")
+
+ICM_42688_P = Module("../../components/ICM-42688-P/ICM-42688-P.zen")
+
+ICM_42688_P(
+    name="IC1",
+    AP_CS=IMU_SPI_CS,
+    AP_SCL_AP_SCLK=IMU_SPI_CLK,
+    AP_SDA_AP_SDIO_AP_SDI=IMU_SPI_MOSI,
+    AP_SDO_AP_AD0=IMU_SPI_MISO,
+    GND=GND,
+    INT1_INT=IMU_INT1,
+    INT2_FSYNC_CLKIN=IMU_INT2,
+    RESV_1=IMU_IMU_RESV_1_NC,
+    RESV_2=IMU_IMU_RESV_2_NC,
+    RESV_3=GND,
+    RESV_4=IMU_IMU_RESV_4_NC,
+    RESV_5=IMU_IMU_RESV_5_NC,
+    VDD=V3V3,
+    VDDIO=V3V3,
+)

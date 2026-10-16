@@ -1,0 +1,15 @@
+"""
+suspension-load-daq sheet module: 15b45aeb-122e-5edc-85be-7cd68844a2cd (/15b45aeb-122e-5edc-85be-7cd68844a2cd/)
+"""
+
+BUCK_PWR_BUCK_FB = io(Net)
+V5_BUCK = io(Power(voltage="4.5V to 5.5V"))
+
+_10PF_50V_C0G = Module("../../components/10pF_50V_C0G/10pF_50V_C0G.zen")
+
+_10PF_50V_C0G(
+    name="C72",
+    dnp=True,
+    P1=V5_BUCK,
+    P2=BUCK_PWR_BUCK_FB,
+)

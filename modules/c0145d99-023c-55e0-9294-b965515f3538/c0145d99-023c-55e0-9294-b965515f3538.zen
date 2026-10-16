@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: c0145d99-023c-55e0-9294-b965515f3538 (/c0145d99-023c-55e0-9294-b965515f3538/)
+"""
+
+VBAT_MON = io(Net)
+GND = io(Ground)
+
+_100NF_16V = Module("../../components/100nF_16V/100nF_16V.zen")
+
+_100NF_16V(name="C83", P1=VBAT_MON, P2=GND)

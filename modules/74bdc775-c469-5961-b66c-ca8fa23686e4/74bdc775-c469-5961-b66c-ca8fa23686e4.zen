@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 74bdc775-c469-5961-b66c-ca8fa23686e4 (/74bdc775-c469-5961-b66c-ca8fa23686e4/)
+"""
+
+CH5_CAL = io(Net)
+CH5_IN_P = io(Net)
+
+_100K_0_1 = Module("../../components/100k_0_1/100k_0_1.zen")
+
+_100K_0_1(name="R39", P1=CH5_IN_P, P2=CH5_CAL)

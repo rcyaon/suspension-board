@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: d7ba2931-70e7-5326-818b-4e0327d87406 (/d7ba2931-70e7-5326-818b-4e0327d87406/)
+"""
+
+ADC_CLKIN = io(Net)
+GND = io(Ground)
+
+_100K = Module("../../components/100k/100k.zen")
+
+_100K(name="R76", P1=ADC_CLKIN, P2=GND)

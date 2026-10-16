@@ -1,0 +1,55 @@
+"""
+LT3042xMSE
+
+Auto-generated using `pcb import`.
+"""
+
+EN_UV = io(Net)
+GND_11 = io(Ground)
+GND_8 = io(Ground)
+ILIM = io(Net)
+# LT3042 datasheet: input 1.8V to 20V, adjustable output 0V to 15V.
+# OUTS senses the output rail; regulation also requires dropout headroom.
+IN_1 = io(Power(voltage="1.8V to 20V"))
+IN_2 = io(Power(voltage="1.8V to 20V"))
+OUT = io(Power(voltage="0V to 15V"))
+OUTS = io(Power(voltage="0V to 15V"))
+PG = io(Net)
+PGFB = io(Net)
+SET = io(Net)
+
+Component(
+    name="LT3042xMSE",
+    properties={
+        "Footprint": "lena_b_string-gauge-daq_components_LT3042xMSE:MSOP-10-1EP_3x3mm_P0.5mm_EP1.68x1.88mm",
+        "Value": "LT3042xMSE",
+        "schematic_description": "200mA, Adjustable, Ultralow Noise, Ultrahigh PSRR RF Linear Regulator, MSOP-10",
+    },
+    symbol=Symbol(library="LT3042xMSE.kicad_sym"),
+    pin_defs={
+        "IN__1": "1",
+        "OUT": "10",
+        "GND__11": "11",
+        "IN__2": "2",
+        "EN/UV": "3",
+        "PG": "4",
+        "ILIM": "5",
+        "PGFB": "6",
+        "SET": "7",
+        "GND__8": "8",
+        "OUTS": "9",
+    },
+    pins={
+        "IN__1": IN_1,
+        "OUT": OUT,
+        "GND__11": GND_11,
+        "IN__2": IN_2,
+        "EN/UV": EN_UV,
+        "PG": PG,
+        "ILIM": ILIM,
+        "PGFB": PGFB,
+        "SET": SET,
+        "GND__8": GND_8,
+        "OUTS": OUTS,
+    },
+)

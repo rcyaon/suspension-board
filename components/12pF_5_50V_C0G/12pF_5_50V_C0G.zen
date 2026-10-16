@@ -1,0 +1,20 @@
+"""
+12pF_5_50V_C0G
+
+Auto-generated using `pcb import`.
+"""
+
+P1 = io(Net)
+P2 = io(Net)
+
+Component(
+    name="12pF_5_50V_C0G",
+    properties={
+        "Footprint": "lena_b_string-gauge-daq_components_12pF_5_50V_C0G:C_0402_1005Metric",
+        "Value": "12pF 5% 50V C0G",
+        "schematic_description": "12pF 5% 50V C0G",
+    },
+    symbol=Symbol(library="12pF_5_50V_C0G.kicad_sym"),
+    pin_defs={"1": "1", "2": "2"},
+    pins={"1": P1, "2": P2},
+)

@@ -1,0 +1,1407 @@
+"""
+suspension-load-daq
+"""
+
+load(
+    "@stdlib/board_config.zen",
+    "BoardConfig",
+    "DesignRules",
+    "Constraints",
+    "Copper",
+    "Holes",
+    "Uvias",
+    "Silkscreen",
+    "SolderMask",
+    "Zones",
+    "PredefinedSizes",
+    "ViaDimension",
+    "NetClass",
+    "Stackup",
+    "Material",
+    "CopperLayer",
+    "DielectricLayer",
+)
+
+ADC_CLKIN = Net("/ADC_CLKIN")
+ADC_DRDY = Net("/ADC_DRDY")
+ADC_MCLK = Net("/ADC_MCLK")
+ADC_REFIN = Net("/ADC_REFIN")
+ADC_SPI_CLK = Net("/ADC_SPI_CLK")
+ADC_SPI_CS = Net("/ADC_SPI_CS")
+ADC_SPI_MISO = Net("/ADC_SPI_MISO")
+ADC_SPI_MOSI = Net("/ADC_SPI_MOSI")
+ADC_SYNC_RST = Net("/ADC_SYNC_RST")
+AIN0N = Net("/AIN0N")
+AIN0P = Net("/AIN0P")
+AIN1N = Net("/AIN1N")
+AIN1P = Net("/AIN1P")
+AIN2N = Net("/AIN2N")
+AIN2P = Net("/AIN2P")
+AIN3N = Net("/AIN3N")
+AIN3P = Net("/AIN3P")
+AIN4N = Net("/AIN4N")
+AIN4P = Net("/AIN4P")
+AIN5N = Net("/AIN5N")
+AIN5P = Net("/AIN5P")
+AIN6N = Net("/AIN6N")
+AIN6P = Net("/AIN6P")
+AIN7N = Net("/AIN7N")
+AIN7P = Net("/AIN7P")
+AUX1 = Net("/AUX1")
+AUX1_SIG = Net("/AUX1_SIG")
+AUX1_V_SENSOR = Net("/AUX1_V_SENSOR")
+AUX2 = Net("/AUX2")
+AUX2_SIG = Net("/AUX2_SIG")
+AUX2_V_SENSOR = Net("/AUX2_V_SENSOR")
+AUX3 = Net("/AUX3")
+AUX3_SIG = Net("/AUX3_SIG")
+AUX3_V_SENSOR = Net("/AUX3_V_SENSOR")
+AUX4 = Net("/AUX4")
+AUX4_SIG = Net("/AUX4_SIG")
+AUX4_V_SENSOR = Net("/AUX4_V_SENSOR")
+BUCK_PWR_BUCK_FB = Net("/BUCK/PWR_BUCK_FB")
+CAN_TERM = Net("/CAN_TERM")
+CH0_CAL = Net("/CH0_CAL")
+CH0_HALF_MID = Net("/CH0_HALF_MID")
+CH0_IN_N = Net("/CH0_IN_N")
+CH0_IN_P = Net("/CH0_IN_P")
+CH0_QTR = Net("/CH0_QTR")
+CH1_CAL = Net("/CH1_CAL")
+CH1_HALF_MID = Net("/CH1_HALF_MID")
+CH1_IN_N = Net("/CH1_IN_N")
+CH1_IN_P = Net("/CH1_IN_P")
+CH1_QTR = Net("/CH1_QTR")
+CH2_CAL = Net("/CH2_CAL")
+CH2_HALF_MID = Net("/CH2_HALF_MID")
+CH2_IN_N = Net("/CH2_IN_N")
+CH2_IN_P = Net("/CH2_IN_P")
+CH2_QTR = Net("/CH2_QTR")
+CH3_CAL = Net("/CH3_CAL")
+CH3_HALF_MID = Net("/CH3_HALF_MID")
+CH3_IN_N = Net("/CH3_IN_N")
+CH3_IN_P = Net("/CH3_IN_P")
+CH3_QTR = Net("/CH3_QTR")
+CH4_CAL = Net("/CH4_CAL")
+CH4_HALF_MID = Net("/CH4_HALF_MID")
+CH4_IN_N = Net("/CH4_IN_N")
+CH4_IN_P = Net("/CH4_IN_P")
+CH4_QTR = Net("/CH4_QTR")
+CH5_CAL = Net("/CH5_CAL")
+CH5_HALF_MID = Net("/CH5_HALF_MID")
+CH5_IN_N = Net("/CH5_IN_N")
+CH5_IN_P = Net("/CH5_IN_P")
+CH5_QTR = Net("/CH5_QTR")
+CH6_CAL = Net("/CH6_CAL")
+CH6_HALF_MID = Net("/CH6_HALF_MID")
+CH6_IN_N = Net("/CH6_IN_N")
+CH6_IN_P = Net("/CH6_IN_P")
+CH6_QTR = Net("/CH6_QTR")
+CH7_CAL = Net("/CH7_CAL")
+CH7_HALF_MID = Net("/CH7_HALF_MID")
+CH7_IN_N = Net("/CH7_IN_N")
+CH7_IN_P = Net("/CH7_IN_P")
+CH7_QTR = Net("/CH7_QTR")
+EXC_SET = Net("/EXC_SET")
+EXC_EN = Net("/EXC_EN")
+# Header pins 9/10 are reserved; no spare GPIO remains on the 48-pin MCU.
+GPIO_PA1 = NotConnected()
+GPIO_PA10 = NotConnected()
+I2C_SCL = Net("/I2C_SCL")
+I2C_SDA = Net("/I2C_SDA")
+LDO_3V3_PWR_LDO_3V3_FB = Net("/LDO_3V3/PWR_LDO_3V3_FB")
+LED_ERR = Net("/LED_ERR")
+LED_ERR_A = Net("/LED_ERR_A")
+LED_LOG = Net("/LED_LOG")
+LED_LOG_A = Net("/LED_LOG_A")
+LED_PWR_A = Net("/LED_PWR_A")
+MCU_BOOT0 = Net("/MCU_BOOT0")
+# PB2/BOOT1 is reused as ADC reset; R64 still guarantees a low boot strap.
+MCU_BOOT1 = ADC_SYNC_RST
+MCU_HSE_IN = Net("/MCU_HSE_IN")
+MCU_HSE_OUT = Net("/MCU_HSE_OUT")
+NRST = Net("/NRST")
+PWR_BUCK_EN = Net("/PWR_BUCK_EN")
+PWR_BUCK_MODE_SYNC = Net("/PWR_BUCK_MODE_SYNC")
+PWR_LDO_3V3_EN = Net("/PWR_LDO_3V3_EN")
+# microSD SPI shares SPI1 with the ADC, with a separate active-low chip select.
+SD_CLK = ADC_SPI_CLK
+SD_CMD = ADC_SPI_MOSI
+SD_DAT0 = ADC_SPI_MISO
+SD_DAT1 = Net("/SD_DAT1")
+SD_DAT2 = Net("/SD_DAT2")
+SD_DAT3 = Net("/SD_CS")
+SD_DET = Net("/SD_DET")
+SHUNT_CAL = Net("/SHUNT_CAL")
+SWD_SWCLK = Net("/SWD_SWCLK")
+SWD_SWDIO = Net("/SWD_SWDIO")
+# Optional SWO is cut; the TC2030 SWO contact is intentionally unconnected.
+SWO = NotConnected()
+UART_RX = Net("/UART_RX")
+UART_TX = Net("/UART_TX")
+USB_CC1 = Net("/USB_CC1")
+USB_CC2 = Net("/USB_CC2")
+USB_D_N = Net("/USB_D_N")
+USB_D_P = Net("/USB_D_P")
+VBAT_MON = Net("/VBAT_MON")
+VBUS_SENSE = Net("/VBUS_SENSE")
+# Voltage contracts describe energized rails, not startup/dropout waveforms.
+# ADC CAP and MCU VCAP are internal-core decoupling domains, not external supplies.
+ADC_CAP = Power()
+CANH = Net()
+CANL = Net()
+CAN_RX = Net()
+CAN_TX = Net()
+# LT3042: 100uA * 24.9kohm = 2.49V nominal; 98..102uA, 0.1% RSET, +/-2mV offset.
+# https://www.analog.com/media/en/technical-documentation/data-sheets/3042fb.pdf, pp.3,14.
+EXC = Power(voltage="2.435V to 2.545V")
+EXC_VIN_FILT = Power(voltage="3.8V to 5.25V")
+GND = Ground()
+IMU_INT1 = Net()
+IMU_INT2 = NotConnected()
+IMU_SPI_CLK = Net()
+IMU_SPI_CS = Net()
+IMU_SPI_MISO = Net()
+IMU_SPI_MOSI = Net()
+MCU_VCAP = Power()
+PWR_BUCK_VCC = Power(voltage="3.1V to 3.5V")
+PWR_V5_ANA = Power(voltage="3.9V to 5.25V")
+# Admitted operating range at the protected buck input (TI SNVSCS7 section 6.3).
+# Raw vehicle voltage / transient requirements still require system-level confirmation.
+PWR_VPROT = Power(voltage="3V to 36V")
+# TPS745: 0.55V * (1 + 255kohm / 51kohm) = 3.3V, including divider/reference error.
+V3V3 = Power(voltage="3.18V to 3.42V")
+V3V3A = Power(voltage="3.234V to 3.366V")
+# V5 includes Schottky forward drop; it is not an ideal 5V regulator output.
+V5 = Power(voltage="3.9V to 5.25V")
+V5_BUCK = Power(voltage="4.95V to 5.05V")
+VBUS = Power(voltage="4.4V to 5.25V")
+VDDA = Power(voltage="3.15V to 3.42V")
+# Owner requirement: 9-16V normal operation; transient survival is a separate qualification.
+VIN_VEH = Power(voltage="9V to 16V")
+
+PART_PWR_D_REV_D = Module("modules/a03ed24d-7ffd-5afe-9978-67309e8c6f85/a03ed24d-7ffd-5afe-9978-67309e8c6f85.zen")
+PART_CH1_JP_HALF_SJ = Module("modules/a19de9d0-f21a-54e7-ab15-7d6ed1346c78/a19de9d0-f21a-54e7-ab15-7d6ed1346c78.zen")
+PART_AUX3_R_S_R = Module("modules/a1daf1dd-4bc2-5083-8401-ad6f23e66ab6/a1daf1dd-4bc2-5083-8401-ad6f23e66ab6.zen")
+PART_EXC_R_SET_R = Module("modules/a1f93929-a486-50c9-beb5-c32a73e08d98/a1f93929-a486-50c9-beb5-c32a73e08d98.zen")
+PART_CH7_Q_CAL_PJE138K_R1_00001 = Module(
+    "modules/a23daabf-0956-52f5-a373-2022bc4faef9/a23daabf-0956-52f5-a373-2022bc4faef9.zen"
+)
+PART_CH7_C_EXC_C = Module("modules/a247b759-3ea5-5b44-898f-087b3c37a78e/a247b759-3ea5-5b44-898f-087b3c37a78e.zen")
+PART_J_VEH_JPH = Module("modules/a65ef7f7-c323-5940-a4ff-051f22e68bf4/a65ef7f7-c323-5940-a4ff-051f22e68bf4.zen")
+PART_CH3_R_FN_R = Module("modules/a792b266-b44c-57f1-baa6-da13708e173b/a792b266-b44c-57f1-baa6-da13708e173b.zen")
+PART_TP_V3V3A_TP = Module("modules/a8ed013e-af9d-5944-a876-3c72c0b9cece/a8ed013e-af9d-5944-a876-3c72c0b9cece.zen")
+PART_EXC_R_IN_R = Module("modules/a9f7788c-2d6a-5146-b36e-bf1c81792907/a9f7788c-2d6a-5146-b36e-bf1c81792907.zen")
+PART_CH0_R_QTR_R = Module("modules/aa5d8139-c6fe-571f-88bc-a77bbd297690/aa5d8139-c6fe-571f-88bc-a77bbd297690.zen")
+PART_CH6_R_FN_R = Module("modules/aa6be016-402d-5f7e-9fa8-abaaff2f5e7e/aa6be016-402d-5f7e-9fa8-abaaff2f5e7e.zen")
+PART_IMU_C_VDDIO_C = Module("modules/aa89050c-6663-584b-b5f0-60196bc68efc/aa89050c-6663-584b-b5f0-60196bc68efc.zen")
+PART_CH7_R_FN_R = Module("modules/acddad07-c61d-5134-b1de-58ab2f79edf5/acddad07-c61d-5134-b1de-58ab2f79edf5.zen")
+PART_CH6_Q_CAL_PJE138K_R1_00001 = Module(
+    "modules/ace59175-327e-5aad-a33a-f1de3a78ac00/ace59175-327e-5aad-a33a-f1de3a78ac00.zen"
+)
+PART_TP_GND_TP = Module("modules/ad59b617-d00b-58b2-b67e-c7ce8f44b245/ad59b617-d00b-58b2-b67e-c7ce8f44b245.zen")
+PART_CH2_Q_CAL_PJE138K_R1_00001 = Module(
+    "modules/b2124ac1-df32-59e7-8737-876db9922f21/b2124ac1-df32-59e7-8737-876db9922f21.zen"
+)
+PART_CH0_R_HB2_R = Module("modules/b22e30c0-1002-5e48-992c-105d200fb984/b22e30c0-1002-5e48-992c-105d200fb984.zen")
+PART_PWR_C_V5_C = Module("modules/b58dcc4f-0eea-596d-93e6-021a5be9f46c/b58dcc4f-0eea-596d-93e6-021a5be9f46c.zen")
+PART_CH5_R_HB2_R = Module("modules/b6f6fcc2-9abf-5124-bd70-3a327c9b85e5/b6f6fcc2-9abf-5124-bd70-3a327c9b85e5.zen")
+PART_CH6_R_QTR_R = Module("modules/b921f4c7-3e3e-5a37-a51a-8488c1f68966/b921f4c7-3e3e-5a37-a51a-8488c1f68966.zen")
+PART_H1_MH = Module("modules/b9855fcc-4e57-56ee-a9f9-c8367af65eaf/b9855fcc-4e57-56ee-a9f9-c8367af65eaf.zen")
+PART_MCU_U = Module("modules/ba66cc6d-99fe-574a-b6f2-5828ea52f350/ba66cc6d-99fe-574a-b6f2-5828ea52f350.zen")
+PART_CH5_C_EXC_C = Module("modules/baac8660-6c54-5732-abf1-a52ef8781f1e/baac8660-6c54-5732-abf1-a52ef8781f1e.zen")
+PART_CH6_R_HB1_R = Module("modules/bb50cf66-d618-57a3-9918-dc9b959b32cf/bb50cf66-d618-57a3-9918-dc9b959b32cf.zen")
+PART_CH5_R_QTR_R = Module("modules/bbe46b28-c363-557a-8993-e00bdadcb025/bbe46b28-c363-557a-8993-e00bdadcb025.zen")
+PART_R_ADC_CLK_R = Module("modules/bc378ef3-a999-55c2-a266-57de27d790c0/bc378ef3-a999-55c2-a266-57de27d790c0.zen")
+PART_CH7_R_QTR_R = Module("modules/bcf9f3a7-2312-5d5e-a44f-9f55d14734c8/bcf9f3a7-2312-5d5e-a44f-9f55d14734c8.zen")
+PART_CH2_R_CAL_R = Module("modules/bde8cdb7-4793-5c0e-8421-4089a0e23093/bde8cdb7-4793-5c0e-8421-4089a0e23093.zen")
+PART_PWR_FB_ANA_FB = Module("modules/bf232644-5666-5b27-a6aa-a678dae5c14c/bf232644-5666-5b27-a6aa-a678dae5c14c.zen")
+PART_PWR_C_MON_C = Module("modules/c0145d99-023c-55e0-9294-b965515f3538/c0145d99-023c-55e0-9294-b965515f3538.zen")
+PART_R_ADC_CS_R = Module("modules/c09b9966-f26b-57df-84e0-bdd315ba3ec5/c09b9966-f26b-57df-84e0-bdd315ba3ec5.zen")
+PART_R_SHUNT_PD_R = Module("modules/c28df3cb-ec4a-5357-a1ea-d08e316d72da/c28df3cb-ec4a-5357-a1ea-d08e316d72da.zen")
+PART_C_DVDD_C = Module("modules/c393c174-0e1e-50ee-a11f-a585faaa953c/c393c174-0e1e-50ee-a11f-a585faaa953c.zen")
+PART_R_VBUS1_R = Module("modules/c9c54f3d-492b-5a41-9dcb-5f47aea848f6/c9c54f3d-492b-5a41-9dcb-5f47aea848f6.zen")
+PART_H3_MH = Module("modules/cc7e77af-aad5-5431-9019-5b31a35f631d/cc7e77af-aad5-5431-9019-5b31a35f631d.zen")
+PART_C_VBUS_C = Module("modules/cd649671-6d9f-5b45-a5a4-4c066b336285/cd649671-6d9f-5b45-a5a4-4c066b336285.zen")
+PART_PWR_BUCK_C_OUT2_C = Module("modules/ce06f4ca-e17a-5552-945d-bd29eb336158/ce06f4ca-e17a-5552-945d-bd29eb336158.zen")
+PART_U_ADC = Module("modules/ce419f7e-aaef-5640-a00c-559494572ce8/ce419f7e-aaef-5640-a00c-559494572ce8.zen")
+PART_EXC_U = Module("modules/ce92f33b-b5ee-566d-91aa-04935ed1a8a1/ce92f33b-b5ee-566d-91aa-04935ed1a8a1.zen")
+PART_MCU_R_BOOT0_R = Module("modules/cea908c8-53fb-5d97-8a26-e4b25fe881b6/cea908c8-53fb-5d97-8a26-e4b25fe881b6.zen")
+PART_CH4_C_CMP_C = Module("modules/cf10d78f-961a-5fc4-b1dd-b308ca535e09/cf10d78f-961a-5fc4-b1dd-b308ca535e09.zen")
+PART_CH7_C_CMN_C = Module("modules/cf449a95-cff8-59ff-a17e-f84886dfe3c2/cf449a95-cff8-59ff-a17e-f84886dfe3c2.zen")
+PART_CH3_R_CAL_R = Module("modules/d15db110-b10c-5c61-97af-728f8c56fc73/d15db110-b10c-5c61-97af-728f8c56fc73.zen")
+PART_AUX1_C_SUP_C = Module("modules/d2552823-29b8-57a9-a493-dea7d6865b3d/d2552823-29b8-57a9-a493-dea7d6865b3d.zen")
+PART_CH5_C_CMN_C = Module("modules/d2c7ed17-67aa-5014-a6d3-ac5ef814ceb0/d2c7ed17-67aa-5014-a6d3-ac5ef814ceb0.zen")
+PART_AUX4_C_F_C = Module("modules/d2f644ec-9d39-5729-979f-5607abb1f607/d2f644ec-9d39-5729-979f-5607abb1f607.zen")
+PART_CH4_R_HB2_R = Module("modules/d61d4ed4-1777-5ff1-9167-8398ee745a19/d61d4ed4-1777-5ff1-9167-8398ee745a19.zen")
+PART_R_ADC_CLK_PD_R = Module("modules/d7ba2931-70e7-5326-818b-4e0327d87406/d7ba2931-70e7-5326-818b-4e0327d87406.zen")
+PART_CH3_C_CMN_C = Module("modules/d8939cc1-af87-51e1-97df-e776c9d3beb0/d8939cc1-af87-51e1-97df-e776c9d3beb0.zen")
+PART_CH1_C_EXC_C = Module("modules/d8c39240-bb3e-5c5f-a683-f4bffc1dbbf5/d8c39240-bb3e-5c5f-a683-f4bffc1dbbf5.zen")
+PART_MCU_R_BOOT1_R = Module("modules/dad08674-6d83-5930-bd6d-346f8df39159/dad08674-6d83-5930-bd6d-346f8df39159.zen")
+PART_R_CAN_TERM_R = Module("modules/dbfc9ad6-c677-5209-929f-97aafed6ec92/dbfc9ad6-c677-5209-929f-97aafed6ec92.zen")
+PART_CH0_JP_HALF_SJ = Module("modules/dbfcf7c2-bf2a-51f8-9afe-17013f4e55be/dbfcf7c2-bf2a-51f8-9afe-17013f4e55be.zen")
+PART_AUX3_R_DIV_R = Module("modules/dc6152e1-5b85-54ce-9ee7-0c3c3c256523/dc6152e1-5b85-54ce-9ee7-0c3c3c256523.zen")
+PART_CAN_C_VCC_C = Module("modules/df1de033-36f3-5298-a097-d3a61898f8d9/df1de033-36f3-5298-a097-d3a61898f8d9.zen")
+PART_MCU_Y_HSE_Y = Module("modules/e036e267-e88f-5a48-902e-69c291364c00/e036e267-e88f-5a48-902e-69c291364c00.zen")
+PART_R_VBUS2_R = Module("modules/e12d15d9-168f-5760-8198-f4dbcc57d6c1/e12d15d9-168f-5760-8198-f4dbcc57d6c1.zen")
+PART_CH4_C_EXC_C = Module("modules/e2041224-f102-5d10-921f-2faf22dc4e97/e2041224-f102-5d10-921f-2faf22dc4e97.zen")
+PART_PWR_C_ANA_OUT_C = Module("modules/e2ea3bbf-1e69-51cf-b062-2d2c15d363cc/e2ea3bbf-1e69-51cf-b062-2d2c15d363cc.zen")
+PART_AUX1_C_F_C = Module("modules/e43017b4-c64d-5198-b7fe-336f944cd2c0/e43017b4-c64d-5198-b7fe-336f944cd2c0.zen")
+PART_J_EXP_PH = Module("modules/e5ddbf15-4968-5b0e-9312-a38794fa11be/e5ddbf15-4968-5b0e-9312-a38794fa11be.zen")
+PART_C_AVDD2_C = Module("modules/e69b0d32-dbfe-5dd9-a9fa-7bc61b77711e/e69b0d32-dbfe-5dd9-a9fa-7bc61b77711e.zen")
+PART_CAN_U = Module("modules/e6a09445-7a84-54da-b157-763b8b3fe48a/e6a09445-7a84-54da-b157-763b8b3fe48a.zen")
+PART_CH1_J_JPH = Module("modules/e6e85893-87da-55ff-9259-d5c35ed3fe2a/e6e85893-87da-55ff-9259-d5c35ed3fe2a.zen")
+PART_CH3_C_DIFF_C = Module("modules/e7672c6c-8dec-5798-a852-24c7d34a1030/e7672c6c-8dec-5798-a852-24c7d34a1030.zen")
+PART_CH5_C_DIFF_C = Module("modules/e85bb6b6-2fa3-5667-a2bc-33b0bc87b7fd/e85bb6b6-2fa3-5667-a2bc-33b0bc87b7fd.zen")
+PART_CH7_C_CMP_C = Module("modules/e89704a5-fb2b-5010-a73f-408e8a978cab/e89704a5-fb2b-5010-a73f-408e8a978cab.zen")
+PART_AUX3_C_F_C = Module("modules/eb377fac-908e-5825-80bb-40999fbfe658/eb377fac-908e-5825-80bb-40999fbfe658.zen")
+PART_CH4_JP_HALF_SJ = Module("modules/ee1d2fef-f770-5173-b9b6-636f4779e3f4/ee1d2fef-f770-5173-b9b6-636f4779e3f4.zen")
+PART_CH0_R_CAL_R = Module("modules/ee217d64-ac1e-5729-aa1d-9333503fac8b/ee217d64-ac1e-5729-aa1d-9333503fac8b.zen")
+PART_CH4_R_HB1_R = Module("modules/eef20df7-4b40-52d3-af61-69cc7fe98ba4/eef20df7-4b40-52d3-af61-69cc7fe98ba4.zen")
+PART_TP_EXC_TP = Module("modules/ef9f38f9-8a2b-5681-a420-b3e6a29b6222/ef9f38f9-8a2b-5681-a420-b3e6a29b6222.zen")
+PART_PWR_LDO_3V3_C_IN_C = Module(
+    "modules/f2132ab1-dc9f-5715-bd34-50b92afa0082/f2132ab1-dc9f-5715-bd34-50b92afa0082.zen"
+)
+PART_CH6_C_CMP_C = Module("modules/f25c9b5f-560b-5d98-80ab-713aad62c2ff/f25c9b5f-560b-5d98-80ab-713aad62c2ff.zen")
+PART_PWR_BUCK_C_OUT1_C = Module("modules/f2673c88-db1d-522c-b7ed-b2ebc8fde686/f2673c88-db1d-522c-b7ed-b2ebc8fde686.zen")
+PART_MCU_SW_BOOT_SW = Module("modules/f545a0d5-a89b-5bb7-8be9-bb919426345c/f545a0d5-a89b-5bb7-8be9-bb919426345c.zen")
+PART_D_CAN_D = Module("modules/f566e676-bdb3-59ca-9a57-cfc107d1e5fa/f566e676-bdb3-59ca-9a57-cfc107d1e5fa.zen")
+PART_EXC_R_EN_R = Module("modules/f7ba1d87-4808-5766-9f32-68315503780b/f7ba1d87-4808-5766-9f32-68315503780b.zen")
+PART_CAN_C_VIO_C = Module("modules/f7c74f2e-3ce5-5b37-a1fb-cb96e37f9cc1/f7c74f2e-3ce5-5b37-a1fb-cb96e37f9cc1.zen")
+PART_CH7_R_CAL_R = Module("modules/f82d0399-3596-57fc-ab56-1699afc655c9/f82d0399-3596-57fc-ab56-1699afc655c9.zen")
+PART_AUX4_R_S_R = Module("modules/f97f4d5d-a06f-5086-a549-f4f8090ac0fd/f97f4d5d-a06f-5086-a549-f4f8090ac0fd.zen")
+PART_R_SCL_R = Module("modules/fa646113-4573-5628-b670-7340b5d5e58a/fa646113-4573-5628-b670-7340b5d5e58a.zen")
+PART_CH2_R_HB2_R = Module("modules/fbc21c15-8643-5a81-a998-0519b9a8d351/fbc21c15-8643-5a81-a998-0519b9a8d351.zen")
+PART_CH3_C_CMP_C = Module("modules/fbd53254-68b6-56dd-8e7f-cda4cab9190b/fbd53254-68b6-56dd-8e7f-cda4cab9190b.zen")
+PART_CH0_R_HB1_R = Module("modules/fbec1b8e-053b-5ef5-9117-a07116091d53/fbec1b8e-053b-5ef5-9117-a07116091d53.zen")
+PART_D_USB_TPD4E02B04DQAR = Module(
+    "modules/fc0d1341-2167-5a38-a1bd-d26b76bce9d1/fc0d1341-2167-5a38-a1bd-d26b76bce9d1.zen"
+)
+PART_CH6_R_HB2_R = Module("modules/fda1c16d-811e-5f92-9304-40d1badb1d18/fda1c16d-811e-5f92-9304-40d1badb1d18.zen")
+PART_CH2_C_CMN_C = Module("modules/fda8b2e8-2404-561b-b864-7d4073f57a0f/fda8b2e8-2404-561b-b864-7d4073f57a0f.zen")
+PART_PWR_BUCK_C_VCC_C = Module("modules/01c532a2-82e3-55ee-94a7-189baf0d5507/01c532a2-82e3-55ee-94a7-189baf0d5507.zen")
+PART_CH5_R_FP_R = Module("modules/031eabe2-d32d-58ba-93db-30559e630ed1/031eabe2-d32d-58ba-93db-30559e630ed1.zen")
+PART_CH4_C_DIFF_C = Module("modules/04c17582-bc4b-5eb3-96fb-4bb26e958468/04c17582-bc4b-5eb3-96fb-4bb26e958468.zen")
+PART_R_ADC_SCLK_R = Module("modules/04c7d2d9-9ec5-56bb-b3be-45efca131518/04c7d2d9-9ec5-56bb-b3be-45efca131518.zen")
+PART_CH0_C_DIFF_C = Module("modules/0559d653-14ab-5f6c-9954-0b1bc7955066/0559d653-14ab-5f6c-9954-0b1bc7955066.zen")
+PART_CH7_J_JPH = Module("modules/05bebe0e-1a5b-5016-ab32-dbdd47f37ef5/05bebe0e-1a5b-5016-ab32-dbdd47f37ef5.zen")
+PART_AUX3_J_JPH = Module("modules/06f5d488-35dd-570f-85e0-74f68fca0149/06f5d488-35dd-570f-85e0-74f68fca0149.zen")
+PART_PWR_C_ANA_IN_C = Module("modules/092a9cab-c080-56cf-a29b-5681f5fbf8bd/092a9cab-c080-56cf-a29b-5681f5fbf8bd.zen")
+PART_CH2_R_FP_R = Module("modules/0b4ce641-3349-5183-ab66-b9ba27c4513a/0b4ce641-3349-5183-ab66-b9ba27c4513a.zen")
+PART_CH6_C_EXC_C = Module("modules/0c9af7e4-346a-57c8-b308-bc4a9cbc4f46/0c9af7e4-346a-57c8-b308-bc4a9cbc4f46.zen")
+PART_TP_V3V3_TP = Module("modules/0d5f77e3-88b7-5d29-9ec8-1a04d3d1997e/0d5f77e3-88b7-5d29-9ec8-1a04d3d1997e.zen")
+PART_CH3_R_QTR_R = Module("modules/0d9113e3-2238-582b-b491-35f6d88e84c6/0d9113e3-2238-582b-b491-35f6d88e84c6.zen")
+PART_AUX4_JP_SUPPLY_SJ = Module("modules/111a5cd9-78c6-5403-8f4d-b823f437e3e0/111a5cd9-78c6-5403-8f4d-b823f437e3e0.zen")
+PART_IMU_R_AD0_PD_R = Module("modules/111fdca5-5071-5d86-afc4-4d7b7eb02689/111fdca5-5071-5d86-afc4-4d7b7eb02689.zen")
+PART_JP_CAN_TERM_SJ = Module("modules/11ba7775-1d6f-58f4-9605-1d063adbeeaa/11ba7775-1d6f-58f4-9605-1d063adbeeaa.zen")
+PART_CH4_R_CAL_R = Module("modules/11fe47ab-b848-5336-982a-4952398ae0b4/11fe47ab-b848-5336-982a-4952398ae0b4.zen")
+PART_R_REF2_R = Module("modules/125a35f1-0a67-5ad5-9b06-1c1b6c5ed606/125a35f1-0a67-5ad5-9b06-1c1b6c5ed606.zen")
+PART_R_SD_D3_R = Module("modules/130f01e5-ed39-50ed-ab16-5e6469396c12/130f01e5-ed39-50ed-ab16-5e6469396c12.zen")
+PART_PWR_BUCK_R_MODE_PD_R = Module(
+    "modules/13410209-e409-5191-8b35-6f8d2692d20f/13410209-e409-5191-8b35-6f8d2692d20f.zen"
+)
+PART_MCU_C_HSE2_C = Module("modules/1431a64a-d0ca-5b63-bf98-b5f03845b158/1431a64a-d0ca-5b63-bf98-b5f03845b158.zen")
+PART_R_SDA_R = Module("modules/14de6aaf-7ab1-5ee4-adde-71e2f322092f/14de6aaf-7ab1-5ee4-adde-71e2f322092f.zen")
+PART_C_AVDD1_C = Module("modules/15a9888b-790c-5bd1-8cc6-eac25d94249c/15a9888b-790c-5bd1-8cc6-eac25d94249c.zen")
+PART_PWR_BUCK_C_FF_C = Module("modules/15b45aeb-122e-5edc-85be-7cd68844a2cd/15b45aeb-122e-5edc-85be-7cd68844a2cd.zen")
+PART_AUX2_C_SUP_C = Module("modules/163f3b60-3d90-5a80-ad15-e9b8ba72e7d6/163f3b60-3d90-5a80-ad15-e9b8ba72e7d6.zen")
+PART_TP_V5_TP = Module("modules/168961b0-171d-5353-b26c-761e2a037e40/168961b0-171d-5353-b26c-761e2a037e40.zen")
+PART_CH2_R_FN_R = Module("modules/1922a713-f07c-57c9-95f3-cf45b1d04b76/1922a713-f07c-57c9-95f3-cf45b1d04b76.zen")
+PART_CH1_R_CAL_R = Module("modules/195bcb0b-a2f4-5adb-ab44-e49692f9096d/195bcb0b-a2f4-5adb-ab44-e49692f9096d.zen")
+PART_R_SD_D1_R = Module("modules/1987fb5a-a392-5cd1-bb06-8ecf7f2b6762/1987fb5a-a392-5cd1-bb06-8ecf7f2b6762.zen")
+PART_CH3_R_FP_R = Module("modules/1b4f84d7-1d56-5342-8a31-23e1ad9bafdc/1b4f84d7-1d56-5342-8a31-23e1ad9bafdc.zen")
+PART_D_ERR_LED = Module("modules/1d6d90ce-41c2-5812-8d89-38a660e7be13/1d6d90ce-41c2-5812-8d89-38a660e7be13.zen")
+PART_J_USB_USB_C = Module("modules/1e38873b-1565-589a-9f67-7da908c7a1cf/1e38873b-1565-589a-9f67-7da908c7a1cf.zen")
+PART_PWR_C_BULK_C = Module("modules/1e3b0317-ca4b-54ab-b2f0-0e95cf5fa961/1e3b0317-ca4b-54ab-b2f0-0e95cf5fa961.zen")
+PART_CH1_R_HB1_R = Module("modules/1f16ee7d-1cae-514f-9a33-a42b69741a90/1f16ee7d-1cae-514f-9a33-a42b69741a90.zen")
+PART_CH0_C_CMP_C = Module("modules/1f1c90d1-1072-5ea1-bee5-bae054bcb36c/1f1c90d1-1072-5ea1-bee5-bae054bcb36c.zen")
+PART_AUX2_JP_SUPPLY_SJ = Module("modules/1f350a60-49db-5781-ad97-f4e9799a952c/1f350a60-49db-5781-ad97-f4e9799a952c.zen")
+PART_AUX2_R_S_R = Module("modules/1f63783d-682a-53c3-b8a0-d74aee7c137c/1f63783d-682a-53c3-b8a0-d74aee7c137c.zen")
+PART_AUX4_R_DIV_R = Module("modules/1fd9b609-c3c7-5874-bd97-6e30e56bd237/1fd9b609-c3c7-5874-bd97-6e30e56bd237.zen")
+PART_PWR_BUCK_R_FBB_R = Module("modules/1fdc2d33-2621-583d-937b-ac571b9293ba/1fdc2d33-2621-583d-937b-ac571b9293ba.zen")
+PART_MCU_C_VDD_BULK_C = Module("modules/21267085-bcb7-545c-9a10-48c61961cb16/21267085-bcb7-545c-9a10-48c61961cb16.zen")
+PART_R_LED_PWR_R = Module("modules/2222a18a-5baf-5f02-9daf-b5ec41d2ede4/2222a18a-5baf-5f02-9daf-b5ec41d2ede4.zen")
+PART_CH6_R_FP_R = Module("modules/2425e86f-48a9-5f6d-a701-599d0f4bdc54/2425e86f-48a9-5f6d-a701-599d0f4bdc54.zen")
+PART_D_LOG_LED = Module("modules/24aa2e51-037e-5090-a545-febc115e20e5/24aa2e51-037e-5090-a545-febc115e20e5.zen")
+PART_CH5_JP_HALF_SJ = Module("modules/24bf2acf-2eed-5466-8b00-f4954110f517/24bf2acf-2eed-5466-8b00-f4954110f517.zen")
+PART_PWR_LDO_3V3_C_OUT_C = Module(
+    "modules/253fdf6e-e3d2-5880-86a5-8c20204657d9/253fdf6e-e3d2-5880-86a5-8c20204657d9.zen"
+)
+PART_PWR_LDO_3V3_U1 = Module("modules/28b8b799-7a7c-55d0-9acd-16a5c6b80815/28b8b799-7a7c-55d0-9acd-16a5c6b80815.zen")
+PART_MCU_C_VDD1_C = Module("modules/2c1abc3e-7e01-5a82-ab1c-a92e3592ed46/2c1abc3e-7e01-5a82-ab1c-a92e3592ed46.zen")
+PART_R_SD_D0_R = Module("modules/2d3cbe74-4a8b-5062-8ca2-92ec071f31c7/2d3cbe74-4a8b-5062-8ca2-92ec071f31c7.zen")
+PART_H4_MH = Module("modules/2f326288-1754-5d21-977f-834f10f62f25/2f326288-1754-5d21-977f-834f10f62f25.zen")
+PART_PWR_U_3V3A = Module("modules/2fa17a4d-9b43-582c-8717-1449c502fd6b/2fa17a4d-9b43-582c-8717-1449c502fd6b.zen")
+PART_MCU_C_VDD3_C = Module("modules/2ffd241f-47b7-5f1d-95b7-56c800f315fb/2ffd241f-47b7-5f1d-95b7-56c800f315fb.zen")
+PART_D_PWR_LED = Module("modules/318736c3-4057-577e-ac19-b3fc8c72f10d/318736c3-4057-577e-ac19-b3fc8c72f10d.zen")
+PART_AUX1_R_S_R = Module("modules/3325587e-5633-5954-a71f-9f666d8b6c2d/3325587e-5633-5954-a71f-9f666d8b6c2d.zen")
+PART_CH3_JP_HALF_SJ = Module("modules/33ab971f-98c2-50bf-89a7-061d6883fb26/33ab971f-98c2-50bf-89a7-061d6883fb26.zen")
+PART_CH3_Q_CAL_PJE138K_R1_00001 = Module(
+    "modules/33b6dbc8-e9d9-5597-9a57-bbf1763d2cda/33b6dbc8-e9d9-5597-9a57-bbf1763d2cda.zen"
+)
+PART_PWR_R_MON1_R = Module("modules/33b85ef0-ac6c-54a8-976a-cd1b18b05bfc/33b85ef0-ac6c-54a8-976a-cd1b18b05bfc.zen")
+PART_PWR_D_OR2_D = Module("modules/350dceed-0515-510a-88b9-110e895832f4/350dceed-0515-510a-88b9-110e895832f4.zen")
+PART_R_LED_ERR_R = Module("modules/353454da-7971-55ab-a653-1fbe36c70b30/353454da-7971-55ab-a653-1fbe36c70b30.zen")
+PART_R_CC2_R = Module("modules/35803eef-61a0-5397-bb72-e5fcb06de3a8/35803eef-61a0-5397-bb72-e5fcb06de3a8.zen")
+PART_PWR_LDO_3V3_R_EN_R = Module(
+    "modules/38a1010b-2857-55c7-814f-9993d772f71a/38a1010b-2857-55c7-814f-9993d772f71a.zen"
+)
+PART_IMU_C_VDD_1_C = Module("modules/3aa69448-3592-5fd0-90f5-bea754d2168e/3aa69448-3592-5fd0-90f5-bea754d2168e.zen")
+PART_AUX2_C_F_C = Module("modules/3ea70995-abe7-5c19-9035-5e4277410534/3ea70995-abe7-5c19-9035-5e4277410534.zen")
+PART_CH1_R_FN_R = Module("modules/417d0f6e-9445-5480-95a9-410a7c298f2e/417d0f6e-9445-5480-95a9-410a7c298f2e.zen")
+PART_AUX1_JP_SUPPLY_SJ = Module("modules/42e94c2e-524c-5936-ac48-f4cf468a078c/42e94c2e-524c-5936-ac48-f4cf468a078c.zen")
+PART_CH5_Q_CAL_PJE138K_R1_00001 = Module(
+    "modules/430a1d7f-a603-53d8-ba88-3850ea54640e/430a1d7f-a603-53d8-ba88-3850ea54640e.zen"
+)
+PART_PWR_LDO_3V3_R_FB_TOP_R = Module(
+    "modules/43405b75-ac7d-5c8b-9e77-f4bf464f001f/43405b75-ac7d-5c8b-9e77-f4bf464f001f.zen"
+)
+PART_AUX3_C_SUP_C = Module("modules/4575d06f-b4ea-5a2c-82ec-e402aca0d26f/4575d06f-b4ea-5a2c-82ec-e402aca0d26f.zen")
+PART_CH3_R_HB1_R = Module("modules/4682cf13-98f2-509f-9ee7-a6b2bca92a51/4682cf13-98f2-509f-9ee7-a6b2bca92a51.zen")
+PART_IMU_R_AD0_PU_R = Module("modules/46ead801-ab76-5db0-ad5a-53a8d3b41345/46ead801-ab76-5db0-ad5a-53a8d3b41345.zen")
+PART_CH1_R_HB2_R = Module("modules/46ffaab0-13f2-5865-923f-a059147e052c/46ffaab0-13f2-5865-923f-a059147e052c.zen")
+PART_PWR_BUCK_R_FBT_R = Module("modules/4870f717-dce8-526e-b7b0-dc75d6a9cc5c/4870f717-dce8-526e-b7b0-dc75d6a9cc5c.zen")
+PART_MCU_C_VDDA1_C = Module("modules/489158e6-4c51-51ce-8f7c-4d3970a7ee17/489158e6-4c51-51ce-8f7c-4d3970a7ee17.zen")
+PART_CH6_C_DIFF_C = Module("modules/489ab747-a4c4-5b21-ac02-c2bcec356e84/489ab747-a4c4-5b21-ac02-c2bcec356e84.zen")
+PART_CH6_JP_HALF_SJ = Module("modules/49ab3303-e2de-50e4-b627-00d909c1a70c/49ab3303-e2de-50e4-b627-00d909c1a70c.zen")
+PART_CH5_R_FN_R = Module("modules/4b8fbaab-019d-5eb0-a685-0971f269e0d9/4b8fbaab-019d-5eb0-a685-0971f269e0d9.zen")
+PART_CH2_JP_HALF_SJ = Module("modules/4cae8669-b100-51ab-8651-bc981bfdb392/4cae8669-b100-51ab-8651-bc981bfdb392.zen")
+PART_AUX2_J_JPH = Module("modules/4f6d3c21-2e6a-59d2-9f01-1944f51cf6b6/4f6d3c21-2e6a-59d2-9f01-1944f51cf6b6.zen")
+PART_AUX4_J_JPH = Module("modules/4fdb8dd6-3685-5045-b10f-bbc886c16bcd/4fdb8dd6-3685-5045-b10f-bbc886c16bcd.zen")
+PART_CH1_R_FP_R = Module("modules/5068ae07-c417-5eea-9c06-33ced4303017/5068ae07-c417-5eea-9c06-33ced4303017.zen")
+PART_PWR_BUCK_R_EN_R = Module("modules/50fa44ff-4763-52d8-aeca-ad0c326186a1/50fa44ff-4763-52d8-aeca-ad0c326186a1.zen")
+PART_AUX4_C_SUP_C = Module("modules/518ee969-9921-506a-b322-bb4c1c1a44b4/518ee969-9921-506a-b322-bb4c1c1a44b4.zen")
+PART_CH0_R_FN_R = Module("modules/52217ed2-e346-5be4-abf7-9fac7e4ae7cb/52217ed2-e346-5be4-abf7-9fac7e4ae7cb.zen")
+PART_CH2_C_EXC_C = Module("modules/533b036d-dc41-5c18-a089-c8059f199da4/533b036d-dc41-5c18-a089-c8059f199da4.zen")
+PART_PWR_BUCK_C_IN3_C = Module("modules/539ed042-5e70-5be5-ae79-bfaa03e7b9ab/539ed042-5e70-5be5-ae79-bfaa03e7b9ab.zen")
+PART_MCU_C_VDD5_C = Module("modules/53d26331-c650-55fb-b0f1-f8e4e6d7b244/53d26331-c650-55fb-b0f1-f8e4e6d7b244.zen")
+PART_R_ADC_DIN_R = Module("modules/5461670a-3aaf-5cd3-9036-4c6da7ad9069/5461670a-3aaf-5cd3-9036-4c6da7ad9069.zen")
+PART_CH7_JP_HALF_SJ = Module("modules/55256115-dd63-568f-b250-0e8bb3a2eadd/55256115-dd63-568f-b250-0e8bb3a2eadd.zen")
+PART_H2_MH = Module("modules/559955d8-fa6e-5336-b163-4da49dac212c/559955d8-fa6e-5336-b163-4da49dac212c.zen")
+PART_CH0_Q_CAL_PJE138K_R1_00001 = Module(
+    "modules/5714b8a8-3b1f-5d3a-b7d1-037fad651d9f/5714b8a8-3b1f-5d3a-b7d1-037fad651d9f.zen"
+)
+PART_CH6_C_CMN_C = Module("modules/58ad30b9-5deb-5817-907d-b083fe744f82/58ad30b9-5deb-5817-907d-b083fe744f82.zen")
+PART_MCU_C_VCAP_C = Module("modules/599c5614-d806-5cd9-a9be-3fa8e92cea42/599c5614-d806-5cd9-a9be-3fa8e92cea42.zen")
+PART_C_SD2_C = Module("modules/5ac41e93-7092-5272-b733-ad4cba2bdb70/5ac41e93-7092-5272-b733-ad4cba2bdb70.zen")
+PART_EXC_C_SET_C = Module("modules/5cb3a483-97da-51ea-a391-4d371adcb3ee/5cb3a483-97da-51ea-a391-4d371adcb3ee.zen")
+PART_CH4_C_CMN_C = Module("modules/5db809c2-d96c-5d72-a4c7-a84b55a0ed86/5db809c2-d96c-5d72-a4c7-a84b55a0ed86.zen")
+PART_MCU_C_VDDA2_C = Module("modules/5e7d4e07-b2ed-5ebf-a7a6-bd2fc3b39a8d/5e7d4e07-b2ed-5ebf-a7a6-bd2fc3b39a8d.zen")
+PART_AUX1_R_DIV_R = Module("modules/5f0c2140-8c3f-5ce4-80de-bc336f86c0b0/5f0c2140-8c3f-5ce4-80de-bc336f86c0b0.zen")
+PART_CH2_C_CMP_C = Module("modules/5f80ea2a-8f00-57d9-a45b-a055a2102205/5f80ea2a-8f00-57d9-a45b-a055a2102205.zen")
+PART_AUX1_J_JPH = Module("modules/61f543e9-48f5-5831-aa84-ce7f0f8416c1/61f543e9-48f5-5831-aa84-ce7f0f8416c1.zen")
+PART_PWR_BUCK_C_IN2_C = Module("modules/64369c8a-7761-591d-8c32-dd68b5c8a2ea/64369c8a-7761-591d-8c32-dd68b5c8a2ea.zen")
+PART_R_REF1_R = Module("modules/654dc289-7f8e-5f09-b9c6-941d7e8fde89/654dc289-7f8e-5f09-b9c6-941d7e8fde89.zen")
+PART_MCU_FB_VDDA_FB = Module("modules/658e8c34-ef65-5186-8fb7-489fe9651086/658e8c34-ef65-5186-8fb7-489fe9651086.zen")
+PART_PWR_R_MON2_R = Module("modules/67f0017f-1e91-539e-bd67-3bb4b7758020/67f0017f-1e91-539e-bd67-3bb4b7758020.zen")
+PART_CH1_C_CMN_C = Module("modules/67f8d86d-93c4-5d67-a432-5fff3a0ac2a5/67f8d86d-93c4-5d67-a432-5fff3a0ac2a5.zen")
+PART_PWR_LDO_3V3_R_FB_BOT_R = Module(
+    "modules/68cc55f2-984d-595d-ac80-67dc581d6d0a/68cc55f2-984d-595d-ac80-67dc581d6d0a.zen"
+)
+PART_CH3_J_JPH = Module("modules/6b365059-de8e-52fb-8773-70cacc8cc1df/6b365059-de8e-52fb-8773-70cacc8cc1df.zen")
+PART_R_SD_D2_R = Module("modules/6c9b8406-7cdc-5a4a-9f62-b6d4390010fc/6c9b8406-7cdc-5a4a-9f62-b6d4390010fc.zen")
+PART_CH1_C_CMP_C = Module("modules/6f156021-c303-5ab4-89fc-321ab838a0e1/6f156021-c303-5ab4-89fc-321ab838a0e1.zen")
+PART_CH4_J_JPH = Module("modules/6f170f22-9fd6-52b3-8d81-cd282b5ab7b4/6f170f22-9fd6-52b3-8d81-cd282b5ab7b4.zen")
+PART_CH1_C_DIFF_C = Module("modules/6f317a57-6eb7-583b-b76e-9fc0fae9e007/6f317a57-6eb7-583b-b76e-9fc0fae9e007.zen")
+PART_PWR_BUCK_C_OUT3_C = Module("modules/6fb2e7a6-5241-569c-8e19-3db211086bed/6fb2e7a6-5241-569c-8e19-3db211086bed.zen")
+PART_CH5_R_HB1_R = Module("modules/7066965c-4576-542e-b262-c1cbf644654d/7066965c-4576-542e-b262-c1cbf644654d.zen")
+PART_CH2_J_JPH = Module("modules/73403d28-3d9d-5ff5-8123-ef8a5ce247d5/73403d28-3d9d-5ff5-8123-ef8a5ce247d5.zen")
+PART_IMU_R_AP_CS_PU_R = Module("modules/73732a84-9e91-5f33-a595-2de340c60aba/73732a84-9e91-5f33-a595-2de340c60aba.zen")
+PART_EXC_C_OUT_C = Module("modules/74ab64a5-43f9-53b4-b3ef-0d5c1a560656/74ab64a5-43f9-53b4-b3ef-0d5c1a560656.zen")
+PART_CH5_R_CAL_R = Module("modules/74bdc775-c469-5961-b66c-ca8fa23686e4/74bdc775-c469-5961-b66c-ca8fa23686e4.zen")
+PART_CH6_J_JPH = Module("modules/75dcb7e6-8d29-5976-9b6d-b0b4577b9dfb/75dcb7e6-8d29-5976-9b6d-b0b4577b9dfb.zen")
+PART_PWR_BUCK_U1 = Module("modules/76aee5bd-a69c-56af-ae87-0c38a51049f7/76aee5bd-a69c-56af-ae87-0c38a51049f7.zen")
+PART_CH6_R_CAL_R = Module("modules/78c958d7-d950-57f9-ab88-0d2e264eeecb/78c958d7-d950-57f9-ab88-0d2e264eeecb.zen")
+PART_PWR_BUCK_C_IN1_C = Module("modules/79396807-b73f-5006-9306-3f283a3a32a2/79396807-b73f-5006-9306-3f283a3a32a2.zen")
+PART_CH0_C_EXC_C = Module("modules/7a58f2e7-b85b-5fb7-82e7-5c9a2797102b/7a58f2e7-b85b-5fb7-82e7-5c9a2797102b.zen")
+PART_CH5_C_CMP_C = Module("modules/7a6aad58-5458-5c8a-b978-cccc6705f377/7a6aad58-5458-5c8a-b978-cccc6705f377.zen")
+PART_AUX2_R_DIV_R = Module("modules/7aeb86de-0cb6-520f-bbc9-af0f250aef3c/7aeb86de-0cb6-520f-bbc9-af0f250aef3c.zen")
+PART_CH4_R_QTR_R = Module("modules/7b4e3355-229e-5773-bc42-82dd8e90467c/7b4e3355-229e-5773-bc42-82dd8e90467c.zen")
+PART_MCU_C_NRST_C = Module("modules/7c8eafdf-dbf8-58d1-b9b9-9862ece71e44/7c8eafdf-dbf8-58d1-b9b9-9862ece71e44.zen")
+PART_C_CAP_C = Module("modules/7d4f95cc-230e-5a50-9dfa-2459198c1824/7d4f95cc-230e-5a50-9dfa-2459198c1824.zen")
+PART_PWR_D_TVS_D = Module("modules/7f5e5f26-e2c8-5ab5-8c6f-b8028e74e3f7/7f5e5f26-e2c8-5ab5-8c6f-b8028e74e3f7.zen")
+PART_R_SD_CMD_R = Module("modules/82295bc8-5b5d-5eb3-bcdd-42f869c88f2e/82295bc8-5b5d-5eb3-bcdd-42f869c88f2e.zen")
+PART_SD_DM3D_SF = Module("modules/828c6bcf-3131-5d9e-af5e-02027cbe04bd/828c6bcf-3131-5d9e-af5e-02027cbe04bd.zen")
+PART_CH0_J_JPH = Module("modules/83a2eb6a-efa0-5854-806d-eb66ffdbbb34/83a2eb6a-efa0-5854-806d-eb66ffdbbb34.zen")
+PART_CH7_C_DIFF_C = Module("modules/841bc991-8422-5fa7-9b69-3aaf37aff645/841bc991-8422-5fa7-9b69-3aaf37aff645.zen")
+PART_CH4_Q_CAL_PJE138K_R1_00001 = Module(
+    "modules/84bf9c6f-d472-5985-b944-c1af379c7924/84bf9c6f-d472-5985-b944-c1af379c7924.zen"
+)
+PART_C_REFIN_C = Module("modules/84d0d648-62b5-5197-b57a-ed5e21b51fe5/84d0d648-62b5-5197-b57a-ed5e21b51fe5.zen")
+PART_MCU_C_VDD4_C = Module("modules/84e8e47b-0fce-5f8e-9816-44a89d82a802/84e8e47b-0fce-5f8e-9816-44a89d82a802.zen")
+PART_IMU_U1 = Module("modules/8522ddad-ae9a-56b5-b069-4220863b1849/8522ddad-ae9a-56b5-b069-4220863b1849.zen")
+PART_CH5_J_JPH = Module("modules/85b103c9-43e1-5bf7-9010-54ba4fdf4107/85b103c9-43e1-5bf7-9010-54ba4fdf4107.zen")
+PART_J_SWD_J = Module("modules/86ae2c84-4daf-53ff-ba88-4a842ec6f995/86ae2c84-4daf-53ff-ba88-4a842ec6f995.zen")
+PART_CH3_C_EXC_C = Module("modules/870d044d-b852-5e50-900f-49fbfd50c315/870d044d-b852-5e50-900f-49fbfd50c315.zen")
+PART_TP_ADC_CLK_TP = Module("modules/87b4de15-7aa9-5698-8b5f-96c4aee0291f/87b4de15-7aa9-5698-8b5f-96c4aee0291f.zen")
+PART_CH7_R_HB1_R = Module("modules/88d93ec0-e8be-5302-bcd0-32bdb48eed9f/88d93ec0-e8be-5302-bcd0-32bdb48eed9f.zen")
+PART_CH0_C_CMN_C = Module("modules/8945cd8e-b394-5830-b6d6-c6cdf697d3f2/8945cd8e-b394-5830-b6d6-c6cdf697d3f2.zen")
+PART_CH0_R_FP_R = Module("modules/8b76130a-9f23-50bf-bb54-55b5d02ad0a2/8b76130a-9f23-50bf-bb54-55b5d02ad0a2.zen")
+PART_CH7_R_FP_R = Module("modules/8c42f7ba-d3ec-5619-bef9-dd7c7125add4/8c42f7ba-d3ec-5619-bef9-dd7c7125add4.zen")
+PART_PWR_D_OR1_D = Module("modules/8c6be9b8-106b-5398-b524-bbd11de1ae5d/8c6be9b8-106b-5398-b524-bbd11de1ae5d.zen")
+PART_MCU_C_VDD2_C = Module("modules/8d26ef12-1d51-5530-89d8-74c004a289de/8d26ef12-1d51-5530-89d8-74c004a289de.zen")
+PART_R_LED_LOG_R = Module("modules/8db2dd21-a472-56b5-96ab-acb591032cbe/8db2dd21-a472-56b5-96ab-acb591032cbe.zen")
+PART_TP_ADC_DRDY_TP = Module("modules/8f394181-caa6-577c-8877-dd752b4f8f83/8f394181-caa6-577c-8877-dd752b4f8f83.zen")
+PART_IMU_C_VDD_2_C = Module("modules/8fc281fd-186d-5066-8cd0-1ebe314583d4/8fc281fd-186d-5066-8cd0-1ebe314583d4.zen")
+PART_CH7_R_HB2_R = Module("modules/90664f2f-6f23-5561-ba12-594719df7aa2/90664f2f-6f23-5561-ba12-594719df7aa2.zen")
+PART_EXC_C_IN_C = Module("modules/91539a00-787c-5914-9cd8-3d0242cceed1/91539a00-787c-5914-9cd8-3d0242cceed1.zen")
+PART_CH2_R_HB1_R = Module("modules/918c9456-7214-59a6-8b5d-dd37305333ff/918c9456-7214-59a6-8b5d-dd37305333ff.zen")
+PART_CH3_R_HB2_R = Module("modules/918fa757-8e84-5f0a-9af0-342303eb0038/918fa757-8e84-5f0a-9af0-342303eb0038.zen")
+PART_CH2_C_DIFF_C = Module("modules/9192bb30-b85b-52ae-a909-b5da064e3971/9192bb30-b85b-52ae-a909-b5da064e3971.zen")
+PART_R_ADC_SYNC_R = Module("modules/928b3591-73d1-5540-9d51-aaa5e7cad2e4/928b3591-73d1-5540-9d51-aaa5e7cad2e4.zen")
+PART_CH1_Q_CAL_PJE138K_R1_00001 = Module(
+    "modules/92e70ffb-a4b7-512f-9ffa-24948135c05c/92e70ffb-a4b7-512f-9ffa-24948135c05c.zen"
+)
+PART_R_CC1_R = Module("modules/9500c6c5-fae4-5e35-9be0-56e7df0f7099/9500c6c5-fae4-5e35-9be0-56e7df0f7099.zen")
+PART_CH4_R_FP_R = Module("modules/976f0ece-3d7a-5b0d-8389-6913cae3b0fa/976f0ece-3d7a-5b0d-8389-6913cae3b0fa.zen")
+PART_AUX3_JP_SUPPLY_SJ = Module("modules/9816b329-1b4e-5bd2-b963-751c8ef37012/9816b329-1b4e-5bd2-b963-751c8ef37012.zen")
+PART_PWR_BUCK_R_MODE_PU_R = Module(
+    "modules/983b829e-6ff4-5874-9075-98ae40fd1a96/983b829e-6ff4-5874-9075-98ae40fd1a96.zen"
+)
+PART_CH2_R_QTR_R = Module("modules/990f88d4-025e-5718-9a45-1e5d885d78ee/990f88d4-025e-5718-9a45-1e5d885d78ee.zen")
+PART_CH1_R_QTR_R = Module("modules/9926cd76-1479-5b6b-94d9-854aa9f8806b/9926cd76-1479-5b6b-94d9-854aa9f8806b.zen")
+PART_CH4_R_FN_R = Module("modules/9c48b1e0-5a59-5529-989f-f68733023431/9c48b1e0-5a59-5529-989f-f68733023431.zen")
+PART_PWR_LDO_3V3_C_FF_C = Module(
+    "modules/9c5f544f-0429-5431-8146-4e0dea7730ec/9c5f544f-0429-5431-8146-4e0dea7730ec.zen"
+)
+PART_C_SD1_C = Module("modules/9d4aee40-da86-58f8-bed0-0e6dc48e951d/9d4aee40-da86-58f8-bed0-0e6dc48e951d.zen")
+PART_MCU_C_HSE1_C = Module("modules/9f67ffe8-afe1-52d2-943e-39048d67a506/9f67ffe8-afe1-52d2-943e-39048d67a506.zen")
+
+PART_PWR_D_REV_D(name="A03ED24D_7FFD_5AFE_9978_67309E8C6F85", PWR_VPROT=PWR_VPROT, VIN_VEH=VIN_VEH)
+
+PART_CH1_JP_HALF_SJ(name="A19DE9D0_F21A_54E7_AB15_7D6ED1346C78", CH1_HALF_MID=CH1_HALF_MID, CH1_IN_N=CH1_IN_N)
+
+PART_AUX3_R_S_R(name="A1DAF1DD_4BC2_5083_8401_AD6F23E66AB6", AUX3=AUX3, AUX3_SIG=AUX3_SIG)
+
+PART_EXC_R_SET_R(name="A1F93929_A486_50C9_BEB5_C32A73E08D98", EXC_SET=EXC_SET, GND=GND)
+
+PART_CH7_Q_CAL_PJE138K_R1_00001(
+    name="A23DAABF_0956_52F5_A373_2022BC4FAEF9",
+    CH7_CAL=CH7_CAL,
+    GND=GND,
+    SHUNT_CAL=SHUNT_CAL,
+)
+
+PART_CH7_C_EXC_C(name="A247B759_3EA5_5B44_898F_087B3C37A78E", EXC=EXC, GND=GND)
+
+PART_J_VEH_JPH(
+    name="A65EF7F7_C323_5940_A4FF_051F22E68BF4",
+    CANH=CANH,
+    CANL=CANL,
+    GND=GND,
+    VIN_VEH=VIN_VEH,
+)
+
+PART_CH3_R_FN_R(name="A792B266_B44C_57F1_BAA6_DA13708E173B", AIN3N=AIN3N, CH3_IN_N=CH3_IN_N)
+
+PART_TP_V3V3A_TP(name="A8ED013E_AF9D_5944_A876_3C72C0B9CECE", V3V3A=V3V3A)
+
+PART_EXC_R_IN_R(name="A9F7788C_2D6A_5146_B36E_BF1C81792907", EXC_VIN_FILT=EXC_VIN_FILT, V5=V5)
+
+PART_CH0_R_QTR_R(name="AA5D8139_C6FE_571F_88BC_A77BBD297690", CH0_QTR=CH0_QTR, GND=GND)
+
+PART_CH6_R_FN_R(name="AA6BE016_402D_5F7E_9FA8_ABAAFF2F5E7E", AIN6N=AIN6N, CH6_IN_N=CH6_IN_N)
+
+PART_IMU_C_VDDIO_C(name="AA89050C_6663_584B_B5F0_60196BC68EFC", GND=GND, V3V3=V3V3)
+
+PART_CH7_R_FN_R(name="ACDDAD07_C61D_5134_B1DE_58AB2F79EDF5", AIN7N=AIN7N, CH7_IN_N=CH7_IN_N)
+
+PART_CH6_Q_CAL_PJE138K_R1_00001(
+    name="ACE59175_327E_5AAD_A33A_F1DE3A78AC00",
+    CH6_CAL=CH6_CAL,
+    GND=GND,
+    SHUNT_CAL=SHUNT_CAL,
+)
+
+PART_TP_GND_TP(name="AD59B617_D00B_58B2_B67E_C7CE8F44B245", GND=GND)
+
+PART_CH2_Q_CAL_PJE138K_R1_00001(
+    name="B2124AC1_DF32_59E7_8737_876DB9922F21",
+    CH2_CAL=CH2_CAL,
+    GND=GND,
+    SHUNT_CAL=SHUNT_CAL,
+)
+
+PART_CH0_R_HB2_R(name="B22E30C0_1002_5E48_992C_105D200FB984", CH0_HALF_MID=CH0_HALF_MID, GND=GND)
+
+PART_PWR_C_V5_C(name="B58DCC4F_0EEA_596D_93E6_021A5BE9F46C", GND=GND, V5=V5)
+
+PART_CH5_R_HB2_R(name="B6F6FCC2_9ABF_5124_BD70_3A327C9B85E5", CH5_HALF_MID=CH5_HALF_MID, GND=GND)
+
+PART_CH6_R_QTR_R(name="B921F4C7_3E3E_5A37_A51A_8488C1F68966", CH6_QTR=CH6_QTR, GND=GND)
+
+PART_H1_MH(name="B9855FCC_4E57_56EE_A9F9_C8367AF65EAF")
+
+PART_MCU_U(
+    name="BA66CC6D_99FE_574A_B6F2_5828EA52F350",
+    ADC_DRDY=ADC_DRDY,
+    ADC_MCLK=ADC_MCLK,
+    ADC_SPI_CLK=ADC_SPI_CLK,
+    ADC_SPI_CS=ADC_SPI_CS,
+    ADC_SPI_MISO=ADC_SPI_MISO,
+    ADC_SPI_MOSI=ADC_SPI_MOSI,
+    ADC_SYNC_RST=ADC_SYNC_RST,
+    AUX1=AUX1,
+    AUX2=AUX2,
+    AUX3=AUX3,
+    AUX4=AUX4,
+    CAN_RX=CAN_RX,
+    CAN_TX=CAN_TX,
+    EXC_EN=EXC_EN,
+    GND=GND,
+    I2C_SCL=I2C_SCL,
+    I2C_SDA=I2C_SDA,
+    IMU_INT1=IMU_INT1,
+    IMU_SPI_CLK=IMU_SPI_CLK,
+    IMU_SPI_CS=IMU_SPI_CS,
+    IMU_SPI_MISO=IMU_SPI_MISO,
+    IMU_SPI_MOSI=IMU_SPI_MOSI,
+    LED_ERR=LED_ERR,
+    LED_LOG=LED_LOG,
+    MCU_BOOT0=MCU_BOOT0,
+    MCU_HSE_IN=MCU_HSE_IN,
+    MCU_HSE_OUT=MCU_HSE_OUT,
+    MCU_VCAP=MCU_VCAP,
+    NRST=NRST,
+    SD_DET=SD_DET,
+    SHUNT_CAL=SHUNT_CAL,
+    SWD_SWCLK=SWD_SWCLK,
+    SWD_SWDIO=SWD_SWDIO,
+    UART_RX=UART_RX,
+    UART_TX=UART_TX,
+    USB_D_N=USB_D_N,
+    USB_D_P=USB_D_P,
+    V3V3=V3V3,
+    VBAT_MON=VBAT_MON,
+    VBUS_SENSE=VBUS_SENSE,
+    VDDA=VDDA,
+    SD_CS=SD_DAT3,
+)
+PART_CH5_C_EXC_C(name="BAAC8660_6C54_5732_ABF1_A52EF8781F1E", EXC=EXC, GND=GND)
+
+PART_CH6_R_HB1_R(name="BB50CF66_D618_57A3_9918_DC9B959B32CF", CH6_HALF_MID=CH6_HALF_MID, EXC=EXC)
+
+PART_CH5_R_QTR_R(name="BBE46B28_C363_557A_8993_E00BDADCB025", CH5_QTR=CH5_QTR, GND=GND)
+
+PART_R_ADC_CLK_R(name="BC378EF3_A999_55C2_A266_57DE27D790C0", ADC_CLKIN=ADC_CLKIN, ADC_MCLK=ADC_MCLK)
+
+PART_CH7_R_QTR_R(name="BCF9F3A7_2312_5D5E_A44F_9F55D14734C8", CH7_QTR=CH7_QTR, GND=GND)
+
+PART_CH2_R_CAL_R(name="BDE8CDB7_4793_5C0E_8421_4089A0E23093", CH2_CAL=CH2_CAL, CH2_IN_P=CH2_IN_P)
+
+PART_PWR_FB_ANA_FB(name="BF232644_5666_5B27_A6AA_A678DAE5C14C", PWR_V5_ANA=PWR_V5_ANA, V5=V5)
+
+PART_PWR_C_MON_C(name="C0145D99_023C_55E0_9294_B965515F3538", GND=GND, VBAT_MON=VBAT_MON)
+
+PART_R_ADC_CS_R(name="C09B9966_F26B_57DF_84E0_BDD315BA3EC5", ADC_SPI_CS=ADC_SPI_CS, V3V3=V3V3)
+
+PART_R_SHUNT_PD_R(name="C28DF3CB_EC4A_5357_A1EA_D08E316D72DA", GND=GND, SHUNT_CAL=SHUNT_CAL)
+
+PART_C_DVDD_C(name="C393C174_0E1E_50EE_A11F_A585FAAA953C", GND=GND, V3V3=V3V3)
+
+PART_R_VBUS1_R(name="C9C54F3D_492B_5A41_9DCB_5F47AEA848F6", VBUS=VBUS, VBUS_SENSE=VBUS_SENSE)
+
+PART_H3_MH(name="CC7E77AF_AAD5_5431_9019_5B31A35F631D")
+
+
+PART_C_VBUS_C(name="CD649671_6D9F_5B45_A5A4_4C066B336285", GND=GND, VBUS=VBUS)
+
+PART_PWR_BUCK_C_OUT2_C(name="CE06F4CA_E17A_5552_945D_BD29EB336158", GND=GND, V5_BUCK=V5_BUCK)
+
+PART_U_ADC(
+    name="CE419F7E_AAEF_5640_A00C_559494572CE8",
+    ADC_CAP=ADC_CAP,
+    ADC_CLKIN=ADC_CLKIN,
+    ADC_DRDY=ADC_DRDY,
+    ADC_REFIN=ADC_REFIN,
+    ADC_SPI_CLK=ADC_SPI_CLK,
+    ADC_SPI_CS=ADC_SPI_CS,
+    ADC_SPI_MISO=ADC_SPI_MISO,
+    ADC_SPI_MOSI=ADC_SPI_MOSI,
+    ADC_SYNC_RST=ADC_SYNC_RST,
+    AIN0N=AIN0N,
+    AIN0P=AIN0P,
+    AIN1N=AIN1N,
+    AIN1P=AIN1P,
+    AIN2N=AIN2N,
+    AIN2P=AIN2P,
+    AIN3N=AIN3N,
+    AIN3P=AIN3P,
+    AIN4N=AIN4N,
+    AIN4P=AIN4P,
+    AIN5N=AIN5N,
+    AIN5P=AIN5P,
+    AIN6N=AIN6N,
+    AIN6P=AIN6P,
+    AIN7N=AIN7N,
+    AIN7P=AIN7P,
+    GND=GND,
+    V3V3=V3V3,
+    V3V3A=V3V3A,
+)
+
+PART_EXC_U(
+    name="CE92F33B_B5EE_566D_91AA_04935ED1A8A1",
+    EXC=EXC,
+    EXC_EN=EXC_EN,
+    EXC_SET=EXC_SET,
+    EXC_VIN_FILT=EXC_VIN_FILT,
+    GND=GND,
+)
+
+PART_MCU_R_BOOT0_R(name="CEA908C8_53FB_5D97_8A26_E4B25FE881B6", GND=GND, MCU_BOOT0=MCU_BOOT0)
+
+PART_CH4_C_CMP_C(name="CF10D78F_961A_5FC4_B1DD_B308CA535E09", AIN4P=AIN4P, GND=GND)
+
+PART_CH7_C_CMN_C(name="CF449A95_CFF8_59FF_A17E_F84886DFE3C2", AIN7N=AIN7N, GND=GND)
+
+PART_CH3_R_CAL_R(name="D15DB110_B10C_5C61_97AF_728F8C56FC73", CH3_CAL=CH3_CAL, CH3_IN_P=CH3_IN_P)
+
+PART_AUX1_C_SUP_C(name="D2552823_29B8_57A9_A493_DEA7D6865B3D", AUX1_V_SENSOR=AUX1_V_SENSOR, GND=GND)
+
+PART_CH5_C_CMN_C(name="D2C7ED17_67AA_5014_A6D3_AC5EF814CEB0", AIN5N=AIN5N, GND=GND)
+
+PART_AUX4_C_F_C(name="D2F644EC_9D39_5729_979F_5607ABB1F607", AUX4=AUX4, GND=GND)
+
+PART_CH4_R_HB2_R(name="D61D4ED4_1777_5FF1_9167_8398EE745A19", CH4_HALF_MID=CH4_HALF_MID, GND=GND)
+
+PART_R_ADC_CLK_PD_R(name="D7BA2931_70E7_5326_818B_4E0327D87406", ADC_CLKIN=ADC_CLKIN, GND=GND)
+
+PART_CH3_C_CMN_C(name="D8939CC1_AF87_51E1_97DF_E776C9D3BEB0", AIN3N=AIN3N, GND=GND)
+
+PART_CH1_C_EXC_C(name="D8C39240_BB3E_5C5F_A683_F4BFFC1DBBF5", EXC=EXC, GND=GND)
+
+PART_MCU_R_BOOT1_R(name="DAD08674_6D83_5930_BD6D_346F8DF39159", GND=GND, MCU_BOOT1=MCU_BOOT1)
+
+PART_R_CAN_TERM_R(name="DBFC9AD6_C677_5209_929F_97AAFED6EC92", CANH=CANH, CAN_TERM=CAN_TERM)
+
+PART_CH0_JP_HALF_SJ(name="DBFCF7C2_BF2A_51F8_9AFE_17013F4E55BE", CH0_HALF_MID=CH0_HALF_MID, CH0_IN_N=CH0_IN_N)
+
+PART_AUX3_R_DIV_R(name="DC6152E1_5B85_54CE_9EE7_0C3C3C256523", AUX3=AUX3, GND=GND)
+
+
+PART_CAN_C_VCC_C(name="DF1DE033_36F3_5298_A097_D3A61898F8D9", GND=GND, V5_BUCK=V5_BUCK)
+
+PART_MCU_Y_HSE_Y(
+    name="E036E267_E88F_5A48_902E_69C291364C00",
+    GND=GND,
+    MCU_HSE_IN=MCU_HSE_IN,
+    MCU_HSE_OUT=MCU_HSE_OUT,
+)
+
+PART_R_VBUS2_R(name="E12D15D9_168F_5760_8198_F4DBCC57D6C1", GND=GND, VBUS_SENSE=VBUS_SENSE)
+
+PART_CH4_C_EXC_C(name="E2041224_F102_5D10_921F_2FAF22DC4E97", EXC=EXC, GND=GND)
+
+PART_PWR_C_ANA_OUT_C(name="E2EA3BBF_1E69_51CF_B062_2D2C15D363CC", GND=GND, V3V3A=V3V3A)
+
+PART_AUX1_C_F_C(name="E43017B4_C64D_5198_B7FE_336F944CD2C0", AUX1=AUX1, GND=GND)
+
+PART_J_EXP_PH(
+    name="E5DDBF15_4968_5B0E_9312_A38794FA11BE",
+    GND=GND,
+    GPIO_PA1=GPIO_PA1,
+    GPIO_PA10=GPIO_PA10,
+    I2C_SCL=I2C_SCL,
+    I2C_SDA=I2C_SDA,
+    UART_RX=UART_RX,
+    UART_TX=UART_TX,
+    V3V3=V3V3,
+    V5=V5,
+)
+
+PART_C_AVDD2_C(name="E69B0D32_DBFE_5DD9_A9FA_7BC61B77711E", GND=GND, V3V3A=V3V3A)
+
+PART_CAN_U(
+    name="E6A09445_7A84_54DA_B157_763B8B3FE48A",
+    CANH=CANH,
+    CANL=CANL,
+    CAN_RX=CAN_RX,
+    CAN_STB=GND,
+    CAN_TX=CAN_TX,
+    GND=GND,
+    V3V3=V3V3,
+    V5_BUCK=V5_BUCK,
+)
+
+PART_CH1_J_JPH(
+    name="E6E85893_87DA_55FF_9259_D5C35ED3FE2A",
+    CH1_IN_N=CH1_IN_N,
+    CH1_IN_P=CH1_IN_P,
+    CH1_QTR=CH1_QTR,
+    EXC=EXC,
+    GND=GND,
+)
+
+PART_CH3_C_DIFF_C(name="E7672C6C_8DEC_5798_A852_24C7D34A1030", AIN3N=AIN3N, AIN3P=AIN3P)
+
+PART_CH5_C_DIFF_C(name="E85BB6B6_2FA3_5667_A2BC_33B0BC87B7FD", AIN5N=AIN5N, AIN5P=AIN5P)
+
+PART_CH7_C_CMP_C(name="E89704A5_FB2B_5010_A73F_408E8A978CAB", AIN7P=AIN7P, GND=GND)
+
+PART_AUX3_C_F_C(name="EB377FAC_908E_5825_80BB_40999FBFE658", AUX3=AUX3, GND=GND)
+
+PART_CH4_JP_HALF_SJ(name="EE1D2FEF_F770_5173_B9B6_636F4779E3F4", CH4_HALF_MID=CH4_HALF_MID, CH4_IN_N=CH4_IN_N)
+
+PART_CH0_R_CAL_R(name="EE217D64_AC1E_5729_AA1D_9333503FAC8B", CH0_CAL=CH0_CAL, CH0_IN_P=CH0_IN_P)
+
+PART_CH4_R_HB1_R(name="EEF20DF7_4B40_52D3_AF61_69CC7FE98BA4", CH4_HALF_MID=CH4_HALF_MID, EXC=EXC)
+
+PART_TP_EXC_TP(name="EF9F38F9_8A2B_5681_A420_B3E6A29B6222", EXC=EXC)
+
+PART_PWR_LDO_3V3_C_IN_C(name="F2132AB1_DC9F_5715_BD34_50B92AFA0082", GND=GND, V5=V5)
+
+PART_CH6_C_CMP_C(name="F25C9B5F_560B_5D98_80AB_713AAD62C2FF", AIN6P=AIN6P, GND=GND)
+
+PART_PWR_BUCK_C_OUT1_C(name="F2673C88_DB1D_522C_B7ED_B2EBC8FDE686", GND=GND, V5_BUCK=V5_BUCK)
+
+PART_MCU_SW_BOOT_SW(name="F545A0D5_A89B_5BB7_8BE9_BB919426345C", MCU_BOOT0=MCU_BOOT0, V3V3=V3V3)
+
+PART_D_CAN_D(
+    name="F566E676_BDB3_59CA_9A57_CFC107D1E5FA",
+    CANH=CANH,
+    CANL=CANL,
+    GND=GND,
+)
+
+PART_EXC_R_EN_R(name="F7BA1D87_4808_5766_9F32_68315503780B", EXC_EN=EXC_EN, GND=GND)
+
+PART_CAN_C_VIO_C(name="F7C74F2E_3CE5_5B37_A1FB_CB96E37F9CC1", GND=GND, V3V3=V3V3)
+
+PART_CH7_R_CAL_R(name="F82D0399_3596_57FC_AB56_1699AFC655C9", CH7_CAL=CH7_CAL, CH7_IN_P=CH7_IN_P)
+
+PART_AUX4_R_S_R(name="F97F4D5D_A06F_5086_A549_F4F8090AC0FD", AUX4=AUX4, AUX4_SIG=AUX4_SIG)
+
+PART_R_SCL_R(name="FA646113_4573_5628_B670_7340B5D5E58A", I2C_SCL=I2C_SCL, V3V3=V3V3)
+
+PART_CH2_R_HB2_R(name="FBC21C15_8643_5A81_A998_0519B9A8D351", CH2_HALF_MID=CH2_HALF_MID, GND=GND)
+
+PART_CH3_C_CMP_C(name="FBD53254_68B6_56DD_8E7F_CDA4CAB9190B", AIN3P=AIN3P, GND=GND)
+
+PART_CH0_R_HB1_R(name="FBEC1B8E_053B_5EF5_9117_A07116091D53", CH0_HALF_MID=CH0_HALF_MID, EXC=EXC)
+
+PART_D_USB_TPD4E02B04DQAR(
+    name="FC0D1341_2167_5A38_A1BD_D26B76BCE9D1",
+    GND=GND,
+    USB_CC1=USB_CC1,
+    USB_CC2=USB_CC2,
+    USB_D_N=USB_D_N,
+    USB_D_P=USB_D_P,
+)
+
+PART_CH6_R_HB2_R(name="FDA1C16D_811E_5F92_9304_40D1BADB1D18", CH6_HALF_MID=CH6_HALF_MID, GND=GND)
+
+PART_CH2_C_CMN_C(name="FDA8B2E8_2404_561B_B864_7D4073F57A0F", AIN2N=AIN2N, GND=GND)
+
+
+PART_PWR_BUCK_C_VCC_C(name="SHEET_01C532A2_82E3_55EE_94A7_189BAF0D5507", GND=GND, PWR_BUCK_VCC=PWR_BUCK_VCC)
+
+PART_CH5_R_FP_R(name="SHEET_031EABE2_D32D_58BA_93DB_30559E630ED1", AIN5P=AIN5P, CH5_IN_P=CH5_IN_P)
+
+PART_CH4_C_DIFF_C(name="SHEET_04C17582_BC4B_5EB3_96FB_4BB26E958468", AIN4N=AIN4N, AIN4P=AIN4P)
+
+PART_R_ADC_SCLK_R(name="SHEET_04C7D2D9_9EC5_56BB_B3BE_45EFCA131518", ADC_SPI_CLK=ADC_SPI_CLK, GND=GND)
+
+PART_CH0_C_DIFF_C(name="SHEET_0559D653_14AB_5F6C_9954_0B1BC7955066", AIN0N=AIN0N, AIN0P=AIN0P)
+
+PART_CH7_J_JPH(
+    name="SHEET_05BEBE0E_1A5B_5016_AB32_DBDD47F37EF5",
+    CH7_IN_N=CH7_IN_N,
+    CH7_IN_P=CH7_IN_P,
+    CH7_QTR=CH7_QTR,
+    EXC=EXC,
+    GND=GND,
+)
+
+PART_AUX3_J_JPH(
+    name="SHEET_06F5D488_35DD_570F_85E0_74F68FCA0149",
+    AUX3_SIG=AUX3_SIG,
+    AUX3_V_SENSOR=AUX3_V_SENSOR,
+    GND=GND,
+)
+
+PART_PWR_C_ANA_IN_C(name="SHEET_092A9CAB_C080_56CF_A29B_5681F5FBF8BD", GND=GND, PWR_V5_ANA=PWR_V5_ANA)
+
+PART_CH2_R_FP_R(name="SHEET_0B4CE641_3349_5183_AB66_B9BA27C4513A", AIN2P=AIN2P, CH2_IN_P=CH2_IN_P)
+
+PART_CH6_C_EXC_C(name="SHEET_0C9AF7E4_346A_57C8_B308_BC4A9CBC4F46", EXC=EXC, GND=GND)
+
+PART_TP_V3V3_TP(name="SHEET_0D5F77E3_88B7_5D29_9EC8_1A04D3D1997E", V3V3=V3V3)
+
+PART_CH3_R_QTR_R(name="SHEET_0D9113E3_2238_582B_B491_35F6D88E84C6", CH3_QTR=CH3_QTR, GND=GND)
+
+PART_AUX4_JP_SUPPLY_SJ(
+    name="SHEET_111A5CD9_78C6_5403_8F4D_B823F437E3E0",
+    AUX4_V_SENSOR=AUX4_V_SENSOR,
+    V5=V5,
+    VDDA=VDDA,
+)
+
+PART_IMU_R_AD0_PD_R(name="SHEET_111FDCA5_5071_5D86_AFC4_4D7B7EB02689", GND=GND, IMU_SPI_MISO=IMU_SPI_MISO)
+
+PART_JP_CAN_TERM_SJ(name="SHEET_11BA7775_1D6F_58F4_9605_1D063ADBEEAA", CANL=CANL, CAN_TERM=CAN_TERM)
+
+PART_CH4_R_CAL_R(name="SHEET_11FE47AB_B848_5336_982A_4952398AE0B4", CH4_CAL=CH4_CAL, CH4_IN_P=CH4_IN_P)
+
+PART_R_REF2_R(name="SHEET_125A35F1_0A67_5AD5_9B06_1C1B6C5ED606", ADC_REFIN=ADC_REFIN, GND=GND)
+
+PART_R_SD_D3_R(name="SHEET_130F01E5_ED39_50ED_AB16_5E6469396C12", SD_DAT3=SD_DAT3, V3V3=V3V3)
+
+PART_PWR_BUCK_R_MODE_PD_R(
+    name="SHEET_13410209_E409_5191_8B35_6F8D2692D20F", GND=GND, PWR_BUCK_MODE_SYNC=PWR_BUCK_MODE_SYNC
+)
+
+PART_MCU_C_HSE2_C(name="SHEET_1431A64A_D0CA_5B63_BF98_B5F03845B158", GND=GND, MCU_HSE_OUT=MCU_HSE_OUT)
+
+PART_R_SDA_R(name="SHEET_14DE6AAF_7AB1_5EE4_ADDE_71E2F322092F", I2C_SDA=I2C_SDA, V3V3=V3V3)
+
+PART_C_AVDD1_C(name="SHEET_15A9888B_790C_5BD1_8CC6_EAC25D94249C", GND=GND, V3V3A=V3V3A)
+
+PART_PWR_BUCK_C_FF_C(
+    name="SHEET_15B45AEB_122E_5EDC_85BE_7CD68844A2CD", BUCK_PWR_BUCK_FB=BUCK_PWR_BUCK_FB, V5_BUCK=V5_BUCK
+)
+
+PART_AUX2_C_SUP_C(name="SHEET_163F3B60_3D90_5A80_AD15_E9B8BA72E7D6", AUX2_V_SENSOR=AUX2_V_SENSOR, GND=GND)
+
+PART_TP_V5_TP(name="SHEET_168961B0_171D_5353_B26C_761E2A037E40", V5=V5)
+
+PART_CH2_R_FN_R(name="SHEET_1922A713_F07C_57C9_95F3_CF45B1D04B76", AIN2N=AIN2N, CH2_IN_N=CH2_IN_N)
+
+PART_CH1_R_CAL_R(name="SHEET_195BCB0B_A2F4_5ADB_AB44_E49692F9096D", CH1_CAL=CH1_CAL, CH1_IN_P=CH1_IN_P)
+
+PART_R_SD_D1_R(name="SHEET_1987FB5A_A392_5CD1_BB06_8ECF7F2B6762", SD_DAT1=SD_DAT1, V3V3=V3V3)
+
+PART_CH3_R_FP_R(name="SHEET_1B4F84D7_1D56_5342_8A31_23E1AD9BAFDC", AIN3P=AIN3P, CH3_IN_P=CH3_IN_P)
+
+PART_D_ERR_LED(name="SHEET_1D6D90CE_41C2_5812_8D89_38A660E7BE13", GND=GND, LED_ERR_A=LED_ERR_A)
+
+PART_J_USB_USB_C(
+    name="SHEET_1E38873B_1565_589A_9F67_7DA908C7A1CF",
+    GND=GND,
+    USB_CC1=USB_CC1,
+    USB_CC2=USB_CC2,
+    USB_D_N=USB_D_N,
+    USB_D_P=USB_D_P,
+    VBUS=VBUS,
+)
+
+PART_PWR_C_BULK_C(name="SHEET_1E3B0317_CA4B_54AB_B2F0_0E95CF5FA961", GND=GND, PWR_VPROT=PWR_VPROT)
+
+PART_CH1_R_HB1_R(name="SHEET_1F16EE7D_1CAE_514F_9A33_A42B69741A90", CH1_HALF_MID=CH1_HALF_MID, EXC=EXC)
+
+PART_CH0_C_CMP_C(name="SHEET_1F1C90D1_1072_5EA1_BEE5_BAE054BCB36C", AIN0P=AIN0P, GND=GND)
+
+PART_AUX2_JP_SUPPLY_SJ(
+    name="SHEET_1F350A60_49DB_5781_AD97_F4E9799A952C",
+    AUX2_V_SENSOR=AUX2_V_SENSOR,
+    V5=V5,
+    VDDA=VDDA,
+)
+
+PART_AUX2_R_S_R(name="SHEET_1F63783D_682A_53C3_B8A0_D74AEE7C137C", AUX2=AUX2, AUX2_SIG=AUX2_SIG)
+
+PART_AUX4_R_DIV_R(name="SHEET_1FD9B609_C3C7_5874_BD97_6E30E56BD237", AUX4=AUX4, GND=GND)
+
+PART_PWR_BUCK_R_FBB_R(name="SHEET_1FDC2D33_2621_583D_937B_AC571B9293BA", BUCK_PWR_BUCK_FB=BUCK_PWR_BUCK_FB, GND=GND)
+
+PART_MCU_C_VDD_BULK_C(name="SHEET_21267085_BCB7_545C_9A10_48C61961CB16", GND=GND, V3V3=V3V3)
+
+PART_R_LED_PWR_R(name="SHEET_2222A18A_5BAF_5F02_9DAF_B5EC41D2EDE4", LED_PWR_A=LED_PWR_A, V3V3=V3V3)
+
+PART_CH6_R_FP_R(name="SHEET_2425E86F_48A9_5F6D_A701_599D0F4BDC54", AIN6P=AIN6P, CH6_IN_P=CH6_IN_P)
+
+PART_D_LOG_LED(name="SHEET_24AA2E51_037E_5090_A545_FEBC115E20E5", GND=GND, LED_LOG_A=LED_LOG_A)
+
+PART_CH5_JP_HALF_SJ(name="SHEET_24BF2ACF_2EED_5466_8B00_F4954110F517", CH5_HALF_MID=CH5_HALF_MID, CH5_IN_N=CH5_IN_N)
+
+PART_PWR_LDO_3V3_C_OUT_C(name="SHEET_253FDF6E_E3D2_5880_86A5_8C20204657D9", GND=GND, V3V3=V3V3)
+
+
+PART_PWR_LDO_3V3_U1(
+    name="SHEET_28B8B799_7A7C_55D0_9ACD_16A5C6B80815",
+    GND=GND,
+    LDO_3V3_PWR_LDO_3V3_FB=LDO_3V3_PWR_LDO_3V3_FB,
+    PWR_LDO_3V3_EN=PWR_LDO_3V3_EN,
+    V3V3=V3V3,
+    V5=V5,
+)
+
+PART_MCU_C_VDD1_C(name="SHEET_2C1ABC3E_7E01_5A82_AB1C_A92E3592ED46", GND=GND, V3V3=V3V3)
+
+PART_R_SD_D0_R(name="SHEET_2D3CBE74_4A8B_5062_8CA2_92EC071F31C7", SD_DAT0=SD_DAT0, V3V3=V3V3)
+
+PART_H4_MH(name="SHEET_2F326288_1754_5D21_977F_834F10F62F25")
+
+PART_PWR_U_3V3A(
+    name="SHEET_2FA17A4D_9B43_582C_8717_1449C502FD6B",
+    GND=GND,
+    PWR_V5_ANA=PWR_V5_ANA,
+    V3V3A=V3V3A,
+)
+
+PART_MCU_C_VDD3_C(name="SHEET_2FFD241F_47B7_5F1D_95B7_56C800F315FB", GND=GND, V3V3=V3V3)
+
+PART_D_PWR_LED(name="SHEET_318736C3_4057_577E_AC19_B3FC8C72F10D", GND=GND, LED_PWR_A=LED_PWR_A)
+
+PART_AUX1_R_S_R(name="SHEET_3325587E_5633_5954_A71F_9F666D8B6C2D", AUX1=AUX1, AUX1_SIG=AUX1_SIG)
+
+PART_CH3_JP_HALF_SJ(name="SHEET_33AB971F_98C2_50BF_89A7_061D6883FB26", CH3_HALF_MID=CH3_HALF_MID, CH3_IN_N=CH3_IN_N)
+
+PART_CH3_Q_CAL_PJE138K_R1_00001(
+    name="SHEET_33B6DBC8_E9D9_5597_9A57_BBF1763D2CDA",
+    CH3_CAL=CH3_CAL,
+    GND=GND,
+    SHUNT_CAL=SHUNT_CAL,
+)
+
+PART_PWR_R_MON1_R(name="SHEET_33B85EF0_AC6C_54A8_976A_CD1B18B05BFC", PWR_VPROT=PWR_VPROT, VBAT_MON=VBAT_MON)
+
+PART_PWR_D_OR2_D(name="SHEET_350DCEED_0515_510A_88B9_110E895832F4", V5=V5, VBUS=VBUS)
+
+PART_R_LED_ERR_R(name="SHEET_353454DA_7971_55AB_A653_1FBE36C70B30", LED_ERR=LED_ERR, LED_ERR_A=LED_ERR_A)
+
+PART_R_CC2_R(name="SHEET_35803EEF_61A0_5397_BB72_E5FCB06DE3A8", GND=GND, USB_CC2=USB_CC2)
+
+PART_PWR_LDO_3V3_R_EN_R(name="SHEET_38A1010B_2857_55C7_814F_9993D772F71A", PWR_LDO_3V3_EN=PWR_LDO_3V3_EN, V5=V5)
+
+PART_IMU_C_VDD_1_C(name="SHEET_3AA69448_3592_5FD0_90F5_BEA754D2168E", GND=GND, V3V3=V3V3)
+
+PART_AUX2_C_F_C(name="SHEET_3EA70995_ABE7_5C19_9035_5E4277410534", AUX2=AUX2, GND=GND)
+
+PART_CH1_R_FN_R(name="SHEET_417D0F6E_9445_5480_95A9_410A7C298F2E", AIN1N=AIN1N, CH1_IN_N=CH1_IN_N)
+
+
+PART_AUX1_JP_SUPPLY_SJ(
+    name="SHEET_42E94C2E_524C_5936_AC48_F4CF468A078C",
+    AUX1_V_SENSOR=AUX1_V_SENSOR,
+    V5=V5,
+    VDDA=VDDA,
+)
+
+PART_CH5_Q_CAL_PJE138K_R1_00001(
+    name="SHEET_430A1D7F_A603_53D8_BA88_3850EA54640E",
+    CH5_CAL=CH5_CAL,
+    GND=GND,
+    SHUNT_CAL=SHUNT_CAL,
+)
+
+PART_PWR_LDO_3V3_R_FB_TOP_R(
+    name="SHEET_43405B75_AC7D_5C8B_9E77_F4BF464F001F", LDO_3V3_PWR_LDO_3V3_FB=LDO_3V3_PWR_LDO_3V3_FB, V3V3=V3V3
+)
+
+PART_AUX3_C_SUP_C(name="SHEET_4575D06F_B4EA_5A2C_82EC_E402ACA0D26F", AUX3_V_SENSOR=AUX3_V_SENSOR, GND=GND)
+
+PART_CH3_R_HB1_R(name="SHEET_4682CF13_98F2_509F_9EE7_A6B2BCA92A51", CH3_HALF_MID=CH3_HALF_MID, EXC=EXC)
+
+PART_IMU_R_AD0_PU_R(name="SHEET_46EAD801_AB76_5DB0_AD5A_53A8D3B41345", IMU_SPI_MISO=IMU_SPI_MISO, V3V3=V3V3)
+
+PART_CH1_R_HB2_R(name="SHEET_46FFAAB0_13F2_5865_923F_A059147E052C", CH1_HALF_MID=CH1_HALF_MID, GND=GND)
+
+PART_PWR_BUCK_R_FBT_R(
+    name="SHEET_4870F717_DCE8_526E_B7B0_DC75D6A9CC5C", BUCK_PWR_BUCK_FB=BUCK_PWR_BUCK_FB, V5_BUCK=V5_BUCK
+)
+
+PART_MCU_C_VDDA1_C(name="SHEET_489158E6_4C51_51CE_8F7C_4D3970A7EE17", GND=GND, VDDA=VDDA)
+
+PART_CH6_C_DIFF_C(name="SHEET_489AB747_A4C4_5B21_AC02_C2BCEC356E84", AIN6N=AIN6N, AIN6P=AIN6P)
+
+PART_CH6_JP_HALF_SJ(name="SHEET_49AB3303_E2DE_50E4_B627_00D909C1A70C", CH6_HALF_MID=CH6_HALF_MID, CH6_IN_N=CH6_IN_N)
+
+PART_CH5_R_FN_R(name="SHEET_4B8FBAAB_019D_5EB0_A685_0971F269E0D9", AIN5N=AIN5N, CH5_IN_N=CH5_IN_N)
+
+PART_CH2_JP_HALF_SJ(name="SHEET_4CAE8669_B100_51AB_8651_BC981BFDB392", CH2_HALF_MID=CH2_HALF_MID, CH2_IN_N=CH2_IN_N)
+
+PART_AUX2_J_JPH(
+    name="SHEET_4F6D3C21_2E6A_59D2_9F01_1944F51CF6B6",
+    AUX2_SIG=AUX2_SIG,
+    AUX2_V_SENSOR=AUX2_V_SENSOR,
+    GND=GND,
+)
+
+PART_AUX4_J_JPH(
+    name="SHEET_4FDB8DD6_3685_5045_B10F_BBC886C16BCD",
+    AUX4_SIG=AUX4_SIG,
+    AUX4_V_SENSOR=AUX4_V_SENSOR,
+    GND=GND,
+)
+
+PART_CH1_R_FP_R(name="SHEET_5068AE07_C417_5EEA_9C06_33CED4303017", AIN1P=AIN1P, CH1_IN_P=CH1_IN_P)
+
+PART_PWR_BUCK_R_EN_R(name="SHEET_50FA44FF_4763_52D8_AECA_AD0C326186A1", PWR_BUCK_EN=PWR_BUCK_EN, PWR_VPROT=PWR_VPROT)
+
+PART_AUX4_C_SUP_C(name="SHEET_518EE969_9921_506A_B322_BB4C1C1A44B4", AUX4_V_SENSOR=AUX4_V_SENSOR, GND=GND)
+
+PART_CH0_R_FN_R(name="SHEET_52217ED2_E346_5BE4_ABF7_9FAC7E4AE7CB", AIN0N=AIN0N, CH0_IN_N=CH0_IN_N)
+
+PART_CH2_C_EXC_C(name="SHEET_533B036D_DC41_5C18_A089_C8059F199DA4", EXC=EXC, GND=GND)
+
+PART_PWR_BUCK_C_IN3_C(name="SHEET_539ED042_5E70_5BE5_AE79_BFAA03E7B9AB", GND=GND, PWR_VPROT=PWR_VPROT)
+
+PART_MCU_C_VDD5_C(name="SHEET_53D26331_C650_55FB_B0F1_F8E4E6D7B244", GND=GND, V3V3=V3V3)
+
+PART_R_ADC_DIN_R(name="SHEET_5461670A_3AAF_5CD3_9036_4C6DA7AD9069", ADC_SPI_MOSI=ADC_SPI_MOSI, GND=GND)
+
+PART_CH7_JP_HALF_SJ(name="SHEET_55256115_DD63_568F_B250_0E8BB3A2EADD", CH7_HALF_MID=CH7_HALF_MID, CH7_IN_N=CH7_IN_N)
+
+PART_H2_MH(name="SHEET_559955D8_FA6E_5336_B163_4DA49DAC212C")
+
+PART_CH0_Q_CAL_PJE138K_R1_00001(
+    name="SHEET_5714B8A8_3B1F_5D3A_B7D1_037FAD651D9F",
+    CH0_CAL=CH0_CAL,
+    GND=GND,
+    SHUNT_CAL=SHUNT_CAL,
+)
+
+PART_CH6_C_CMN_C(name="SHEET_58AD30B9_5DEB_5817_907D_B083FE744F82", AIN6N=AIN6N, GND=GND)
+
+PART_MCU_C_VCAP_C(name="SHEET_599C5614_D806_5CD9_A9BE_3FA8E92CEA42", GND=GND, MCU_VCAP=MCU_VCAP)
+
+PART_C_SD2_C(name="SHEET_5AC41E93_7092_5272_B733_AD4CBA2BDB70", GND=GND, V3V3=V3V3)
+
+PART_EXC_C_SET_C(name="SHEET_5CB3A483_97DA_51EA_A391_4D371ADCB3EE", EXC_SET=EXC_SET, GND=GND)
+
+PART_CH4_C_CMN_C(name="SHEET_5DB809C2_D96C_5D72_A4C7_A84B55A0ED86", AIN4N=AIN4N, GND=GND)
+
+PART_MCU_C_VDDA2_C(name="SHEET_5E7D4E07_B2ED_5EBF_A7A6_BD2FC3B39A8D", GND=GND, VDDA=VDDA)
+
+PART_AUX1_R_DIV_R(name="SHEET_5F0C2140_8C3F_5CE4_80DE_BC336F86C0B0", AUX1=AUX1, GND=GND)
+
+PART_CH2_C_CMP_C(name="SHEET_5F80EA2A_8F00_57D9_A45B_A055A2102205", AIN2P=AIN2P, GND=GND)
+
+PART_AUX1_J_JPH(
+    name="SHEET_61F543E9_48F5_5831_AA84_CE7F0F8416C1",
+    AUX1_SIG=AUX1_SIG,
+    AUX1_V_SENSOR=AUX1_V_SENSOR,
+    GND=GND,
+)
+
+PART_PWR_BUCK_C_IN2_C(name="SHEET_64369C8A_7761_591D_8C32_DD68B5C8A2EA", GND=GND, PWR_VPROT=PWR_VPROT)
+
+PART_R_REF1_R(name="SHEET_654DC289_7F8E_5F09_B9C6_941D7E8FDE89", ADC_REFIN=ADC_REFIN, EXC=EXC)
+
+PART_MCU_FB_VDDA_FB(name="SHEET_658E8C34_EF65_5186_8FB7_489FE9651086", V3V3=V3V3, VDDA=VDDA)
+
+PART_PWR_R_MON2_R(name="SHEET_67F0017F_1E91_539E_BD67_3BB4B7758020", GND=GND, VBAT_MON=VBAT_MON)
+
+PART_CH1_C_CMN_C(name="SHEET_67F8D86D_93C4_5D67_A432_5FFF3A0AC2A5", AIN1N=AIN1N, GND=GND)
+
+PART_PWR_LDO_3V3_R_FB_BOT_R(
+    name="SHEET_68CC55F2_984D_595D_AC80_67DC581D6D0A", GND=GND, LDO_3V3_PWR_LDO_3V3_FB=LDO_3V3_PWR_LDO_3V3_FB
+)
+
+PART_CH3_J_JPH(
+    name="SHEET_6B365059_DE8E_52FB_8773_70CACC8CC1DF",
+    CH3_IN_N=CH3_IN_N,
+    CH3_IN_P=CH3_IN_P,
+    CH3_QTR=CH3_QTR,
+    EXC=EXC,
+    GND=GND,
+)
+
+PART_R_SD_D2_R(name="SHEET_6C9B8406_7CDC_5A4A_9F62_B6D4390010FC", SD_DAT2=SD_DAT2, V3V3=V3V3)
+
+PART_CH1_C_CMP_C(name="SHEET_6F156021_C303_5AB4_89FC_321AB838A0E1", AIN1P=AIN1P, GND=GND)
+
+PART_CH4_J_JPH(
+    name="SHEET_6F170F22_9FD6_52B3_8D81_CD282B5AB7B4",
+    CH4_IN_N=CH4_IN_N,
+    CH4_IN_P=CH4_IN_P,
+    CH4_QTR=CH4_QTR,
+    EXC=EXC,
+    GND=GND,
+)
+
+PART_CH1_C_DIFF_C(name="SHEET_6F317A57_6EB7_583B_B76E_9FC0FAE9E007", AIN1N=AIN1N, AIN1P=AIN1P)
+
+PART_PWR_BUCK_C_OUT3_C(name="SHEET_6FB2E7A6_5241_569C_8E19_3DB211086BED", GND=GND, V5_BUCK=V5_BUCK)
+
+PART_CH5_R_HB1_R(name="SHEET_7066965C_4576_542E_B262_C1CBF644654D", CH5_HALF_MID=CH5_HALF_MID, EXC=EXC)
+
+PART_CH2_J_JPH(
+    name="SHEET_73403D28_3D9D_5FF5_8123_EF8A5CE247D5",
+    CH2_IN_N=CH2_IN_N,
+    CH2_IN_P=CH2_IN_P,
+    CH2_QTR=CH2_QTR,
+    EXC=EXC,
+    GND=GND,
+)
+
+PART_IMU_R_AP_CS_PU_R(name="SHEET_73732A84_9E91_5F33_A595_2DE340C60ABA", IMU_SPI_CS=IMU_SPI_CS, V3V3=V3V3)
+
+PART_EXC_C_OUT_C(name="SHEET_74AB64A5_43F9_53B4_B3EF_0D5C1A560656", EXC=EXC, GND=GND)
+
+PART_CH5_R_CAL_R(name="SHEET_74BDC775_C469_5961_B66C_CA8FA23686E4", CH5_CAL=CH5_CAL, CH5_IN_P=CH5_IN_P)
+
+PART_CH6_J_JPH(
+    name="SHEET_75DCB7E6_8D29_5976_9B6D_B0B4577B9DFB",
+    CH6_IN_N=CH6_IN_N,
+    CH6_IN_P=CH6_IN_P,
+    CH6_QTR=CH6_QTR,
+    EXC=EXC,
+    GND=GND,
+)
+
+PART_PWR_BUCK_U1(
+    name="SHEET_76AEE5BD_A69C_56AF_AE87_0C38A51049F7",
+    BUCK_PWR_BUCK_FB=BUCK_PWR_BUCK_FB,
+    GND=GND,
+    PWR_BUCK_EN=PWR_BUCK_EN,
+    PWR_BUCK_MODE_SYNC=PWR_BUCK_MODE_SYNC,
+    PWR_BUCK_VCC=PWR_BUCK_VCC,
+    PWR_VPROT=PWR_VPROT,
+    V5_BUCK=V5_BUCK,
+)
+
+PART_CH6_R_CAL_R(name="SHEET_78C958D7_D950_57F9_AB88_0D2E264EEECB", CH6_CAL=CH6_CAL, CH6_IN_P=CH6_IN_P)
+
+PART_PWR_BUCK_C_IN1_C(name="SHEET_79396807_B73F_5006_9306_3F283A3A32A2", GND=GND, PWR_VPROT=PWR_VPROT)
+
+PART_CH0_C_EXC_C(name="SHEET_7A58F2E7_B85B_5FB7_82E7_5C9A2797102B", EXC=EXC, GND=GND)
+
+PART_CH5_C_CMP_C(name="SHEET_7A6AAD58_5458_5C8A_B978_CCCC6705F377", AIN5P=AIN5P, GND=GND)
+
+PART_AUX2_R_DIV_R(name="SHEET_7AEB86DE_0CB6_520F_BBC9_AF0F250AEF3C", AUX2=AUX2, GND=GND)
+
+PART_CH4_R_QTR_R(name="SHEET_7B4E3355_229E_5773_BC42_82DD8E90467C", CH4_QTR=CH4_QTR, GND=GND)
+
+PART_MCU_C_NRST_C(name="SHEET_7C8EAFDF_DBF8_58D1_B9B9_9862ECE71E44", GND=GND, NRST=NRST)
+
+PART_C_CAP_C(name="SHEET_7D4F95CC_230E_5A50_9DFA_2459198C1824", ADC_CAP=ADC_CAP, GND=GND)
+
+PART_PWR_D_TVS_D(name="SHEET_7F5E5F26_E2C8_5AB5_8C6F_B8028E74E3F7", GND=GND, VIN_VEH=VIN_VEH)
+
+PART_R_SD_CMD_R(name="SHEET_82295BC8_5B5D_5EB3_BCDD_42F869C88F2E", SD_CMD=SD_CMD, V3V3=V3V3)
+
+PART_SD_DM3D_SF(
+    name="SHEET_828C6BCF_3131_5D9E_AF5E_02027CBE04BD",
+    GND=GND,
+    SD_CLK=SD_CLK,
+    SD_CMD=SD_CMD,
+    SD_DAT0=SD_DAT0,
+    SD_DAT1=SD_DAT1,
+    SD_DAT2=SD_DAT2,
+    SD_DAT3=SD_DAT3,
+    SD_DET=SD_DET,
+    V3V3=V3V3,
+)
+
+PART_CH0_J_JPH(
+    name="SHEET_83A2EB6A_EFA0_5854_806D_EB66FFDBBB34",
+    CH0_IN_N=CH0_IN_N,
+    CH0_IN_P=CH0_IN_P,
+    CH0_QTR=CH0_QTR,
+    EXC=EXC,
+    GND=GND,
+)
+
+PART_CH7_C_DIFF_C(name="SHEET_841BC991_8422_5FA7_9B69_3AAF37AFF645", AIN7N=AIN7N, AIN7P=AIN7P)
+
+PART_CH4_Q_CAL_PJE138K_R1_00001(
+    name="SHEET_84BF9C6F_D472_5985_B944_C1AF379C7924",
+    CH4_CAL=CH4_CAL,
+    GND=GND,
+    SHUNT_CAL=SHUNT_CAL,
+)
+
+PART_C_REFIN_C(name="SHEET_84D0D648_62B5_5197_B57A_ED5E21B51FE5", ADC_REFIN=ADC_REFIN, GND=GND)
+
+PART_MCU_C_VDD4_C(name="SHEET_84E8E47B_0FCE_5F8E_9816_44A89D82A802", GND=GND, V3V3=V3V3)
+
+PART_IMU_U1(
+    name="SHEET_8522DDAD_AE9A_56B5_B069_4220863B1849",
+    GND=GND,
+    IMU_INT1=IMU_INT1,
+    IMU_INT2=IMU_INT2,
+    IMU_SPI_CLK=IMU_SPI_CLK,
+    IMU_SPI_CS=IMU_SPI_CS,
+    IMU_SPI_MISO=IMU_SPI_MISO,
+    IMU_SPI_MOSI=IMU_SPI_MOSI,
+    V3V3=V3V3,
+)
+
+PART_CH5_J_JPH(
+    name="SHEET_85B103C9_43E1_5BF7_9010_54BA4FDF4107",
+    CH5_IN_N=CH5_IN_N,
+    CH5_IN_P=CH5_IN_P,
+    CH5_QTR=CH5_QTR,
+    EXC=EXC,
+    GND=GND,
+)
+
+PART_J_SWD_J(
+    name="SHEET_86AE2C84_4DAF_53FF_BA88_4A842EC6F995",
+    GND=GND,
+    NRST=NRST,
+    SWD_SWCLK=SWD_SWCLK,
+    SWD_SWDIO=SWD_SWDIO,
+    SWO=SWO,
+    V3V3=V3V3,
+)
+
+PART_CH3_C_EXC_C(name="SHEET_870D044D_B852_5E50_900F_49FBFD50C315", EXC=EXC, GND=GND)
+
+PART_TP_ADC_CLK_TP(name="SHEET_87B4DE15_7AA9_5698_8B5F_96C4AEE0291F", ADC_CLKIN=ADC_CLKIN)
+
+PART_CH7_R_HB1_R(name="SHEET_88D93EC0_E8BE_5302_BCD0_32BDB48EED9F", CH7_HALF_MID=CH7_HALF_MID, EXC=EXC)
+
+PART_CH0_C_CMN_C(name="SHEET_8945CD8E_B394_5830_B6D6_C6CDF697D3F2", AIN0N=AIN0N, GND=GND)
+
+PART_CH0_R_FP_R(name="SHEET_8B76130A_9F23_50BF_BB54_55B5D02AD0A2", AIN0P=AIN0P, CH0_IN_P=CH0_IN_P)
+
+PART_CH7_R_FP_R(name="SHEET_8C42F7BA_D3EC_5619_BEF9_DD7C7125ADD4", AIN7P=AIN7P, CH7_IN_P=CH7_IN_P)
+
+PART_PWR_D_OR1_D(name="SHEET_8C6BE9B8_106B_5398_B524_BBD11DE1AE5D", V5=V5, V5_BUCK=V5_BUCK)
+
+PART_MCU_C_VDD2_C(name="SHEET_8D26EF12_1D51_5530_89D8_74C004A289DE", GND=GND, V3V3=V3V3)
+
+PART_R_LED_LOG_R(name="SHEET_8DB2DD21_A472_56B5_96AB_ACB591032CBE", LED_LOG=LED_LOG, LED_LOG_A=LED_LOG_A)
+
+PART_TP_ADC_DRDY_TP(name="SHEET_8F394181_CAA6_577C_8877_DD752B4F8F83", ADC_DRDY=ADC_DRDY)
+
+PART_IMU_C_VDD_2_C(name="SHEET_8FC281FD_186D_5066_8CD0_1EBE314583D4", GND=GND, V3V3=V3V3)
+
+PART_CH7_R_HB2_R(name="SHEET_90664F2F_6F23_5561_BA12_594719DF7AA2", CH7_HALF_MID=CH7_HALF_MID, GND=GND)
+
+PART_EXC_C_IN_C(name="SHEET_91539A00_787C_5914_9CD8_3D0242CCEED1", EXC_VIN_FILT=EXC_VIN_FILT, GND=GND)
+
+PART_CH2_R_HB1_R(name="SHEET_918C9456_7214_59A6_8B5D_DD37305333FF", CH2_HALF_MID=CH2_HALF_MID, EXC=EXC)
+
+PART_CH3_R_HB2_R(name="SHEET_918FA757_8E84_5F0A_9AF0_342303EB0038", CH3_HALF_MID=CH3_HALF_MID, GND=GND)
+
+PART_CH2_C_DIFF_C(name="SHEET_9192BB30_B85B_52AE_A909_B5DA064E3971", AIN2N=AIN2N, AIN2P=AIN2P)
+
+PART_R_ADC_SYNC_R(name="SHEET_928B3591_73D1_5540_9D51_AAA5E7CAD2E4", ADC_SYNC_RST=ADC_SYNC_RST, V3V3=V3V3)
+
+PART_CH1_Q_CAL_PJE138K_R1_00001(
+    name="SHEET_92E70FFB_A4B7_512F_9FFA_24948135C05C",
+    CH1_CAL=CH1_CAL,
+    GND=GND,
+    SHUNT_CAL=SHUNT_CAL,
+)
+
+PART_R_CC1_R(name="SHEET_9500C6C5_FAE4_5E35_9BE0_56E7DF0F7099", GND=GND, USB_CC1=USB_CC1)
+
+PART_CH4_R_FP_R(name="SHEET_976F0ECE_3D7A_5B0D_8389_6913CAE3B0FA", AIN4P=AIN4P, CH4_IN_P=CH4_IN_P)
+
+PART_AUX3_JP_SUPPLY_SJ(
+    name="SHEET_9816B329_1B4E_5BD2_B963_751C8EF37012",
+    AUX3_V_SENSOR=AUX3_V_SENSOR,
+    V5=V5,
+    VDDA=VDDA,
+)
+
+PART_PWR_BUCK_R_MODE_PU_R(
+    name="SHEET_983B829E_6FF4_5874_9075_98AE40FD1A96", PWR_BUCK_MODE_SYNC=PWR_BUCK_MODE_SYNC, PWR_BUCK_VCC=PWR_BUCK_VCC
+)
+
+PART_CH2_R_QTR_R(name="SHEET_990F88D4_025E_5718_9A45_1E5D885D78EE", CH2_QTR=CH2_QTR, GND=GND)
+
+PART_CH1_R_QTR_R(name="SHEET_9926CD76_1479_5B6B_94D9_854AA9F8806B", CH1_QTR=CH1_QTR, GND=GND)
+
+PART_CH4_R_FN_R(name="SHEET_9C48B1E0_5A59_5529_989F_F68733023431", AIN4N=AIN4N, CH4_IN_N=CH4_IN_N)
+
+PART_PWR_LDO_3V3_C_FF_C(
+    name="SHEET_9C5F544F_0429_5431_8146_4E0DEA7730EC", LDO_3V3_PWR_LDO_3V3_FB=LDO_3V3_PWR_LDO_3V3_FB, V3V3=V3V3
+)
+
+PART_C_SD1_C(name="SHEET_9D4AEE40_DA86_58F8_BED0_0E6DC48E951D", GND=GND, V3V3=V3V3)
+
+PART_MCU_C_HSE1_C(name="SHEET_9F67FFE8_AFE1_52D2_943E_39048D67A506", GND=GND, MCU_HSE_IN=MCU_HSE_IN)
+
+Board(
+    name="suspension-load-daq",
+    path="eda",
+    schematic=True,
+    layers=4,
+    config=BoardConfig(
+        design_rules=DesignRules(
+            constraints=Constraints(
+                copper=Copper(
+                    minimum_clearance=0.09,
+                    minimum_track_width=0.09,
+                    minimum_connection_width=0.0,
+                    minimum_annular_width=0.1,
+                    minimum_via_diameter=0.25,
+                    copper_to_hole_clearance=0.2,
+                    copper_to_edge_clearance=0.4,
+                ),
+                holes=Holes(minimum_through_hole=0.15, hole_to_hole_clearance=0.3),
+                uvias=Uvias(minimum_uvia_diameter=0.15, minimum_uvia_hole=0.1),
+                silkscreen=Silkscreen(minimum_item_clearance=0.1, minimum_text_height=0.6),
+                solder_mask=SolderMask(clearance=0.0, minimum_width=0.0, to_copper_clearance=0.0),
+                zones=Zones(minimum_clearance=0.15),
+            ),
+            predefined_sizes=PredefinedSizes(
+                track_widths=[0.127, 0.16, 0.2, 0.4, 0.8],
+                via_dimensions=[
+                    ViaDimension(diameter=0.25, drill=0.15),
+                    ViaDimension(diameter=0.4, drill=0.2),
+                    ViaDimension(diameter=0.45, drill=0.2),
+                    ViaDimension(diameter=0.5, drill=0.3),
+                    ViaDimension(diameter=0.6, drill=0.3),
+                ],
+            ),
+            netclasses=[
+                NetClass(
+                    name="Default",
+                    clearance=0.16,
+                    track_width=0.16,
+                    via_diameter=0.45,
+                    via_drill=0.2,
+                    microvia_diameter=0.3,
+                    microvia_drill=0.1,
+                    diff_pair_width=0.2,
+                    diff_pair_gap=0.2,
+                    diff_pair_via_gap=0.25,
+                    priority=2147483647,
+                ),
+                NetClass(
+                    name="100Ohm Diff",
+                    clearance=0.2,
+                    track_width=0.1334,
+                    diff_pair_width=0.1334,
+                    diff_pair_gap=0.127,
+                    priority=0,
+                    color="rgb(194, 194, 0)",
+                ),
+                NetClass(name="50Ohm SE", clearance=0.2, track_width=0.2908, priority=1, color="rgb(0, 0, 194)"),
+                NetClass(
+                    name="85Ohm Diff",
+                    clearance=0.2,
+                    track_width=0.2235,
+                    diff_pair_width=0.2235,
+                    diff_pair_gap=0.127,
+                    priority=2,
+                    color="rgb(194, 0, 194)",
+                ),
+                NetClass(
+                    name="90Ohm Diff",
+                    clearance=0.2,
+                    track_width=0.1867,
+                    diff_pair_width=0.1867,
+                    diff_pair_gap=0.127,
+                    priority=3,
+                    color="rgb(0, 194, 0)",
+                ),
+            ],
+        ),
+        stackup=Stackup(
+            materials=[
+                Material(name="Prepreg", relative_permittivity=4.4, loss_tangent=0.025),
+                Material(name="FR4-Core", relative_permittivity=4.6, loss_tangent=0.025),
+            ],
+            silk_screen_color="White",
+            solder_mask_color="Black",
+            thickness=1.5862,
+            layers=[
+                CopperLayer(thickness=0.035, role="mixed"),
+                DielectricLayer(thickness=0.2104, material="Prepreg", form="prepreg"),
+                CopperLayer(thickness=0.0152, role="power"),
+                DielectricLayer(thickness=1.065, material="FR4-Core", form="core"),
+                CopperLayer(thickness=0.0152, role="power"),
+                DielectricLayer(thickness=0.2104, material="Prepreg", form="prepreg"),
+                CopperLayer(thickness=0.035, role="mixed"),
+            ],
+            copper_finish="ENIG",
+        ),
+    ),
+)

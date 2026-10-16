@@ -1,0 +1,15 @@
+"""
+suspension-load-daq sheet module: 88d93ec0-e8be-5302-bcd0-32bdb48eed9f (/88d93ec0-e8be-5302-bcd0-32bdb48eed9f/)
+"""
+
+CH7_HALF_MID = io(Net)
+EXC = io(Power(voltage="0V to 15V"))
+
+_350_0_1 = Module("../../components/350_0_1/350_0_1.zen")
+
+_350_0_1(
+    name="R54",
+    dnp=True,
+    P1=EXC,
+    P2=CH7_HALF_MID,
+)

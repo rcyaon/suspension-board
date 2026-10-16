@@ -1,0 +1,36 @@
+"""
+suspension-load-daq sheet module: 1e38873b-1565-589a-9f67-7da908c7a1cf (/1e38873b-1565-589a-9f67-7da908c7a1cf/)
+"""
+
+USB_CC1 = io(Net)
+USB_CC2 = io(Net)
+USB_D_N = io(Net)
+USB_D_P = io(Net)
+GND = io(Ground)
+VBUS = io(Power(voltage="4V to 5.5V"))
+
+USB_SBU1 = Net("/USB_SBU1")
+USB_SBU2 = Net("/USB_SBU2")
+
+USB4105 = Module("../../components/USB4105/USB4105.zen")
+
+USB4105(
+    name="J15",
+    CC1=USB_CC1,
+    CC2=USB_CC2,
+    D_NEG_A7=USB_D_N,
+    D_NEG_B7=USB_D_N,
+    D_POS_A6=USB_D_P,
+    D_POS_B6=USB_D_P,
+    GND_A1=GND,
+    GND_A12=GND,
+    GND_B1=GND,
+    GND_B12=GND,
+    SBU1=USB_SBU1,
+    SBU2=USB_SBU2,
+    SHIELD=GND,
+    VBUS_A4=VBUS,
+    VBUS_A9=VBUS,
+    VBUS_B4=VBUS,
+    VBUS_B9=VBUS,
+)

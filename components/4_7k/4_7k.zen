@@ -1,0 +1,20 @@
+"""
+4_7k
+
+Auto-generated using `pcb import`.
+"""
+
+P1 = io(Net)
+P2 = io(Net)
+
+Component(
+    name="4_7k",
+    properties={
+        "Footprint": "lena_b_string-gauge-daq_components_4_7k:R_0402_1005Metric",
+        "Value": "4.7k",
+        "schematic_description": "4.7k",
+    },
+    symbol=Symbol(library="4_7k.kicad_sym"),
+    pin_defs={"1": "1", "2": "2"},
+    pins={"1": P1, "2": P2},
+)

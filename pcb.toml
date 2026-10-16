@@ -1,0 +1,14 @@
+[workspace]
+repository = "code.diode.computer/lena/b/string-gauge-daq"
+pcb-version = "0.4"
+vendor = [
+    "code.diode.computer/diode/registry/**",
+    "code.diode.computer/**",
+]
+
+[board]
+name = "string-gauge-daq"
+path = "string-gauge-daq.zen"
+
+[dependencies]
+"code.diode.computer/lena/registry/components/STMicroelectronics/STM32F412CEU6" = "0.1.0"

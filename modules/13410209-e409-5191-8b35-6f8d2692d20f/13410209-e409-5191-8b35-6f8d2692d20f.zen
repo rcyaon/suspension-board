@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 13410209-e409-5191-8b35-6f8d2692d20f (/13410209-e409-5191-8b35-6f8d2692d20f/)
+"""
+
+PWR_BUCK_MODE_SYNC = io(Net)
+GND = io(Ground)
+
+_100K = Module("../../components/100k/100k.zen")
+
+_100K(name="R68", P1=PWR_BUCK_MODE_SYNC, P2=GND)

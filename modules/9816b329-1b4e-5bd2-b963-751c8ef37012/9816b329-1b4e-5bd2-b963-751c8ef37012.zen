@@ -1,0 +1,18 @@
+"""
+suspension-load-daq sheet module: 9816b329-1b4e-5bd2-b963-751c8ef37012 (/9816b329-1b4e-5bd2-b963-751c8ef37012/)
+"""
+
+AUX3_V_SENSOR = io(Net)
+V5 = io(Power(voltage="2.2V to 5.5V"))
+VDDA = io(Power(voltage="1.7V to 3.6V"))
+
+COMPONENT_SOLDERJUMPER_3_P1_3MM_BRIDGED12_PAD1_0X1_5MM = Module(
+    "../../components/component__SolderJumper-3_P1_3mm_Bridged12_Pad1_0x1_5mm/component__SolderJumper-3_P1_3mm_Bridged12_Pad1_0x1_5mm.zen"
+)
+
+COMPONENT_SOLDERJUMPER_3_P1_3MM_BRIDGED12_PAD1_0X1_5MM(
+    name="JP3",
+    P1=VDDA,
+    P2=AUX3_V_SENSOR,
+    P3=V5,
+)

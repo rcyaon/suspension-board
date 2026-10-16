@@ -1,0 +1,16 @@
+"""
+suspension-load-daq sheet module: f566e676-bdb3-59ca-9a57-cfc107d1e5fa (/f566e676-bdb3-59ca-9a57-cfc107d1e5fa/)
+"""
+
+CANH = io(Net)
+CANL = io(Net)
+GND = io(Ground)
+
+PESD2CANFD24V = Module("../../components/PESD2CANFD24V/PESD2CANFD24V.zen")
+
+PESD2CANFD24V(
+    name="D1",
+    CC=GND,
+    K1=CANH,
+    K2=CANL,
+)

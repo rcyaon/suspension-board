@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 489158e6-4c51-51ce-8f7c-4d3970a7ee17 (/489158e6-4c51-51ce-8f7c-4d3970a7ee17/)
+"""
+
+GND = io(Ground)
+VDDA = io(Power(voltage="1.7V to 3.6V"))
+
+_1UF_16V = Module("../../components/1uF_16V/1uF_16V.zen")
+
+_1UF_16V(name="C69", P1=VDDA, P2=GND)

@@ -1,0 +1,11 @@
+"""
+suspension-load-daq sheet module: 928b3591-73d1-5540-9d51-aaa5e7cad2e4 (/928b3591-73d1-5540-9d51-aaa5e7cad2e4/)
+"""
+
+ADC_SYNC_RST = io(Net)
+V3V3 = io(Power(voltage="2.7V to 3.6V"))
+
+_10K = Module("../../components/10k/10k.zen")
+
+# PB2 is BOOT1 at reset: R64 pulls it low; do not fit this conflicting pull-up.
+_10K(name="R80", dnp=True, P1=ADC_SYNC_RST, P2=V3V3)

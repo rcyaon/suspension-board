@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 01c532a2-82e3-55ee-94a7-189baf0d5507 (/01c532a2-82e3-55ee-94a7-189baf0d5507/)
+"""
+
+GND = io(Ground)
+PWR_BUCK_VCC = io(Power(voltage="3.1V to 3.5V"))
+
+_2_2UF_16V_X7R = Module("../../components/2_2uF_16V_X7R/2_2uF_16V_X7R.zen")
+
+_2_2UF_16V_X7R(name="C79", P1=PWR_BUCK_VCC, P2=GND)

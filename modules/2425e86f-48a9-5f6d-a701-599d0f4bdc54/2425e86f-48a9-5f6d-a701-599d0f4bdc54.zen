@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 2425e86f-48a9-5f6d-a701-599d0f4bdc54 (/2425e86f-48a9-5f6d-a701-599d0f4bdc54/)
+"""
+
+AIN6P = io(Net)
+CH6_IN_P = io(Net)
+
+_1K_0_1 = Module("../../components/1k_0_1/1k_0_1.zen")
+
+_1K_0_1(name="R47", P1=CH6_IN_P, P2=AIN6P)

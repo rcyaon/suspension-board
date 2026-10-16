@@ -1,0 +1,38 @@
+"""
+TCAN1462VDRBRQ1
+
+Auto-generated using `pcb import`.
+"""
+
+CANH = io(Net)
+CANL = io(Net)
+EP = io(Ground)
+GND = io(Ground)
+RXD = io(Net)
+STB = io(Net)
+TXD = io(Net)
+# SLLSFF2 section 6.4: bus supply and independent IO level-shifter supply.
+VCC = io(Power(voltage="4.5V to 5.5V"))
+VIO = io(Power(voltage="1.7V to 5.5V"))
+
+Component(
+    name="TCAN1462VDRBRQ1",
+    properties={
+        "Footprint": "lena_b_string-gauge-daq_components_TCAN1462VDRBRQ1:TCAN1462V-Q1-DRB",
+        "Value": "TCAN1462VDRBRQ1",
+        "schematic_description": "Automotive CAN FD transceiver with SIC and VIO level-shift, 8 Mbps, 58-V bus fault, standby, VSON-8 (DRB, 3x3mm)",
+    },
+    symbol=Symbol(library="TCAN1462VDRBRQ1.kicad_sym"),
+    pin_defs={
+        "TXD": "1",
+        "GND": "2",
+        "VCC": "3",
+        "RXD": "4",
+        "VIO": "5",
+        "CANL": "6",
+        "CANH": "7",
+        "STB": "8",
+        "EP": "9",
+    },
+    pins={"TXD": TXD, "GND": GND, "VCC": VCC, "RXD": RXD, "VIO": VIO, "CANL": CANL, "CANH": CANH, "STB": STB, "EP": EP},
+)

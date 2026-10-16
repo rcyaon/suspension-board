@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: f7ba1d87-4808-5766-9f32-68315503780b (/f7ba1d87-4808-5766-9f32-68315503780b/)
+"""
+
+EXC_EN = io(Net)
+GND = io(Ground)
+
+_100K = Module("../../components/100k/100k.zen")
+
+_100K(name="R57", P1=EXC_EN, P2=GND)

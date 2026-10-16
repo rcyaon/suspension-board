@@ -1,0 +1,105 @@
+"""STM32F412CEU6 controller allocation for the suspension logger.
+
+DS11139 Rev 9, Tables 9/11: all 36 package GPIOs are assigned. MCO1 on
+PA8 outputs the same 8 MHz HSE used for timestamps. SPI1 is shared by the
+ADS131M08 and SPI-mode microSD with independent chip selects; SPI2 is
+reserved for the IMU. Optional SWO is omitted; SWD/NRST remain available.
+PC13/14/15 are inputs only (card detect / ADC DRDY / IMU INT1).
+PB2/BOOT1 also drives ADC SYNC/RESET: R64 straps it low at reset; R80 is DNP.
+See docs/mcu-migration.md for AFs, DMA, timing and boot constraints.
+"""
+
+ADC_DRDY = io(Net)
+ADC_MCLK = io(Net)
+ADC_SPI_CLK = io(Net)
+ADC_SPI_CS = io(Net)
+ADC_SPI_MISO = io(Net)
+ADC_SPI_MOSI = io(Net)
+ADC_SYNC_RST = io(Net)
+AUX1 = io(Net)
+AUX2 = io(Net)
+AUX3 = io(Net)
+AUX4 = io(Net)
+CAN_RX = io(Net)
+CAN_TX = io(Net)
+EXC_EN = io(Net)
+SHUNT_CAL = io(Net)
+LED_ERR = io(Net)
+LED_LOG = io(Net)
+I2C_SCL = io(Net)
+I2C_SDA = io(Net)
+IMU_INT1 = io(Net)
+IMU_SPI_CLK = io(Net)
+IMU_SPI_CS = io(Net)
+IMU_SPI_MISO = io(Net)
+IMU_SPI_MOSI = io(Net)
+MCU_BOOT0 = io(Net)
+MCU_HSE_IN = io(Net)
+MCU_HSE_OUT = io(Net)
+NRST = io(Net)
+SD_CS = io(Net)
+SD_DET = io(Net)
+SWD_SWCLK = io(Net)
+SWD_SWDIO = io(Net)
+UART_RX = io(Net)
+UART_TX = io(Net)
+USB_D_N = io(Net)
+USB_D_P = io(Net)
+VBAT_MON = io(Net)
+VBUS_SENSE = io(Net)
+GND = io(Ground)
+# Internal core-regulator node: the existing 4.7uF C63 is its only load.
+MCU_VCAP = io(Power)
+V3V3 = io(Power(voltage="3.0V to 3.6V"))
+VDDA = io(Power(voltage="1.8V to 3.6V"))
+
+Mcu = Module("code.diode.computer/lena/registry/components/STMicroelectronics/STM32F412CEU6/STM32F412CEU6.zen")
+
+Mcu(
+    name="U3",
+    VDD=V3V3,
+    VDDA=VDDA,
+    VBAT=V3V3,
+    VSS=GND,
+    VSSA=GND,
+    EP=GND,
+    VCAP=Net(MCU_VCAP),
+    BOOT0=MCU_BOOT0,
+    NRST=NRST,
+    PA0=AUX1,
+    PA1=AUX2,
+    PA2=UART_TX,
+    PA3=UART_RX,
+    PA4=AUX3,
+    PA5=ADC_SPI_CLK,
+    PA6=ADC_SPI_MISO,
+    PA7=ADC_SPI_MOSI,
+    PA8=ADC_MCLK,
+    PA9=VBUS_SENSE,
+    PA10=SD_CS,
+    PA11=USB_D_N,
+    PA12=USB_D_P,
+    PA13=SWD_SWDIO,
+    PA14=SWD_SWCLK,
+    PA15=ADC_SPI_CS,
+    PB0=AUX4,
+    PB1=VBAT_MON,
+    PB2=ADC_SYNC_RST,
+    PB3=SHUNT_CAL,
+    PB4=EXC_EN,
+    PB5=LED_ERR,
+    PB6=I2C_SCL,
+    PB7=I2C_SDA,
+    PB8=CAN_RX,
+    PB9=CAN_TX,
+    PB10=LED_LOG,
+    PB12=IMU_SPI_CS,
+    PB13=IMU_SPI_CLK,
+    PB14=IMU_SPI_MISO,
+    PB15=IMU_SPI_MOSI,
+    PC13=SD_DET,
+    PC14_OSC32_IN=ADC_DRDY,
+    PC15_OSC32_OUT=IMU_INT1,
+    PH0_OSC_IN=MCU_HSE_IN,
+    PH1_OSC_OUT=MCU_HSE_OUT,
+)

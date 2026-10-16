@@ -1,0 +1,74 @@
+"""
+USB4105
+
+Auto-generated using `pcb import`.
+"""
+
+CC1 = io(Net)
+CC2 = io(Net)
+D_NEG_A7 = io(Net)
+D_NEG_B7 = io(Net)
+D_POS_A6 = io(Net)
+D_POS_B6 = io(Net)
+GND_A1 = io(Ground)
+GND_A12 = io(Ground)
+GND_B1 = io(Ground)
+GND_B12 = io(Ground)
+SBU1 = io(Net)
+SBU2 = io(Net)
+# Chassis shield is intentionally independent of signal/power return.
+SHIELD = io(Net)
+# Generic connector contact API: negotiated VBUS voltage is imposed by the
+# application, not by this passive receptacle. This board uses default 5V USB.
+VBUS_A4 = io(Power)
+VBUS_A9 = io(Power)
+VBUS_B4 = io(Power)
+VBUS_B9 = io(Power)
+
+Component(
+    name="USB4105",
+    properties={
+        "Footprint": "lena_b_string-gauge-daq_components_USB4105:USB4105",
+        "Value": "USB4105",
+        "schematic_description": "USB Type-C USB 2.0 receptacle, 16P, top-mount right-angle, GCT USB4105",
+    },
+    symbol=Symbol(library="USB4105.kicad_sym"),
+    pin_defs={
+        "GND__A1": "A1",
+        "GND__A12": "A12",
+        "VBUS__A4": "A4",
+        "CC1": "A5",
+        "D+__A6": "A6",
+        "D-__A7": "A7",
+        "SBU1": "A8",
+        "VBUS__A9": "A9",
+        "GND__B1": "B1",
+        "GND__B12": "B12",
+        "VBUS__B4": "B4",
+        "CC2": "B5",
+        "D+__B6": "B6",
+        "D-__B7": "B7",
+        "SBU2": "B8",
+        "VBUS__B9": "B9",
+        "SHIELD": "SH",
+    },
+    pins={
+        "GND__A1": GND_A1,
+        "GND__A12": GND_A12,
+        "VBUS__A4": VBUS_A4,
+        "CC1": CC1,
+        "D+__A6": D_POS_A6,
+        "D-__A7": D_NEG_A7,
+        "SBU1": SBU1,
+        "VBUS__A9": VBUS_A9,
+        "GND__B1": GND_B1,
+        "GND__B12": GND_B12,
+        "VBUS__B4": VBUS_B4,
+        "CC2": CC2,
+        "D+__B6": D_POS_B6,
+        "D-__B7": D_NEG_B7,
+        "SBU2": SBU2,
+        "VBUS__B9": VBUS_B9,
+        "SHIELD": SHIELD,
+    },
+)

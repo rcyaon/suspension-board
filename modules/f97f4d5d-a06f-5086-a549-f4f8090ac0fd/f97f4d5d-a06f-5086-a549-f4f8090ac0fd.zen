@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: f97f4d5d-a06f-5086-a549-f4f8090ac0fd (/f97f4d5d-a06f-5086-a549-f4f8090ac0fd/)
+"""
+
+AUX4 = io(Net)
+AUX4_SIG = io(Net)
+
+_10K_1_R_0603_1608METRIC = Module("../../components/10k_1__R_0603_1608Metric/10k_1__R_0603_1608Metric.zen")
+
+_10K_1_R_0603_1608METRIC(name="R8", P1=AUX4_SIG, P2=AUX4)

@@ -1,0 +1,21 @@
+"""
+PESD2CANFD24V
+
+Auto-generated using `pcb import`.
+"""
+
+CC = io(Net)
+K1 = io(Net)
+K2 = io(Net)
+
+Component(
+    name="PESD2CANFD24V",
+    properties={
+        "Footprint": "lena_b_string-gauge-daq_components_PESD2CANFD24V:PESD2CANFD24V",
+        "Value": "PESD2CANFD24V",
+        "schematic_description": "Dual bidirectional TVS array for automotive CAN/CAN-FD ESD protection, 24 V working, AEC-Q101, SOT-23",
+    },
+    symbol=Symbol(library="PESD2CANFD24V.kicad_sym"),
+    pin_defs={"K1": "1", "K2": "2", "CC": "3"},
+    pins={"K1": K1, "K2": K2, "CC": CC},
+)

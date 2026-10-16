@@ -1,0 +1,15 @@
+"""
+suspension-load-daq sheet module: 654dc289-7f8e-5f09-b9c6-941d7e8fde89 (/654dc289-7f8e-5f09-b9c6-941d7e8fde89/)
+"""
+
+ADC_REFIN = io(Net)
+EXC = io(Power(voltage="0V to 15V"))
+
+_10K_0_1 = Module("../../components/10k_0_1/10k_0_1.zen")
+
+_10K_0_1(
+    name="R87",
+    dnp=True,
+    P1=EXC,
+    P2=ADC_REFIN,
+)

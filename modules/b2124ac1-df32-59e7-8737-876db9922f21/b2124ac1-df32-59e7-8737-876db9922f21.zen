@@ -1,0 +1,16 @@
+"""
+suspension-load-daq sheet module: b2124ac1-df32-59e7-8737-876db9922f21 (/b2124ac1-df32-59e7-8737-876db9922f21/)
+"""
+
+CH2_CAL = io(Net)
+SHUNT_CAL = io(Net)
+GND = io(Ground)
+
+PJE138K_R1_00001 = Module("../../components/PJE138K_R1_00001/PJE138K_R1_00001.zen")
+
+PJE138K_R1_00001(
+    name="Q3",
+    D=CH2_CAL,
+    G=SHUNT_CAL,
+    S=GND,
+)

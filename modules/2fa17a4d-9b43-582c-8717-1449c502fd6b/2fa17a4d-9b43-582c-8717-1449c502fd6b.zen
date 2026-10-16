@@ -1,0 +1,17 @@
+"""
+suspension-load-daq sheet module: 2fa17a4d-9b43-582c-8717-1449c502fd6b (/2fa17a4d-9b43-582c-8717-1449c502fd6b/)
+"""
+
+GND = io(Ground)
+PWR_V5_ANA = io(Power(voltage="2.2V to 5.5V"))
+V3V3A = io(Power(voltage="2.7V to 3.6V"))
+
+LP5907MFX_3_3 = Module("../../components/LP5907MFX-3_3/LP5907MFX-3_3.zen")
+
+LP5907MFX_3_3(
+    name="U6",
+    EN=PWR_V5_ANA,
+    GND=GND,
+    IN=PWR_V5_ANA,
+    OUT=V3V3A,
+)

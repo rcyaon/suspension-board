@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: a1f93929-a486-50c9-beb5-c32a73e08d98 (/a1f93929-a486-50c9-beb5-c32a73e08d98/)
+"""
+
+EXC_SET = io(Net)
+GND = io(Ground)
+
+_24_9K_0_1 = Module("../../components/24_9k_0_1/24_9k_0_1.zen")
+
+_24_9K_0_1(name="R59", P1=EXC_SET, P2=GND)

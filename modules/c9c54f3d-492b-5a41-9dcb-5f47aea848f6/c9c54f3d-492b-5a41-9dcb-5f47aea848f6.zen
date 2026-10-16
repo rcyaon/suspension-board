@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: c9c54f3d-492b-5a41-9dcb-5f47aea848f6 (/c9c54f3d-492b-5a41-9dcb-5f47aea848f6/)
+"""
+
+VBUS_SENSE = io(Net)
+VBUS = io(Power(voltage="4V to 5.5V"))
+
+_10K_1 = Module("../../components/10k_1/10k_1.zen")
+
+_10K_1(name="R97", P1=VBUS, P2=VBUS_SENSE)

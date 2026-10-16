@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 04c7d2d9-9ec5-56bb-b3be-45efca131518 (/04c7d2d9-9ec5-56bb-b3be-45efca131518/)
+"""
+
+ADC_SPI_CLK = io(Net)
+GND = io(Ground)
+
+_100K = Module("../../components/100k/100k.zen")
+
+_100K(name="R79", P1=ADC_SPI_CLK, P2=GND)

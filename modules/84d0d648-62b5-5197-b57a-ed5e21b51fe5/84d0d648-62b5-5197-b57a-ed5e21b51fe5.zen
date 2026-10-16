@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 84d0d648-62b5-5197-b57a-ed5e21b51fe5 (/84d0d648-62b5-5197-b57a-ed5e21b51fe5/)
+"""
+
+ADC_REFIN = io(Net)
+GND = io(Ground)
+
+_100NF_16V = Module("../../components/100nF_16V/100nF_16V.zen")
+
+_100NF_16V(name="C47", P1=ADC_REFIN, P2=GND)

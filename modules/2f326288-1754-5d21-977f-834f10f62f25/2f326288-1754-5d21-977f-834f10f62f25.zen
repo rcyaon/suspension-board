@@ -1,0 +1,9 @@
+"""
+suspension-load-daq sheet module: 2f326288-1754-5d21-977f-834f10f62f25 (/2f326288-1754-5d21-977f-834f10f62f25/)
+"""
+
+H4_P1 = Net("/H4_P1")
+
+M3_DIN965_TOPBOTTOM = Module("../../components/M3_DIN965_TopBottom/M3_DIN965_TopBottom.zen")
+
+M3_DIN965_TOPBOTTOM(name="H4", P1=H4_P1)

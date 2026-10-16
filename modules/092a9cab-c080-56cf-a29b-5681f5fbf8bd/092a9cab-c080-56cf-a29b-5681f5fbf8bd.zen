@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 092a9cab-c080-56cf-a29b-5681f5fbf8bd (/092a9cab-c080-56cf-a29b-5681f5fbf8bd/)
+"""
+
+GND = io(Ground)
+PWR_V5_ANA = io(Power(voltage="2.2V to 5.5V"))
+
+_1UF_16V = Module("../../components/1uF_16V/1uF_16V.zen")
+
+_1UF_16V(name="C80", P1=PWR_V5_ANA, P2=GND)

@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: bf232644-5666-5b27-a6aa-a678dae5c14c (/bf232644-5666-5b27-a6aa-a678dae5c14c/)
+"""
+
+PWR_V5_ANA = io(Power(voltage="2.2V to 5.5V"))
+V5 = io(Power(voltage="2.2V to 5.5V"))
+
+_220_100MHZ = Module("../../components/220_100MHz/220_100MHz.zen")
+
+_220_100MHZ(name="FB2", P1=V5, P2=PWR_V5_ANA)

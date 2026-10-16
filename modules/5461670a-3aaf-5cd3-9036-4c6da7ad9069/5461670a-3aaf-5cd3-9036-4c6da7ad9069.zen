@@ -1,0 +1,11 @@
+"""
+suspension-load-daq sheet module: 5461670a-3aaf-5cd3-9036-4c6da7ad9069 (/5461670a-3aaf-5cd3-9036-4c6da7ad9069/)
+"""
+
+ADC_SPI_MOSI = io(Net)
+GND = io(Ground)
+
+_100K = Module("../../components/100k/100k.zen")
+
+# Shared with SD CMD/MOSI, which already has a pull-up; avoid an idle divider.
+_100K(name="R78", dnp=True, P1=ADC_SPI_MOSI, P2=GND)

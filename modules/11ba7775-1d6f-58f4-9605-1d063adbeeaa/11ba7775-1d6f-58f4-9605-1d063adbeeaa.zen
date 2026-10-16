@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 11ba7775-1d6f-58f4-9605-1d063adbeeaa (/11ba7775-1d6f-58f4-9605-1d063adbeeaa/)
+"""
+
+CAN_TERM = io(Net)
+CANL = io(Net)
+
+COMPONENT = Module("../../components/component/component.zen")
+
+COMPONENT(name="JP13", P1=CAN_TERM, P2=CANL)

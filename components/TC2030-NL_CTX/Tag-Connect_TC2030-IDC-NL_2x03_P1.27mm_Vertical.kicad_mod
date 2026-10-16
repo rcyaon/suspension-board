@@ -1,0 +1,172 @@
+(footprint "Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Vertical"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Tag-Connect TC2030-NL (no-legs) Plug-of-Nails land pattern: 6 contact pads on 1.27 mm pitch and 3 alignment holes. Pad-only programming/debug interface, no populated part. https://www.tag-connect.com/wp-content/uploads/bsk-pdf-manager/2026/07/NL-TC2030-Footprint.pdf")
+	(tags "Tag-Connect TC2030-NL Plug-of-Nails no-legs debug programming pogo pad-only 2x03 1.27mm")
+	(attr exclude_from_pos_files exclude_from_bom)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -1.905 1.27)
+		(end -1.905 0.635)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "d9fdf734-1385-4565-b54a-d86dd02db568")
+	)
+	(fp_line
+		(start -1.27 1.27)
+		(end -1.905 1.27)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "4bc8a245-9e7c-46df-aecd-ab1d95f66725")
+	)
+	(fp_line
+		(start -3.5 -2)
+		(end 3.5 -2)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "3008c380-102c-456d-b979-05e2ea4e57fe")
+	)
+	(fp_line
+		(start -3.5 2)
+		(end -3.5 -2)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "a9e8d293-6d84-45e5-86ce-6bf0b766b480")
+	)
+	(fp_line
+		(start 3.5 -2)
+		(end 3.5 2)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "cb7e6896-57a1-47cb-b5bb-6030a2cc43e3")
+	)
+	(fp_line
+		(start 3.5 2)
+		(end -3.5 2)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "a8d475bd-025a-4c37-8471-b52cd8c2b99a")
+	)
+	(fp_text user "KEEPOUT"
+		(at 0 0)
+		(layer "Cmts.User")
+		(uuid "463a54e4-9c55-4aca-994c-584c8bf5c12a")
+		(effects
+			(font
+				(size 0.4 0.4)
+				(thickness 0.07)
+			)
+		)
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0)
+		(layer "F.Fab")
+		(uuid "519943ad-dce7-41ea-a7c1-807694a42ba2")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "" np_thru_hole circle
+		(at -2.54 0)
+		(size 0.9906 0.9906)
+		(drill 0.9906)
+		(layers "*.Cu" "*.Mask")
+	)
+	(pad "" np_thru_hole circle
+		(at 2.54 -1.016)
+		(size 0.9906 0.9906)
+		(drill 0.9906)
+		(layers "*.Cu" "*.Mask")
+	)
+	(pad "" np_thru_hole circle
+		(at 2.54 1.016)
+		(size 0.9906 0.9906)
+		(drill 0.9906)
+		(layers "*.Cu" "*.Mask")
+	)
+	(pad "1" connect circle
+		(at -1.27 0.635)
+		(size 0.7874 0.7874)
+		(layers "F.Cu" "F.Mask")
+	)
+	(pad "2" connect circle
+		(at -1.27 -0.635)
+		(size 0.7874 0.7874)
+		(layers "F.Cu" "F.Mask")
+	)
+	(pad "3" connect circle
+		(at 0 0.635)
+		(size 0.7874 0.7874)
+		(layers "F.Cu" "F.Mask")
+	)
+	(pad "4" connect circle
+		(at 0 -0.635)
+		(size 0.7874 0.7874)
+		(layers "F.Cu" "F.Mask")
+	)
+	(pad "5" connect circle
+		(at 1.27 0.635)
+		(size 0.7874 0.7874)
+		(layers "F.Cu" "F.Mask")
+	)
+	(pad "6" connect circle
+		(at 1.27 -0.635)
+		(size 0.7874 0.7874)
+		(layers "F.Cu" "F.Mask")
+	)
+	(zone
+		(layer "F.Cu")
+		(uuid "2071fdf5-d6fc-4160-bc94-ab85712b4bd0")
+		(hatch full 0.508)
+		(connect_pads
+			(clearance 0)
+		)
+		(min_thickness 0.254)
+		(keepout
+			(tracks allowed)
+			(vias not_allowed)
+			(pads allowed)
+			(copperpour not_allowed)
+			(footprints not_allowed)
+		)
+		(placement
+			(enabled no)
+			(sheetname "")
+		)
+		(fill
+			(thermal_gap 0.508)
+			(thermal_bridge_width 0.508)
+			(island_removal_mode 0)
+		)
+		(polygon
+			(pts
+				(xy 1.2700000000000102 -0.6350000000000051) (xy -1.2700000000000102 -0.6350000000000051) (xy -1.2700000000000102 0.634999999999998)
+				(xy 1.2700000000000102 0.634999999999998)
+			)
+		)
+	)
+	(embedded_fonts no)
+)

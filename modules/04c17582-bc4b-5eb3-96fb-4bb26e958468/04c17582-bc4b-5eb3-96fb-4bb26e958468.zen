@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 04c17582-bc4b-5eb3-96fb-4bb26e958468 (/04c17582-bc4b-5eb3-96fb-4bb26e958468/)
+"""
+
+AIN4N = io(Net)
+AIN4P = io(Net)
+
+_10NF_5_50V_C0G = Module("../../components/10nF_5_50V_C0G/10nF_5_50V_C0G.zen")
+
+_10NF_5_50V_C0G(name="C29", P1=AIN4P, P2=AIN4N)

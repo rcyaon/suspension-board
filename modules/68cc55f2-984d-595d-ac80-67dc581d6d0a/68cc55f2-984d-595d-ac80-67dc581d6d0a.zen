@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 68cc55f2-984d-595d-ac80-67dc581d6d0a (/68cc55f2-984d-595d-ac80-67dc581d6d0a/)
+"""
+
+LDO_3V3_PWR_LDO_3V3_FB = io(Net)
+GND = io(Ground)
+
+_51K_1 = Module("../../components/51k_1/51k_1.zen")
+
+_51K_1(name="R71", P1=LDO_3V3_PWR_LDO_3V3_FB, P2=GND)

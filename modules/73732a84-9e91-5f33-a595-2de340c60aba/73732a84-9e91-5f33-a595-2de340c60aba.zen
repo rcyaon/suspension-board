@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 73732a84-9e91-5f33-a595-2de340c60aba (/73732a84-9e91-5f33-a595-2de340c60aba/)
+"""
+
+IMU_SPI_CS = io(Net)
+V3V3 = io(Power(voltage="2.7V to 3.6V"))
+
+_10K = Module("../../components/10k/10k.zen")
+
+_10K(name="R62", P1=IMU_SPI_CS, P2=V3V3)

@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 8db2dd21-a472-56b5-96ab-acb591032cbe (/8db2dd21-a472-56b5-96ab-acb591032cbe/)
+"""
+
+LED_LOG = io(Net)
+LED_LOG_A = io(Net)
+
+_1K = Module("../../components/1k/1k.zen")
+
+_1K(name="R85", P1=LED_LOG, P2=LED_LOG_A)

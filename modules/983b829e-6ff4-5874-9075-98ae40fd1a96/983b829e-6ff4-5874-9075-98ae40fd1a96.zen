@@ -1,0 +1,15 @@
+"""
+suspension-load-daq sheet module: 983b829e-6ff4-5874-9075-98ae40fd1a96 (/983b829e-6ff4-5874-9075-98ae40fd1a96/)
+"""
+
+PWR_BUCK_MODE_SYNC = io(Net)
+PWR_BUCK_VCC = io(Power(voltage="3.1V to 3.5V"))
+
+_100K = Module("../../components/100k/100k.zen")
+
+_100K(
+    name="R69",
+    dnp=True,
+    P1=PWR_BUCK_VCC,
+    P2=PWR_BUCK_MODE_SYNC,
+)

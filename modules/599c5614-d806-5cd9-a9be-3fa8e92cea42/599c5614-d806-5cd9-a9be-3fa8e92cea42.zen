@@ -1,0 +1,11 @@
+"""
+suspension-load-daq sheet module: 599c5614-d806-5cd9-a9be-3fa8e92cea42 (/599c5614-d806-5cd9-a9be-3fa8e92cea42/)
+"""
+
+GND = io(Ground)
+# Local STM32 core-regulator decoupling domain; voltage follows scaling mode.
+MCU_VCAP = io(Power)
+
+_4_7UF_16V = Module("../../components/4_7uF_16V/4_7uF_16V.zen")
+
+_4_7UF_16V(name="C63", P1=MCU_VCAP, P2=GND)

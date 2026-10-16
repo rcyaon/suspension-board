@@ -1,0 +1,30 @@
+"""
+component_SolderJumper-3_P1_3mm_Bridged12_Pad1_0x1_5mm
+
+Auto-generated using `pcb import`.
+"""
+
+skip_bom = config(bool, default=True)
+
+
+skip_pos = config(bool, default=True)
+
+
+P1 = io(Net)
+P2 = io(Net)
+P3 = io(Net)
+
+Component(
+    name="component_SolderJumper-3_P1_3mm_Bridged12_Pad1_0x1_5mm",
+    prefix="JP",
+    skip_bom=skip_bom,
+    skip_pos=skip_pos,
+    properties={
+        "Footprint": "lena_b_string-gauge-daq_components_component__SolderJumper-3_P1_3mm_Bridged12_Pad1_0x1_5mm:SolderJumper-3_P1.3mm_Bridged12_Pad1.0x1.5mm",
+        "Value": "",
+        "schematic_description": "Net tie, 3 pins",
+    },
+    symbol=Symbol(library="component__SolderJumper-3_P1_3mm_Bridged12_Pad1_0x1_5mm.kicad_sym"),
+    pin_defs={"1": "1", "2": "2", "3": "3"},
+    pins={"1": P1, "2": P2, "3": P3},
+)

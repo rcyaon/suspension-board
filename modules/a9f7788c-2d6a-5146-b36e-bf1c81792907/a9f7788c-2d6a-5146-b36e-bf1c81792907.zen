@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: a9f7788c-2d6a-5146-b36e-bf1c81792907 (/a9f7788c-2d6a-5146-b36e-bf1c81792907/)
+"""
+
+EXC_VIN_FILT = io(Power(voltage="1.8V to 20V"))
+V5 = io(Power(voltage="2.2V to 5.5V"))
+
+_1_1 = Module("../../components/1_1/1_1.zen")
+
+_1_1(name="R58", P1=V5, P2=EXC_VIN_FILT)

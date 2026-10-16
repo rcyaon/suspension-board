@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 74ab64a5-43f9-53b4-b3ef-0d5c1a560656 (/74ab64a5-43f9-53b4-b3ef-0d5c1a560656/)
+"""
+
+EXC = io(Power(voltage="0V to 15V"))
+GND = io(Ground)
+
+_10UF_16V = Module("../../components/10uF_16V/10uF_16V.zen")
+
+_10UF_16V(name="C52", P1=EXC, P2=GND)

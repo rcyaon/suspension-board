@@ -1,0 +1,71 @@
+"""
+suspension-load-daq sheet module: ce419f7e-aaef-5640-a00c-559494572ce8 (/ce419f7e-aaef-5640-a00c-559494572ce8/)
+"""
+
+ADC_CLKIN = io(Net)
+ADC_DRDY = io(Net)
+ADC_REFIN = io(Net)
+ADC_SPI_CLK = io(Net)
+ADC_SPI_CS = io(Net)
+ADC_SPI_MISO = io(Net)
+ADC_SPI_MOSI = io(Net)
+ADC_SYNC_RST = io(Net)
+AIN0N = io(Net)
+AIN0P = io(Net)
+AIN1N = io(Net)
+AIN1P = io(Net)
+AIN2N = io(Net)
+AIN2P = io(Net)
+AIN3N = io(Net)
+AIN3P = io(Net)
+AIN4N = io(Net)
+AIN4P = io(Net)
+AIN5N = io(Net)
+AIN5P = io(Net)
+AIN6N = io(Net)
+AIN6P = io(Net)
+AIN7N = io(Net)
+AIN7P = io(Net)
+# Local ADS131M08 digital-core LDO decoupling domain, not an external supply.
+ADC_CAP = io(Power)
+GND = io(Ground)
+V3V3 = io(Power(voltage="2.7V to 3.6V"))
+V3V3A = io(Power(voltage="2.7V to 3.6V"))
+
+ADS131M08XPBS = Module("../../components/ADS131M08xPBS/ADS131M08xPBS.zen")
+
+ADS131M08XPBS(
+    name="U7",
+    AGND_13=GND,
+    AGND_27=GND,
+    AGND_28=GND,
+    AIN0N=AIN0N,
+    AIN0P=AIN0P,
+    AIN1N=AIN1N,
+    AIN1P=AIN1P,
+    AIN2N=AIN2N,
+    AIN2P=AIN2P,
+    AIN3N=AIN3N,
+    AIN3P=AIN3P,
+    AIN4N=AIN4N,
+    AIN4P=AIN4P,
+    AIN5N=AIN5N,
+    AIN5P=AIN5P,
+    AIN6N=AIN6N,
+    AIN6P=AIN6P,
+    AIN7N=AIN7N,
+    AIN7P=AIN7P,
+    AVDD=V3V3A,
+    CAP=ADC_CAP,
+    DGND=GND,
+    DIN=ADC_SPI_MOSI,
+    DOUT=ADC_SPI_MISO,
+    DVDD=V3V3,
+    N_CS=ADC_SPI_CS,
+    N_DRDY=ADC_DRDY,
+    N_SYNC_N_RESET=ADC_SYNC_RST,
+    REFIN=ADC_REFIN,
+    SCLK=ADC_SPI_CLK,
+    XTAL1_CLKIN=ADC_CLKIN,
+    XTAL2=NotConnected(),
+)

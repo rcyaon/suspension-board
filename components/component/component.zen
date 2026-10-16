@@ -1,0 +1,29 @@
+"""
+component
+
+Auto-generated using `pcb import`.
+"""
+
+skip_bom = config(bool, default=True)
+
+
+skip_pos = config(bool, default=True)
+
+
+P1 = io(Net)
+P2 = io(Net)
+
+Component(
+    name="component",
+    prefix="JP",
+    skip_bom=skip_bom,
+    skip_pos=skip_pos,
+    properties={
+        "Footprint": "lena_b_string-gauge-daq_components_component:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm",
+        "Value": "",
+        "schematic_description": "Net tie, 2 pins",
+    },
+    symbol=Symbol(library="component.kicad_sym"),
+    pin_defs={"1": "1", "2": "2"},
+    pins={"1": P1, "2": P2},
+)

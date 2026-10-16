@@ -1,0 +1,27 @@
+"""
+suspension-load-daq sheet module: e6a09445-7a84-54da-b157-763b8b3fe48a (/e6a09445-7a84-54da-b157-763b8b3fe48a/)
+"""
+
+CANH = io(Net)
+CANL = io(Net)
+CAN_RX = io(Net)
+CAN_STB = io(Net)
+CAN_TX = io(Net)
+GND = io(Ground)
+V3V3 = io(Power(voltage="2.7V to 3.6V"))
+V5_BUCK = io(Power(voltage="4.5V to 5.5V"))
+
+TCAN1462VDRBRQ1 = Module("../../components/TCAN1462VDRBRQ1/TCAN1462VDRBRQ1.zen")
+
+TCAN1462VDRBRQ1(
+    name="U1",
+    CANH=CANH,
+    CANL=CANL,
+    EP=GND,
+    GND=GND,
+    RXD=CAN_RX,
+    STB=CAN_STB,
+    TXD=CAN_TX,
+    VCC=V5_BUCK,
+    VIO=V3V3,
+)

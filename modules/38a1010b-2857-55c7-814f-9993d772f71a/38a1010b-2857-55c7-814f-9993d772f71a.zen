@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 38a1010b-2857-55c7-814f-9993d772f71a (/38a1010b-2857-55c7-814f-9993d772f71a/)
+"""
+
+PWR_LDO_3V3_EN = io(Net)
+V5 = io(Power(voltage="2.2V to 5.5V"))
+
+_100K = Module("../../components/100k/100k.zen")
+
+_100K(name="R70", P1=V5, P2=PWR_LDO_3V3_EN)

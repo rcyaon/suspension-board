@@ -1,0 +1,20 @@
+"""
+2A_40V_Schottky_Rectifier
+
+Auto-generated using `pcb import`.
+"""
+
+A = io(Net)
+K = io(Net)
+
+Component(
+    name="2A_40V_Schottky_Rectifier",
+    properties={
+        "Footprint": "lena_b_string-gauge-daq_components_2A_40V_Schottky_Rectifier:D_SMA",
+        "Value": "2A 40V Schottky Rectifier",
+        "schematic_description": "2A 40V Schottky Rectifier",
+    },
+    symbol=Symbol(library="2A_40V_Schottky_Rectifier.kicad_sym"),
+    pin_defs={"K": "1", "A": "2"},
+    pins={"K": K, "A": A},
+)

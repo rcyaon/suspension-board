@@ -1,0 +1,42 @@
+"""
+TC2030-NL_CTX
+
+Auto-generated using `pcb import`.
+"""
+
+skip_bom = config(bool, default=True)
+
+
+skip_pos = config(bool, default=True)
+
+
+GND = io(Ground)
+N_RESET = io(Net)
+SWCLK_TCK = io(Net)
+SWDIO_TMS = io(Net)
+SWO_TDO = io(Net)
+# TC2030-CTX cable pin 1 passes the target logic supply/reference to the
+# debugger. Generic Power intentionally leaves voltage to target/probe specs;
+# the passive land pattern does not impose a single logic-voltage range.
+VTREF = io(Power)
+
+Component(
+    name="TC2030-NL_CTX",
+    skip_bom=skip_bom,
+    skip_pos=skip_pos,
+    properties={
+        "Footprint": "lena_b_string-gauge-daq_components_TC2030-NL_CTX:Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Vertical",
+        "Value": "TC2030-NL_CTX",
+        "schematic_description": "Tag-Connect TC2030 no-legs land pattern wired to the ARM Cortex SWD/JTAG pinout of the TC2030-CTX-NL cable, 6 pads; pads only, no populated part",
+    },
+    symbol=Symbol(library="TC2030-NL_CTX.kicad_sym"),
+    pin_defs={"VTref": "1", "SWDIO/TMS": "2", "~{RESET}": "3", "SWCLK/TCK": "4", "GND": "5", "SWO/TDO": "6"},
+    pins={
+        "VTref": VTREF,
+        "SWDIO/TMS": SWDIO_TMS,
+        "~{RESET}": N_RESET,
+        "SWCLK/TCK": SWCLK_TCK,
+        "GND": GND,
+        "SWO/TDO": SWO_TDO,
+    },
+)

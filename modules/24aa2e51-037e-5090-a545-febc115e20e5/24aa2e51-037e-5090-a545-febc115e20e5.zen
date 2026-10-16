@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 24aa2e51-037e-5090-a545-febc115e20e5 (/24aa2e51-037e-5090-a545-febc115e20e5/)
+"""
+
+LED_LOG_A = io(Net)
+GND = io(Ground)
+
+LED_GREEN = Module("../../components/LED_GREEN/LED_GREEN.zen")
+
+LED_GREEN(name="D3", A=LED_LOG_A, K=GND)

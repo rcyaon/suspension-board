@@ -1,0 +1,20 @@
+"""
+suspension-load-daq sheet module: a65ef7f7-c323-5940-a4ff-051f22e68bf4 (/a65ef7f7-c323-5940-a4ff-051f22e68bf4/)
+"""
+
+CANH = io(Net)
+CANL = io(Net)
+GND = io(Ground)
+# Raw vehicle supply upstream of reverse protection: input envelope is not
+# specified by the import. Generic until defined; buck VIN is checked separately.
+VIN_VEH = io(Power)
+
+B4B_PH_K_S = Module("../../components/B4B-PH-K-S/B4B-PH-K-S.zen")
+
+B4B_PH_K_S(
+    name="J16",
+    PIN_1=VIN_VEH,
+    PIN_2=GND,
+    PIN_3=CANH,
+    PIN_4=CANL,
+)

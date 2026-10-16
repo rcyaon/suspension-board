@@ -1,0 +1,9 @@
+"""
+suspension-load-daq sheet module: 0d5f77e3-88b7-5d29-9ec8-1a04d3d1997e (/0d5f77e3-88b7-5d29-9ec8-1a04d3d1997e/)
+"""
+
+V3V3 = io(Power(voltage="2.7V to 3.6V"))
+
+TESTPOINT_SMALL = Module("../../components/TestPoint_Small/TestPoint_Small.zen")
+
+TESTPOINT_SMALL(name="TP5", P1=V3V3)

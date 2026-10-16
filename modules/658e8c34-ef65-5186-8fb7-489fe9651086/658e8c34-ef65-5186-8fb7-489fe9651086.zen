@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 658e8c34-ef65-5186-8fb7-489fe9651086 (/658e8c34-ef65-5186-8fb7-489fe9651086/)
+"""
+
+V3V3 = io(Power(voltage="2.7V to 3.6V"))
+VDDA = io(Power(voltage="1.7V to 3.6V"))
+
+_220_100MHZ = Module("../../components/220_100MHz/220_100MHz.zen")
+
+_220_100MHZ(name="FB1", P1=V3V3, P2=VDDA)

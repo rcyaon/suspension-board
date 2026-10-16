@@ -1,0 +1,16 @@
+"""
+suspension-load-daq sheet module: 4f6d3c21-2e6a-59d2-9f01-1944f51cf6b6 (/4f6d3c21-2e6a-59d2-9f01-1944f51cf6b6/)
+"""
+
+AUX2_SIG = io(Net)
+AUX2_V_SENSOR = io(Net)
+GND = io(Ground)
+
+B3B_PH_K_S = Module("../../components/B3B-PH-K-S/B3B-PH-K-S.zen")
+
+B3B_PH_K_S(
+    name="J2",
+    PIN_1=AUX2_V_SENSOR,
+    PIN_2=AUX2_SIG,
+    PIN_3=GND,
+)

@@ -1,0 +1,17 @@
+"""
+suspension-load-daq sheet module: e036e267-e88f-5a48-902e-69c291364c00 (/e036e267-e88f-5a48-902e-69c291364c00/)
+"""
+
+MCU_HSE_IN = io(Net)
+MCU_HSE_OUT = io(Net)
+GND = io(Ground)
+
+_8MHZ_10PF = Module("../../components/8MHz_10pF/8MHz_10pF.zen")
+
+_8MHZ_10PF(
+    name="Y1",
+    G_2=GND,
+    G_4=GND,
+    P1=MCU_HSE_IN,
+    P3=MCU_HSE_OUT,
+)

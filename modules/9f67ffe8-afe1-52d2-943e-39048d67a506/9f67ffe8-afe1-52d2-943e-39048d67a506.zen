@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 9f67ffe8-afe1-52d2-943e-39048d67a506 (/9f67ffe8-afe1-52d2-943e-39048d67a506/)
+"""
+
+MCU_HSE_IN = io(Net)
+GND = io(Ground)
+
+_12PF_5_50V_C0G = Module("../../components/12pF_5_50V_C0G/12pF_5_50V_C0G.zen")
+
+_12PF_5_50V_C0G(name="C58", P1=MCU_HSE_IN, P2=GND)

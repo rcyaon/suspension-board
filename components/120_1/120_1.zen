@@ -1,0 +1,20 @@
+"""
+120_1
+
+Auto-generated using `pcb import`.
+"""
+
+P1 = io(Net)
+P2 = io(Net)
+
+Component(
+    name="120_1",
+    properties={
+        "Footprint": "lena_b_string-gauge-daq_components_120_1:R_0805_2012Metric",
+        "Value": "120 1%",
+        "schematic_description": "120 1%",
+    },
+    symbol=Symbol(library="120_1.kicad_sym"),
+    pin_defs={"1": "1", "2": "2"},
+    pins={"1": P1, "2": P2},
+)

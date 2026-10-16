@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 318736c3-4057-577e-ac19-b3fc8c72f10d (/318736c3-4057-577e-ac19-b3fc8c72f10d/)
+"""
+
+LED_PWR_A = io(Net)
+GND = io(Ground)
+
+LED_BLUE = Module("../../components/LED_BLUE/LED_BLUE.zen")
+
+LED_BLUE(name="D4", A=LED_PWR_A, K=GND)

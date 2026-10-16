@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 130f01e5-ed39-50ed-ab16-5e6469396c12 (/130f01e5-ed39-50ed-ab16-5e6469396c12/)
+"""
+
+SD_DAT3 = io(Net)
+V3V3 = io(Power(voltage="2.7V to 3.6V"))
+
+_47K = Module("../../components/47k/47k.zen")
+
+_47K(name="R95", P1=SD_DAT3, P2=V3V3)

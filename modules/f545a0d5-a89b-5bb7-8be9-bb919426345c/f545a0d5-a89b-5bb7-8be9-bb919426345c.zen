@@ -1,0 +1,16 @@
+"""
+suspension-load-daq sheet module: f545a0d5-a89b-5bb7-8be9-bb919426345c (/f545a0d5-a89b-5bb7-8be9-bb919426345c/)
+"""
+
+MCU_BOOT0 = io(Net)
+V3V3 = io(Power(voltage="2.7V to 3.6V"))
+
+KMR211NGLFS = Module("../../components/KMR211NGLFS/KMR211NGLFS.zen")
+
+KMR211NGLFS(
+    name="SW1",
+    P1_1=MCU_BOOT0,
+    P1_4=MCU_BOOT0,
+    P2_2=V3V3,
+    P2_3=V3V3,
+)

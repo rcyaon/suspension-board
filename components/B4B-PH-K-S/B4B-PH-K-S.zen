@@ -1,0 +1,22 @@
+"""
+B4B-PH-K-S
+
+Auto-generated using `pcb import`.
+"""
+
+PIN_1 = io(Net)
+PIN_2 = io(Net)
+PIN_3 = io(Net)
+PIN_4 = io(Net)
+
+Component(
+    name="B4B-PH-K-S",
+    properties={
+        "Footprint": "lena_b_string-gauge-daq_components_B4B-PH-K-S:JST_PH_B4B-PH-K_1x04_P2.00mm_Vertical",
+        "Value": "B4B-PH-K-S",
+        "schematic_description": "JST PH series 2.00mm 4-position vertical through-hole wire-to-board header",
+    },
+    symbol=Symbol(library="B4B-PH-K-S.kicad_sym"),
+    pin_defs={"Pin_1": "1", "Pin_2": "2", "Pin_3": "3", "Pin_4": "4"},
+    pins={"Pin_1": PIN_1, "Pin_2": PIN_2, "Pin_3": PIN_3, "Pin_4": PIN_4},
+)

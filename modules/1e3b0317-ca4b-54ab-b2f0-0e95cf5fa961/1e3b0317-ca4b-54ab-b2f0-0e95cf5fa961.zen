@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 1e3b0317-ca4b-54ab-b2f0-0e95cf5fa961 (/1e3b0317-ca4b-54ab-b2f0-0e95cf5fa961/)
+"""
+
+GND = io(Ground)
+PWR_VPROT = io(Power(voltage="3V to 36V"))
+
+EEE_FK1H470P = Module("../../components/EEE-FK1H470P/EEE-FK1H470P.zen")
+
+EEE_FK1H470P(name="C82", NEG=GND, POS=PWR_VPROT)

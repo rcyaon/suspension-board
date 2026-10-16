@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 79396807-b73f-5006-9306-3f283a3a32a2 (/79396807-b73f-5006-9306-3f283a3a32a2/)
+"""
+
+GND = io(Ground)
+PWR_VPROT = io(Power(voltage="3V to 36V"))
+
+_4_7UF_50V_X7R = Module("../../components/4_7uF_50V_X7R/4_7uF_50V_X7R.zen")
+
+_4_7UF_50V_X7R(name="C73", P1=PWR_VPROT, P2=GND)

@@ -1,0 +1,22 @@
+"""
+suspension-load-daq sheet module: 86ae2c84-4daf-53ff-ba88-4a842ec6f995 (/86ae2c84-4daf-53ff-ba88-4a842ec6f995/)
+"""
+
+NRST = io(Net)
+SWD_SWCLK = io(Net)
+SWD_SWDIO = io(Net)
+SWO = io(Net)
+GND = io(Ground)
+V3V3 = io(Power(voltage="2.7V to 3.6V"))
+
+TC2030_NL_CTX = Module("../../components/TC2030-NL_CTX/TC2030-NL_CTX.zen")
+
+TC2030_NL_CTX(
+    name="J14",
+    GND=GND,
+    N_RESET=NRST,
+    SWCLK_TCK=SWD_SWCLK,
+    SWDIO_TMS=SWD_SWDIO,
+    SWO_TDO=SWO,
+    VTREF=V3V3,
+)

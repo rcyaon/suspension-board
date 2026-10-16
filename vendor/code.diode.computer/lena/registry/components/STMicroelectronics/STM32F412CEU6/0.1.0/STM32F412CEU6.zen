@@ -1,0 +1,134 @@
+"""STMicroelectronics STM32F412CEU6 - Arm Cortex-M4F MCU, UFQFPN48 (primitive).
+
+Exact device: STM32F412CE, 512 KB flash, 256 KB SRAM, 100 MHz, UFQFPN48
+7 x 7 mm, 0.5 mm pitch, 5.6 x 5.6 mm exposed pad (ST package code A0B9),
+-40 to +85 C (suffix 6). Evidence: ST DS11139 Rev 9 - pinout Fig. 12 (p43),
+pin definitions Table 9 (pp49-62), alternate functions Table 11 (pp66-71),
+Fig. 12 labels pin 6 "PH0-OSC_OUT" (typo);
+Table 9 name PH1-OSC_OUT is used. Package Fig. 63/64 + Table 101 (pp170-171), ordering Table 111 (p190).
+
+Primitive package only: no decoupling, crystal, reset, or boot strap circuitry.
+Integrator-owned support (DS11139):
+- VDD (pins 24/36/48): one 100 nF per VDD/VSS pair plus one 4.7 uF ceramic on
+  one VDD pin (Fig. 21 notes). 1.8-3.6 V: the 48-pin package has no PDR_ON pin,
+  so the internal supervisor is always on (Sec. 3.18.1). The USB PHY supply
+  (VDDUSB) is not bonded out; PA11/PA12 USB needs VDD >= 3.0 V (Table 16).
+- VDDA/VREF+ (pin 9) with VSSA/VREF- (pin 8): 100 nF + 1 uF; VDDA must be at
+  VDD potential (<= 300 mV difference during ramps) and VSSA = VSS (Table 16
+  note 4, Fig. 21 note 4).
+- VBAT (pin 1): 1.65-3.6 V backup domain; tie to VDD if no battery.
+- VCAP_1 (pin 22): internal 1.2 V core regulator output. Single-VCAP package,
+  so one 4.7 uF ceramic, ESR < 1 ohm, to VSS (p84 Table 18); the
+  2 x 2.2 uF (ESR < 2 ohm) option applies only to 100/144-pin parts with VCAP_2. Not a supply rail -
+  do not load or connect it to anything else.
+- EP (pad 49): exposed die pad; ST recommends soldering it to PCB ground
+  (Fig. 63 note 3). The land is plain copper with no thermal vias; the ST
+  drawing does not require them.
+- BOOT0 (pin 44) is a dedicated input (0-9 V, Table 16); PB2 is BOOT1.
+- PC13-PC15 are on the backup power switch: <= 2 MHz, 30 pF, no sourcing
+  (Table 9 note 2).
+"""
+
+VDD = io(Power(voltage="1.8V to 3.6V"))
+VDDA = io(Power(voltage="1.8V to 3.6V"))
+VBAT = io(Power(voltage="1.65V to 3.6V"))
+VSS = io(Ground)
+VSSA = io(Ground)
+EP = io(Ground)
+# Core-regulator decoupling node (V12 ~1.08-1.38 V); connect only the 4.7 uF cap.
+VCAP = io(Net)
+
+NRST = io(Net, optional=True)
+BOOT0 = io(Net)
+PA0 = io(Net, optional=True)
+PA1 = io(Net, optional=True)
+PA2 = io(Net, optional=True)
+PA3 = io(Net, optional=True)
+PA4 = io(Net, optional=True)
+PA5 = io(Net, optional=True)
+PA6 = io(Net, optional=True)
+PA7 = io(Net, optional=True)
+PA8 = io(Net, optional=True)
+PA9 = io(Net, optional=True)
+PA10 = io(Net, optional=True)
+PA11 = io(Net, optional=True)
+PA12 = io(Net, optional=True)
+PA13 = io(Net, optional=True)
+PA14 = io(Net, optional=True)
+PA15 = io(Net, optional=True)
+PB0 = io(Net, optional=True)
+PB1 = io(Net, optional=True)
+PB2 = io(Net, optional=True)
+PB3 = io(Net, optional=True)
+PB4 = io(Net, optional=True)
+PB5 = io(Net, optional=True)
+PB6 = io(Net, optional=True)
+PB7 = io(Net, optional=True)
+PB8 = io(Net, optional=True)
+PB9 = io(Net, optional=True)
+PB10 = io(Net, optional=True)
+PB12 = io(Net, optional=True)
+PB13 = io(Net, optional=True)
+PB14 = io(Net, optional=True)
+PB15 = io(Net, optional=True)
+PC13 = io(Net, optional=True)
+PC14_OSC32_IN = io(Net, optional=True)
+PC15_OSC32_OUT = io(Net, optional=True)
+PH0_OSC_IN = io(Net, optional=True)
+PH1_OSC_OUT = io(Net, optional=True)
+
+Component(
+    name="STM32F412CEU6",
+    symbol=Symbol(library="STM32F412CEU6.kicad_sym"),
+    properties={
+        # Ordering-only variant: identical die/package, tape-and-reel packing.
+        "alternatives": [Part(mpn="STM32F412CEU6TR", manufacturer="STMicroelectronics")],
+    },
+    pins={
+        "VBAT": VBAT,
+        "VDD": VDD,
+        "VDDA/VREF+": VDDA,
+        "VSS": VSS,
+        "VSSA/VREF-": VSSA,
+        "EP": EP,
+        "VCAP_1": VCAP,
+        "NRST": NRST,
+        "BOOT0": BOOT0,
+        "PA0": PA0,
+        "PA1": PA1,
+        "PA2": PA2,
+        "PA3": PA3,
+        "PA4": PA4,
+        "PA5": PA5,
+        "PA6": PA6,
+        "PA7": PA7,
+        "PA8": PA8,
+        "PA9": PA9,
+        "PA10": PA10,
+        "PA11": PA11,
+        "PA12": PA12,
+        "PA13": PA13,
+        "PA14": PA14,
+        "PA15": PA15,
+        "PB0": PB0,
+        "PB1": PB1,
+        "PB2": PB2,
+        "PB3": PB3,
+        "PB4": PB4,
+        "PB5": PB5,
+        "PB6": PB6,
+        "PB7": PB7,
+        "PB8": PB8,
+        "PB9": PB9,
+        "PB10": PB10,
+        "PB12": PB12,
+        "PB13": PB13,
+        "PB14": PB14,
+        "PB15": PB15,
+        "PC13": PC13,
+        "PC14-OSC32_IN": PC14_OSC32_IN,
+        "PC15-OSC32_OUT": PC15_OSC32_OUT,
+        "PH0-OSC_IN": PH0_OSC_IN,
+        "PH1-OSC_OUT": PH1_OSC_OUT,
+    },
+)

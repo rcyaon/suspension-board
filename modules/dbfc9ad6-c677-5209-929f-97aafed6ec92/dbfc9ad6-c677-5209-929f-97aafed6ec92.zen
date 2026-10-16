@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: dbfc9ad6-c677-5209-929f-97aafed6ec92 (/dbfc9ad6-c677-5209-929f-97aafed6ec92/)
+"""
+
+CAN_TERM = io(Net)
+CANH = io(Net)
+
+_120_1 = Module("../../components/120_1/120_1.zen")
+
+_120_1(name="R81", P1=CANH, P2=CAN_TERM)

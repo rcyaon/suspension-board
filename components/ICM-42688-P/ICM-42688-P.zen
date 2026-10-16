@@ -1,0 +1,64 @@
+"""
+ICM-42688-P
+
+Auto-generated using `pcb import`.
+"""
+
+AP_CS = io(Net)
+AP_SCL_AP_SCLK = io(Net)
+AP_SDA_AP_SDIO_AP_SDI = io(Net)
+AP_SDO_AP_AD0 = io(Net)
+GND = io(Ground)
+INT1_INT = io(Net)
+INT2_FSYNC_CLKIN = io(Net)
+RESV_1 = io(Net)
+RESV_2 = io(Net)
+# DS-000347 Table 10: pin 7 must be connected to ground.
+RESV_3 = io(Ground)
+RESV_4 = io(Net)
+RESV_5 = io(Net)
+# DS-000347: independent core and digital IO supply operating ranges.
+VDD = io(Power(voltage="1.71V to 3.6V"))
+VDDIO = io(Power(voltage="1.71V to 3.6V"))
+
+Component(
+    name="ICM-42688-P",
+    properties={
+        "Footprint": "lena_b_string-gauge-daq_components_ICM-42688-P:IIM42352",
+        "Value": "ICM-42688-P",
+        "schematic_description": "IMU (Inertial Measurement Unit), 6-Axis, Accelerometer, Gyroscope",
+    },
+    symbol=Symbol(library="ICM-42688-P.kicad_sym"),
+    pin_defs={
+        "AP_SDO_/_AP_AD0": "1",
+        "RESV_4": "10",
+        "RESV_5": "11",
+        "AP_CS": "12",
+        "AP_SCL_/_AP_SCLK": "13",
+        "AP_SDA_/_AP_SDIO_/_AP_SDI": "14",
+        "RESV_1": "2",
+        "RESV_2": "3",
+        "INT1_/_INT": "4",
+        "VDDIO": "5",
+        "GND": "6",
+        "RESV_3": "7",
+        "VDD": "8",
+        "INT2_/_FSYNC_/_CLKIN": "9",
+    },
+    pins={
+        "AP_SDO_/_AP_AD0": AP_SDO_AP_AD0,
+        "RESV_4": RESV_4,
+        "RESV_5": RESV_5,
+        "AP_CS": AP_CS,
+        "AP_SCL_/_AP_SCLK": AP_SCL_AP_SCLK,
+        "AP_SDA_/_AP_SDIO_/_AP_SDI": AP_SDA_AP_SDIO_AP_SDI,
+        "RESV_1": RESV_1,
+        "RESV_2": RESV_2,
+        "INT1_/_INT": INT1_INT,
+        "VDDIO": VDDIO,
+        "GND": GND,
+        "RESV_3": RESV_3,
+        "VDD": VDD,
+        "INT2_/_FSYNC_/_CLKIN": INT2_FSYNC_CLKIN,
+    },
+)

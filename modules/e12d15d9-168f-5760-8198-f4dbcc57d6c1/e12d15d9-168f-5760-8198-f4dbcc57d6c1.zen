@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: e12d15d9-168f-5760-8198-f4dbcc57d6c1 (/e12d15d9-168f-5760-8198-f4dbcc57d6c1/)
+"""
+
+VBUS_SENSE = io(Net)
+GND = io(Ground)
+
+_15K_1 = Module("../../components/15k_1/15k_1.zen")
+
+_15K_1(name="R98", P1=VBUS_SENSE, P2=GND)

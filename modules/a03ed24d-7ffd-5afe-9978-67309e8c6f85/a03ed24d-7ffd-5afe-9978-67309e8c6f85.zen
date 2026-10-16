@@ -1,0 +1,12 @@
+"""
+suspension-load-daq sheet module: a03ed24d-7ffd-5afe-9978-67309e8c6f85 (/a03ed24d-7ffd-5afe-9978-67309e8c6f85/)
+"""
+
+PWR_VPROT = io(Power(voltage="3V to 36V"))
+# Raw vehicle supply upstream of reverse protection: input envelope is not
+# specified by the import. Generic until defined; buck VIN is checked separately.
+VIN_VEH = io(Power)
+
+_2A_40V_SCHOTTKY_RECTIFIER = Module("../../components/2A_40V_Schottky_Rectifier/2A_40V_Schottky_Rectifier.zen")
+
+_2A_40V_SCHOTTKY_RECTIFIER(name="D8", A=VIN_VEH, K=PWR_VPROT)

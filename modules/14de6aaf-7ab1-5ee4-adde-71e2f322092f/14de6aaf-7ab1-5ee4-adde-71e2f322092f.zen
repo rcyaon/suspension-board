@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 14de6aaf-7ab1-5ee4-adde-71e2f322092f (/14de6aaf-7ab1-5ee4-adde-71e2f322092f/)
+"""
+
+I2C_SDA = io(Net)
+V3V3 = io(Power(voltage="2.7V to 3.6V"))
+
+_4_7K = Module("../../components/4_7k/4_7k.zen")
+
+_4_7K(name="R90", P1=I2C_SDA, P2=V3V3)

@@ -1,0 +1,24 @@
+"""
+B6B-PH-K-S
+
+Auto-generated using `pcb import`.
+"""
+
+PIN_1 = io(Net)
+PIN_2 = io(Net)
+PIN_3 = io(Net)
+PIN_4 = io(Net)
+PIN_5 = io(Net)
+PIN_6 = io(Net)
+
+Component(
+    name="B6B-PH-K-S",
+    properties={
+        "Footprint": "lena_b_string-gauge-daq_components_B6B-PH-K-S:JST_PH_B6B-PH-K_1x06_P2.00mm_Vertical",
+        "Value": "B6B-PH-K-S",
+        "schematic_description": "JST PH series 2.00mm 6-position vertical through-hole wire-to-board header",
+    },
+    symbol=Symbol(library="B6B-PH-K-S.kicad_sym"),
+    pin_defs={"Pin_1": "1", "Pin_2": "2", "Pin_3": "3", "Pin_4": "4", "Pin_5": "5", "Pin_6": "6"},
+    pins={"Pin_1": PIN_1, "Pin_2": PIN_2, "Pin_3": PIN_3, "Pin_4": PIN_4, "Pin_5": PIN_5, "Pin_6": PIN_6},
+)

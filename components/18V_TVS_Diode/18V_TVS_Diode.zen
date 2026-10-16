@@ -1,0 +1,20 @@
+"""
+18V_TVS_Diode
+
+Auto-generated using `pcb import`.
+"""
+
+A1 = io(Net)
+A2 = io(Net)
+
+Component(
+    name="18V_TVS_Diode",
+    properties={
+        "Footprint": "lena_b_string-gauge-daq_components_18V_TVS_Diode:D_SMB",
+        "Value": "18V TVS Diode",
+        "schematic_description": "18V TVS Diode",
+    },
+    symbol=Symbol(library="18V_TVS_Diode.kicad_sym"),
+    pin_defs={"A1": "1", "A2": "2"},
+    pins={"A1": A1, "A2": A2},
+)

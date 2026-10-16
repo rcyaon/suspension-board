@@ -1,0 +1,121 @@
+"""
+ADS131M08xPBS
+
+Auto-generated using `pcb import`.
+"""
+
+AGND_13 = io(Ground)
+AGND_27 = io(Ground)
+AGND_28 = io(Ground)
+AIN0N = io(Net)
+AIN0P = io(Net)
+AIN1N = io(Net)
+AIN1P = io(Net)
+AIN2N = io(Net)
+AIN2P = io(Net)
+AIN3N = io(Net)
+AIN3P = io(Net)
+AIN4N = io(Net)
+AIN4P = io(Net)
+AIN5N = io(Net)
+AIN5P = io(Net)
+AIN6N = io(Net)
+AIN6P = io(Net)
+AIN7N = io(Net)
+AIN7P = io(Net)
+# SBAS950 section 6.3: normal conversion and internal digital LDO enabled.
+# The separate 1.65V to 2V DVDD mode requires CAP tied to DVDD (section 10.1)
+# and is intentionally not represented by this imported board's supply API.
+AVDD = io(Power(voltage="2.7V to 3.6V"))
+# Local digital-core LDO decoupling output; generic to avoid an external-rail
+# contract on an internally sourced capacitor domain (section 10.1).
+CAP = io(Power)
+DGND = io(Ground)
+DIN = io(Net)
+DOUT = io(Net)
+DVDD = io(Power(voltage="2.7V to 3.6V"))
+N_CS = io(Net)
+N_DRDY = io(Net)
+N_SYNC_N_RESET = io(Net)
+REFIN = io(Net)
+SCLK = io(Net)
+XTAL1_CLKIN = io(Net)
+XTAL2 = io(Net)
+
+Component(
+    name="ADS131M08xPBS",
+    properties={
+        "Footprint": "lena_b_string-gauge-daq_components_ADS131M08xPBS:TQFP-32_5x5mm_P0.5mm",
+        "Value": "ADS131M08xPBS",
+        "schematic_description": "8-channel, 24-bit, simultaneous sampling Delta-Sigma ADC, 32kSPS, G=1..128 PGA, SPI interface, integrated 1.2V reference, TQFP-32 (Texas PBS / S-PQFP-G32)",
+    },
+    symbol=Symbol(library="ADS131M08xPBS.kicad_sym"),
+    pin_defs={
+        "AIN2P": "1",
+        "AIN6N": "10",
+        "AIN7N": "11",
+        "AIN7P": "12",
+        "AGND__13": "13",
+        "REFIN": "14",
+        "AVDD": "15",
+        "~{SYNC}/~{RESET}": "16",
+        "~{CS}": "17",
+        "~{DRDY}": "18",
+        "SCLK": "19",
+        "AIN2N": "2",
+        "DOUT": "20",
+        "DIN": "21",
+        "XTAL2": "22",
+        "XTAL1/CLKIN": "23",
+        "CAP": "24",
+        "DGND": "25",
+        "DVDD": "26",
+        "AGND__27": "27",
+        "AGND__28": "28",
+        "AIN0P": "29",
+        "AIN3N": "3",
+        "AIN0N": "30",
+        "AIN1N": "31",
+        "AIN1P": "32",
+        "AIN3P": "4",
+        "AIN4P": "5",
+        "AIN4N": "6",
+        "AIN5N": "7",
+        "AIN5P": "8",
+        "AIN6P": "9",
+    },
+    pins={
+        "AIN2P": AIN2P,
+        "AIN6N": AIN6N,
+        "AIN7N": AIN7N,
+        "AIN7P": AIN7P,
+        "AGND__13": AGND_13,
+        "REFIN": REFIN,
+        "AVDD": AVDD,
+        "~{SYNC}/~{RESET}": N_SYNC_N_RESET,
+        "~{CS}": N_CS,
+        "~{DRDY}": N_DRDY,
+        "SCLK": SCLK,
+        "AIN2N": AIN2N,
+        "DOUT": DOUT,
+        "DIN": DIN,
+        "XTAL2": XTAL2,
+        "XTAL1/CLKIN": XTAL1_CLKIN,
+        "CAP": CAP,
+        "DGND": DGND,
+        "DVDD": DVDD,
+        "AGND__27": AGND_27,
+        "AGND__28": AGND_28,
+        "AIN0P": AIN0P,
+        "AIN3N": AIN3N,
+        "AIN0N": AIN0N,
+        "AIN1N": AIN1N,
+        "AIN1P": AIN1P,
+        "AIN3P": AIN3P,
+        "AIN4P": AIN4P,
+        "AIN4N": AIN4N,
+        "AIN5N": AIN5N,
+        "AIN5P": AIN5P,
+        "AIN6P": AIN6P,
+    },
+)

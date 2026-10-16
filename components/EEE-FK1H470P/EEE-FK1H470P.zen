@@ -1,0 +1,20 @@
+"""
+EEE-FK1H470P
+
+Auto-generated using `pcb import`.
+"""
+
+NEG = io(Net)
+POS = io(Net)
+
+Component(
+    name="EEE-FK1H470P",
+    properties={
+        "Footprint": "lena_b_string-gauge-daq_components_EEE-FK1H470P:EEE-FK1H470P",
+        "Value": "EEE-FK1H470P",
+        "schematic_description": "Aluminum electrolytic capacitor, 47uF 20% 50V, FK series low-impedance, SMD size E (8x6.2mm), 2000h 105C",
+    },
+    symbol=Symbol(library="EEE-FK1H470P.kicad_sym"),
+    pin_defs={"+": "1", "-": "2"},
+    pins={"+": POS, "-": NEG},
+)

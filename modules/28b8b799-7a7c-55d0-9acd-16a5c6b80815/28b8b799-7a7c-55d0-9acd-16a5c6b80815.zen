@@ -1,0 +1,24 @@
+"""
+suspension-load-daq sheet module: 28b8b799-7a7c-55d0-9acd-16a5c6b80815 (/28b8b799-7a7c-55d0-9acd-16a5c6b80815/)
+"""
+
+LDO_3V3_PWR_LDO_3V3_FB = io(Net)
+PWR_LDO_3V3_EN = io(Net)
+GND = io(Ground)
+V3V3 = io(Power(voltage="2.7V to 3.6V"))
+V5 = io(Power(voltage="2.2V to 5.5V"))
+
+PWR_LDO_3V3_PG = Net("/PWR_LDO_3V3_PG")
+
+TPS74501PDRVR = Module("../../components/TPS74501PDRVR/TPS74501PDRVR.zen")
+
+TPS74501PDRVR(
+    name="U5",
+    EN=PWR_LDO_3V3_EN,
+    EP=GND,
+    FB=LDO_3V3_PWR_LDO_3V3_FB,
+    GND=GND,
+    IN=V5,
+    OUT=V3V3,
+    PG=PWR_LDO_3V3_PG,
+)

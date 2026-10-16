@@ -1,0 +1,56 @@
+"""
+TPSM33610S5QRDNRQ1
+
+Auto-generated using `pcb import`.
+"""
+
+BOOT = io(Net)
+EN = io(Net)
+FB = io(Net)
+GND = io(Ground)
+MODE_SYNC = io(Net)
+PGOOD = io(Net)
+SW_5 = io(Net)
+SW_6 = io(Net)
+# SNVSCS7 sections 6.3/6.5: VCC is the internal LDO decoupling output;
+# do not use it as an external load supply. VIN range is after startup.
+VCC = io(Power(voltage="3.1V to 3.5V"))
+VIN = io(Power(voltage="3V to 36V"))
+# S5 trims to 5V when FB is tied to VOUT; a divider permits 1V to 7V.
+VOUT = io(Power(voltage="1V to 7V"))
+
+Component(
+    name="TPSM33610S5QRDNRQ1",
+    properties={
+        "Footprint": "lena_b_string-gauge-daq_components_TPSM33610S5QRDNRQ1:TPSM336xx-Q1",
+        "Value": "TPSM33610S5QRDNRQ1",
+        "schematic_description": "1A 5V fixed automotive synchronous buck power module, 3-36V VIN, QFN-FCMOD-11",
+    },
+    symbol=Symbol(library="TPSM33610S5QRDNRQ1.kicad_sym"),
+    pin_defs={
+        "PGOOD": "1",
+        "GND": "10",
+        "MODE/SYNC": "11",
+        "EN": "2",
+        "VIN": "3",
+        "VOUT": "4",
+        "SW__5": "5",
+        "SW__6": "6",
+        "BOOT": "7",
+        "VCC": "8",
+        "FB": "9",
+    },
+    pins={
+        "PGOOD": PGOOD,
+        "GND": GND,
+        "MODE/SYNC": MODE_SYNC,
+        "EN": EN,
+        "VIN": VIN,
+        "VOUT": VOUT,
+        "SW__5": SW_5,
+        "SW__6": SW_6,
+        "BOOT": BOOT,
+        "VCC": VCC,
+        "FB": FB,
+    },
+)

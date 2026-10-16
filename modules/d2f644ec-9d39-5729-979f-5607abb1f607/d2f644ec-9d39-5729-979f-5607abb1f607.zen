@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: d2f644ec-9d39-5729-979f-5607abb1f607 (/d2f644ec-9d39-5729-979f-5607abb1f607/)
+"""
+
+AUX4 = io(Net)
+GND = io(Ground)
+
+_47NF_16V = Module("../../components/47nF_16V/47nF_16V.zen")
+
+_47NF_16V(name="C7", P1=AUX4, P2=GND)

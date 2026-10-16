@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: dad08674-6d83-5930-bd6d-346f8df39159 (/dad08674-6d83-5930-bd6d-346f8df39159/)
+"""
+
+MCU_BOOT1 = io(Net)
+GND = io(Ground)
+
+_10K = Module("../../components/10k/10k.zen")
+
+_10K(name="R64", P1=MCU_BOOT1, P2=GND)

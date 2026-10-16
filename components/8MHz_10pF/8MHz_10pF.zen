@@ -1,0 +1,22 @@
+"""
+8MHz_10pF
+
+Auto-generated using `pcb import`.
+"""
+
+G_2 = io(Net)
+G_4 = io(Net)
+P1 = io(Net)
+P3 = io(Net)
+
+Component(
+    name="8MHz_10pF",
+    properties={
+        "Footprint": "lena_b_string-gauge-daq_components_8MHz_10pF:Crystal_SMD_3225-4Pin_3.2x2.5mm",
+        "Value": "8MHz 10pF",
+        "schematic_description": "8MHz 10pF",
+    },
+    symbol=Symbol(library="8MHz_10pF.kicad_sym"),
+    pin_defs={"1": "1", "G__2": "2", "3": "3", "G__4": "4"},
+    pins={"1": P1, "G__2": G_2, "3": P3, "G__4": G_4},
+)

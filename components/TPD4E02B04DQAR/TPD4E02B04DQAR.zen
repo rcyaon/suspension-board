@@ -1,0 +1,50 @@
+"""
+TPD4E02B04DQAR
+
+Auto-generated using `pcb import`.
+"""
+
+GND_3 = io(Ground)
+GND_8 = io(Ground)
+IO1_1 = io(Net)
+IO1_10 = io(Net)
+IO2_2 = io(Net)
+IO2_9 = io(Net)
+IO3_4 = io(Net)
+IO3_7 = io(Net)
+IO4_5 = io(Net)
+IO4_6 = io(Net)
+
+Component(
+    name="TPD4E02B04DQAR",
+    properties={
+        "Footprint": "lena_b_string-gauge-daq_components_TPD4E02B04DQAR:TPD4E02B04DQAR",
+        "Value": "TPD4E02B04DQAR",
+        "schematic_description": "4-channel bidirectional ESD/TVS protection array for USB Type-C and high-speed data lines, 0.25pF, USON-10 (DQA)",
+    },
+    symbol=Symbol(library="TPD4E02B04DQAR.kicad_sym"),
+    pin_defs={
+        "IO1__1": "1",
+        "IO1__10": "10",
+        "IO2__2": "2",
+        "GND__3": "3",
+        "IO3__4": "4",
+        "IO4__5": "5",
+        "IO4__6": "6",
+        "IO3__7": "7",
+        "GND__8": "8",
+        "IO2__9": "9",
+    },
+    pins={
+        "IO1__1": IO1_1,
+        "IO1__10": IO1_10,
+        "IO2__2": IO2_2,
+        "GND__3": GND_3,
+        "IO3__4": IO3_4,
+        "IO4__5": IO4_5,
+        "IO4__6": IO4_6,
+        "IO3__7": IO3_7,
+        "GND__8": GND_8,
+        "IO2__9": IO2_9,
+    },
+)

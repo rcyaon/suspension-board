@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 7c8eafdf-dbf8-58d1-b9b9-9862ece71e44 (/7c8eafdf-dbf8-58d1-b9b9-9862ece71e44/)
+"""
+
+NRST = io(Net)
+GND = io(Ground)
+
+_100NF_16V = Module("../../components/100nF_16V/100nF_16V.zen")
+
+_100NF_16V(name="C62", P1=NRST, P2=GND)

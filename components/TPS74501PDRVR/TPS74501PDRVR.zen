@@ -1,0 +1,26 @@
+"""
+TPS74501PDRVR
+
+Auto-generated using `pcb import`.
+"""
+
+EN = io(Net)
+EP = io(Ground)
+FB = io(Net)
+GND = io(Ground)
+# SBVS326 recommended operating conditions; output set by feedback divider.
+IN = io(Power(voltage="1.5V to 6V"))
+OUT = io(Power(voltage="0.55V to 5.5V"))
+PG = io(Net)
+
+Component(
+    name="TPS74501PDRVR",
+    properties={
+        "Footprint": "lena_b_string-gauge-daq_components_TPS74501PDRVR:TPS74x01P",
+        "Value": "TPS74501PDRVR",
+        "schematic_description": "500mA low-IQ high-PSRR adjustable LDO, open-drain PG with 150 us delay, WSON-6",
+    },
+    symbol=Symbol(library="TPS74501PDRVR.kicad_sym"),
+    pin_defs={"OUT": "1", "FB": "2", "GND": "3", "EN": "4", "PG": "5", "IN": "6", "EP": "7"},
+    pins={"OUT": OUT, "FB": FB, "GND": GND, "EN": EN, "PG": PG, "IN": IN, "EP": EP},
+)

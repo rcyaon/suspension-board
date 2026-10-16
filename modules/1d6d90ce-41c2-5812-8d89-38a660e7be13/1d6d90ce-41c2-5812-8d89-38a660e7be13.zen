@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 1d6d90ce-41c2-5812-8d89-38a660e7be13 (/1d6d90ce-41c2-5812-8d89-38a660e7be13/)
+"""
+
+LED_ERR_A = io(Net)
+GND = io(Ground)
+
+LED_RED = Module("../../components/LED_RED/LED_RED.zen")
+
+LED_RED(name="D2", A=LED_ERR_A, K=GND)

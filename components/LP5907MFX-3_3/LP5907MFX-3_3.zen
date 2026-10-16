@@ -1,0 +1,23 @@
+"""
+LP5907MFX-3_3
+
+Auto-generated using `pcb import`.
+"""
+
+EN = io(Net)
+GND = io(Ground)
+# SNVS798 sections 5.3 and 5.5; fixed 3.3V output has +/-2% tolerance.
+IN = io(Power(voltage="2.2V to 5.5V"))
+OUT = io(Power(voltage="3.234V to 3.366V"))
+
+Component(
+    name="LP5907MFX-3_3",
+    properties={
+        "Footprint": "lena_b_string-gauge-daq_components_LP5907MFX-3_3:SOT-23-5",
+        "Value": "LP5907MFX-3.3",
+        "schematic_description": "250-mA Ultra-Low-Noise Low-IQ LDO, 3.3V, SOT-23",
+    },
+    symbol=Symbol(library="LP5907MFX-3_3.kicad_sym"),
+    pin_defs={"IN": "1", "GND": "2", "EN": "3", "NC": "4", "OUT": "5"},
+    pins={"IN": IN, "GND": GND, "EN": EN, "OUT": OUT},
+)

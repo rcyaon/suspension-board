@@ -1,0 +1,15 @@
+"""
+suspension-load-daq sheet module: 9c5f544f-0429-5431-8146-4e0dea7730ec (/9c5f544f-0429-5431-8146-4e0dea7730ec/)
+"""
+
+LDO_3V3_PWR_LDO_3V3_FB = io(Net)
+V3V3 = io(Power(voltage="2.7V to 3.6V"))
+
+_10NF = Module("../../components/10nF/10nF.zen")
+
+_10NF(
+    name="C85",
+    dnp=True,
+    P1=V3V3,
+    P2=LDO_3V3_PWR_LDO_3V3_FB,
+)

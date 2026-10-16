@@ -1,0 +1,21 @@
+"""
+suspension-load-daq sheet module: 6b365059-de8e-52fb-8773-70cacc8cc1df (/6b365059-de8e-52fb-8773-70cacc8cc1df/)
+"""
+
+CH3_IN_N = io(Net)
+CH3_IN_P = io(Net)
+CH3_QTR = io(Net)
+EXC = io(Power(voltage="0V to 15V"))
+GND = io(Ground)
+
+B6B_PH_K_S = Module("../../components/B6B-PH-K-S/B6B-PH-K-S.zen")
+
+B6B_PH_K_S(
+    name="J8",
+    PIN_1=EXC,
+    PIN_2=CH3_IN_P,
+    PIN_3=CH3_IN_N,
+    PIN_4=GND,
+    PIN_5=CH3_QTR,
+    PIN_6=GND,
+)

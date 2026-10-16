@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 4870f717-dce8-526e-b7b0-dc75d6a9cc5c (/4870f717-dce8-526e-b7b0-dc75d6a9cc5c/)
+"""
+
+BUCK_PWR_BUCK_FB = io(Net)
+V5_BUCK = io(Power(voltage="4.5V to 5.5V"))
+
+_0 = Module("../../components/0/0.zen")
+
+_0(name="R67", P1=V5_BUCK, P2=BUCK_PWR_BUCK_FB)

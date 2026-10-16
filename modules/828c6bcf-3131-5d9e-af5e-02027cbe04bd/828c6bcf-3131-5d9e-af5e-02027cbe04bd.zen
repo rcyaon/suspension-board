@@ -1,0 +1,30 @@
+"""
+suspension-load-daq sheet module: 828c6bcf-3131-5d9e-af5e-02027cbe04bd (/828c6bcf-3131-5d9e-af5e-02027cbe04bd/)
+"""
+
+SD_CLK = io(Net)
+SD_CMD = io(Net)
+SD_DAT0 = io(Net)
+SD_DAT1 = io(Net)
+SD_DAT2 = io(Net)
+SD_DAT3 = io(Net)
+SD_DET = io(Net)
+GND = io(Ground)
+V3V3 = io(Power(voltage="2.7V to 3.6V"))
+
+DM3D_SF = Module("../../components/DM3D-SF/DM3D-SF.zen")
+
+DM3D_SF(
+    name="J17",
+    CLK=SD_CLK,
+    CMD=SD_CMD,
+    DAT0=SD_DAT0,
+    DAT1=SD_DAT1,
+    DAT2=SD_DAT2,
+    DAT3_CD=SD_DAT3,
+    DET_A=SD_DET,
+    DET_B=GND,
+    SHIELD=GND,
+    VDD=V3V3,
+    VSS=GND,
+)

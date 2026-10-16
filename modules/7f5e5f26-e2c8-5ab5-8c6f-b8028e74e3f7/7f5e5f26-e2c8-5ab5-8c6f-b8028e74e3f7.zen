@@ -1,0 +1,12 @@
+"""
+suspension-load-daq sheet module: 7f5e5f26-e2c8-5ab5-8c6f-b8028e74e3f7 (/7f5e5f26-e2c8-5ab5-8c6f-b8028e74e3f7/)
+"""
+
+GND = io(Ground)
+# Raw vehicle supply upstream of reverse protection: input envelope is not
+# specified by the import. Generic until defined; buck VIN is checked separately.
+VIN_VEH = io(Power)
+
+_18V_TVS_DIODE = Module("../../components/18V_TVS_Diode/18V_TVS_Diode.zen")
+
+_18V_TVS_DIODE(name="D9", A1=GND, A2=VIN_VEH)

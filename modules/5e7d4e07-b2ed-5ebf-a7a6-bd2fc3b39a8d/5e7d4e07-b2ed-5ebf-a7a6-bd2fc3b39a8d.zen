@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 5e7d4e07-b2ed-5ebf-a7a6-bd2fc3b39a8d (/5e7d4e07-b2ed-5ebf-a7a6-bd2fc3b39a8d/)
+"""
+
+GND = io(Ground)
+VDDA = io(Power(voltage="1.7V to 3.6V"))
+
+_100NF_16V = Module("../../components/100nF_16V/100nF_16V.zen")
+
+_100NF_16V(name="C70", P1=VDDA, P2=GND)

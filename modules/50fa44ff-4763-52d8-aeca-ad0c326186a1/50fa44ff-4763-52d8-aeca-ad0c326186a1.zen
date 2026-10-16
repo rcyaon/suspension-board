@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 50fa44ff-4763-52d8-aeca-ad0c326186a1 (/50fa44ff-4763-52d8-aeca-ad0c326186a1/)
+"""
+
+PWR_BUCK_EN = io(Net)
+PWR_VPROT = io(Power(voltage="3V to 36V"))
+
+_100K = Module("../../components/100k/100k.zen")
+
+_100K(name="R65", P1=PWR_VPROT, P2=PWR_BUCK_EN)

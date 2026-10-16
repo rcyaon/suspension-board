@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: bc378ef3-a999-55c2-a266-57de27d790c0 (/bc378ef3-a999-55c2-a266-57de27d790c0/)
+"""
+
+ADC_CLKIN = io(Net)
+ADC_MCLK = io(Net)
+
+_33 = Module("../../components/33/33.zen")
+
+_33(name="R75", P1=ADC_MCLK, P2=ADC_CLKIN)

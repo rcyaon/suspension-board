@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 67f0017f-1e91-539e-bd67-3bb4b7758020 (/67f0017f-1e91-539e-bd67-3bb4b7758020/)
+"""
+
+VBAT_MON = io(Net)
+GND = io(Ground)
+
+_10K_1_R_0603_1608METRIC = Module("../../components/10k_1__R_0603_1608Metric/10k_1__R_0603_1608Metric.zen")
+
+_10K_1_R_0603_1608METRIC(name="R74", P1=VBAT_MON, P2=GND)

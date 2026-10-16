@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: c28df3cb-ec4a-5357-a1ea-d08e316d72da (/c28df3cb-ec4a-5357-a1ea-d08e316d72da/)
+"""
+
+SHUNT_CAL = io(Net)
+GND = io(Ground)
+
+_100K = Module("../../components/100k/100k.zen")
+
+_100K(name="R96", P1=SHUNT_CAL, P2=GND)

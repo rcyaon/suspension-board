@@ -1,0 +1,9 @@
+"""
+suspension-load-daq sheet module: 87b4de15-7aa9-5698-8b5f-96c4aee0291f (/87b4de15-7aa9-5698-8b5f-96c4aee0291f/)
+"""
+
+ADC_CLKIN = io(Net)
+
+TESTPOINT_SMALL = Module("../../components/TestPoint_Small/TestPoint_Small.zen")
+
+TESTPOINT_SMALL(name="TP1", P1=ADC_CLKIN)

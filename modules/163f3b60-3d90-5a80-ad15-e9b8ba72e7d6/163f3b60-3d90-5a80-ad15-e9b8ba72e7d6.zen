@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 163f3b60-3d90-5a80-ad15-e9b8ba72e7d6 (/163f3b60-3d90-5a80-ad15-e9b8ba72e7d6/)
+"""
+
+AUX2_V_SENSOR = io(Net)
+GND = io(Ground)
+
+_100NF_16V = Module("../../components/100nF_16V/100nF_16V.zen")
+
+_100NF_16V(name="C4", P1=AUX2_V_SENSOR, P2=GND)

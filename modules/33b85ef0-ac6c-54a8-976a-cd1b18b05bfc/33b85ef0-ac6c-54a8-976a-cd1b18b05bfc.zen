@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 33b85ef0-ac6c-54a8-976a-cd1b18b05bfc (/33b85ef0-ac6c-54a8-976a-cd1b18b05bfc/)
+"""
+
+VBAT_MON = io(Net)
+PWR_VPROT = io(Power(voltage="3V to 36V"))
+
+_100K_1 = Module("../../components/100k_1/100k_1.zen")
+
+_100K_1(name="R73", P1=PWR_VPROT, P2=VBAT_MON)

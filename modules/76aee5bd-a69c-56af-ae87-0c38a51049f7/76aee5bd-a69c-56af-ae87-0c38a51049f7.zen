@@ -1,0 +1,30 @@
+"""
+suspension-load-daq sheet module: 76aee5bd-a69c-56af-ae87-0c38a51049f7 (/76aee5bd-a69c-56af-ae87-0c38a51049f7/)
+"""
+
+BUCK_PWR_BUCK_FB = io(Net)
+PWR_BUCK_EN = io(Net)
+PWR_BUCK_MODE_SYNC = io(Net)
+GND = io(Ground)
+PWR_BUCK_VCC = io(Power(voltage="3.1V to 3.5V"))
+PWR_VPROT = io(Power(voltage="3V to 36V"))
+V5_BUCK = io(Power(voltage="4.5V to 5.5V"))
+
+PWR_BUCK_PGOOD = Net("/PWR_BUCK_PGOOD")
+
+TPSM33610S5QRDNRQ1 = Module("../../components/TPSM33610S5QRDNRQ1/TPSM33610S5QRDNRQ1.zen")
+
+TPSM33610S5QRDNRQ1(
+    name="U4",
+    BOOT=NotConnected(),
+    EN=PWR_BUCK_EN,
+    FB=BUCK_PWR_BUCK_FB,
+    GND=GND,
+    MODE_SYNC=PWR_BUCK_MODE_SYNC,
+    PGOOD=PWR_BUCK_PGOOD,
+    SW_5=NotConnected(),
+    SW_6=NotConnected(),
+    VCC=PWR_BUCK_VCC,
+    VIN=PWR_VPROT,
+    VOUT=V5_BUCK,
+)

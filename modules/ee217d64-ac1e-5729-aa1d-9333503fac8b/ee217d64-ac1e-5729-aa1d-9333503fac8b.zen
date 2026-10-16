@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: ee217d64-ac1e-5729-aa1d-9333503fac8b (/ee217d64-ac1e-5729-aa1d-9333503fac8b/)
+"""
+
+CH0_CAL = io(Net)
+CH0_IN_P = io(Net)
+
+_100K_0_1 = Module("../../components/100k_0_1/100k_0_1.zen")
+
+_100K_0_1(name="R9", P1=CH0_IN_P, P2=CH0_CAL)

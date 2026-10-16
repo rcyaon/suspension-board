@@ -1,0 +1,26 @@
+"""
+suspension-load-daq sheet module: ce92f33b-b5ee-566d-91aa-04935ed1a8a1 (/ce92f33b-b5ee-566d-91aa-04935ed1a8a1/)
+"""
+
+EXC_SET = io(Net)
+EXC_EN = io(Net)
+EXC = io(Power(voltage="0V to 15V"))
+EXC_VIN_FILT = io(Power(voltage="1.8V to 20V"))
+GND = io(Ground)
+
+LT3042XMSE = Module("../../components/LT3042xMSE/LT3042xMSE.zen")
+
+LT3042XMSE(
+    name="U2",
+    EN_UV=EXC_EN,
+    GND_11=GND,
+    GND_8=GND,
+    ILIM=GND,
+    IN_1=EXC_VIN_FILT,
+    IN_2=EXC_VIN_FILT,
+    OUT=EXC,
+    OUTS=EXC,
+    PG=NotConnected(),
+    PGFB=EXC_VIN_FILT,
+    SET=EXC_SET,
+)

@@ -1,0 +1,11 @@
+"""
+suspension-load-daq sheet module: 7d4f95cc-230e-5a50-9dfa-2459198c1824 (/7d4f95cc-230e-5a50-9dfa-2459198c1824/)
+"""
+
+# Local ADS131M08 digital-core LDO decoupling domain, not an external supply.
+ADC_CAP = io(Power)
+GND = io(Ground)
+
+_220NF_16V = Module("../../components/220nF_16V/220nF_16V.zen")
+
+_220NF_16V(name="C45", P1=ADC_CAP, P2=GND)

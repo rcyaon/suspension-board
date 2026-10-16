@@ -1,0 +1,15 @@
+"""
+suspension-load-daq sheet module: b6f6fcc2-9abf-5124-bd70-3a327c9b85e5 (/b6f6fcc2-9abf-5124-bd70-3a327c9b85e5/)
+"""
+
+CH5_HALF_MID = io(Net)
+GND = io(Ground)
+
+_350_0_1 = Module("../../components/350_0_1/350_0_1.zen")
+
+_350_0_1(
+    name="R43",
+    dnp=True,
+    P1=CH5_HALF_MID,
+    P2=GND,
+)

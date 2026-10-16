@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 353454da-7971-55ab-a653-1fbe36c70b30 (/353454da-7971-55ab-a653-1fbe36c70b30/)
+"""
+
+LED_ERR = io(Net)
+LED_ERR_A = io(Net)
+
+_1K = Module("../../components/1k/1k.zen")
+
+_1K(name="R84", P1=LED_ERR, P2=LED_ERR_A)

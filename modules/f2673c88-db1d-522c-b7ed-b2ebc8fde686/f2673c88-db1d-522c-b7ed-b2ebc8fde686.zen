@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: f2673c88-db1d-522c-b7ed-b2ebc8fde686 (/f2673c88-db1d-522c-b7ed-b2ebc8fde686/)
+"""
+
+GND = io(Ground)
+V5_BUCK = io(Power(voltage="4.5V to 5.5V"))
+
+_22UF_16V_X7R = Module("../../components/22uF_16V_X7R/22uF_16V_X7R.zen")
+
+_22UF_16V_X7R(name="C76", P1=V5_BUCK, P2=GND)

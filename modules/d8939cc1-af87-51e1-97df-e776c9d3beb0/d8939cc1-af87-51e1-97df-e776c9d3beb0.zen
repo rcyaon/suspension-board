@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: d8939cc1-af87-51e1-97df-e776c9d3beb0 (/d8939cc1-af87-51e1-97df-e776c9d3beb0/)
+"""
+
+AIN3N = io(Net)
+GND = io(Ground)
+
+_1NF_5_50V_C0G = Module("../../components/1nF_5_50V_C0G/1nF_5_50V_C0G.zen")
+
+_1NF_5_50V_C0G(name="C23", P1=AIN3N, P2=GND)

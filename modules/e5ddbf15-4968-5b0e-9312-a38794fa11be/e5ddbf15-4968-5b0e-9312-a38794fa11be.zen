@@ -1,0 +1,31 @@
+"""
+suspension-load-daq sheet module: e5ddbf15-4968-5b0e-9312-a38794fa11be (/e5ddbf15-4968-5b0e-9312-a38794fa11be/)
+"""
+
+GPIO_PA1 = io(Net)
+GPIO_PA10 = io(Net)
+I2C_SCL = io(Net)
+I2C_SDA = io(Net)
+UART_RX = io(Net)
+UART_TX = io(Net)
+GND = io(Ground)
+V3V3 = io(Power(voltage="2.7V to 3.6V"))
+V5 = io(Power(voltage="2.2V to 5.5V"))
+
+_2_54MM_5_X_2_THT_VERTICAL_MALE = Module(
+    "../../components/2_54mm_5_x_2_THT_Vertical_Male/2_54mm_5_x_2_THT_Vertical_Male.zen"
+)
+
+_2_54MM_5_X_2_THT_VERTICAL_MALE(
+    name="J13",
+    PIN_1=V3V3,
+    PIN_10=GPIO_PA10,
+    PIN_2=V5,
+    PIN_3=GND,
+    PIN_4=GND,
+    PIN_5=UART_TX,
+    PIN_6=UART_RX,
+    PIN_7=I2C_SCL,
+    PIN_8=I2C_SDA,
+    PIN_9=GPIO_PA1,
+)

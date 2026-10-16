@@ -1,0 +1,15 @@
+"""
+suspension-load-daq sheet module: 7aeb86de-0cb6-520f-bbc9-af0f250aef3c (/7aeb86de-0cb6-520f-bbc9-af0f250aef3c/)
+"""
+
+AUX2 = io(Net)
+GND = io(Ground)
+
+_18K_1 = Module("../../components/18k_1/18k_1.zen")
+
+_18K_1(
+    name="R3",
+    dnp=True,
+    P1=AUX2,
+    P2=GND,
+)

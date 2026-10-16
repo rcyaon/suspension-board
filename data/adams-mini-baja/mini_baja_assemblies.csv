@@ -1,0 +1,24 @@
+Assembly,Class,Major role,Minor role,Template,Subsystem file,Subsystem mass (kg)
+baja_fr_susp.asy,suspension,suspension,front,_double_wishbone.tpl,baja_front_suspension.sub,83.500936
+baja_fr_susp.asy,suspension,steering,front,_baja_steering.tpl,baja_steering.sub,8.490745
+baja_fr_susp.asy,suspension,TOTAL,,,,91.991681
+baja_full_vehicle_rdw.asy,full_vehicle,suspension,front,_double_wishbone.tpl,baja_front_suspension.sub,83.500936
+baja_full_vehicle_rdw.asy,full_vehicle,suspension,rear,_double_wishbone.tpl,baja_dw_rear.sub,54.219234
+baja_full_vehicle_rdw.asy,full_vehicle,steering,front,_baja_steering.tpl,baja_steering.sub,8.490745
+baja_full_vehicle_rdw.asy,full_vehicle,wheel,front,_handling_tire.tpl,baja_front_tires.sub,20.0
+baja_full_vehicle_rdw.asy,full_vehicle,wheel,rear,_handling_tire.tpl,baja_rear_tires_large.sub,20.0
+baja_full_vehicle_rdw.asy,full_vehicle,body,any,_baja_body.tpl,baja_frame.sub,42.918608
+baja_full_vehicle_rdw.asy,full_vehicle,brake_system,any,_brake_system_4Wdisk.tpl,baja_4w_brakes.sub,0.0
+baja_full_vehicle_rdw.asy,full_vehicle,powertrain,rear,_powertrain.tpl,baja_powertrain.sub,27.5
+baja_full_vehicle_rdw.asy,full_vehicle,TOTAL,,,,256.629523
+baja_full_vehicle_swingarm.asy,full_vehicle,suspension,front,_double_wishbone.tpl,baja_front_suspension.sub,83.500936
+baja_full_vehicle_swingarm.asy,full_vehicle,suspension,rear,_baja_swingarm.tpl,baja_swingarm.sub,12.618783
+baja_full_vehicle_swingarm.asy,full_vehicle,steering,front,_baja_steering.tpl,baja_steering.sub,8.490745
+baja_full_vehicle_swingarm.asy,full_vehicle,wheel,front,_handling_tire.tpl,baja_front_tires.sub,20.0
+baja_full_vehicle_swingarm.asy,full_vehicle,wheel,rear,_handling_tire.tpl,baja_rear_tires.sub,20.0
+baja_full_vehicle_swingarm.asy,full_vehicle,body,any,_baja_body.tpl,baja_frame.sub,42.918608
+baja_full_vehicle_swingarm.asy,full_vehicle,brake_system,any,_baja_brakes_inboard_rear.tpl,baja_3_brakes.sub,0.0
+baja_full_vehicle_swingarm.asy,full_vehicle,powertrain,rear,_baja_powertrain_direct.tpl,baja_powertrain_direct.sub,23.5
+baja_full_vehicle_swingarm.asy,full_vehicle,TOTAL,,,,211.029072
+baja_rear_dw.asy,suspension,suspension,rear,_double_wishbone.tpl,baja_dw_rear.sub,54.219234
+baja_rear_dw.asy,suspension,TOTAL,,,,54.219234

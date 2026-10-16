@@ -1,0 +1,22 @@
+"""
+KMR211NGLFS
+
+Auto-generated using `pcb import`.
+"""
+
+P1_1 = io(Net)
+P1_4 = io(Net)
+P2_2 = io(Net)
+P2_3 = io(Net)
+
+Component(
+    name="KMR211NGLFS",
+    properties={
+        "Footprint": "lena_b_string-gauge-daq_components_KMR211NGLFS:KMR2x1NGLFS",
+        "Value": "KMR211NGLFS",
+        "schematic_description": "Tactile switch SPST-NO, 1.2N, 32V 50mA, silver contacts, IP40, 4.2x2.8mm SMD gullwing",
+    },
+    symbol=Symbol(library="KMR211NGLFS.kicad_sym"),
+    pin_defs={"1__1": "1", "2__2": "2", "2__3": "3", "1__4": "4"},
+    pins={"1__1": P1_1, "2__2": P2_2, "2__3": P2_3, "1__4": P1_4},
+)

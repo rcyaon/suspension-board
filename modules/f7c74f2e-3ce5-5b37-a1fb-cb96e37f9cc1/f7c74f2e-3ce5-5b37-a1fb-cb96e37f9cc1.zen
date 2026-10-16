@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: f7c74f2e-3ce5-5b37-a1fb-cb96e37f9cc1 (/f7c74f2e-3ce5-5b37-a1fb-cb96e37f9cc1/)
+"""
+
+GND = io(Ground)
+V3V3 = io(Power(voltage="2.7V to 3.6V"))
+
+_1UF_6_3V = Module("../../components/1uF_6_3V/1uF_6_3V.zen")
+
+_1UF_6_3V(name="C10", P1=V3V3, P2=GND)

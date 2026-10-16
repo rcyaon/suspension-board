@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 9500c6c5-fae4-5e35-9be0-56e7df0f7099 (/9500c6c5-fae4-5e35-9be0-56e7df0f7099/)
+"""
+
+USB_CC1 = io(Net)
+GND = io(Ground)
+
+_5_1K_1 = Module("../../components/5_1k_1/5_1k_1.zen")
+
+_5_1K_1(name="R82", P1=USB_CC1, P2=GND)
