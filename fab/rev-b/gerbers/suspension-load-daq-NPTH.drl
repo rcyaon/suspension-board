@@ -1,0 +1,23 @@
+M48
+; DRILL file KiCad 10.0.7+diode.ci371.g6ee082d497fe-0diode1~deb13u1 date 2026-10-19T18:48:58
+; FORMAT={-:-/ absolute / metric / decimal}
+; #@! TF.CreationDate,2026-10-19T18:48:58+00:00
+; #@! TF.GenerationSoftware,Kicad,Pcbnew,10.0.7+diode.ci371.g6ee082d497fe-0diode1~deb13u1
+; #@! TF.FileFunction,NonPlated,1,4,NPTH
+FMAT,2
+METRIC
+; #@! TA.AperFunction,NonPlated,NPTH,ComponentDrill
+T1C0.650
+; #@! TA.AperFunction,NonPlated,NPTH,ComponentDrill
+T2C0.991
+%
+G90
+G05
+T1
+X192.72Y-150.11
+X192.72Y-155.89
+T2
+X178.66Y-149.9
+X183.74Y-148.884
+X183.74Y-150.916
+M30

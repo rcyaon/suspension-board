@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: 42c85b78-310c-59ab-acf1-6f20bdacd00c (/42c85b78-310c-59ab-acf1-6f20bdacd00c/)
+"""
+
+MCU_LSE_IN = io(Net)
+MCU_LSE_OUT = io(Net)
+
+_32_768KHZ_7PF = Module("../../components/32_768kHz_7pF/32_768kHz_7pF.zen")
+
+_32_768KHZ_7PF(name="Y2", P1=MCU_LSE_IN, P2=MCU_LSE_OUT)

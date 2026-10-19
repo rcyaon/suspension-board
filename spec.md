@@ -43,6 +43,7 @@ The legacy circuit uses CH0–CH7: these correspond to requirement channels 1–
 - Aux inputs accept any three-wire ratiometric position sensor on MCU 12-bit ADC1: shock linear pot, Hall-effect arm-angle sensor (e.g. TI DRV5055, VDDA-supplied), rotary ride-height sensor or string pot. Linear pots are not rated for mud/dust; prefer sealed or contactless sensors for field runs. Quadrature/digital encoders are not supported on the aux inputs.
 - Supply jumper selects VDDA or 5 V for active sensors such as brake pressure.
 - Populate the divider option for 0–5 V sensors so the MCU pin sees ≤3.2 V. Protection includes 10 kΩ series resistance and must survive a 14.4 V signal-wire short with ≤5 mA injected into the pin, recover without damage, and retain ≥200 Hz bandwidth.
+- Each AUX node has a BAT54WS-class Schottky (D10–D13) to V3V3 after the 10 kΩ series resistor. STM32F412 ADC pins are FT I/Os that allow no positive injection, so a 14.4 V wire short (~1.1 mA) is clamped near the 3.3 V rail. V3V3 is used instead of VDDA so fault current does not pass through the FB1 VDDA filter; the clamp level is the same.
 - Vehicle battery voltage is divided to a fifth ADC1 input.
 - Analog inputs are not 5 V tolerant in analog mode. Existing protection/divider/filter populations still require test and worst-case review; choosing a jumper does not make an MCU ADC input 5 V tolerant.
 
@@ -81,7 +82,7 @@ PB2 is also BOOT1: R64 holds it low during reset; R80's conflicting reset pull-u
 
 ## Power and budget
 
-Vehicle 12 V → harness fuse → TVS / reverse-polarity protection → ≥36 V-rated 5 V buck → diode OR with USB-C 5 V → 5 V system rail. Linear regulation produces 3.3 V digital; ferrite plus low-noise LDO produces 3.3 V ADC analog; LT3042 produces 2.49 V excitation. Switching output must not directly feed analog circuitry.
+Vehicle 12 V → harness fuse → TVS / reverse-polarity protection → ≥36 V-rated 5 V buck → diode OR with USB-C 5 V → 5 V system rail. The OR diodes D6/D7 are RB168MM-40 low-leakage 40 V Schottkys; the V5 rail is therefore 3.8–5.25 V (USB 4.4 V minimum less about 0.5 V), and downstream LDO/LT3042 headroom is checked against that range. Linear regulation produces 3.3 V digital; ferrite plus low-noise LDO produces 3.3 V ADC analog; LT3042 produces 2.49 V excitation. Switching output must not directly feed analog circuitry.
 
 - Vehicle operating input **9–16 V**. Survive reverse battery and specified load-dump-type spikes without damage. A concrete transient waveform/source impedance is still needed for an energy qualification.
 - USB-only runs all measurement, storage and download functions except CAN. No USB-to-vehicle or vehicle-to-USB back-feed.
@@ -103,7 +104,9 @@ Vehicle 12 V → harness fuse → TVS / reverse-polarity protection → ≥36 V-
 - Vibration, mud and water spray; ambient −10 to +60 °C.
 - Positively locking, gland/seal-compatible field connectors. JST PH remains a bench-only interim population; sealed family is open.
 - Separate analog section from buck, SD and USB. Route bridge pairs differentially/symmetrically; pair input resistors thermally. Place supply bypasses locally, with short complete return loops.
-- Existing four-layer 1.6 mm ENIG/black-mask stackup retained. The imported placement is not a finished floorplan: outline, mounting constraints, plane pours and routing are still incomplete.
+- Board outline 99 × 76 mm. Four-layer 1.6 mm ENIG/black mask: L1 signal + GND pour, In1 solid GND, In2 power (EXC region under the analog half, V3V3 elsewhere), L4 signal + GND pour; JLCPCB standard 0.1 mm track/space and 0.3/0.6 mm vias.
+- Four plated M3 holes with GND rings and 3.5 mm keepouts on a 92.6 × 49.0 mm pattern (corners at 3.2/95.8 mm × 13.5/62.5 mm). The hole pattern is a layout assumption pending the enclosure.
+- Field connectors occupy only the top and bottom edges (bridges, AUX, power/CAN, UART/I²C). USB-C and microSD are service connectors on the right edge. JST PH footprints are retained as the bench population.
 
 ## Acceptance tests (requirements, not completed results)
 
@@ -132,7 +135,7 @@ The owner delegated these two choices for a student Baja car. The priority is re
    Fixture calibration must include the actual board, harness and sensor assembly. Use start/end **shunt increments** to normalize/check gain against the fixture baseline; a >0.5% change is a run-quality flag requiring investigation, not permission to silently rescale every error. Calibration cannot remove excitation noise, gauge thermal apparent strain, lead/bond changes or real preload. There is no claim of ±0.5% untrimmed rail accuracy or guaranteed overall force accuracy. This decision changes the original rail-accuracy acceptance; it does not relax the noise or force-calibration obligations.
 
 ## Remaining implementation / qualification blockers
-1. Choose the sealed connector family, enclosure and mounting-hole pattern before final placement. Current PCB is not within a completed <100 ×80 mm outline and remains unrouted; no manufacturing-ready claim.
+1. Choose the sealed connector family and enclosure, and confirm or adjust the assumed 92.6 × 49.0 mm M3 hole pattern. The PCB is now placed, routed, poured and DRC-clean within 99 × 76 mm, but a connector-family change would require re-placement of the edge connectors; no manufacturing-ready claim.
 2. Qualify the selected offline correction/calibration process, power budget, transients, reverse-input leakage, auxiliary fault recovery, noise and 30-minute logging on actual hardware. Load-cell channel8 gain/range requires its datasheet.
 3. Confirm actual SPI/AF configuration in CubeMX or equivalent device data before firmware/layout release. SDIO is not used, so its alternative pins need not be committed. bxCAN1 PB8/PB9 is verified from DS11139 Table11 as AF8.
 4. LT3042 ILIM/PGFB strapping is checked as allowed; physical Kelvin layout and thermal/short-circuit tests remain mandatory. Confirm steel-compensated gauge ordering codes; CEA-06-125UT-350 is the baseline, not a validated substitution list.

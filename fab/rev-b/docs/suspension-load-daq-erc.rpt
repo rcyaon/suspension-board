@@ -1,0 +1,1664 @@
+ERC report (2026-10-19T18:49:32, Encoding UTF8)
+Report includes: Errors, Warnings, Exclusions
+
+***** Sheet /
+[lib_symbol_issues]: The current configuration does not include the symbol library 'power'
+    ; warning
+    @(116.84 mm, 111.76 mm): Symbol #PWR0003 [GND]
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(121.92 mm, 76.20 mm): Label 'PWR.BUCK.PGOOD'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(177.80 mm, 109.22 mm): Label 'PWR.LDO_3V3.PG'
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(190.50 mm, 284.48 mm): Symbol #PWRc193df3aa49f567981a65619f9b92358 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(195.58 mm, 279.40 mm): Symbol #PWR11e677433e575bdfb433837245f28826 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(200.66 mm, 248.92 mm): Symbol #PWRa278454c095c5de9ae4d32ce6d8db501 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(200.66 mm, 351.79 mm): Symbol #PWRa468de02444c54ffaa0aeffc4bf1564f [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(203.20 mm, 629.92 mm): Symbol #PWR516a368cccbf5f5db3b621393023ca3c [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(210.82 mm, 182.88 mm): Symbol U3 [STM32F412CEU6]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(210.82 mm, 260.35 mm): Symbol J8 [B6B-PH-K-S]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(210.82 mm, 342.90 mm): Symbol J1 [B3B-PH-K-S]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(210.82 mm, 370.84 mm): Symbol #PWRc07b20e27a6b5b6dadc6c5ce47004ce5 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(210.82 mm, 378.46 mm): Symbol C45 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(210.82 mm, 386.08 mm): Symbol #PWR5cf2b1e785845ebd84ecdb7212d36419 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(210.82 mm, 411.48 mm): Symbol C23 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(210.82 mm, 419.10 mm): Symbol #PWRf0b1a8e5365c5d2587c57a96a490a8a5 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(210.82 mm, 436.88 mm): Symbol #PWRce68a6c7fe675c9ba13515f1e41f3cfc [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(210.82 mm, 444.50 mm): Symbol R73 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(210.82 mm, 480.06 mm): Symbol R43 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(210.82 mm, 487.68 mm): Symbol #PWRa14f3a695ab55167b9822b46f03fa3c7 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(210.82 mm, 513.08 mm): Symbol SW1 [KMR211NGLFS]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(210.82 mm, 543.56 mm): Symbol C37 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(210.82 mm, 574.04 mm): Symbol C62 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(210.82 mm, 581.66 mm): Symbol #PWR7fed56015f5051ae89e2c459ca007b3c [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(210.82 mm, 603.25 mm): Symbol R82 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(210.82 mm, 610.87 mm): Symbol #PWR5cc24500fc7a52a4b67b3c68391984db [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(210.82 mm, 636.27 mm): Symbol FB1 [FerriteBead_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(210.82 mm, 668.02 mm): Symbol TP1 [TestPoint_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(210.82 mm, 695.96 mm): Symbol R41 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(210.82 mm, 726.44 mm): Symbol R2 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(210.82 mm, 754.38 mm): Symbol R84 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(210.82 mm, 774.70 mm): Symbol JP11 [NetTie_2]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'power'
+    ; warning
+    @(215.90 mm, 226.06 mm): Symbol #PWR0001 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(218.44 mm, 629.92 mm): Symbol #PWR4da0dc9b91945cb1b8929867d44a8fb5 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(220.98 mm, 505.46 mm): Symbol #PWR19b1216efae25ae48f268732be0e9e88 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(223.52 mm, 754.38 mm): Symbol R85 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(227.33 mm, 726.44 mm): Symbol R4 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(228.60 mm, 636.27 mm): Symbol R78 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(228.60 mm, 643.89 mm): Symbol #PWRd08d2465145e54cebce2d08f50044c5e [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(228.60 mm, 695.96 mm): Symbol R46 [R_Small]
+[same_local_global_label]: Local and global labels have same name
+    ; warning
+    @(229.87 mm, 205.74 mm): Global Label 'CAN_RX'
+    @(121.92 mm, 106.68 mm): Label 'CAN_RX'
+[same_local_global_label]: Local and global labels have same name
+    ; warning
+    @(229.87 mm, 208.28 mm): Global Label 'CAN_TX'
+    @(121.92 mm, 116.84 mm): Label 'CAN_TX'
+[same_local_global_label]: Local and global labels have same name
+    ; warning
+    @(229.87 mm, 218.44 mm): Global Label 'IMU_SPI_MISO'
+    @(121.92 mm, 157.48 mm): Label 'IMU_SPI_MISO'
+[same_local_global_label]: Local and global labels have same name
+    ; warning
+    @(229.87 mm, 220.98 mm): Global Label 'IMU_SPI_MOSI'
+    @(121.92 mm, 162.56 mm): Label 'IMU_SPI_MOSI'
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(229.87 mm, 436.88 mm): Symbol #PWR0a076625ac8f5f758f03babd417f3b8e [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(229.87 mm, 444.50 mm): Symbol R12 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(229.87 mm, 603.25 mm): Symbol R83 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(229.87 mm, 610.87 mm): Symbol #PWRb4f6cc9b835e57d09e5557afb9454a2f [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(231.14 mm, 472.44 mm): Symbol #PWR54c234ef10e15140947b9e48b59cc197 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(231.14 mm, 480.06 mm): Symbol R48 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(231.14 mm, 513.08 mm): Symbol D4 [LED_Small_Filled_Blue]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(231.14 mm, 520.70 mm): Symbol #PWR1ad80fbeca2b5207a1faca4b01c9903c [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(231.14 mm, 574.04 mm): Symbol R9 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(233.68 mm, 284.48 mm): Symbol #PWR6a8cc8d3c0dc5ba6aa0db51f596f6649 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(234.95 mm, 378.46 mm): Symbol C63 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(234.95 mm, 386.08 mm): Symbol #PWR9aaddb79649f5f98803e130038297ba0 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(237.49 mm, 668.02 mm): Symbol R10 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(238.76 mm, 279.40 mm): Symbol #PWR672f90c5a7b257658956d8294be7ce8f [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(238.76 mm, 411.48 mm): Symbol C24 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(238.76 mm, 419.10 mm): Symbol #PWR609f51513c625c95b2e176b92783de49 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(238.76 mm, 754.38 mm): Symbol TP6 [TestPoint_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(238.76 mm, 759.46 mm): Symbol #PWR17c71e8ea7c5561da71152f55f2ebd0b [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(240.03 mm, 351.79 mm): Symbol #PWR9a9ad985aebd5decbee0e72d82f6fc23 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(240.03 mm, 543.56 mm): Symbol C41 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(242.57 mm, 774.70 mm): Symbol JP12 [NetTie_2]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(243.84 mm, 248.92 mm): Symbol #PWR2f453e2a6263560da6090fc1c92a4f8c [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(243.84 mm, 636.27 mm): Symbol R79 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(243.84 mm, 643.89 mm): Symbol #PWRa12b407392af53158b85e90fe8f76865 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(243.84 mm, 726.44 mm): Symbol R6 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(246.38 mm, 695.96 mm): Symbol R47 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(247.65 mm, 309.88 mm): Symbol Q1 [PJE138K_R1_00001]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(248.92 mm, 603.25 mm): Symbol C1 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(248.92 mm, 610.87 mm): Symbol #PWR33f8ee23ebee5ea68b82e109c2c0b2c5 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(250.19 mm, 342.90 mm): Symbol J2 [B3B-PH-K-S]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(250.19 mm, 444.50 mm): Symbol R13 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(250.19 mm, 452.12 mm): Symbol #PWRdce204d462465deeb5c7086cb8b6da47 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(251.46 mm, 480.06 mm): Symbol R49 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(251.46 mm, 487.68 mm): Symbol #PWRb1790550ec6f5bbc8ca9aa76b2578972 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(251.46 mm, 505.46 mm): Symbol #PWR419cfb4470b4515393e344275cd90078 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(251.46 mm, 513.08 mm): Symbol C84 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(251.46 mm, 520.70 mm): Symbol #PWRc0279e36a16657ffa2476d45aa2e65ca [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(251.46 mm, 574.04 mm): Symbol R15 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(254.00 mm, 175.26 mm): Symbol #PWRa735e22c0f8851f2ac8a0b44c351801a [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(254.00 mm, 182.88 mm): Symbol C14 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(254.00 mm, 190.50 mm): Symbol #PWRda6f2519eebe5e58a5e46b0f1a0f36cf [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(254.00 mm, 260.35 mm): Symbol J9 [B6B-PH-K-S]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(254.00 mm, 317.50 mm): Symbol #PWRbdbba6ecc8e758a48e8aa3edbc8cba5f [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(255.27 mm, 668.02 mm): Symbol R11 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(256.54 mm, 378.46 mm): Symbol C2 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(256.54 mm, 386.08 mm): Symbol #PWR5438412d05e25830a3d515d7939eadb7 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(259.08 mm, 636.27 mm): Symbol TP4 [TestPoint_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(259.08 mm, 641.35 mm): Symbol #PWR074a6af12fd254b3bc0497a966322cef [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(260.35 mm, 726.44 mm): Symbol R8 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(264.16 mm, 695.96 mm): Symbol R52 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(266.70 mm, 411.48 mm): Symbol C27 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(266.70 mm, 419.10 mm): Symbol #PWR5dc8b512be425fa8889187f3370e9e7b [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(266.70 mm, 754.38 mm): Symbol TP3 [TestPoint_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(266.70 mm, 759.46 mm): Symbol #PWRd7ebceaa771258a08ce569826cab2397 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(269.24 mm, 535.94 mm): Symbol #PWR5abeac4be83458538c43d12752e7b283 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(269.24 mm, 543.56 mm): Symbol C50 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(269.24 mm, 551.18 mm): Symbol #PWRa6963eaae95b51cab363a79cbd7c091e [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(269.24 mm, 603.25 mm): Symbol C3 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(269.24 mm, 610.87 mm): Symbol #PWR2f8af36fe9bc5416a56aa033d0cb9105 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(270.51 mm, 436.88 mm): Symbol #PWR75471ef5444c50d69cdf5666ac6abe97 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(270.51 mm, 444.50 mm): Symbol R18 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(271.78 mm, 472.44 mm): Symbol #PWRf3fe0a723b2a5a6bb3c0e7b2cd651018 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(271.78 mm, 480.06 mm): Symbol R54 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(271.78 mm, 505.46 mm): Symbol #PWR794718d528305a1eb69b98654589ecde [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(271.78 mm, 513.08 mm): Symbol R87 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(271.78 mm, 574.04 mm): Symbol R21 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(273.05 mm, 668.02 mm): Symbol R16 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(274.32 mm, 774.70 mm): Symbol JP13 [NetTie_2]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(275.59 mm, 182.88 mm): Symbol C18 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(275.59 mm, 309.88 mm): Symbol Q2 [PJE138K_R1_00001]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(276.86 mm, 284.48 mm): Symbol #PWRbe1cb11af13a5f4f8d6b236f32860629 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(276.86 mm, 726.44 mm): Symbol R81 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(278.13 mm, 378.46 mm): Symbol C4 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(278.13 mm, 386.08 mm): Symbol #PWR5e84431eb82252fe93b2ff5adb57dd86 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(279.40 mm, 351.79 mm): Symbol #PWRfd15381639ac5a13877316535c17dc4a [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(281.94 mm, 279.40 mm): Symbol #PWR07ea68cada85518e95312ab3fb21e4b3 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(281.94 mm, 317.50 mm): Symbol #PWR18f41e0bae4f5a58ac2d50ba041d5a47 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(281.94 mm, 695.96 mm): Symbol R53 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(287.02 mm, 248.92 mm): Symbol #PWRef710cbad78d594e92a6207a00a4e7ba [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(287.02 mm, 636.27 mm): Symbol R1 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(287.02 mm, 643.89 mm): Symbol #PWR2be89fa189cc5143bcbb479e6a234d02 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(288.29 mm, 543.56 mm): Symbol D2 [LED_Small_Filled_Red]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(288.29 mm, 551.18 mm): Symbol #PWR37fc465fbb93585783092d23981bb55b [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(289.56 mm, 342.90 mm): Symbol J3 [B3B-PH-K-S]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(289.56 mm, 603.25 mm): Symbol C5 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(289.56 mm, 610.87 mm): Symbol #PWR08176276d01e5064acab2a6a50811486 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(290.83 mm, 444.50 mm): Symbol R19 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(290.83 mm, 452.12 mm): Symbol #PWRf7f6559433c4501a884d2bfb4b520b96 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(290.83 mm, 668.02 mm): Symbol R17 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(292.10 mm, 480.06 mm): Symbol R55 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(292.10 mm, 487.68 mm): Symbol #PWR8a76eeb931fe5c6c9778c2c0e1b37115 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(292.10 mm, 513.08 mm): Symbol R88 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(292.10 mm, 520.70 mm): Symbol #PWR7a9fd4e470285e7b902cb09c074c838c [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(292.10 mm, 574.04 mm): Symbol R27 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(294.64 mm, 411.48 mm): Symbol C28 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(294.64 mm, 419.10 mm): Symbol #PWR72e5e2166e295c68b60a7eb249ea7499 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(294.64 mm, 754.38 mm): Symbol TP5 [TestPoint_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(294.64 mm, 759.46 mm): Symbol #PWR42c9cdcf21265c04987856f4ae6daa0a [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(297.18 mm, 182.88 mm): Symbol C22 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(297.18 mm, 260.35 mm): Symbol J10 [B6B-PH-K-S]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(299.72 mm, 378.46 mm): Symbol C6 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(299.72 mm, 386.08 mm): Symbol #PWRaaf6b37cef0058d5a5c2d518a28cf126 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(300.99 mm, 688.34 mm): Symbol #PWR573604aa208d54deaafa9f594abcf5e5 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(300.99 mm, 695.96 mm): Symbol R89 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(303.53 mm, 309.88 mm): Symbol Q3 [PJE138K_R1_00001]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(304.80 mm, 636.27 mm): Symbol R3 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(304.80 mm, 643.89 mm): Symbol #PWRb65387d804165811babf4804499292c7 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(304.80 mm, 772.16 mm): Symbol D10 [D_Schottky_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(307.34 mm, 543.56 mm): Symbol R14 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(307.34 mm, 551.18 mm): Symbol #PWR9db0202c65335422b6464b4b101633f5 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(308.61 mm, 668.02 mm): Symbol R22 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(309.88 mm, 317.50 mm): Symbol #PWRd6b026f42a545439ac7ef403b1df3857 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(309.88 mm, 603.25 mm): Symbol C7 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(309.88 mm, 610.87 mm): Symbol #PWR3268141b3ef553ab8d5808fc12f223e5 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(311.15 mm, 436.88 mm): Symbol #PWR4643b5130e295dd289ebd62acca1d639 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(311.15 mm, 444.50 mm): Symbol R24 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(312.42 mm, 480.06 mm): Symbol C47 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(312.42 mm, 487.68 mm): Symbol #PWR4a26904023bb5ce194e5aa57ced2e31a [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(312.42 mm, 513.08 mm): Symbol C53 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(312.42 mm, 520.70 mm): Symbol #PWR9870dd165bd95a04b2d63faa48e6f256 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(312.42 mm, 574.04 mm): Symbol R33 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(316.23 mm, 688.34 mm): Symbol #PWR7f4593c2771e5530b8d69ed199b47a42 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(316.23 mm, 695.96 mm): Symbol R90 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(318.77 mm, 182.88 mm): Symbol C26 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(318.77 mm, 351.79 mm): Symbol #PWRa3673183c529552d8d695e8cdc66ec05 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(320.04 mm, 284.48 mm): Symbol #PWR96f2986132dd57cbae21d47c7a7a250f [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(321.31 mm, 378.46 mm): Symbol C8 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(321.31 mm, 386.08 mm): Symbol #PWR2620ca48cc7059d1a6a8c070892ecf5d [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(321.31 mm, 754.38 mm): Symbol TP7 [TestPoint_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(321.31 mm, 759.46 mm): Symbol #PWRd8238c6fb4c258569f79a895222dfc11 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(322.58 mm, 411.48 mm): Symbol C31 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(322.58 mm, 419.10 mm): Symbol #PWR476915bc17bf5b548bf51d40f6eaab52 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(322.58 mm, 636.27 mm): Symbol R5 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(322.58 mm, 643.89 mm): Symbol #PWRdc574c703e0159bf99e6ea06607bea3b [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(325.12 mm, 279.40 mm): Symbol #PWR03555e95c862528c8f3e21ae064cc388 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(326.39 mm, 668.02 mm): Symbol R23 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(326.39 mm, 718.82 mm): Symbol #PWR38b04f24fa39570f8876d18b73c33fb3 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(326.39 mm, 726.44 mm): Symbol R92 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(327.66 mm, 543.56 mm): Symbol R20 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(327.66 mm, 551.18 mm): Symbol #PWRe6758b8080245f3d987e05aeb8aad86c [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(328.93 mm, 342.90 mm): Symbol J4 [B3B-PH-K-S]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(328.93 mm, 596.90 mm): Symbol #PWRf6a7d6e16e0959a2854691a3d5170ffb [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(330.20 mm, 248.92 mm): Symbol #PWR223ccdcbf5c059ae8af9df396b9e93b9 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(331.47 mm, 309.88 mm): Symbol Q4 [PJE138K_R1_00001]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(331.47 mm, 444.50 mm): Symbol R25 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(331.47 mm, 452.12 mm): Symbol #PWR7ce91a8071aa5ffca61024ee08df67e6 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(331.47 mm, 695.96 mm): Symbol R63 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(331.47 mm, 703.58 mm): Symbol #PWRdfd4648921775c96ba05d0fdb5cf59c3 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(332.74 mm, 574.04 mm): Symbol R39 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(334.01 mm, 480.06 mm): Symbol D3 [LED_Small_Filled_Green]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(334.01 mm, 487.68 mm): Symbol #PWRd11913c99b1858168c0c551349a4853f [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(334.01 mm, 513.08 mm): Symbol C13 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(336.55 mm, 603.25 mm): Symbol R58 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(337.82 mm, 317.50 mm): Symbol #PWR745385f943905c398df1b571502453b1 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(340.36 mm, 182.88 mm): Symbol C30 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(340.36 mm, 260.35 mm): Symbol J11 [B6B-PH-K-S]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(340.36 mm, 636.27 mm): Symbol R7 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(340.36 mm, 643.89 mm): Symbol #PWR1b217d388e8f58f8beaeab9eef4db04a [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(340.36 mm, 718.82 mm): Symbol #PWR0aac015511bc5b25992b90b50bf39542 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(340.36 mm, 726.44 mm): Symbol R93 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(340.36 mm, 772.16 mm): Symbol D11 [D_Schottky_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(342.90 mm, 378.46 mm): Symbol C11 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(342.90 mm, 386.08 mm): Symbol #PWR4b413af4714252cd9ff86706ac1b98c4 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(344.17 mm, 596.90 mm): Symbol #PWR36235121a26551ef85f2948aec4b8b98 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(344.17 mm, 668.02 mm): Symbol R28 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(345.44 mm, 695.96 mm): Symbol R64 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(345.44 mm, 703.58 mm): Symbol #PWR5ad89cf99f7f5e5bbed4a4203fef5bbf [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(347.98 mm, 543.56 mm): Symbol R26 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(347.98 mm, 551.18 mm): Symbol #PWRbc6ccf1294055afc8189e42d28e17460 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(350.52 mm, 411.48 mm): Symbol C32 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(350.52 mm, 419.10 mm): Symbol #PWR79f6c0237647526587d68068db3ee126 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(351.79 mm, 436.88 mm): Symbol #PWRa7e52e2b610657118c82847619d0d7cd [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(351.79 mm, 444.50 mm): Symbol R30 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(353.06 mm, 574.04 mm): Symbol R45 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(354.33 mm, 718.82 mm): Symbol #PWR052f60a4cdf95df99a491a69b583a582 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(354.33 mm, 726.44 mm): Symbol R94 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(358.14 mm, 636.27 mm): Symbol R76 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(358.14 mm, 643.89 mm): Symbol #PWRc34a8915546157d59f03962b8e9da06b [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(358.14 mm, 754.38 mm): Symbol JP5 [NetTie_2]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(359.41 mm, 309.88 mm): Symbol Q5 [PJE138K_R1_00001]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(359.41 mm, 603.25 mm): Symbol R74 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(359.41 mm, 610.87 mm): Symbol #PWR4df8fff8bb5c574181337bf861484a86 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(359.41 mm, 688.34 mm): Symbol #PWR59d0d8c4aeec56aab19cf85d8aab46ce [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(359.41 mm, 695.96 mm): Symbol R77 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(361.95 mm, 182.88 mm): Symbol C34 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(361.95 mm, 342.90 mm): Symbol D1 [PESD2CANFD24V]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(361.95 mm, 473.71 mm): Symbol #PWRfacb7ee7ccdb520b92bdc2cb94191a72 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(361.95 mm, 668.02 mm): Symbol R29 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(363.22 mm, 284.48 mm): Symbol #PWR658fac729e1b5a1281f93a07557ff2b3 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(363.22 mm, 513.08 mm): Symbol C17 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(365.76 mm, 317.50 mm): Symbol #PWR159281bd0fb75648875632662cb34c1d [GND]
+[unconnected_wire_endpoint]: Unconnected wire endpoint
+    ; warning
+    @(367.03 mm, 480.06 mm): Horizontal Wire, length 5.08 mm
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(368.30 mm, 279.40 mm): Symbol #PWRe907b0b33da253cc9e73b8544e340475 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(368.30 mm, 543.56 mm): Symbol R32 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(368.30 mm, 551.18 mm): Symbol #PWR17d550d7d73c50db998188e9ca77b611 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(368.30 mm, 718.82 mm): Symbol #PWR87c31222fa23554188cdf5cb708a845f [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(368.30 mm, 726.44 mm): Symbol R95 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(370.84 mm, 378.46 mm): Symbol C12 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(370.84 mm, 386.08 mm): Symbol #PWR7eff0ec23fc557fb934926a32ebe9dd4 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(372.11 mm, 444.50 mm): Symbol R31 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(372.11 mm, 452.12 mm): Symbol #PWRf7ee2f0dab915333933dc063c138b4e9 [GND]
+[unconnected_wire_endpoint]: Unconnected wire endpoint
+    ; warning
+    @(372.11 mm, 480.06 mm): Horizontal Wire, length 5.08 mm
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(373.38 mm, 248.92 mm): Symbol #PWR31f99937b9c85b55b0a38ef6133a8616 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(373.38 mm, 574.04 mm): Symbol R51 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(373.38 mm, 628.65 mm): Symbol #PWRaeb88401c6855e9fbc35422b0a6865eb [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(373.38 mm, 636.27 mm): Symbol R86 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(373.38 mm, 695.96 mm): Symbol R57 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(373.38 mm, 703.58 mm): Symbol #PWRac18963543c2594ea28d0a8a66fdefad [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(374.65 mm, 351.79 mm): Symbol #PWRc83fd273b91a5ee28572f9fe44f4e0d5 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(375.92 mm, 603.25 mm): Symbol H1 [MountingHole_Pad]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(375.92 mm, 610.87 mm): Symbol #PWRbe7b43e7df19519da09b114fb900c70f [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(375.92 mm, 772.16 mm): Symbol D12 [D_Schottky_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(377.19 mm, 473.71 mm): Symbol #PWR97f64200b12d5b368e55a5885a37c6b7 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(378.46 mm, 411.48 mm): Symbol C35 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(378.46 mm, 419.10 mm): Symbol #PWRc31a12cab48b52849d1f32ac1372627a [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(379.73 mm, 668.02 mm): Symbol R34 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(382.27 mm, 718.82 mm): Symbol #PWR25de303727ec5f5199cfa653cbeef49e [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(382.27 mm, 726.44 mm): Symbol R91 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(383.54 mm, 182.88 mm): Symbol C38 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(383.54 mm, 260.35 mm): Symbol J12 [B6B-PH-K-S]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(383.54 mm, 332.74 mm): Symbol #PWR1f0dcb8161605cbdb337c142219f0776 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(387.35 mm, 309.88 mm): Symbol Q6 [PJE138K_R1_00001]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(387.35 mm, 695.96 mm): Symbol TP2 [TestPoint_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(388.62 mm, 337.82 mm): Symbol #PWRce2301fdc00656fd8f19395ad9efcf2d [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(388.62 mm, 543.56 mm): Symbol R38 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(388.62 mm, 551.18 mm): Symbol #PWRfb1ed4f1ba22562e85cd7cf8b11e8aa2 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(388.62 mm, 636.27 mm): Symbol R96 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(388.62 mm, 643.89 mm): Symbol #PWR0514ffbef29b5c43a4c5fb0da52053d2 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(389.89 mm, 754.38 mm): Symbol JP6 [NetTie_2]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(392.43 mm, 436.88 mm): Symbol #PWRf5e132df22da5b3a8e30650c10b2fdc7 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(392.43 mm, 444.50 mm): Symbol R36 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(392.43 mm, 513.08 mm): Symbol C21 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(393.70 mm, 317.50 mm): Symbol #PWR405cea8cfd8f5f508cc970e475dcee6a [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(394.97 mm, 566.42 mm): Symbol #PWRf918d9e9b9055961b6868610ec302c27 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(394.97 mm, 574.04 mm): Symbol R97 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(394.97 mm, 726.44 mm): Symbol R75 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(396.24 mm, 342.90 mm): Symbol JP1 [NetTie_3]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(397.51 mm, 668.02 mm): Symbol R35 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(398.78 mm, 378.46 mm): Symbol C15 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(398.78 mm, 386.08 mm): Symbol #PWRf56285fb72d457dab015ffe628bce1be [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(400.05 mm, 473.71 mm): Symbol #PWR7442ff257e2658d680fbfa56bf18742a [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(403.86 mm, 628.65 mm): Symbol #PWR20b098bb8edd517da9414e4e74ee6b99 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(403.86 mm, 636.27 mm): Symbol R80 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(405.13 mm, 182.88 mm): Symbol C42 [C_Small]
+[unconnected_wire_endpoint]: Unconnected wire endpoint
+    ; warning
+    @(405.13 mm, 480.06 mm): Horizontal Wire, length 5.08 mm
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(406.40 mm, 411.48 mm): Symbol C36 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(406.40 mm, 419.10 mm): Symbol #PWR5855e7f1bf9c52179473af6d8a8c819e [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(408.94 mm, 543.56 mm): Symbol R44 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(408.94 mm, 551.18 mm): Symbol #PWR1d4d735f53dd51d58f745ef7a7d297b5 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(408.94 mm, 603.25 mm): Symbol H2 [MountingHole_Pad]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(408.94 mm, 610.87 mm): Symbol #PWR673192a301905d759a1e6db22b6cb6ef [GND]
+[unconnected_wire_endpoint]: Unconnected wire endpoint
+    ; warning
+    @(410.21 mm, 480.06 mm): Horizontal Wire, length 5.08 mm
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(411.48 mm, 772.16 mm): Symbol D13 [D_Schottky_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(412.75 mm, 444.50 mm): Symbol R37 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(412.75 mm, 452.12 mm): Symbol #PWR671aa66ed23658379b5462346a36d4e9 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(412.75 mm, 574.04 mm): Symbol R98 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(412.75 mm, 581.66 mm): Symbol #PWRade4a75890d75dd6bea3db752099dc0b [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(415.29 mm, 309.88 mm): Symbol Q7 [PJE138K_R1_00001]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(415.29 mm, 473.71 mm): Symbol #PWRa3aec1f30b755e5bb10ccf69d1ace902 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(415.29 mm, 668.02 mm): Symbol R40 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(419.10 mm, 332.74 mm): Symbol #PWRa6ca052e0f0152b485530b31c6566202 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(421.64 mm, 317.50 mm): Symbol #PWRe8cb38f320655761ae5f122c0245bef6 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(421.64 mm, 513.08 mm): Symbol C25 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(421.64 mm, 754.38 mm): Symbol JP7 [NetTie_2]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(422.91 mm, 260.35 mm): Symbol D5 [TPD4E02B04DQAR]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(422.91 mm, 280.67 mm): Symbol #PWRb32018e1503b55e098aa90744ffc0b4f [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(424.18 mm, 337.82 mm): Symbol #PWRa5c098e97b085b24be16d78d405bbb11 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(426.72 mm, 182.88 mm): Symbol C52 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(426.72 mm, 378.46 mm): Symbol C16 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(426.72 mm, 386.08 mm): Symbol #PWRf026436409ee5544b6d51fa56a5f8c4c [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(429.26 mm, 543.56 mm): Symbol R50 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(429.26 mm, 551.18 mm): Symbol #PWR15991702df2d537e8489c169aff07356 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(429.26 mm, 567.69 mm): Symbol #PWRa64665ce63cd50f38060d9321026e004 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(431.80 mm, 342.90 mm): Symbol JP2 [NetTie_3]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(433.07 mm, 436.88 mm): Symbol #PWR3af308e4b47b5479a1f7d6ac9ead0db9 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(433.07 mm, 444.50 mm): Symbol R42 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(434.34 mm, 411.48 mm): Symbol C39 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(434.34 mm, 419.10 mm): Symbol #PWR20c838a19a4b52c7b288701a69912cfe [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(436.88 mm, 574.04 mm): Symbol FB2 [FerriteBead_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(438.15 mm, 473.71 mm): Symbol #PWR5b3000c29ebc5465b5e32df97a3867f2 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(441.96 mm, 603.25 mm): Symbol H3 [MountingHole_Pad]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(441.96 mm, 610.87 mm): Symbol #PWRdc99d514ddcc5a2b9b3fd807c9dec41a [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(443.23 mm, 309.88 mm): Symbol Q8 [PJE138K_R1_00001]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(444.50 mm, 567.69 mm): Symbol #PWR50036d87f50555e8ac4d4bcec186cd9c [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(445.77 mm, 480.06 mm): Symbol D8 [D_Schottky_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(449.58 mm, 317.50 mm): Symbol #PWRae838f9282535bc1bc5a3798a6262388 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(449.58 mm, 543.56 mm): Symbol R56 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(449.58 mm, 551.18 mm): Symbol #PWR90010ac74baf5109ba82a3c360baa290 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(450.85 mm, 513.08 mm): Symbol C29 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(452.12 mm, 175.26 mm): Symbol #PWR336a4385ccc05823a21e16356995ec89 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(452.12 mm, 182.88 mm): Symbol C46 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(452.12 mm, 190.50 mm): Symbol #PWRf49d1fd3b03b5ffba7b401085933915b [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(453.39 mm, 473.71 mm): Symbol #PWR8be0c2d55de05fdb98396ba583348932 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(453.39 mm, 754.38 mm): Symbol JP8 [NetTie_2]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(454.66 mm, 332.74 mm): Symbol #PWR82671e4363525f9bbbf73f0af2808e53 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(454.66 mm, 378.46 mm): Symbol C19 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(454.66 mm, 386.08 mm): Symbol #PWR7b49af9a1a37566b80a13edd531e8ef3 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(455.93 mm, 276.86 mm): Symbol #PWR013ba04ef9525f72a1601cbce553ceb7 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(459.74 mm, 337.82 mm): Symbol #PWR8f1249ff1e7354beaf06b751037000a4 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(461.01 mm, 248.92 mm): Symbol #PWR618f104e500e55d8855f5b1483792ba5 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(462.28 mm, 411.48 mm): Symbol C40 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(462.28 mm, 419.10 mm): Symbol #PWRf055f70fd03b585cb836865a8bb06f5f [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(463.55 mm, 309.88 mm): Symbol C58 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(463.55 mm, 317.50 mm): Symbol #PWRf127067d9b2f507fa3600415c4e4f359 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(467.36 mm, 342.90 mm): Symbol JP3 [NetTie_3]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(469.90 mm, 480.06 mm): Symbol R59 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(469.90 mm, 487.68 mm): Symbol #PWR3f8e9cf747b65e6092c5382f6ebd379a [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(471.17 mm, 182.88 mm): Symbol C48 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(471.17 mm, 260.35 mm): Symbol J13 [Conn_02x05_Odd_Even]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(474.98 mm, 603.25 mm): Symbol H4 [MountingHole_Pad]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(474.98 mm, 610.87 mm): Symbol #PWR5c460889e53e5127923c1149bcbe0be1 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(480.06 mm, 513.08 mm): Symbol C33 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(482.60 mm, 378.46 mm): Symbol C20 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(482.60 mm, 386.08 mm): Symbol #PWR69071f802a99586e92e859ec663a75b9 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(483.87 mm, 248.92 mm): Symbol #PWR6fb55679b9725f9ca85de3f35639d771 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(485.14 mm, 754.38 mm): Symbol JP9 [NetTie_2]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(488.95 mm, 276.86 mm): Symbol #PWR5b540d9b878c5ec788b9d75a0ed74c29 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(490.22 mm, 332.74 mm): Symbol #PWR9cea920b90a95885b51d1303deaa9ef1 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(491.49 mm, 182.88 mm): Symbol C49 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(492.76 mm, 480.06 mm): Symbol C83 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(492.76 mm, 487.68 mm): Symbol #PWRdf56f27e81fe511ab44af7549499ac31 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(495.30 mm, 337.82 mm): Symbol #PWR1f1a1cc8777155bab18eaf890e19f95e [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(501.65 mm, 252.73 mm): Symbol #PWR3213f6b353be576db8fe8a11ea3e308b [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(501.65 mm, 260.35 mm): Symbol C69 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(501.65 mm, 267.97 mm): Symbol #PWR3b2e5266e3d1553c82129e93b80f3d7a [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(502.92 mm, 342.90 mm): Symbol JP4 [NetTie_3]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(513.08 mm, 182.88 mm): Symbol C64 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(515.62 mm, 403.86 mm): Symbol #PWR63ebeb503f615427ad0fdeb2a605368b [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(515.62 mm, 411.48 mm): Symbol C80 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(515.62 mm, 419.10 mm): Symbol #PWR247f231385075f1c80322ae56433abe7 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(516.89 mm, 754.38 mm): Symbol JP10 [NetTie_2]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(520.70 mm, 260.35 mm): Symbol C70 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(524.51 mm, 302.26 mm): Symbol #PWR577248f983a15c44bd593f9e56615f2f [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(524.51 mm, 309.88 mm): Symbol D9 [D_TVS_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(524.51 mm, 317.50 mm): Symbol #PWRe4aa46f4759b5aef9be8beed3843f6ea [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(532.13 mm, 335.28 mm): Symbol #PWRbf71fa534ed25257879745ebed5826db [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(532.13 mm, 342.90 mm): Symbol C51 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(532.13 mm, 350.52 mm): Symbol #PWR70e7b194c7df53a59efc1953f1600ed3 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(534.67 mm, 182.88 mm): Symbol C65 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(544.83 mm, 276.86 mm): Symbol #PWR75575338c792539daa09c0b9a1b97929 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(549.91 mm, 251.46 mm): Symbol #PWR3781e07544295ef3adcfc27845044d36 [VCC]
+[same_local_global_label]: Local and global labels have same name
+    ; warning
+    @(554.99 mm, 262.89 mm): Global Label 'CANH'
+    @(121.92 mm, 96.52 mm): Label 'CANH'
+[same_local_global_label]: Local and global labels have same name
+    ; warning
+    @(554.99 mm, 265.43 mm): Global Label 'CANL'
+    @(121.92 mm, 101.60 mm): Label 'CANL'
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(556.26 mm, 182.88 mm): Symbol C66 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(560.07 mm, 260.35 mm): Symbol J16 [B4B-PH-K-S]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(577.85 mm, 182.88 mm): Symbol C67 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(586.74 mm, 250.19 mm): Symbol #PWR5dedb6a32fe85761b65b1d92fb8dbae4 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(598.17 mm, 342.90 mm): Symbol Y1 [Crystal_GND24_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(598.17 mm, 350.52 mm): Symbol #PWR5490267453505258a66a5d77d4f442a7 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(599.44 mm, 182.88 mm): Symbol C68 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(599.44 mm, 260.35 mm): Symbol U6 [LP5907MFX-3.3]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(599.44 mm, 273.05 mm): Symbol #PWR5b7fc8cfc35058149014171ca7295635 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(612.14 mm, 250.19 mm): Symbol #PWRbaaa154d50eb511e9cc9af89687ebdac [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(621.03 mm, 182.88 mm): Symbol C71 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(627.38 mm, 255.27 mm): Symbol #PWRa100d46dcde65bf5b28e6e3d7b01c7d0 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(627.38 mm, 260.35 mm): Symbol C82 [EEE-FK1H470P]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(627.38 mm, 278.13 mm): Symbol #PWR2947a2bc87a15c6ba3b1e97d4a28031a [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(654.05 mm, 260.35 mm): Symbol C59 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(654.05 mm, 267.97 mm): Symbol #PWR0c75ffa45c255092902e084696a68115 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(660.40 mm, 144.78 mm): Symbol #PWR67eba27df6dc5f88bc940e02993c9b8d [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(662.94 mm, 182.88 mm): Symbol U7 [ADS131M08xPBS]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(664.21 mm, 220.98 mm): Symbol #PWRe385db0b3bc550e9bcd9b2609179055c [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(670.56 mm, 139.70 mm): Symbol #PWR5216d357fa4d54f99e24a94453d982dd [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(683.26 mm, 144.78 mm): Symbol #PWR68fae74552ac56098c02af3426d32473 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(698.50 mm, 214.63 mm): Symbol #PWR3dd439e2abb35ad193827354135b6d34 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(703.58 mm, 209.55 mm): Symbol #PWRbe698ba3d7b25aabbd2cc0e6bedd280d [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(708.66 mm, 161.29 mm): Symbol #PWR06c0c5af9e805b98896825df67ea56c6 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(736.60 mm, 182.88 mm): Symbol J17 [DM3D-SF]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(762.00 mm, 204.47 mm): Symbol #PWR854557978a5c555a8f3fb1920d54f4f8 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(778.51 mm, 215.90 mm): Symbol #PWRdee6f4b6d5215c72aaa99da1b6dfde0a [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(779.78 mm, 182.88 mm): Symbol J15 [USB4105]
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(795.02 mm, 200.66 mm): Label 'USB_SBU1'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(795.02 mm, 203.20 mm): Label 'USB_SBU2'
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(800.10 mm, 152.40 mm): Symbol #PWR37c680b5bb1658fd81a7e4354a283dfd [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(811.53 mm, 203.20 mm): Symbol #PWRb818dd1123cd584c914ee65157681687 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(816.61 mm, 172.72 mm): Symbol #PWR99412751d4dc52a3b9ddedd7ea0e47cb [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(831.85 mm, 182.88 mm): Symbol U2 [LT3042xMSE]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(831.85 mm, 198.12 mm): Symbol #PWR9b76051d36fb5b359892cf05af5c8191 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(847.09 mm, 172.72 mm): Symbol #PWRef1d08881112541fab07d08d9860ad98 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(852.17 mm, 167.64 mm): Symbol #PWR05eea14a22615573b19c4542960748f4 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(863.60 mm, 284.48 mm): Symbol #PWR24bdb9111f5752a58e361656c0cb5187 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(871.22 mm, 175.26 mm): Symbol #PWR8c9a2acac08654d6ac06df15ffbe9aed [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(871.22 mm, 182.88 mm): Symbol C43 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(871.22 mm, 190.50 mm): Symbol #PWRe698af898d005811966805581533fdb4 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(871.22 mm, 290.83 mm): Symbol D7 [D_Schottky_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(878.84 mm, 284.48 mm): Symbol #PWR5a32c2a3d11d5b16bbd0cdf1713d86f0 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(891.54 mm, 182.88 mm): Symbol C44 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(897.89 mm, 284.48 mm): Symbol #PWRc8b52921e1455a2e8ad8809eebb56e7f [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(905.51 mm, 290.83 mm): Symbol D6 [D_Schottky_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(913.13 mm, 284.48 mm): Symbol #PWRa9afda1cd5d050f2891939686a5d6a3a [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(914.40 mm, 182.88 mm): Symbol C81 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(953.77 mm, 167.64 mm): Symbol #PWRf0aa5bc4244755e4987c9bbf3a3fd62e [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(953.77 mm, 198.12 mm): Symbol #PWR41b2f73416945435b94eea3e55cb324f [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(958.85 mm, 182.88 mm): Symbol J14 [TC2030-NL_CTX]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(986.79 mm, 207.01 mm): Symbol #PWRb95d0bcd57885dc0b7a8954ccea914d1 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(991.87 mm, 201.93 mm): Symbol #PWRdf4a502660ae5725a0948e6995d87c89 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(996.95 mm, 171.45 mm): Symbol #PWR455b4431b3eb53ba871673faf9aca492 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(1007.11 mm, 182.88 mm): Symbol J5 [B6B-PH-K-S]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(1029.97 mm, 207.01 mm): Symbol #PWRf120596fbbf151559c912b6cebb57c5e [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(1035.05 mm, 201.93 mm): Symbol #PWRe46caac2c9e65ecf97de4ddcb934f3ab [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(1040.13 mm, 171.45 mm): Symbol #PWRfd3dd9484df8578dace637aae6ec3381 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(1050.29 mm, 182.88 mm): Symbol J6 [B6B-PH-K-S]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(1073.15 mm, 207.01 mm): Symbol #PWR5e3ec7a37e20529ba00b5408dd30ed51 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(1078.23 mm, 201.93 mm): Symbol #PWR60ae3f68e9ee516d80f5eafd3a92ead1 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(1083.31 mm, 171.45 mm): Symbol #PWRc589dc18e67c538e94144844edbb9438 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(1093.47 mm, 182.88 mm): Symbol J7 [B6B-PH-K-S]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(16.51 mm, 33.02 mm): Symbol #PWRde473f2b9e555978b5ff89598d7dfbba [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(21.59 mm, 38.10 mm): Symbol #PWR247c54639d70500fb14560198cf2bfbf [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(40.64 mm, 57.15 mm): Symbol U4 [TPSM33610S5QRDNRQ1]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(40.64 mm, 83.82 mm): Symbol #PWR9c80de938878599ab594ec8432c2dfac [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(40.64 mm, 107.95 mm): Symbol #PWRd7ec1e64a41a5346bd4a55c8d2fa70fc [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(40.64 mm, 115.57 mm): Symbol C72 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(40.64 mm, 148.59 mm): Symbol #PWR724833be9da852b48b3647b7f6cb6d4c [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(40.64 mm, 156.21 mm): Symbol R67 [R_Small]
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(54.61 mm, 60.96 mm): Hierarchical Label 'PGOOD'
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(54.61 mm, 156.21 mm): Symbol R66 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(54.61 mm, 163.83 mm): Symbol #PWR02f8363bea7f50a3a6723e1a5bbb5c83 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(59.69 mm, 38.10 mm): Symbol #PWR8b5ad5ee36255c00847ff4dc79fde761 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(71.12 mm, 107.95 mm): Symbol #PWRf9a82c7defd653f6a8357cd25bae5fad [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(71.12 mm, 115.57 mm): Symbol R69 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(83.82 mm, 49.53 mm): Symbol #PWR3a715b6a0edf57cc9d52e15211af25f7 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(83.82 mm, 57.15 mm): Symbol C73 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(83.82 mm, 64.77 mm): Symbol #PWR87bbdb079f7756d0a6ce59d0f7a59818 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(90.17 mm, 107.95 mm): Symbol #PWR9e6ea374954151459dee1be464777a1f [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(90.17 mm, 115.57 mm): Symbol R65 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(105.41 mm, 115.57 mm): Symbol R68 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(105.41 mm, 123.19 mm): Symbol #PWR0bb22339b9eb5cf8a39561463de18780 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(114.30 mm, 57.15 mm): Symbol C74 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(144.78 mm, 57.15 mm): Symbol C75 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(179.07 mm, 49.53 mm): Symbol #PWRdf57e25c0fa75627b08f7817e235cf15 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(179.07 mm, 57.15 mm): Symbol C76 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(179.07 mm, 64.77 mm): Symbol #PWR086dc4318a4a5246a6d77fd3e671cce3 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(207.01 mm, 57.15 mm): Symbol C77 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(234.95 mm, 57.15 mm): Symbol C78 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(267.97 mm, 49.53 mm): Symbol #PWRef04ac28e9775b3984641c99b9079ef9 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(267.97 mm, 57.15 mm): Symbol C79 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(267.97 mm, 64.77 mm): Symbol #PWR2ff35d34ca1f507e937232c615e1e0c2 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(105.41 mm, 85.09 mm): Symbol #PWR2917de3551f5586e83ed409ad0f67cbf [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(110.49 mm, 90.17 mm): Symbol #PWR7ef7ffad439a5f79b89e33aa3647a0b8 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(129.54 mm, 104.14 mm): Symbol U1 [TCAN1462VDRBRQ1]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(129.54 mm, 124.46 mm): Symbol #PWR13b1e9f4bdcd51d1baeba241a9dcc01a [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'power'
+    ; warning
+    @(143.51 mm, 110.49 mm): Symbol #PWR0002 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(161.29 mm, 96.52 mm): Symbol #PWR0f50626a53e65ccdbb577e99829bbf5f [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(161.29 mm, 104.14 mm): Symbol C9 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(161.29 mm, 111.76 mm): Symbol #PWR133a112075ef5907bdb4713498dd1275 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(180.34 mm, 96.52 mm): Symbol #PWR8389e864197c5190b54fdf8fa245fa34 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(180.34 mm, 104.14 mm): Symbol C10 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(180.34 mm, 111.76 mm): Symbol #PWR02c059691f22551786d8c9034a859550 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(67.31 mm, 59.69 mm): Symbol #PWRee873a1e0dde548280f20792b7969d34 [VCC]
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(91.44 mm, 107.95 mm): Label 'IMU.RESV_1_NC'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(93.98 mm, 107.95 mm): Label 'IMU.RESV_2_NC'
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(97.79 mm, 87.63 mm): Symbol IC1 [ICM-42688-P]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(97.79 mm, 113.03 mm): Symbol #PWRd7d4fccb037852e5b038dfbd24dc3941 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(97.79 mm, 132.08 mm): Symbol #PWR0ae13f0b3c1056c68289080f2cab6039 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(97.79 mm, 139.70 mm): Symbol R61 [R_Small]
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(101.60 mm, 107.95 mm): Label 'IMU.RESV_4_NC'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(104.14 mm, 107.95 mm): Label 'IMU.RESV_5_NC'
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(111.76 mm, 132.08 mm): Symbol #PWR1242d6b77102560db9f5ba93a129eddf [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(111.76 mm, 139.70 mm): Symbol R62 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(128.27 mm, 113.03 mm): Symbol #PWRad620423ccf85d6c9eacfb81d6e66c63 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(146.05 mm, 80.01 mm): Symbol #PWR6143782c0bc554829a326732a723731a [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(146.05 mm, 87.63 mm): Symbol C54 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(146.05 mm, 95.25 mm): Symbol #PWRa3692c1299f756a2addd580f72f49a84 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(172.72 mm, 87.63 mm): Symbol C55 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(200.66 mm, 87.63 mm): Symbol C56 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(224.79 mm, 87.63 mm): Symbol R60 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(224.79 mm, 95.25 mm): Symbol #PWR000b120f106a5eb5add6f4a4584f35cd [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(105.41 mm, 71.12 mm): Symbol #PWRf6f34ea373d159a18a77299d74bfbbe2 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(118.11 mm, 101.60 mm): Symbol #PWR50a93de082cd5e3aadcb83ef2de832b9 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(119.38 mm, 83.82 mm): Symbol U5 [TPS74501PDRVR]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(119.38 mm, 116.84 mm): Symbol #PWR86314c68d9345ca9b1b3638a5f283c1a [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(119.38 mm, 124.46 mm): Symbol C87 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(119.38 mm, 132.08 mm): Symbol #PWR04595aa9740151969ba4b2757845dc7b [GND]
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(128.27 mm, 88.90 mm): Hierarchical Label 'PG'
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(133.35 mm, 71.12 mm): Symbol #PWRa9f62c95e69a528f8f8909a44b250aba [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(138.43 mm, 116.84 mm): Symbol #PWRb034e9fa0b6355eca71c4f5545899cad [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(138.43 mm, 124.46 mm): Symbol C85 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(151.13 mm, 76.20 mm): Symbol #PWRa199eb7dfc6c52289296b78511bb147a [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(151.13 mm, 83.82 mm): Symbol R72 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(152.40 mm, 116.84 mm): Symbol #PWR00725d41b86f5bb5b0e015ec56f09867 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(152.40 mm, 124.46 mm): Symbol R70 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(170.18 mm, 83.82 mm): Symbol R71 [R_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(170.18 mm, 91.44 mm): Symbol #PWRb42aba4a868f50efbda794060bb4b3b6 [GND]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(187.96 mm, 76.20 mm): Symbol #PWR2508b7ce26f9586782b43667b4345186 [VCC]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(187.96 mm, 83.82 mm): Symbol C86 [C_Small]
+[lib_symbol_issues]: The current configuration does not include the symbol library ''
+    ; warning
+    @(187.96 mm, 91.44 mm): Symbol #PWRaf9e973859d4555f8c6566692d0454bc [GND]
+
+***** Sheet /BUCK/
+
+***** Sheet /CAN/
+[multiple_net_names]: Both CAN_TX and TXD are attached to the same items; CAN_TX will be used in the netlist
+    ; warning
+    @(115.57 mm, 107.95 mm): Global Label 'CAN_TX'
+    @(115.57 mm, 107.95 mm): Hierarchical Label 'TXD'
+[multiple_net_names]: Both CAN_RX and RXD are attached to the same items; CAN_RX will be used in the netlist
+    ; warning
+    @(115.57 mm, 110.49 mm): Global Label 'CAN_RX'
+    @(115.57 mm, 110.49 mm): Hierarchical Label 'RXD'
+[multiple_net_names]: Both GND and STB are attached to the same items; GND will be used in the netlist
+    ; warning
+    @(180.34 mm, 111.76 mm): Symbol #PWR02c059691f22551786d8c9034a859550 Pin 1 [Power input, Line]
+    @(143.51 mm, 110.49 mm): Hierarchical Label 'STB'
+
+***** Sheet /IMU/
+[multiple_net_names]: Both IMU_SPI_CS and SPI.CS are attached to the same items; IMU_SPI_CS will be used in the netlist
+    ; warning
+    @(123.19 mm, 80.01 mm): Global Label 'IMU_SPI_CS'
+    @(111.76 mm, 142.24 mm): Hierarchical Label 'SPI.CS'
+[multiple_net_names]: Both IMU_SPI_CLK and SPI.CLK are attached to the same items; IMU_SPI_CLK will be used in the netlist
+    ; warning
+    @(123.19 mm, 74.93 mm): Global Label 'IMU_SPI_CLK'
+    @(123.19 mm, 74.93 mm): Hierarchical Label 'SPI.CLK'
+[same_local_global_label]: Local and global labels have same name
+    ; warning
+    @(123.19 mm, 74.93 mm): Global Label 'IMU_SPI_CLK'
+    @(121.92 mm, 147.32 mm): Label 'IMU_SPI_CLK'
+[multiple_net_names]: Both IMU_SPI_MOSI and SPI.MOSI are attached to the same items; IMU_SPI_MOSI will be used in the netlist
+    ; warning
+    @(123.19 mm, 77.47 mm): Global Label 'IMU_SPI_MOSI'
+    @(123.19 mm, 77.47 mm): Hierarchical Label 'SPI.MOSI'
+[same_local_global_label]: Local and global labels have same name
+    ; warning
+    @(123.19 mm, 80.01 mm): Global Label 'IMU_SPI_CS'
+    @(121.92 mm, 152.40 mm): Label 'IMU_SPI_CS'
+[multiple_net_names]: Both IMU_INT1 and INT1 are attached to the same items; IMU_INT1 will be used in the netlist
+    ; warning
+    @(123.19 mm, 87.63 mm): Global Label 'IMU_INT1'
+    @(123.19 mm, 87.63 mm): Hierarchical Label 'INT1'
+[same_local_global_label]: Local and global labels have same name
+    ; warning
+    @(123.19 mm, 87.63 mm): Global Label 'IMU_INT1'
+    @(121.92 mm, 137.16 mm): Label 'IMU_INT1'
+[pin_to_pin]: Pins of type Bidirectional and Power output are connected
+    ; warning
+    @(123.19 mm, 90.17 mm): Symbol IC1 Pin 9 [INT2_/_FSYNC_/_CLKIN, Bidirectional, Line]
+    @(603.25 mm, 350.52 mm): Symbol #FLG_GND Pin 1 [~, Power output, Line]
+[multiple_net_names]: Both IMU_SPI_MISO and SPI.MISO are attached to the same items; IMU_SPI_MISO will be used in the netlist
+    ; warning
+    @(224.79 mm, 85.09 mm): Global Label 'IMU_SPI_MISO'
+    @(224.79 mm, 85.09 mm): Hierarchical Label 'SPI.MISO'
+
+***** Sheet /LDO_3V3/
+
+ ** ERC messages: 542  Errors 0  Warnings 542
+
+ ** Ignored checks:
+    - Global label only appears once in the schematic
+    - Four connection points are joined together
+    - SPICE model issue
+    - Assigned footprint doesn't match footprint filters

@@ -1,0 +1,27 @@
+Variable,Value
+Bump Travel (mm),228.600
+Rebound Travel (mm),-228.600
+Bump Rebound Increment (mm),1.000
+Roll Angle (deg),15.000
+Roll Increment (deg),0.500
+Steer Travel (mm),55.000
+Steer Increment (mm),2.000
+Wheelbase (mm),1500.000
+Total Mass C of G Height (mm),342.900
+Braking Front (%),60.000
+Drive Front (%),0.000
+Total Mass Front (%),42.060
+Front Brake Type,2
+Rear Brake Type,1
+Total Mass (kg),163.293
+Front Type,1.000
+Rear Type,1.000
+Drive Shaft Joint Radius (mm),65.000
+# Bump Increments,5.000
+# Rebound Increments,5.000
+# Roll Increments,5.000
+# Steer Increments,5.000
+Unsprung Mass FL (kg),9.000
+Unsprung Mass FR (kg),9.000
+Unsprung Mass RL (kg),11.000
+Unsprung Mass RR (kg),11.000

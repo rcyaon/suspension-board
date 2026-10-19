@@ -1,0 +1,23 @@
+"""
+1A_40V_LowIR_Schottky_Rectifier
+
+Auto-generated using `pcb import`; part changed from MBR120VLSFT1G to the
+AEC-Q101 super-low-IR ROHM RB168MM-40TF so the USB/vehicle diode-OR does not
+back-feed through reverse leakage (RB168MM-40 IR ~0.25 uA at 5 V, 75 C, versus
+~0.3-0.8 mA for MBR120VLSF at 60 C).
+"""
+
+A = io(Net)
+K = io(Net)
+
+Component(
+    name="1A_40V_LowIR_Schottky_Rectifier",
+    properties={
+        "Footprint": "lena_b_string-gauge-daq_components_1A_40V_LowIR_Schottky_Rectifier:D_SOD-123F",
+        "Value": "1A 40V Low-IR Schottky",
+        "schematic_description": "1A 40V low-leakage Schottky rectifier",
+    },
+    symbol=Symbol(library="1A_40V_LowIR_Schottky_Rectifier.kicad_sym"),
+    pin_defs={"K": "1", "A": "2"},
+    pins={"K": K, "A": A},
+)

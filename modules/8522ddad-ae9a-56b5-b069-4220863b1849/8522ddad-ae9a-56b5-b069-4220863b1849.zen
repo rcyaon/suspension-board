@@ -4,7 +4,6 @@ suspension-load-daq sheet module: 8522ddad-ae9a-56b5-b069-4220863b1849 (/8522dda
 
 GND = io(Ground)
 IMU_INT1 = io(Net)
-IMU_INT2 = io(Net)
 IMU_SPI_CLK = io(Net)
 IMU_SPI_CS = io(Net)
 IMU_SPI_MISO = io(Net)
@@ -26,7 +25,9 @@ ICM_42688_P(
     AP_SDO_AP_AD0=IMU_SPI_MISO,
     GND=GND,
     INT1_INT=IMU_INT1,
-    INT2_FSYNC_CLKIN=IMU_INT2,
+    # DS-000347 Table 2: pin 9 (INT2/FSYNC/CLKIN) "connect to GND if FSYNC not used".
+    # INT2 stays at its reset default (open-drain) and is not used by firmware.
+    INT2_FSYNC_CLKIN=GND,
     RESV_1=IMU_IMU_RESV_1_NC,
     RESV_2=IMU_IMU_RESV_2_NC,
     RESV_3=GND,

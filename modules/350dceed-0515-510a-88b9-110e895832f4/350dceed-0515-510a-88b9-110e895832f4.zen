@@ -5,6 +5,8 @@ suspension-load-daq sheet module: 350dceed-0515-510a-88b9-110e895832f4 (/350dcee
 V5 = io(Power(voltage="2.2V to 5.5V"))
 VBUS = io(Power(voltage="4V to 5.5V"))
 
-_1A_20V_SCHOTTKY_RECTIFIER = Module("../../components/1A_20V_Schottky_Rectifier/1A_20V_Schottky_Rectifier.zen")
+_1A_40V_LOWIR_SCHOTTKY_RECTIFIER = Module(
+    "../../components/1A_40V_LowIR_Schottky_Rectifier/1A_40V_LowIR_Schottky_Rectifier.zen"
+)
 
-_1A_20V_SCHOTTKY_RECTIFIER(name="D7", A=VBUS, K=V5)
+_1A_40V_LOWIR_SCHOTTKY_RECTIFIER(name="D7", A=VBUS, K=V5)
