@@ -1,2 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+# Fab outputs are stored byte-for-byte (MANIFEST.txt checksums)
+fab/** -text

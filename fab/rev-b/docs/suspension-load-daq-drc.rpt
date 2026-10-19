@@ -1,0 +1,46 @@
+** Drc report for suspension-load-daq.kicad_pcb **
+** Created on 2026-10-19T18:49:32 **
+** Report includes: Errors, Warnings, Exclusions **
+
+** Found 7 DRC violations **
+[silk_overlap]: Silkscreen clearance (board setup constraints silk clearance 0.1000 mm; actual 0.0000 mm)
+    Rule: board setup constraints silk; warning
+    @(185.8650 mm, 161.9500 mm): Segment of D2 on F.Silkscreen
+    @(185.7600 mm, 163.6078 mm): Segment of C54 on F.Silkscreen
+[silk_overlap]: Silkscreen clearance (board setup constraints silk clearance 0.1000 mm; actual 0.0000 mm)
+    Rule: board setup constraints silk; warning
+    @(172.9500 mm, 170.1500 mm): Segment of JP4 on F.Silkscreen
+    @(173.7400 mm, 170.0900 mm): Segment of J4 on F.Silkscreen
+[silk_overlap]: Silkscreen clearance (board setup constraints silk clearance 0.1000 mm; actual 0.0000 mm)
+    Rule: board setup constraints silk; warning
+    @(173.2500 mm, 169.8500 mm): Segment of JP4 on F.Silkscreen
+    @(173.7400 mm, 170.0900 mm): Segment of J4 on F.Silkscreen
+[silk_overlap]: Silkscreen clearance (board setup constraints silk clearance 0.1000 mm; actual 0.0000 mm)
+    Rule: board setup constraints silk; warning
+    @(173.7400 mm, 170.0900 mm): Segment of J4 on F.Silkscreen
+    @(173.2500 mm, 169.8500 mm): Segment of JP4 on F.Silkscreen
+[silk_overlap]: Silkscreen clearance (board setup constraints silk clearance 0.1000 mm; actual 0.0000 mm)
+    Rule: board setup constraints silk; warning
+    @(164.3400 mm, 170.0900 mm): Segment of J3 on F.Silkscreen
+    @(163.5500 mm, 170.1500 mm): Segment of JP3 on F.Silkscreen
+[silk_overlap]: Silkscreen clearance (board setup constraints silk clearance 0.1000 mm; actual 0.0000 mm)
+    Rule: board setup constraints silk; warning
+    @(164.3400 mm, 170.0900 mm): Segment of J3 on F.Silkscreen
+    @(163.8500 mm, 169.8500 mm): Segment of JP3 on F.Silkscreen
+[silk_overlap]: Silkscreen clearance (board setup constraints silk clearance 0.1000 mm; actual 0.0000 mm)
+    Rule: board setup constraints silk; warning
+    @(163.8500 mm, 169.8500 mm): Segment of JP3 on F.Silkscreen
+    @(164.3400 mm, 170.0900 mm): Segment of J3 on F.Silkscreen
+
+** Found 0 unconnected pads **
+
+** Found 0 Footprint errors **
+
+** Ignored checks **
+    - Footprint has no courtyard defined
+    - Track endpoint not centered on via
+    - Tuning profile track geometries
+    - Footprint doesn't match symbol's footprint filters
+    - Footprint component type doesn't match footprint pads
+
+** End of Report **

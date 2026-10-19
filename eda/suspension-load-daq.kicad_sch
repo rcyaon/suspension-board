@@ -3221,7 +3221,7 @@
 					(justify left)
 				)
 			)
-			(property "Footprint" "D_SOD-123F"
+			(property "Footprint" ""
 				(at 0 0 90)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3232,7 +3232,7 @@
 					)
 				)
 			)
-			(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/mbr120vlsft1-d.pdf"
+			(property "Datasheet" ""
 				(at 0 0 90)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3243,29 +3243,7 @@
 					)
 				)
 			)
-			(property "Description" "1 A 20 V Schottky rectifier, VF <= 0.34 V at 1 A/25 C, SOD-123FL"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Manufacturer_Name" "onsemi"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Manufacturer_Part_Number" "MBR120VLSFT1G"
+			(property "Description" "Schottky diode, small symbol"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3590,7 +3568,7 @@
 					)
 				)
 			)
-			(property "Datasheet" ""
+			(property "Datasheet" "https://fscdn.rohm.com/en/products/databook/datasheet/discrete/diode/schottky_barrier/rb168mm-40tftr-e.pdf"
 				(at 0 0 90)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3601,7 +3579,29 @@
 					)
 				)
 			)
-			(property "Description" "Schottky diode, small symbol"
+			(property "Description" "1 A 40 V super-low-IR Schottky rectifier, AEC-Q101, VF <= 0.65 V at 1 A, IR <= 0.55 uA at 40 V/25 C, SOD-123FL (PMDU)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Manufacturer_Name" "Rohm Semiconductor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Manufacturer_Part_Number" "RB168MM-40TFTR"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3673,6 +3673,341 @@
 				)
 			)
 			(symbol "D_Schottky_Small_2_1_1"
+				(pin passive line
+					(at -2.54 0 0)
+					(length 1.778)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 0 180)
+					(length 1.778)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "D_Schottky_Small_3"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at -1.27 2.032 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "D_Schottky_Small"
+				(at -7.112 -2.032 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Schottky diode, small symbol"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "diode Schottky"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "D_Schottky_Small_3_0_1"
+				(polyline
+					(pts
+						(xy -1.27 0.762) (xy -1.27 1.016) (xy -0.762 1.016) (xy -0.762 -1.016) (xy -0.254 -1.016) (xy -0.254 -0.762)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.762 0) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.016) (xy -0.762 0) (xy 0.762 1.016) (xy 0.762 -1.016)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "D_Schottky_Small_3_1_1"
+				(pin passive line
+					(at -2.54 0 0)
+					(length 1.778)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 0 180)
+					(length 1.778)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "D_Schottky_Small_4"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at -1.27 2.032 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "D_Schottky_Small"
+				(at -7.112 -2.032 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Schottky diode, small symbol"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "diode Schottky"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "D_Schottky_Small_4_0_1"
+				(polyline
+					(pts
+						(xy -1.27 0.762) (xy -1.27 1.016) (xy -0.762 1.016) (xy -0.762 -1.016) (xy -0.254 -1.016) (xy -0.254 -0.762)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.762 0) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.016) (xy -0.762 0) (xy 0.762 1.016) (xy 0.762 -1.016)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "D_Schottky_Small_4_1_1"
 				(pin passive line
 					(at -2.54 0 0)
 					(length 1.778)
@@ -12225,6 +12560,16 @@
 	)
 	(wire
 		(pts
+			(xy 897.89 290.83) (xy 897.89 284.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1a3a1a06-8361-524f-a241-7f6f752daecc")
+	)
+	(wire
+		(pts
 			(xy 335.28 262.89) (xy 325.12 262.89)
 		)
 		(stroke
@@ -12322,6 +12667,16 @@
 			(type default)
 		)
 		(uuid "1f826ed5-5aa5-539e-a2fd-c22c92ce48c0")
+	)
+	(wire
+		(pts
+			(xy 902.97 290.83) (xy 897.89 290.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1fac6a03-bd82-56ea-91f0-7cf0eca1afc5")
 	)
 	(wire
 		(pts
@@ -12615,6 +12970,16 @@
 	)
 	(wire
 		(pts
+			(xy 441.96 605.79) (xy 441.96 610.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "340561aa-f805-5d4d-a443-c5560fe07c62")
+	)
+	(wire
+		(pts
 			(xy 490.22 345.44) (xy 490.22 332.74)
 		)
 		(stroke
@@ -12702,6 +13067,16 @@
 			(type default)
 		)
 		(uuid "37801eab-d183-5e17-b9b1-ab9f85258fe6")
+	)
+	(wire
+		(pts
+			(xy 908.05 290.83) (xy 913.13 290.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "38b6f1a5-3112-5fa6-accf-b8e9b241a008")
 	)
 	(wire
 		(pts
@@ -13305,6 +13680,16 @@
 	)
 	(wire
 		(pts
+			(xy 868.68 290.83) (xy 863.6 290.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "591f7497-26ce-5f2f-bc1c-65b7f06b0e28")
+	)
+	(wire
+		(pts
 			(xy 1045.21 190.5) (xy 1029.97 190.5)
 		)
 		(stroke
@@ -13612,6 +13997,16 @@
 			(type default)
 		)
 		(uuid "6ffae65f-940f-5024-81d6-fe9a1072a251")
+	)
+	(wire
+		(pts
+			(xy 873.76 290.83) (xy 878.84 290.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "700951c1-b6bd-5015-8598-e7799ea49f17")
 	)
 	(wire
 		(pts
@@ -14095,6 +14490,16 @@
 	)
 	(wire
 		(pts
+			(xy 408.94 605.79) (xy 408.94 610.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8eb2defe-87db-53d4-a2be-e28ee72ae2c7")
+	)
+	(wire
+		(pts
 			(xy 210.82 576.58) (xy 210.82 581.66)
 		)
 		(stroke
@@ -14262,6 +14667,16 @@
 			(type default)
 		)
 		(uuid "969bcd74-90ac-441a-95bd-b31989d324f6")
+	)
+	(wire
+		(pts
+			(xy 863.6 290.83) (xy 863.6 284.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9713c490-dfd2-518e-bec7-d119cf657561")
 	)
 	(wire
 		(pts
@@ -14985,6 +15400,16 @@
 	)
 	(wire
 		(pts
+			(xy 474.98 605.79) (xy 474.98 610.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bfb861ab-5d64-5b66-be7c-b60a75fcf364")
+	)
+	(wire
+		(pts
 			(xy 452.12 187.96) (xy 471.17 187.96)
 		)
 		(stroke
@@ -15112,6 +15537,26 @@
 			(type default)
 		)
 		(uuid "c903f445-d581-5ad8-8153-c8b13c7a4e35")
+	)
+	(wire
+		(pts
+			(xy 913.13 290.83) (xy 913.13 284.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c910ca85-ebca-5e89-b911-d8e3702e58f6")
+	)
+	(wire
+		(pts
+			(xy 878.84 290.83) (xy 878.84 284.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c9d7b520-64e7-5cdf-91ad-6bff3275b5f3")
 	)
 	(wire
 		(pts
@@ -15942,6 +16387,16 @@
 			(type default)
 		)
 		(uuid "f8f47873-48be-5ecf-b6df-1b3428c81d04")
+	)
+	(wire
+		(pts
+			(xy 375.92 605.79) (xy 375.92 610.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f90e26a2-6688-5006-a1d8-b29cb8b6acee")
 	)
 	(wire
 		(pts
@@ -17020,6 +17475,27 @@
 			)
 		)
 	)
+	(label "AUX2"
+		(at 340.36 774.7 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "24988b5d-7893-455c-b32b-b7c3d88f3464")
+		(property "pcb:net" "/AUX2"
+			(at 0 0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(label "AUX2.V_SENSOR"
 		(at 434.34 342.9 0)
 		(effects
@@ -17093,6 +17569,27 @@
 		)
 		(uuid "2715c413-05d4-589b-965f-2a8ae9d55651")
 		(property "pcb:net" "/AIN1N"
+			(at 0 0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(label "AUX1"
+		(at 304.8 774.7 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "27b02030-2556-4292-b5aa-dc56bcbebfa5")
+		(property "pcb:net" "/AUX1"
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)
@@ -19288,6 +19785,27 @@
 			)
 		)
 	)
+	(label "AUX4"
+		(at 411.48 774.7 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "7baea975-6fa8-4ced-b8a7-6c716ecc6b00")
+		(property "pcb:net" "/AUX4"
+			(at 0 0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(label "USB_D_N"
 		(at 411.48 257.81 180)
 		(effects
@@ -19487,27 +20005,6 @@
 		)
 		(uuid "82ef2c9a-daa4-57ea-8c11-2e329147216c")
 		(property "pcb:net" "/CH5_QTR"
-			(at 0 0 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(label "H2.P1"
-		(at 408.94 605.79 270)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "832c5568-aa42-5f6c-b680-389b949479b7")
-		(property "pcb:net" "SHEET_559955D8_FA6E_5336_B163_4DA49DAC212C./H2_P1"
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)
@@ -19876,27 +20373,6 @@
 			)
 		)
 	)
-	(label "H4.P1"
-		(at 474.98 605.79 270)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "8a809be8-8028-50ec-83fb-0d86f3eef87f")
-		(property "pcb:net" "SHEET_2F326288_1754_5D21_977F_834F10F62F25./H4_P1"
-			(at 0 0 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
 	(label "I2C_SCL"
 		(at 300.99 698.5 270)
 		(effects
@@ -19907,27 +20383,6 @@
 		)
 		(uuid "8bd550da-6efe-52f8-a83a-3da1d6f2cc55")
 		(property "pcb:net" "/I2C_SCL"
-			(at 0 0 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(label "H3.P1"
-		(at 441.96 605.79 270)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "8c417fd4-236a-5258-8e5c-c19f7f221fa0")
-		(property "pcb:net" "CC7E77AF_AAD5_5431_9019_5B31A35F631D./H3_P1"
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)
@@ -22564,6 +23019,27 @@
 			)
 		)
 	)
+	(label "AUX3"
+		(at 375.92 774.7 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ef8e4420-e400-4f84-af5f-ee617b9138ea")
+		(property "pcb:net" "/AUX3"
+			(at 0 0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(label "CH3.IN_N"
 		(at 450.85 754.38 180)
 		(effects
@@ -22921,27 +23397,6 @@
 			)
 		)
 	)
-	(label "H1.P1"
-		(at 375.92 605.79 270)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "fb5d238e-de6a-5551-8ce3-e8483a5f4c40")
-		(property "pcb:net" "B9855FCC_4E57_56EE_A9F9_C8367AF65EAF./H1_P1"
-			(at 0 0 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
 	(label "AIN1N"
 		(at 398.78 375.92 90)
 		(effects
@@ -23122,6 +23577,28 @@
 			)
 		)
 	)
+	(global_label "V3V3"
+		(shape bidirectional)
+		(at 375.92 769.62 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "14da650d-c459-5149-9138-b9762e399d71")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 375.92 769.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
 	(global_label "IMU_SPI_MISO"
 		(shape bidirectional)
 		(at 229.87 218.44 0)
@@ -23211,6 +23688,50 @@
 		)
 		(property "pcb:net" "IMU_SPI_MOSI"
 			(at 0 0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "V3V3"
+		(shape bidirectional)
+		(at 340.36 769.62 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3e9a66f8-27d2-5870-a215-512236a6172e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 340.36 769.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "V3V3"
+		(shape bidirectional)
+		(at 304.8 769.62 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "636b47f6-ef13-5eb2-a619-d66ecfd42365")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 304.8 769.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23541,6 +24062,28 @@
 		)
 		(property "pcb:net" "V3V3"
 			(at 0 0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "V3V3"
+		(shape bidirectional)
+		(at 411.48 769.62 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c98925b8-5b57-556e-b7cd-83ffe811f470")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 411.48 769.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -29576,6 +30119,95 @@
 			(project "suspension-load-daq"
 				(path "/513d9cc1-d27a-514d-a37c-2f1ca04dddfa"
 					(reference "#PWR247f231385075f1c80322ae56433abe7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "VCC")
+		(at 863.6 284.48 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "24bdb911-1f57-52a5-8e36-1656c0cb5187")
+		(property "Reference" "#PWR24bdb9111f5752a58e361656c0cb5187"
+			(at 863.6 284.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "V5"
+			(at 863.6 280.67 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 863.6 284.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 863.6 284.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 863.6 284.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 863.6 284.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b12e7e29-c457-5ded-b325-d9e037c80f4b")
+		)
+		(instances
+			(project "suspension-load-daq"
+				(path "/513d9cc1-d27a-514d-a37c-2f1ca04dddfa"
+					(reference "#PWR24bdb9111f5752a58e361656c0cb5187")
 					(unit 1)
 				)
 			)
@@ -37213,6 +37845,98 @@
 		)
 	)
 	(symbol
+		(lib_name "D_Schottky_Small_2")
+		(lib_id "D_Schottky_Small")
+		(at 905.51 290.83 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4de1e35e-9b40-5500-8331-ee61ab920c25")
+		(property "Reference" "D6"
+			(at 905.256 287.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1A 40V Low-IR Schottky"
+			(at 905.256 288.29 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "lena_b_string-gauge-daq_components_1A_40V_LowIR_Schottky_Rectifier:D_SOD-123F"
+			(at 905.51 290.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://fscdn.rohm.com/en/products/databook/datasheet/discrete/diode/schottky_barrier/rb168mm-40tftr-e.pdf"
+			(at 905.51 290.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "1A 40V low-leakage Schottky rectifier"
+			(at 905.51 290.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Path" "SHEET_8C6BE9B8_106B_5398_B524_BBD11DE1AE5D.D6.1A_40V_LowIR_Schottky_Rectifier"
+			(at 905.51 290.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "afded284-9d60-517c-8148-877663b81c9a")
+		)
+		(pin "2"
+			(uuid "0fc31c59-61ec-5254-8a90-c4fe2531c261")
+		)
+		(instances
+			(project "suspension-load-daq"
+				(path "/513d9cc1-d27a-514d-a37c-2f1ca04dddfa"
+					(reference "D6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "GND")
 		(at 359.41 610.87 0)
 		(unit 1)
@@ -39065,6 +39789,95 @@
 	)
 	(symbol
 		(lib_id "VCC")
+		(at 878.84 284.48 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5a32c2a3-d11d-5b16-bbd0-cdf1713d86f0")
+		(property "Reference" "#PWR5a32c2a3d11d5b16bbd0cdf1713d86f0"
+			(at 878.84 284.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VBUS"
+			(at 878.84 280.67 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 878.84 284.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 878.84 284.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 878.84 284.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 878.84 284.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "585fab7c-0fa9-54d6-af5e-bb37aa995150")
+		)
+		(instances
+			(project "suspension-load-daq"
+				(path "/513d9cc1-d27a-514d-a37c-2f1ca04dddfa"
+					(reference "#PWR5a32c2a3d11d5b16bbd0cdf1713d86f0")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "VCC")
 		(at 269.24 535.94 0)
 		(unit 1)
 		(body_style 1)
@@ -39558,6 +40371,95 @@
 			(project "suspension-load-daq"
 				(path "/513d9cc1-d27a-514d-a37c-2f1ca04dddfa"
 					(reference "#PWR5b7fc8cfc35058149014171ca7295635")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "GND")
+		(at 474.98 610.87 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5c460889-e53e-5127-923c-1149bcbe0be1")
+		(property "Reference" "#PWR5c460889e53e5127923c1149bcbe0be1"
+			(at 474.98 610.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 474.98 614.68 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 474.98 610.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 474.98 610.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 474.98 610.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 474.98 610.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "03a2e19f-5d2a-5df1-99f2-0427a1a88cfe")
+		)
+		(instances
+			(project "suspension-load-daq"
+				(path "/513d9cc1-d27a-514d-a37c-2f1ca04dddfa"
+					(reference "#PWR5c460889e53e5127923c1149bcbe0be1")
 					(unit 1)
 				)
 			)
@@ -42413,6 +43315,95 @@
 		)
 	)
 	(symbol
+		(lib_id "GND")
+		(at 408.94 610.87 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "673192a3-0190-5d75-9a1e-6db22b6cb6ef")
+		(property "Reference" "#PWR673192a301905d759a1e6db22b6cb6ef"
+			(at 408.94 610.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 408.94 614.68 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 408.94 610.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 408.94 610.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 408.94 610.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 408.94 610.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0aa66301-47f3-5089-bb17-c75f8d02c03b")
+		)
+		(instances
+			(project "suspension-load-daq"
+				(path "/513d9cc1-d27a-514d-a37c-2f1ca04dddfa"
+					(reference "#PWR673192a301905d759a1e6db22b6cb6ef")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "VCC")
 		(at 660.4 144.78 0)
 		(unit 1)
@@ -42906,6 +43897,99 @@
 		)
 	)
 	(symbol
+		(lib_name "D_Schottky_Small_4")
+		(lib_id "D_Schottky_Small")
+		(at 340.36 772.16 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6b56ae29-5394-5206-ab15-074e99d54563")
+		(property "Reference" "D11"
+			(at 342.9 771.271 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "200mA 30V Schottky Rectifier"
+			(at 342.9 772.541 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "stdlib_kicad-footprints_Diode_SMD:D_SOD-323"
+			(at 340.36 772.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 340.36 772.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "200mA 30V Schottky Rectifier"
+			(at 340.36 772.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Path" "AUX2_D_CLAMP.D"
+			(at 340.36 772.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4043fa1d-2f5d-5212-bf8a-2fa33eb1ef89")
+		)
+		(pin "2"
+			(uuid "4666f214-d975-5f50-be6f-5f6a903ee4fa")
+		)
+		(instances
+			(project "suspension-load-daq"
+				(path "/513d9cc1-d27a-514d-a37c-2f1ca04dddfa"
+					(reference "D11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_name "R_Small_2")
 		(lib_id "R_Small")
 		(at 229.87 444.5 0)
@@ -43163,6 +44247,98 @@
 			(project "suspension-load-daq"
 				(path "/513d9cc1-d27a-514d-a37c-2f1ca04dddfa"
 					(reference "R6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "D_Schottky_Small")
+		(at 411.48 772.16 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6d4040a1-2c37-5fde-85c6-1de5024bee73")
+		(property "Reference" "D13"
+			(at 414.02 771.271 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "200mA 30V Schottky Rectifier"
+			(at 414.02 772.541 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "stdlib_kicad-footprints_Diode_SMD:D_SOD-323"
+			(at 411.48 772.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 411.48 772.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "200mA 30V Schottky Rectifier"
+			(at 411.48 772.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Path" "AUX4_D_CLAMP.D"
+			(at 411.48 772.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6e09f0bd-b336-51fc-b220-483ebd254d83")
+		)
+		(pin "2"
+			(uuid "4a218f02-2b9f-58d5-8c9f-3dee75d6fde0")
+		)
+		(instances
+			(project "suspension-load-daq"
+				(path "/513d9cc1-d27a-514d-a37c-2f1ca04dddfa"
+					(reference "D13")
 					(unit 1)
 				)
 			)
@@ -45585,6 +46761,99 @@
 		)
 	)
 	(symbol
+		(lib_name "D_Schottky_Small_4")
+		(lib_id "D_Schottky_Small")
+		(at 375.92 772.16 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "7ee62035-7df3-503e-84e4-e22a3bccf080")
+		(property "Reference" "D12"
+			(at 378.46 771.271 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "200mA 30V Schottky Rectifier"
+			(at 378.46 772.541 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "stdlib_kicad-footprints_Diode_SMD:D_SOD-323"
+			(at 375.92 772.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 375.92 772.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "200mA 30V Schottky Rectifier"
+			(at 375.92 772.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Path" "AUX3_D_CLAMP.D"
+			(at 375.92 772.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5d431758-c2f9-5ca4-aa29-2f44f918b8a8")
+		)
+		(pin "2"
+			(uuid "4f96ac79-243a-54b3-9de3-37f72eee2aa4")
+		)
+		(instances
+			(project "suspension-load-daq"
+				(path "/513d9cc1-d27a-514d-a37c-2f1ca04dddfa"
+					(reference "D12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "GND")
 		(at 370.84 386.08 0)
 		(unit 1)
@@ -47160,6 +48429,98 @@
 			(project "suspension-load-daq"
 				(path "/513d9cc1-d27a-514d-a37c-2f1ca04dddfa"
 					(reference "J8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "D_Schottky_Small_2")
+		(lib_id "D_Schottky_Small")
+		(at 871.22 290.83 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8954b137-b37f-5788-ac3d-17ce26d003c7")
+		(property "Reference" "D7"
+			(at 870.966 287.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1A 40V Low-IR Schottky"
+			(at 870.966 288.29 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "lena_b_string-gauge-daq_components_1A_40V_LowIR_Schottky_Rectifier:D_SOD-123F"
+			(at 871.22 290.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://fscdn.rohm.com/en/products/databook/datasheet/discrete/diode/schottky_barrier/rb168mm-40tftr-e.pdf"
+			(at 871.22 290.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "1A 40V low-leakage Schottky rectifier"
+			(at 871.22 290.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Path" "SHEET_350DCEED_0515_510A_88B9_110E895832F4.D7.1A_40V_LowIR_Schottky_Rectifier"
+			(at 871.22 290.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c667d6bc-5e6d-509c-9612-11b9cb4766c9")
+		)
+		(pin "2"
+			(uuid "c02c5be8-2fb4-5584-afa4-80eb1ef60446")
+		)
+		(instances
+			(project "suspension-load-daq"
+				(path "/513d9cc1-d27a-514d-a37c-2f1ca04dddfa"
+					(reference "D7")
 					(unit 1)
 				)
 			)
@@ -51833,6 +53194,95 @@
 		)
 	)
 	(symbol
+		(lib_id "VCC")
+		(at 913.13 284.48 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a9afda1c-d5d0-50f2-8919-39686a5d6a3a")
+		(property "Reference" "#PWRa9afda1cd5d050f2891939686a5d6a3a"
+			(at 913.13 284.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "V5_BUCK"
+			(at 913.13 280.67 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 913.13 284.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 913.13 284.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 913.13 284.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 913.13 284.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "169054bc-6100-5abe-a1ee-ea8a3e3ba524")
+		)
+		(instances
+			(project "suspension-load-daq"
+				(path "/513d9cc1-d27a-514d-a37c-2f1ca04dddfa"
+					(reference "#PWRa9afda1cd5d050f2891939686a5d6a3a")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "D_TVS_Small")
 		(at 524.51 309.88 90)
 		(unit 1)
@@ -55406,6 +56856,95 @@
 		)
 	)
 	(symbol
+		(lib_id "GND")
+		(at 375.92 610.87 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "be7b43e7-df19-519d-a09b-114fb900c70f")
+		(property "Reference" "#PWRbe7b43e7df19519da09b114fb900c70f"
+			(at 375.92 610.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 375.92 614.68 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 375.92 610.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 375.92 610.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 375.92 610.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 375.92 610.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d6708d4b-b9db-537f-83da-2e7d64b03fc8")
+		)
+		(instances
+			(project "suspension-load-daq"
+				(path "/513d9cc1-d27a-514d-a37c-2f1ca04dddfa"
+					(reference "#PWRbe7b43e7df19519da09b114fb900c70f")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_name "C_Small_3")
 		(lib_id "C_Small")
 		(at 450.85 513.08 0)
@@ -57269,6 +58808,99 @@
 		)
 	)
 	(symbol
+		(lib_name "D_Schottky_Small_3")
+		(lib_id "D_Schottky_Small")
+		(at 304.8 772.16 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c78ae5b4-9c1f-5b30-b6ea-dca1b9b99f6d")
+		(property "Reference" "D10"
+			(at 307.34 771.271 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "200mA 30V Schottky Rectifier"
+			(at 307.34 772.541 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "stdlib_kicad-footprints_Diode_SMD:D_SOD-323"
+			(at 304.8 772.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 304.8 772.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "200mA 30V Schottky Rectifier"
+			(at 304.8 772.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Path" "AUX1_D_CLAMP.D"
+			(at 304.8 772.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0a4415b1-2fcf-5afb-b7c8-fe3b1938351b")
+		)
+		(pin "2"
+			(uuid "ce8a2dcb-d3a9-5bee-9a54-c20f9ccda5d9")
+		)
+		(instances
+			(project "suspension-load-daq"
+				(path "/513d9cc1-d27a-514d-a37c-2f1ca04dddfa"
+					(reference "D10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "GND")
 		(at 374.65 351.79 0)
 		(unit 1)
@@ -57457,6 +59089,95 @@
 			(project "suspension-load-daq"
 				(path "/513d9cc1-d27a-514d-a37c-2f1ca04dddfa"
 					(reference "R3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "VCC")
+		(at 897.89 284.48 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c8b52921-e145-5a2e-8ad8-809eebb56e7f")
+		(property "Reference" "#PWRc8b52921e1455a2e8ad8809eebb56e7f"
+			(at 897.89 284.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "V5"
+			(at 897.89 280.67 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 897.89 284.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 897.89 284.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 897.89 284.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 897.89 284.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f5c5c057-fe10-5f6d-a92f-5baa80c1b642")
+		)
+		(instances
+			(project "suspension-load-daq"
+				(path "/513d9cc1-d27a-514d-a37c-2f1ca04dddfa"
+					(reference "#PWRc8b52921e1455a2e8ad8809eebb56e7f")
 					(unit 1)
 				)
 			)
@@ -60058,6 +61779,95 @@
 	)
 	(symbol
 		(lib_id "GND")
+		(at 441.96 610.87 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "dc99d514-ddcc-5a2b-9b3f-d807c9dec41a")
+		(property "Reference" "#PWRdc99d514ddcc5a2b9b3fd807c9dec41a"
+			(at 441.96 610.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 441.96 614.68 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 441.96 610.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 441.96 610.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 441.96 610.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 441.96 610.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5ecfc247-4925-5c0d-8754-0d78bf4fb2d5")
+		)
+		(instances
+			(project "suspension-load-daq"
+				(path "/513d9cc1-d27a-514d-a37c-2f1ca04dddfa"
+					(reference "#PWRdc99d514ddcc5a2b9b3fd807c9dec41a")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "GND")
 		(at 250.19 452.12 0)
 		(unit 1)
 		(body_style 1)
@@ -62205,98 +64015,6 @@
 			(project "suspension-load-daq"
 				(path "/513d9cc1-d27a-514d-a37c-2f1ca04dddfa"
 					(reference "C45")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_name "D_Schottky_Small_2")
-		(lib_id "D_Schottky_Small")
-		(at 407.67 480.06 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "edaa6053-567a-5b87-ad13-8fed0a6344fc")
-		(property "Reference" "D7"
-			(at 407.416 476.25 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "1A 20V Schottky Rectifier"
-			(at 407.416 477.52 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "lena_b_string-gauge-daq_components_1A_20V_Schottky_Rectifier:D_SOD-123F"
-			(at 407.67 480.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/mbr120vlsft1-d.pdf"
-			(at 407.67 480.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "1A 20V Schottky Rectifier"
-			(at 407.67 480.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Path" "SHEET_350DCEED_0515_510A_88B9_110E895832F4.D7.1A_20V_Schottky_Rectifier"
-			(at 407.67 480.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "86b70c86-aa9b-5982-abe7-93ba372a6be4")
-		)
-		(pin "2"
-			(uuid "9d6c8f06-0424-5661-bf10-aab5670222af")
-		)
-		(instances
-			(project "suspension-load-daq"
-				(path "/513d9cc1-d27a-514d-a37c-2f1ca04dddfa"
-					(reference "D7")
 					(unit 1)
 				)
 			)
@@ -65404,97 +67122,6 @@
 			(project "suspension-load-daq"
 				(path "/513d9cc1-d27a-514d-a37c-2f1ca04dddfa"
 					(reference "C69")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "D_Schottky_Small")
-		(at 369.57 480.06 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "fe4a49d9-bd7c-51eb-8d40-c91a45d0f16b")
-		(property "Reference" "D6"
-			(at 369.316 476.25 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "1A 20V Schottky Rectifier"
-			(at 369.316 477.52 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "lena_b_string-gauge-daq_components_1A_20V_Schottky_Rectifier:D_SOD-123F"
-			(at 369.57 480.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/mbr120vlsft1-d.pdf"
-			(at 369.57 480.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "1A 20V Schottky Rectifier"
-			(at 369.57 480.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Path" "SHEET_8C6BE9B8_106B_5398_B524_BBD11DE1AE5D.D6.1A_20V_Schottky_Rectifier"
-			(at 369.57 480.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "cf9e09c6-d955-5a15-a2d1-f69d60cfebc1")
-		)
-		(pin "2"
-			(uuid "cdeb3ca9-b472-59fe-adad-d3ca0338f185")
-		)
-		(instances
-			(project "suspension-load-daq"
-				(path "/513d9cc1-d27a-514d-a37c-2f1ca04dddfa"
-					(reference "D6")
 					(unit 1)
 				)
 			)

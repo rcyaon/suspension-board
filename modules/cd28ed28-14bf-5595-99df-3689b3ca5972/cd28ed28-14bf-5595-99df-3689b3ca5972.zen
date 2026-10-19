@@ -1,0 +1,16 @@
+"""
+suspension-load-daq sheet module: cd28ed28-14bf-5595-99df-3689b3ca5972 (/cd28ed28-14bf-5595-99df-3689b3ca5972/)
+"""
+
+MCU_BTN_USER = io(Net)
+GND = io(Ground)
+
+KMR211NGLFS = Module("../../components/KMR211NGLFS/KMR211NGLFS.zen")
+
+KMR211NGLFS(
+    name="SW2",
+    P1_1=MCU_BTN_USER,
+    P1_4=MCU_BTN_USER,
+    P2_2=GND,
+    P2_3=GND,
+)

@@ -48,7 +48,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/mbr120vlsft1-d.pdf"
+		(property "Datasheet" "https://fscdn.rohm.com/en/products/databook/datasheet/discrete/diode/schottky_barrier/rb168mm-40tftr-e.pdf"
 			(at 0 0 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -59,7 +59,7 @@
 				)
 			)
 		)
-		(property "Description" "1 A 20 V Schottky rectifier, VF <= 0.34 V at 1 A/25 C, SOD-123FL"
+		(property "Description" "1 A 40 V super-low-IR Schottky rectifier, AEC-Q101, VF <= 0.65 V at 1 A, IR <= 0.55 uA at 40 V/25 C, SOD-123FL (PMDU)"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -92,7 +92,7 @@
 				)
 			)
 		)
-		(property "Manufacturer_Name" "onsemi"
+		(property "Manufacturer_Name" "Rohm Semiconductor"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -103,7 +103,7 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "MBR120VLSFT1G"
+		(property "Manufacturer_Part_Number" "RB168MM-40TFTR"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)

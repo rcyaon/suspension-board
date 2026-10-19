@@ -1,0 +1,10 @@
+"""
+suspension-load-daq sheet module: dd7cf743-08da-5bf9-a43f-35695b3085ea (/dd7cf743-08da-5bf9-a43f-35695b3085ea/)
+"""
+
+MCU_BTN_USER = io(Net)
+GND = io(Ground)
+
+_100NF_16V = Module("../../components/100nF_16V/100nF_16V.zen")
+
+_100NF_16V(name="C57", P1=MCU_BTN_USER, P2=GND)

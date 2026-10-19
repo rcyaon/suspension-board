@@ -736,7 +736,7 @@
 						)
 					)
 				)
-				(pin output line
+				(pin bidirectional line
 					(at 25.4 -2.54 180)
 					(length 2.54)
 					(name "INT2_/_FSYNC_/_CLKIN"
@@ -1291,10 +1291,6 @@
 			(embedded_fonts no)
 		)
 	)
-	(no_connect
-		(at 123.19 90.17)
-		(uuid "6b113ffc-3a6d-4f7b-9782-315df034fe54")
-	)
 	(wire
 		(pts
 			(xy 146.05 85.09) (xy 146.05 80.01)
@@ -1477,6 +1473,16 @@
 	)
 	(wire
 		(pts
+			(xy 123.19 90.17) (xy 128.27 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d40c21e5-ad41-528d-a4cb-b89e151f011c")
+	)
+	(wire
+		(pts
 			(xy 67.31 74.93) (xy 67.31 59.69)
 		)
 		(stroke
@@ -1494,6 +1500,16 @@
 			(type default)
 		)
 		(uuid "dc83d421-5120-5499-85e5-0b15c4cf4a4e")
+	)
+	(wire
+		(pts
+			(xy 128.27 90.17) (xy 128.27 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e8089760-0022-58ce-b9ad-ec8bf29607f3")
 	)
 	(wire
 		(pts
@@ -2925,6 +2941,95 @@
 			(project "suspension-load-daq"
 				(path "/513d9cc1-d27a-514d-a37c-2f1ca04dddfa/748b5ba0-a895-5c4f-9346-840ef80e97d5"
 					(reference "#PWRa3692c1299f756a2addd580f72f49a84")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "GND")
+		(at 128.27 113.03 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ad620423-ccf8-5d6c-9eac-fb81d6e66c63")
+		(property "Reference" "#PWRad620423ccf85d6c9eacfb81d6e66c63"
+			(at 128.27 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 128.27 116.84 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 128.27 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 128.27 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 128.27 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 128.27 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6dbf1d3f-2015-56f4-bfc6-5753d82c8de4")
+		)
+		(instances
+			(project "suspension-load-daq"
+				(path "/513d9cc1-d27a-514d-a37c-2f1ca04dddfa/748b5ba0-a895-5c4f-9346-840ef80e97d5"
+					(reference "#PWRad620423ccf85d6c9eacfb81d6e66c63")
 					(unit 1)
 				)
 			)

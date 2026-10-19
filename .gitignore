@@ -43,4 +43,4 @@ __pycache__/
 *.pyc
 
 # Docs are kept locally, not in the repo
-docs/
+/docs/
