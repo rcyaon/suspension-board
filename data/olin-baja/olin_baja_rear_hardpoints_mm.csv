@@ -1,0 +1,19 @@
+(#),HARD POINT LOCATION,X (in),Y (in),Z (in)
+1,Lower Wish Front Pivot,1211.734,292.087,404.298
+2,Lower Wish Rear Pivot,1896.357,109.912,344.401
+3,Lower With Upright Joint,1737.204,652.820,218.272
+4,Upper Wish Front Pivot,1238.416,324.592,500.945
+5,Upper Wish Rear Pivot,1871.891,156.028,445.523
+6,Upper Wish Upright Joint,1750.479,647.638,370.004
+7,Shock Mount Wishbone,1585.610,432.896,328.199
+8,Shock Mount Body,1623.576,258.906,762.145
+9,Toe Rod Outer Joint,1826.040,648.667,359.430
+10,Toe Rod Inner Joint,1786.619,501.301,392.484
+11,Upper Spring Pivot,1623.576,258.906,762.145
+12,Lower Spring Pivot,1585.610,432.896,328.199
+13,Wheel Spindle Point,1743.841,586.768,291.922
+14,Wheel Center Point,1743.841,688.306,295.468
+15,Lower Wishbone CG,1308.100,342.900,322.580
+16,Upper Wishbone CG,1620.520,365.760,436.880
+17,Knuckle CG,1803.400,574.040,375.920
+18,Tie-Rod CG,1765.300,660.400,309.880

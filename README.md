@@ -53,5 +53,6 @@ Native supply-drive flags and unused-sheet-input no-connects are persistent KiCa
 | `fab/rev-b/` | Rev B manufacturing package from commit 99bcdad: JLCPCB Gerber zip, BOM/CPL, schematic and assembly PDFs, DRC/ERC reports, STEP, IPC. See [fab/rev-b/README-fab.md](fab/rev-b/README-fab.md) |
 | `board-spec.md`, `spec.md` | requirements brief and current design specification |
 | `docs/` | test plan, MCU migration, measurement decisions, part selection, Baja Discord notes |
-| `analysis/` | expected-load hand calcs (`python3 analysis/expected_loads.py`) |
-| `data/adams-mini-baja/` | Adams model export used by the analysis |
+| `analysis/` | expected-load hand calcs (`python3 analysis/expected_loads.py`) and hardpoint-vs-sweep check (`python3 analysis/check_olin_geometry.py`) |
+| `data/olin-baja/` | Olin Baja suspension workbook: hardpoints, global variables, toe/steer/Ackermann sweeps. Used by the analysis |
+| `data/adams-mini-baja/` | Adams mini baja model export (reference; no longer used by the analysis) |

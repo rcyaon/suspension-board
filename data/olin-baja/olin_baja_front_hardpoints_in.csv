@@ -1,0 +1,19 @@
+(#),HARD POINT LOCATION,X (in),Y (in),Z (in)
+1,Lower Wishbone Front Pivot,-37.262,-6.836,2.588
+2,Lower Wishbone Rear Pivot,-30.185,-6.448,0.395
+3,Lower Wishbone Outer Ball Joint,-36.588,-30.961,-4.261
+4,Upper Wishbone Front Pivot,-41.704,-7.687,7.951
+5,Upper Wishbone Rear Pivot,-29.593,-7.010,4.155
+6,Upper Wishbone Outer Ball Joint,-35.681,-30.066,1.387
+7,Damper Wishbone End,-35.060,-16.975,0.445
+8,Damper Body End,-30.047,-9.089,15.871
+9,Outer Track Rod Ball Joint,-33.130,-30.453,-3.425
+10,Inner Track Rod Ball Joint,-31.102,-6.929,2.129
+11,Upper Spring Pivot Point,-30.047,-9.089,15.871
+12,Lower Spring Pivot Point,-35.060,-16.975,0.445
+13,Wheel Spindle Point,-35.715,-30.514,-1.573
+14,Wheel Center Point,-35.706,-31.366,-1.545
+15,Lower Wishbone CG,158.661,-17.323,7.677
+16,Upper Wishbone CG,164.173,-20.472,17.717
+17,Knuckle CG,166.535,-20.669,8.661
+18,Tie-Rod CG,162.598,-28.346,10.827
