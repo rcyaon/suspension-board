@@ -81389,7 +81389,7 @@
 			)
 		)
 	)
-	(gr_text "SUSPENSION \nSTRAIN LOGGER\nOLIN BAJA 2026"
+	(gr_text "SUSPENSION\nLOAD LOGGER\nOLIN BAJA 2026"
 		(at 117.5 154 0)
 		(layer "F.SilkS")
 		(uuid "fa38a77a-f2ee-49b9-8dee-3d8b63d25c69")
@@ -81473,7 +81473,7 @@
 			(justify mirror)
 		)
 	)
-	(gr_text "SUSPENSION LOAD DAQ  v1.0\nOLIN BAJA  2026-10\nLA"
+	(gr_text "SUSPENSION LOAD LOGGER  v1.0\nOLIN BAJA  2026-10\nLA"
 		(at 153 129 0)
 		(layer "B.SilkS")
 		(uuid "bf86ef06-ac1a-4afb-982b-a18545dc340e")
