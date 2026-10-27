@@ -1,0 +1,20 @@
+# suspension logger run config (copied into every log header)
+NODE=1
+CAN_MASTER=1
+AUTOSTART=0
+OSR=2048
+GAIN=128,128,32,32,128,128,64,32
+MAX_MB=8
+DATE=2026-10-26
+TRACK=simulated rough course (Adams mini baja rear, 15 mph event)
+EVENT=firmware bench test
+DRIVER=sim
+TYRE_KPA_FL=55
+TYRE_KPA_FR=55
+TYRE_KPA_RL=62
+TYRE_KPA_RR=62
+RIDE_HEIGHT_MM=300
+AMBIENT_C=20
+BOARD_ID=REV-B-SIM
+SENSOR_IDS=CH1-6 CEA-06-125UT-350 sim; CH7 rod end sim; CH8 load cell sim
+CAL_ID=none
