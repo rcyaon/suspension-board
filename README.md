@@ -4,13 +4,7 @@ A data logger that bolts onto one corner of the Baja car and records the forces 
 
 ![The board, 3D view](images/board-3d.png)
 
-## Status
 
-- **Board:** layout finished. The silkscreen changed on 2026-10-27, so the files for ordering need to be exported again before boards are ordered.
-- **Firmware:** passes every test in a computer simulation driven by the Adams mini baja model (graphs below).
-- **Not done yet:** running on a real board, bench tests, sealed connectors and the enclosure.
-
-## The board
 
 | Top | Bottom |
 |---|---|
