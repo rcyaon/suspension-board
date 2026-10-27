@@ -32,8 +32,6 @@ The real firmware runs on a PC, connected to simulated versions of the board's c
 
 ![Time between samples](firmware/test/results/sample_timing.svg)
 
-Full results: [firmware test results](firmware/test/results/summary.md). Run `make -C firmware test` to regenerate them.
-
 ## What it measures
 
 | Where | What | Sensors |
