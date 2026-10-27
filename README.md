@@ -1,55 +1,44 @@
-# Suspension strain-gauge logger
+# Baja Suspension Load Logger (Rev B)
 
-One board per Baja suspension corner. It logs 8 strain-gauge bridges, 4 aux sensors (e.g. shock travel), battery voltage and a 6-axis IMU to microSD. The logs are later calibrated into arm forces for stress and fatigue work. Hardware: STM32F412 MCU, ADS131M08 bridge ADC, ICM-42688 IMU, microSD, CAN and USB-C (Rev B, in `eda/`, `fab/rev-b/` and `string-gauge-daq.zen`).
+A data logger that mounts on one corner of the Baja car and records the forces going through the suspension arms while the car drives. Today the arm design rests on estimated loads ("3 g bump", "5 g landing"). This board replaces those estimates with measured ones, which then feed the stress and fatigue analysis.
 
 ![Rev B board, top](fab/rev-b/renders/suspension-load-daq-top.png)
 
-## Start here
+## Status
 
-| If you want to… | Read this |
+- **Board design:** finished. The manufacturing files are ready to send to JLCPCB.
+- **Firmware:** written and passing all tests in a computer simulation of the board, driven by the Adams mini baja model.
+- **Still open:** the firmware has not run on a real board yet. Bench tests (noise, long logging runs, fault tests), sealed connectors and the enclosure still need to be done.
+
+## What to look at
+
+| To check… | Open |
 |---|---|
-| See what the board must do and what's still open | [spec.md](spec.md) |
-| See the firmware test results | [firmware/test/results/summary.md](firmware/test/results/summary.md) |
-| Look at the circuit | [Schematic (PDF)](fab/rev-b/docs/suspension-load-daq-schematic.pdf) |
-| Look at the board layout | [Layers (PDF)](fab/rev-b/docs/suspension-load-daq-layers.pdf), [top render](fab/rev-b/renders/suspension-load-daq-top.png), [bottom render](fab/rev-b/renders/suspension-load-daq-bottom.png), [3D model (STEP)](fab/rev-b/3d/suspension-load-daq.step) |
-| Order or assemble boards | [fab/rev-b/README-fab.md](fab/rev-b/README-fab.md) (gerbers zip, JLCPCB BOM and placement files) |
-| See the parts list | [Full BOM (CSV)](fab/rev-b/assembly/suspension-load-daq-BOM-full.csv) |
-| Understand how the firmware works | [How the firmware works with the board](#how-the-firmware-works-with-the-board), below |
-| Build, test or flash the firmware | [Firmware](#firmware), below |
+| What the board has to do | [Design specification](spec.md) |
+| Whether the firmware works | [Firmware test results](firmware/test/results/summary.md) |
+| The circuit | [Schematic (PDF)](fab/rev-b/docs/suspension-load-daq-schematic.pdf) |
+| The board layout | [Layout (PDF)](fab/rev-b/docs/suspension-load-daq-layers.pdf), [top](fab/rev-b/renders/suspension-load-daq-top.png) and [bottom](fab/rev-b/renders/suspension-load-daq-bottom.png) renders |
+| The parts list | [Bill of materials (CSV)](fab/rev-b/assembly/suspension-load-daq-BOM-full.csv) |
+| What's needed to order boards | [Fabrication package](fab/rev-b/README-fab.md) |
 
-## What's in each folder
+## What it measures
 
-| Folder / file | What it is |
-|---|---|
-| `spec.md` | Design specification for Rev B: requirements, channel table, open items |
-| `board-spec.md` | The original requirements brief written as input to Diode (informal; `spec.md` supersedes it) |
-| `firmware/` | Logger firmware: `src/` (C code), `test/` (PC simulator and tests), `tools/sdlog.py` (log decoder) |
-| `fab/rev-b/` | Everything for manufacturing: gerbers, BOM/placement, schematic and layer PDFs, renders, DRC/ERC reports |
-| `eda/` | KiCad project (schematic and PCB) |
-| `string-gauge-daq.zen` | Diode board source the KiCad project is generated from |
-| `analysis/` | Python scripts: expected suspension loads, geometry checks |
-| `data/` | Reference vehicle data (Adams mini baja model, Olin Baja hardpoints), each with its own README |
-| `components/`, `modules/`, `vendor/`, `pcb.toml` | Part libraries and config used by the Diode `pcb` tool. No need to read these |
+| Where | What | Sensors |
+|---|---|---|
+| Lower control arm | Push/pull and bending (it carries the shock) | 4 strain gauges |
+| Upper control arm | Push/pull and fore-aft | 2 strain gauges |
+| Toe link | Push/pull | 1 strain gauge |
+| Shock | Force through the shock, used as a cross-check | 1 load cell |
+| Shock travel and extras | Position sensors | 4 inputs |
+| Chassis motion | Acceleration and rotation | Built-in motion sensor |
 
-## How the firmware works with the board
+## How it works
 
-- **One clock.** The MCU passes its 8 MHz crystal to the ADC through MCO1. Samples and timestamps can't drift apart.
-- **The ADC sets the pace.** Each ADC "data ready" (1953 per second by default) triggers an interrupt. It reads all 8 bridges at once, then reads the IMU on its own SPI bus and the latest aux/battery scan, and stores one 60-byte record.
-- **Shared SPI bus.** The ADC and SD card share SPI1. The main loop moves 512-byte blocks from a 128 KB RAM buffer to the card in short steps that fit between ADC samples. A slow card stall is absorbed by the buffer. If the card stalls longer than about 1 s, the lost samples are counted and marked in the file.
-- **Each run calibrates itself.** At start: excitation on, 1 s settle, then a shunt-cal step (all 8 shunt resistors on together). At stop: the same shunt step, then excitation off. The firmware compares the two steps and flags a gain drift above 0.5%.
-- **Raw data only.** ADC codes are stored unchanged. Filter correction and force calibration happen later on a PC.
-- **Log file.** Each run is a new `RUNnnnnn.BIN`, preallocated in one piece on a FAT32 card. Its text header holds the rate, gains and the contents of `CONFIG.TXT` from the card: driver, track, tyre pressures, sensor IDs and similar run notes.
-- **Control.** Start and stop come from the UART console, a CAN command, or autostart. One board, the CAN master, broadcasts start/stop and a 10 Hz sync so several corner boards can be lined up afterwards. With USB power only, everything except CAN still works.
+- All 8 force channels are recorded at the same moment, nearly 2,000 times per second, to a microSD card.
+- Each run checks its own calibration at the start and end, and flags the data if the readings drifted.
+- One board can start and stop the others, and they all record a shared timing signal, so all four corners can be compared side by side.
+- The card holds the raw readings. They are turned into forces afterwards on a computer, using a calibration done on each arm before it goes on the car.
 
-## Firmware
+---
 
-```sh
-make -C firmware test        # run the firmware in the PC simulator on the Adams drive (no hardware needed)
-make -C firmware check-arm   # compile the STM32 code for Cortex-M4 with clang
-make -C firmware             # build firmware.bin (needs arm-none-eabi-gcc); make flash writes it over SWD
-python3 firmware/tools/sdlog.py RUN00001.BIN out.csv   # decode a log
-```
-
-`firmware/src` is plain C with no vendor libraries. Hardware access sits behind `hal.h`, so the same code runs on the board (`src/stm32`) and in the simulator (`test/sim`). The test drives a rear corner over bumps, whoops, a 0.5 m drop and braking. The input comes from the Adams mini baja spring, damper, tire, hardpoint and mass data. The test checks every logged sample against that input: [results](firmware/test/results/summary.md).
-
-**Not yet done:** the firmware has not run on real hardware. USB data download is not implemented, so take the card out to get the logs. The bench tests in `spec.md` (noise, 30-min logging on a real card, fault tests) are still open, along with the sealed connectors and enclosure.
+Everything else in this repo is design source or tooling, and you don't need it to review the board. Firmware build instructions are in [firmware/README.md](firmware/README.md).
