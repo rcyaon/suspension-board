@@ -4,12 +4,6 @@ A data logger that mounts on one corner of the Baja car and records the forces g
 
 ![Rev B board, top](fab/rev-b/renders/suspension-load-daq-top.png)
 
-## Status
-
-- **Board design:** finished. The manufacturing files are ready to send to JLCPCB.
-- **Firmware:** written and passing all tests in a computer simulation of the board, driven by the Adams mini baja model.
-- **Still open:** the firmware has not run on a real board yet. Bench tests (noise, long logging runs, fault tests), sealed connectors and the enclosure still need to be done.
-
 ## What to look at
 
 | To check… | Open |
