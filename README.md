@@ -18,6 +18,12 @@ A data logger that bolts onto one corner of the Baja car and records the forces 
 
 Every connector pin is labeled on the bottom of the board.
 
+The three white boxes on the bottom are blank patches to write on with a fine permanent marker:
+
+- **S/N:** the board's serial number (01, 02, …), to tell identical boards apart.
+- **CORNER:** which corner of the car the board is mounted on (LF, RF, LR or RR), so each data file can be matched to its corner.
+- **CAL DATE:** the date the strain gauges wired to this board were last calibrated on their arm. The board also checks its own calibration automatically at the start and end of every run; this date is for the arm calibration.
+
 ## Does the firmware work?
 
 The real firmware runs on a PC, connected to simulated versions of the board's chips. It is fed a 10 s drive from the Adams model: a bump, whoops, a 0.5 m drop and braking. The SD card file it writes is then checked sample by sample against that input.
