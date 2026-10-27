@@ -19,6 +19,12 @@ The SD card file is then decoded by separate code and every sample is compared w
 
 ![shock force: logged vs input](shock_force.svg)
 
+![strain channels: logged vs input](strain_channels.svg)
+
+![error added per channel](channel_error.svg)
+
+![time between samples](sample_timing.svg)
+
 ## What these tests don't cover
 
 This is a simulation, so it says nothing about analog noise, real SD card timing, the ADC's filter delay (corrected afterwards on the PC) or the PCB itself. Those need the bench tests in `spec.md` and `docs/test-plan.md`.

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="240" font-family="sans-serif" font-size="11" fill="#0b0b0b">
+<rect width="100%" height="100%" fill="#fcfcfb"/>
+<text x="60" y="18" font-weight="bold">Time between samples, normal drive (30616 samples)</text>
+<text x="91.9" y="216" text-anchor="middle" fill="#52514e">506</text>
+<text x="155.8" y="216" text-anchor="middle" fill="#52514e">507</text>
+<text x="219.6" y="216" text-anchor="middle" fill="#52514e">508</text>
+<text x="283.5" y="216" text-anchor="middle" fill="#52514e">509</text>
+<text x="347.3" y="216" text-anchor="middle" fill="#52514e">510</text>
+<text x="411.2" y="216" text-anchor="middle" fill="#52514e">511</text>
+<text x="475.0" y="216" text-anchor="middle" fill="#52514e">512</text>
+<text x="538.8" y="216" text-anchor="middle" fill="#52514e">513</text>
+<text x="602.7" y="216" text-anchor="middle" fill="#52514e">514</text>
+<text x="666.5" y="216" text-anchor="middle" fill="#52514e">515</text>
+<text x="730.4" y="216" text-anchor="middle" fill="#52514e">516</text>
+<text x="794.2" y="216" text-anchor="middle" fill="#52514e">517</text>
+<text x="858.1" y="216" text-anchor="middle" fill="#52514e">518</text>
+<rect x="325.0" y="190.9" width="44.7" height="9.1" rx="3" fill="#2a78d6"/><text x="347.3" y="185.9" text-anchor="middle" fill="#52514e">765</text>
+<rect x="388.8" y="46.0" width="44.7" height="154.0" rx="3" fill="#2a78d6"/><text x="411.2" y="41.0" text-anchor="middle" fill="#52514e">12975</text>
+<rect x="452.7" y="114.7" width="44.7" height="85.3" rx="3" fill="#2a78d6"/><text x="475.0" y="109.7" text-anchor="middle" fill="#52514e">7191</text>
+<rect x="516.5" y="142.3" width="44.7" height="57.7" rx="3" fill="#2a78d6"/><text x="538.8" y="137.3" text-anchor="middle" fill="#52514e">4862</text>
+<rect x="580.3" y="142.8" width="44.7" height="57.2" rx="3" fill="#2a78d6"/><text x="602.7" y="137.8" text-anchor="middle" fill="#52514e">4822</text>
+<line x1="60" x2="890" y1="200.0" y2="200.0" stroke="#52514e"/>
+<text x="60" y="234" fill="#52514e">µs between consecutive samples. Target 512 µs; the test passes within ±5 µs. Every sample landed within ±2 µs.</text>
+</svg>

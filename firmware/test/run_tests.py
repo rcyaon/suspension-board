@@ -134,11 +134,14 @@ def check_case(name, image, rep, sc, expect_drops, rate="1953.125"):
     use = exc_on & (t > t_exc + 0.2) & ~near_edge
     vexc = rep["exc_volts"]
     err_uv = np.zeros((len(t), 8))
+    got_v = np.zeros((len(t), 8))
+    true_mvv = np.zeros((len(t), 8))
     for ch in range(8):
         mvv = truth(sc, t_scn, f"ch{ch + 1}_mvv")
         vin = (mvv * 1e-3 + shunt * SHUNT_VV) * vexc
         got = log.codes[:, ch] * 1.2 / (log.gain[ch] * 2.0 ** 23)
         err_uv[:, ch] = (got - vin) * 1e6
+        got_v[:, ch], true_mvv[:, ch] = got, mvv
     off = np.median(err_uv[use], axis=0)
     resid = err_uv[use] - off
     rms = np.sqrt((resid ** 2).mean(axis=0))
@@ -208,12 +211,14 @@ def check_case(name, image, rep, sc, expect_drops, rate="1953.125"):
                  sd_block_us=rep["fw"]["sd_block_us_max"], stalls=dev["sd_long_stalls"],
                  rms=rms, exc_est=exc_est, period=per_us, jitter=np.abs(dt[gaps == 0] - per_us).max(),
                  lag=np.abs(lag).max(), cal=cal, force_peak=force[run].max(), truth_peak=f_true[run].max())
-    return c, log, stats, (t, t_scn, force, f_true, run)
+    logged_mvv = got_v / exc_est * 1e3 - off * 1e-3 / exc_est
+    extra = dict(logged_mvv=logged_mvv, true_mvv=true_mvv, rms=rms, dt=dt[gaps == 0], per_us=per_us)
+    return c, log, stats, (t, t_scn, force, f_true, run, extra)
 
 
 def plot_svg(data, sc, path):
     """logged vs input shock force as a dependency-free SVG"""
-    t, t_scn, force, f_true, run = data
+    t, t_scn, force, f_true, run = data[:5]
     w, h, padl, padb = 900, 300, 60, 40
     t0, t1 = sc["t_s"][0], sc["t_s"][-1]
     fmin, fmax = -500.0, 5500.0
@@ -235,6 +240,100 @@ def plot_svg(data, sc, path):
 </svg>''')
 
 
+# shared look for the extra plots: grey = input, blue = logged, recessive grid
+INK, INK2, GRID, BLUE, REF = "#0b0b0b", "#52514e", "#e4e3df", "#2a78d6", "#b9b8b2"
+
+
+def _svg(w, h, body):
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" font-family="sans-serif" '
+            f'font-size="11" fill="{INK}">\n<rect width="100%" height="100%" fill="#fcfcfb"/>\n{body}\n</svg>')
+
+
+def plot_channels_svg(data, sc, path):
+    """logged vs input for four strain channels, one small panel each (own y scale)"""
+    t, t_scn, force, f_true, run, ex = data
+    chans = [(0, "CH1  lower arm push/pull"), (2, "CH3  lower arm bending"),
+             (4, "CH5  upper arm push/pull"), (7, "CH8  shock load cell")]
+    w, ph, padl, top = 900, 105, 60, 30
+    h = top + ph * len(chans) + 30
+    t0, t1 = 0.0, 10.0
+    X = lambda x: padl + (x - t0) / (t1 - t0) * (w - padl - 10)
+    k = np.flatnonzero(run)[::4]
+    body = [f'<text x="{padl}" y="18" font-weight="bold">Strain channels: logged by the firmware vs the Adams input (mV/V)</text>']
+    for i, (ch, name) in enumerate(chans):
+        y0 = top + i * ph
+        ref, got = ex["true_mvv"][k, ch], ex["logged_mvv"][k, ch]
+        lo, hi = min(ref.min(), got.min()), max(ref.max(), got.max())
+        pad = 0.08 * (hi - lo or 1)
+        lo, hi = lo - pad, hi + pad
+        Y = lambda y: y0 + ph - 18 - (y - lo) / (hi - lo) * (ph - 30)
+        for v in (lo + pad, hi - pad):
+            body.append(f'<line x1="{padl}" x2="{w - 10}" y1="{Y(v):.1f}" y2="{Y(v):.1f}" stroke="{GRID}"/>'
+                        f'<text x="{padl - 6}" y="{Y(v) + 4:.1f}" text-anchor="end" fill="{INK2}">{(0.0 if abs(v) < 5e-4 else v):.3g}</text>')
+        pr = " ".join(f"{X(a):.1f},{Y(b):.1f}" for a, b in zip(t_scn[k], ref))
+        pg = " ".join(f"{X(a):.1f},{Y(b):.1f}" for a, b in zip(t_scn[k], got))
+        body.append(f'<polyline points="{pr}" fill="none" stroke="{REF}" stroke-width="4" stroke-linejoin="round"/>')
+        body.append(f'<polyline points="{pg}" fill="none" stroke="{BLUE}" stroke-width="1.2"/>')
+        body.append(f'<text x="{padl + 6}" y="{y0 + 10}" fill="{INK2}">{name}</text>')
+    yb = top + ph * len(chans)
+    body += [f'<text x="{X(v):.1f}" y="{yb}" text-anchor="middle" fill="{INK2}">{v:.0f}</text>' for v in range(0, 11)]
+    body.append(f'<line x1="{padl}" x2="{padl + 22}" y1="{h - 10}" y2="{h - 10}" stroke="{REF}" stroke-width="4"/>'
+                f'<text x="{padl + 28}" y="{h - 6}">Adams input</text>'
+                f'<line x1="{padl + 120}" x2="{padl + 142}" y1="{h - 10}" y2="{h - 10}" stroke="{BLUE}" stroke-width="2"/>'
+                f'<text x="{padl + 148}" y="{h - 6}">logged on the SD card</text>'
+                f'<text x="{w - 10}" y="{h - 6}" text-anchor="end" fill="{INK2}">drive time (s)</text>')
+    path.write_text(_svg(w, h, "\n".join(body)))
+
+
+def plot_error_svg(data, path):
+    """per-channel residual RMS against the simulator's own noise"""
+    ex = data[5]
+    rms = ex["rms"]
+    w, h, padl, padb, top = 900, 240, 60, 40, 34
+    ymax = max(0.5, rms.max() * 1.25)
+    Y = lambda y: (h - padb) - y / ymax * (h - padb - top)
+    bw = (w - padl - 10) / 8
+    body = [f'<text x="{padl}" y="18" font-weight="bold">Error added by the firmware, per channel (µV RMS, input-referred)</text>']
+    for v in np.arange(0, ymax + 1e-9, 0.1):
+        body.append(f'<line x1="{padl}" x2="{w - 10}" y1="{Y(v):.1f}" y2="{Y(v):.1f}" stroke="{GRID}"/>'
+                    f'<text x="{padl - 6}" y="{Y(v) + 4:.1f}" text-anchor="end" fill="{INK2}">{v:.1f}</text>')
+    for i, r in enumerate(rms):
+        x = padl + i * bw + bw * 0.25
+        body.append(f'<rect x="{x:.1f}" y="{Y(r):.1f}" width="{bw * 0.5:.1f}" height="{Y(0) - Y(r):.1f}" rx="3" fill="{BLUE}"/>'
+                    f'<text x="{x + bw * 0.25:.1f}" y="{Y(r) - 5:.1f}" text-anchor="middle" fill="{INK2}">{r:.2f}</text>'
+                    f'<text x="{x + bw * 0.25:.1f}" y="{h - padb + 16}" text-anchor="middle" fill="{INK2}">CH{i + 1}</text>')
+    body.append(f'<line x1="{padl}" x2="{w - 10}" y1="{Y(NOISE_UV):.1f}" y2="{Y(NOISE_UV):.1f}" stroke="{INK}" '
+                f'stroke-dasharray="5 4"/><text x="{w - 12}" y="{Y(NOISE_UV) - 22:.1f}" text-anchor="end">'
+                f'dashed: noise the simulator itself adds ({NOISE_UV} µV)</text>')
+    body.append(f'<text x="{padl}" y="{h - 6}" fill="{INK2}">bars at the dashed line mean the logged data is as clean as the input: '
+                'the firmware adds no measurable error</text>')
+    path.write_text(_svg(w, h, "\n".join(body)))
+
+
+def plot_timing_svg(data, path):
+    """histogram of the time between consecutive logged samples"""
+    ex = data[5]
+    dt, per = ex["dt"], ex["per_us"]
+    vals, counts = np.unique(dt, return_counts=True)
+    lo, hi = int(per) - 6, int(per) + 6
+    w, h, padl, padb, top = 900, 240, 60, 40, 34
+    cmax = counts.max()
+    Y = lambda y: (h - padb) - y / cmax * (h - padb - top - 12)
+    X = lambda x: padl + (x - lo) / (hi - lo + 1) * (w - padl - 10)
+    bw = X(lo + 1) - X(lo)
+    body = [f'<text x="{padl}" y="18" font-weight="bold">Time between samples, normal drive ({len(dt) + 1} samples)</text>']
+    for v in range(lo, hi + 1):
+        body.append(f'<text x="{X(v) + bw / 2:.1f}" y="{h - padb + 16}" text-anchor="middle" fill="{INK2}">{v}</text>')
+    for v, c_ in zip(vals, counts):
+        if lo <= v <= hi:
+            body.append(f'<rect x="{X(v) + bw * 0.15:.1f}" y="{Y(c_):.1f}" width="{bw * 0.7:.1f}" height="{Y(0) - Y(c_):.1f}" rx="3" fill="{BLUE}"/>'
+                        f'<text x="{X(v) + bw / 2:.1f}" y="{Y(c_) - 5:.1f}" text-anchor="middle" fill="{INK2}">{c_}</text>')
+    body.append(f'<line x1="{padl}" x2="{w - 10}" y1="{Y(0):.1f}" y2="{Y(0):.1f}" stroke="{INK2}"/>')
+    body.append(f'<text x="{padl}" y="{h - 6}" fill="{INK2}">µs between consecutive samples. Target {per:.0f} µs; '
+                f'the test passes within ±5 µs. Every sample landed within ±{np.abs(dt - per).max():.0f} µs.</text>')
+    path.write_text(_svg(w, h, "\n".join(body)))
+
+
 def main():
     subprocess.run(["make", "-s", "-C", str(FW), "sim"], check=True)
     if not SCENARIO.exists():
@@ -247,6 +346,9 @@ def main():
     c1, log, st, data = check_case("Normal drive", img, rep, sc, False)
     cases.append(c1)
     plot_svg(data, sc, RESULTS / "shock_force.svg")
+    plot_channels_svg(data, sc, RESULTS / "strain_channels.svg")
+    plot_error_svg(data, RESULTS / "channel_error.svg")
+    plot_timing_svg(data, RESULTS / "sample_timing.svg")
     img2, rep2, _ = run_case("stall", ["--stall-at-block", "1800", "--stall-ms", "1500"])
     c2, _, st2, _ = check_case("SD card freezes for 1.5 s (longer than the ~1 s RAM buffer)", img2, rep2, sc, True)
     cases.append(c2)
@@ -281,6 +383,9 @@ def main():
              " and the firmware's own count, and each loss was marked in the log. It then caught up without missing"
              " another reading.", "",
              "![shock force: logged vs input](shock_force.svg)", "",
+             "![strain channels: logged vs input](strain_channels.svg)", "",
+             "![error added per channel](channel_error.svg)", "",
+             "![time between samples](sample_timing.svg)", "",
              "## What these tests don't cover", "",
              "This is a simulation, so it says nothing about analog noise, real SD card timing, the ADC's"
              " filter delay (corrected afterwards on the PC) or the PCB itself. Those need the bench tests in"
