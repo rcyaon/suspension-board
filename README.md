@@ -2,6 +2,35 @@
 
 One board per Baja suspension corner. It logs 8 strain-gauge bridges, 4 aux sensors (e.g. shock travel), battery voltage and a 6-axis IMU to microSD. The logs are later calibrated into arm forces for stress and fatigue work. Hardware: STM32F412 MCU, ADS131M08 bridge ADC, ICM-42688 IMU, microSD, CAN and USB-C (Rev B, in `eda/`, `fab/rev-b/` and `string-gauge-daq.zen`).
 
+![Rev B board, top](fab/rev-b/renders/suspension-load-daq-top.png)
+
+## Start here
+
+| If you want to… | Read this |
+|---|---|
+| See what the board must do and what's still open | [spec.md](spec.md) |
+| See the firmware test results | [firmware/test/results/summary.md](firmware/test/results/summary.md) |
+| Look at the circuit | [Schematic (PDF)](fab/rev-b/docs/suspension-load-daq-schematic.pdf) |
+| Look at the board layout | [Layers (PDF)](fab/rev-b/docs/suspension-load-daq-layers.pdf), [top render](fab/rev-b/renders/suspension-load-daq-top.png), [bottom render](fab/rev-b/renders/suspension-load-daq-bottom.png), [3D model (STEP)](fab/rev-b/3d/suspension-load-daq.step) |
+| Order or assemble boards | [fab/rev-b/README-fab.md](fab/rev-b/README-fab.md) (gerbers zip, JLCPCB BOM and placement files) |
+| See the parts list | [Full BOM (CSV)](fab/rev-b/assembly/suspension-load-daq-BOM-full.csv) |
+| Understand how the firmware works | [How the firmware works with the board](#how-the-firmware-works-with-the-board), below |
+| Build, test or flash the firmware | [Firmware](#firmware), below |
+
+## What's in each folder
+
+| Folder / file | What it is |
+|---|---|
+| `spec.md` | Design specification for Rev B: requirements, channel table, open items |
+| `board-spec.md` | The original requirements brief written as input to Diode (informal; `spec.md` supersedes it) |
+| `firmware/` | Logger firmware: `src/` (C code), `test/` (PC simulator and tests), `tools/sdlog.py` (log decoder) |
+| `fab/rev-b/` | Everything for manufacturing: gerbers, BOM/placement, schematic and layer PDFs, renders, DRC/ERC reports |
+| `eda/` | KiCad project (schematic and PCB) |
+| `string-gauge-daq.zen` | Diode board source the KiCad project is generated from |
+| `analysis/` | Python scripts: expected suspension loads, geometry checks |
+| `data/` | Reference vehicle data (Adams mini baja model, Olin Baja hardpoints), each with its own README |
+| `components/`, `modules/`, `vendor/`, `pcb.toml` | Part libraries and config used by the Diode `pcb` tool. No need to read these |
+
 ## How the firmware works with the board
 
 - **One clock.** The MCU passes its 8 MHz crystal to the ADC through MCO1. Samples and timestamps can't drift apart.
