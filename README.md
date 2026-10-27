@@ -1,38 +1,56 @@
-# Baja Suspension Load Logger (Rev B)
+# Baja Suspension Load Logger
 
-A data logger that mounts on one corner of the Baja car and records the forces going through the suspension arms while the car drives. Today the arm design rests on estimated loads ("3 g bump", "5 g landing"). This board replaces those estimates with measured ones, which then feed the stress and fatigue analysis.
+A data logger that bolts onto one corner of the Baja car and records the forces in the suspension arms while the car drives. The arm design currently uses estimated loads ("3 g bump", "5 g landing"); this board replaces them with measured ones.
 
-![Rev B board, top](fab/rev-b/renders/suspension-load-daq-top.png)
+![The board, 3D view](images/board-3d.png)
 
-## What to look at
 
-| To check… | Open |
+
+| Top | Bottom |
 |---|---|
-| What the board has to do | [Design specification](spec.md) |
-| Whether the firmware works | [Firmware test results](firmware/test/results/summary.md) |
-| The circuit | [Schematic (PDF)](fab/rev-b/docs/suspension-load-daq-schematic.pdf) |
-| The board layout | [Layout (PDF)](fab/rev-b/docs/suspension-load-daq-layers.pdf), [top](fab/rev-b/renders/suspension-load-daq-top.png) and [bottom](fab/rev-b/renders/suspension-load-daq-bottom.png) renders |
-| The parts list | [Bill of materials (CSV)](fab/rev-b/assembly/suspension-load-daq-BOM-full.csv) |
-| What's needed to order boards | [Fabrication package](fab/rev-b/README-fab.md) |
+| ![Top](images/board-top.png) | ![Bottom](images/board-bottom.png) |
+
+Every connector pin is labeled on the bottom of the board.
+
+## Does the firmware work?
+
+The real firmware runs on a PC, connected to simulated versions of the board's chips. It is fed a 10 s drive from the Adams model: a bump, whoops, a 0.5 m drop and braking. The SD card file it writes is then checked sample by sample against that input.
+
+**What was logged matches the input.** The blue line is what the firmware saved; the grey line underneath is the Adams input.
+
+![Strain channels: logged vs input](firmware/test/results/strain_channels.svg)
+
+**Shock force is right.** Peak landing force logged 4930 N, against 4929 N in the Adams model.
+
+![Shock force: logged vs input](firmware/test/results/shock_force.svg)
+
+**The firmware adds no error.** The error on each channel is no larger than the noise the simulator itself puts in.
+
+![Error per channel](firmware/test/results/channel_error.svg)
+
+**No samples lost, and the timing is steady.** All 30,616 samples were saved, each within 2 µs of its 512 µs slot.
+
+![Time between samples](firmware/test/results/sample_timing.svg)
+
+Full results: [firmware test results](firmware/test/results/summary.md). Run `make -C firmware test` to regenerate them.
 
 ## What it measures
 
 | Where | What | Sensors |
 |---|---|---|
-| Lower control arm | Push/pull and bending (it carries the shock) | 4 strain gauges |
+| Lower control arm | Push/pull and bending | 4 strain gauges |
 | Upper control arm | Push/pull and fore-aft | 2 strain gauges |
 | Toe link | Push/pull | 1 strain gauge |
-| Shock | Force through the shock, used as a cross-check | 1 load cell |
+| Shock | Force, as a cross-check | 1 load cell |
 | Shock travel and extras | Position sensors | 4 inputs |
 | Chassis motion | Acceleration and rotation | Built-in motion sensor |
 
-## How it works
+All 8 force channels are sampled at the same instant, about 2,000 times a second, onto a microSD card.
 
-- All 8 force channels are recorded at the same moment, nearly 2,000 times per second, to a microSD card.
-- Each run checks its own calibration at the start and end, and flags the data if the readings drifted.
-- One board can start and stop the others, and they all record a shared timing signal, so all four corners can be compared side by side.
-- The card holds the raw readings. They are turned into forces afterwards on a computer, using a calibration done on each arm before it goes on the car.
+## More detail
 
----
-
-Everything else in this repo is design source or tooling, and you don't need it to review the board. Firmware build instructions are in [firmware/README.md](firmware/README.md).
+- [Design specification](spec.md)
+- [Schematic (PDF)](fab/rev-b/docs/suspension-load-daq-schematic.pdf)
+- [Parts list (CSV)](fab/rev-b/assembly/suspension-load-daq-BOM-full.csv)
+- [Ordering files](fab/rev-b/README-fab.md)
+- [Firmware build instructions](firmware/README.md)

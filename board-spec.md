@@ -115,6 +115,7 @@ USB-C 5 V ───────────────────────�
   - bridge input pairs are routed differentially and symmetrically.
   - the anti-alias resistors sit together so they share temperature.
   - analog and digital ground return paths are kept apart under the ADC.
+- **silkscreen art:** logos, doodles and signatures go on the back (B.SilkS), mirrored so they read correctly from that side. keep lines at least 0.15 mm wide so they print. keep art off pads, pin rows and mounting holes, since silkscreen does not print on bare copper.
 - **size:** target under 100 × 80 mm.
 
 ## acceptance tests
