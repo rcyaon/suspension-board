@@ -25,7 +25,7 @@ The legacy circuit uses CH0–CH7: these correspond to requirement channels 1–
 - Axial-channel noise requirement: ≤0.5 µV/V rms at about 2 ksps and gain 128, approximately 0.3 µε. The acceptance test below is the stricter ≤1 µVrms input-referred requirement.
 - Input filter per channel: 1 kΩ + 1 kΩ, 0.1%, with 10 nF C0G differential capacitance and 1 nF C0G from each input to ground. Keep the resistor pair thermally close and layout symmetric.
 - Gain flatness within 0.5% through 500 Hz applies to the **calibrated, offline-processed measurement chain**, not the uncompensated ADC output. Preserve raw samples and validate a common band-limited correction on all eight channels. Do not equalize near Nyquist or claim correction removes aliasing.
-- A 100 kΩ shunt resistor, switched across one arm by a FET, on every channel. One direct MCU GPIO drives all eight FETs. Expected 350 Ω calibration step is approximately −0.874 mV/V.
+- A 100 kΩ shunt resistor, switched across one arm by a FET, on every channel. One direct MCU GPIO drives all eight FETs. Expected calibration step is approximately −0.874 mV/V with 350 Ω gauges and −0.300 mV/V with 120 Ω gauges; firmware gain-drift checks use the start/end ratio, so either works, but fixture/acceptance checks must use the value for the fitted gauge.
 - Each bridge uses one locking six-contact connector: EXC+, EXC−, SIG+, SIG−, QTR and shield. Sealed connector family is not yet selected; installed JST PH is bench-only.
 
 ## Signal chain and excitation
@@ -41,9 +41,9 @@ The legacy circuit uses CH0–CH7: these correspond to requirement channels 1–
 ## Four auxiliary analog inputs and battery monitor
 
 - Aux inputs accept any three-wire ratiometric position sensor on MCU 12-bit ADC1: shock linear pot, Hall-effect arm-angle sensor (e.g. TI DRV5055, VDDA-supplied), rotary ride-height sensor or string pot. Linear pots are not rated for mud/dust; prefer sealed or contactless sensors for field runs. Quadrature/digital encoders are not supported on the aux inputs.
-- Supply jumper selects VDDA or 5 V for active sensors such as brake pressure.
-- Populate the divider option for 0–5 V sensors so the MCU pin sees ≤3.2 V. Protection includes 10 kΩ series resistance and must survive a 14.4 V signal-wire short with ≤5 mA injected into the pin, recover without damage, and retain ≥200 Hz bandwidth.
-- Each AUX node has a BAT54WS-class Schottky (D10–D13) to V3V3 after the 10 kΩ series resistor. STM32F412 ADC pins are FT I/Os that allow no positive injection, so a 14.4 V wire short (~1.1 mA) is clamped near the 3.3 V rail. V3V3 is used instead of VDDA so fault current does not pass through the FB1 VDDA filter; the clamp level is the same.
+- Supply jumper selects VDDA (JP1–JP4 1-2, default) or 5 V (2-3) for active sensors such as brake pressure. The 5 V position is V5_BUCK (5.0 V, ahead of the D6/D7 OR diodes), not the 3.8–5.25 V V5 rail, so 5 V sensors see an in-spec supply. Like CAN, the 5 V sensor supply is therefore absent on USB-only power.
+- Populate the divider option (R1/R3/R5/R7 = 16.9 kΩ with the 10 kΩ series resistor) for 0–5 V sensors so the MCU pin sees ≤3.2 V: 3.14 V at 5.00 V and 3.30 V at 5.25 V (ngspice). Protection includes 10 kΩ series resistance and must survive a 14.4 V signal-wire short with ≤5 mA injected into the pin, recover without damage, and retain ≥200 Hz bandwidth.
+- Each AUX node has a BAT54WS-class Schottky (D10–D13) to V3V3 after the 10 kΩ series resistor. STM32F412 ADC pins are FT I/Os that allow no positive injection, so a 14.4 V wire short (~1.1 mA) is clamped near the 3.3 V rail: ngspice gives 3.49–3.67 V at the pin over −10 to +60 °C and typical/max BAT54WS VF, below the 4.0 V absolute maximum (DS Table 13). A lower-VF Schottky was rejected: e.g. CUS520 leaks ~2–5 µA at 3 V and 50–60 °C, a 20–50 mV error through 10 kΩ. V3V3 is used instead of VDDA so fault current does not pass through the FB1 VDDA filter; the clamp level is the same.
 - Vehicle battery voltage is divided to a fifth ADC1 input.
 - Analog inputs are not 5 V tolerant in analog mode. Existing protection/divider/filter populations still require test and worst-case review; choosing a jumper does not make an MCU ADC input 5 V tolerant.
 
@@ -85,7 +85,7 @@ PB2 is also BOOT1: R64 holds it low during reset; R80's conflicting reset pull-u
 Vehicle 12 V → harness fuse → TVS / reverse-polarity protection → ≥36 V-rated 5 V buck → diode OR with USB-C 5 V → 5 V system rail. The OR diodes D6/D7 are RB168MM-40 low-leakage 40 V Schottkys; the V5 rail is therefore 3.8–5.25 V (USB 4.4 V minimum less about 0.5 V), and downstream LDO/LT3042 headroom is checked against that range. Linear regulation produces 3.3 V digital; ferrite plus low-noise LDO produces 3.3 V ADC analog; LT3042 produces 2.49 V excitation. Switching output must not directly feed analog circuitry.
 
 - Vehicle operating input **9–16 V**. Survive reverse battery and specified load-dump-type spikes without damage. A concrete transient waveform/source impedance is still needed for an energy qualification.
-- USB-only runs all measurement, storage and download functions except CAN. No USB-to-vehicle or vehicle-to-USB back-feed.
+- USB-only runs all measurement, storage and download functions except CAN and the 5 V aux sensor supply (both come from V5_BUCK). No USB-to-vehicle or vehicle-to-USB back-feed.
 - Vehicle input power target **<1.5 W with eight 350 Ω bridges excited**. This is an average operating budget, not permission to ignore SD write peaks; hardware/current measurements are required.
 - Preserve continuous local ground reference and segregate noisy return currents. “Analog/digital return paths apart under ADC” means controlled return-current placement and a local common reference, not an arbitrary split/slot beneath input pairs or clocks.
 
@@ -115,12 +115,12 @@ Vehicle 12 V → harness fuse → TVS / reverse-polarity protection → ≥36 V-
 | Inputs shorted, PGA128, 1953.125 sps | ≤1 µVrms per channel |
 | Excitation with eight 350 Ω dummy bridges | 2.49 V nominal; **2.43–2.55 V electrical acceptance**, measured/recorded per board, settled in <1 s |
 | Corrected frequency response, all bridge channels | Within 0.5% through 500 Hz, verified by an injected-signal sweep; record corrected noise and phase/delay |
-| Shunt calibration | −0.874 mV/V ±1% on every channel |
-| One common signal to all channels | No inter-channel phase offset |
+| Shunt calibration | −0.874 mV/V ±1% on every channel (350 Ω gauges; −0.300 mV/V ±1% with 120 Ω) |
+| One common signal to all channels | No inter-channel phase offset beyond component tolerance. The input RC adds ~24.7 µs group delay (350 Ω bridge); 5% C0G capacitors allow about ±1.2 µs (±0.2° at 500 Hz) channel-to-channel. Measure and correct offline if it matters |
 | Logging for 30 minutes | Zero dropped samples |
 | Aux signal short to 14.4 V | No damage, reading recovers |
 | Reversed vehicle input | No damage / no operating current; define leakage measurement threshold |
-| USB-only | All functions except CAN |
+| USB-only | All functions except CAN and the 5 V aux sensor supply |
 
 ## Resolved Baja measurement decisions
 
@@ -128,7 +128,7 @@ The owner delegated these two choices for a student Baja car. The priority is re
 
 1. **Frequency response: retain raw 1953.125 sps logging and correct offline.** Do not add MCU equalization or raise the default acquisition rate. Preserve ADC counts unchanged; apply one documented, band-limited response correction identically to all bridge channels before the cross-talk/force reconstruction. The 0.5% flatness criterion is for this processed chain and must be demonstrated by a sweep, not inferred from a theoretical inverse alone. Keep raw and processed products separate, align fixed filter delays with aux/IMU timestamps, and evaluate aliasing/impacts in validation. Hardware aliasing, saturation and dynamic noise are not repaired by equalization.
 
-   **Correction to the earlier estimate:** ADS131M08 OSR2048 is sinc³ at OSR1024 followed by a sinc¹ average of two—not a sinc³ at OSR2048. At 8 MHz CLKIN, the modeled digital gain at 500 Hz is about 0.84838; including the specified RC gives **0.84654 (15.35% droop)**, requiring about **1.1813× / +1.447 dB** correction there. The earlier 28.31% estimate was incorrect. Other OSRs need their own correct model and coefficient set.
+   **Correction to the earlier estimate:** ADS131M08 OSR2048 is sinc³ at OSR1024 followed by a sinc¹ average of two—not a sinc³ at OSR2048. At 8 MHz CLKIN, the modeled digital gain at 500 Hz is about 0.84838; The specified RC must be modelled with the bridge's source impedance (each output leg is R/2): for 350 Ω bridges the RC pole is ~6.45 kHz, giving **0.84584 (15.42% droop)** and about **1.1823× / +1.454 dB** correction at 500 Hz; for 120 Ω bridges the pole is ~7.15 kHz, giving 0.84631 and 1.1816×. The earlier 0.84654 / 1.1813× figure ignored the bridge resistance. The earlier 28.31% estimate was incorrect. Other OSRs need their own correct model and coefficient set.
 
 2. **Excitation: use measurement-chain calibration, not a trim pot or new precision reference.** Keep LT3042, the fixed 24.9 kΩ 0.1% low-TCR resistor and internal ADC reference. Replace the unnecessarily tight absolute-rail ±0.5% acceptance with the safe loaded **2.43–2.55 V** window and measure/record actual excitation with an accurate DMM during board/fixture calibration. At 2.55 V the eight 120 Ω bridges draw 170 mA and balanced common mode is 1.275 V, below AVDD(min)−1.8 V = 1.434 V. Current/thermal/noise tests still apply.
 

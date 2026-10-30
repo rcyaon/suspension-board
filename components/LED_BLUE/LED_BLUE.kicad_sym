@@ -48,7 +48,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://optoelectronics.liteon.com/upload/download/DS-22-99-0224/LTST-C190TBKT.PDF"
+		(property "Datasheet" "https://www.lcsc.com/product-detail/C125095.html"
 			(at 0 0 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -59,7 +59,7 @@
 				)
 			)
 		)
-		(property "Description" "Blue 470 nm LED, 0603, typical VF 3.3 V"
+		(property "Description" "Yellow 590 nm LED, 0603, typical VF 2.1 V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -114,7 +114,7 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "LTST-C190TBKT"
+		(property "Manufacturer_Part_Number" "LTST-C190KSKT"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)

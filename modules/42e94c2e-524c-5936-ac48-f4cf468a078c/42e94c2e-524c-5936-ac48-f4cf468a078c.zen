@@ -3,7 +3,7 @@ suspension-load-daq sheet module: 42e94c2e-524c-5936-ac48-f4cf468a078c (/42e94c2
 """
 
 AUX1_V_SENSOR = io(Net)
-V5 = io(Power(voltage="2.2V to 5.5V"))
+V5_BUCK = io(Power(voltage="4.95V to 5.05V"))
 VDDA = io(Power(voltage="1.7V to 3.6V"))
 
 COMPONENT_SOLDERJUMPER_3_P1_3MM_BRIDGED12_PAD1_0X1_5MM = Module(
@@ -14,5 +14,5 @@ COMPONENT_SOLDERJUMPER_3_P1_3MM_BRIDGED12_PAD1_0X1_5MM(
     name="JP1",
     P1=VDDA,
     P2=AUX1_V_SENSOR,
-    P3=V5,
+    P3=V5_BUCK,
 )

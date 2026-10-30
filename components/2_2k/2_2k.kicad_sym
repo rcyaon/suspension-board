@@ -57,7 +57,7 @@
 				)
 			)
 		)
-		(property "Description" "2.2 kOhms ±1% 0.1W, 1/10W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film"
+		(property "Description" "1 kOhms ±1% 0.1W, 1/10W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -101,7 +101,7 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "ERJ-2RKF2201X"
+		(property "Manufacturer_Part_Number" "ERJ-2RKF1001X"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)

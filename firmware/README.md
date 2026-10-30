@@ -17,6 +17,6 @@ python3 firmware/tools/sdlog.py RUN00001.BIN out.csv   # decode a log
 - **Each run calibrates itself.** At start: excitation on, 1 s settle, then a shunt-cal step (all 8 shunt resistors on together). At stop: the same shunt step, then excitation off. The firmware compares the two steps and flags a gain drift above 0.5%.
 - **Raw data only.** ADC codes are stored unchanged. Filter correction and force calibration happen later on a PC.
 - **Log file.** Each run is a new `RUNnnnnn.BIN`, preallocated in one piece on a FAT32 card. Its text header holds the rate, gains and the contents of `CONFIG.TXT` from the card: driver, track, tyre pressures, sensor IDs and similar run notes.
-- **Control.** Start and stop come from the UART console, a CAN command, or autostart. One board, the CAN master, broadcasts start/stop and a 10 Hz sync so several corner boards can be lined up afterwards. With USB power only, everything except CAN still works.
+- **Control.** Start and stop come from the UART console, a CAN command, or autostart. One board, the CAN master, broadcasts start/stop and a 10 Hz sync so several corner boards can be lined up afterwards. With USB power only, everything except CAN and the 5 V aux sensor supply still works.
 
 **Not yet done:** the firmware has not run on real hardware. USB data download is not implemented, so take the card out to get the logs. The bench tests in `spec.md` (noise, 30-min logging on a real card, fault tests) are still open, along with the sealed connectors and enclosure.

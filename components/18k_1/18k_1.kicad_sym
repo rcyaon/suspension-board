@@ -57,7 +57,7 @@
 				)
 			)
 		)
-		(property "Description" "18 kOhms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film"
+		(property "Description" "16.9 kOhms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -101,7 +101,7 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "ERJ-3EKF1802V"
+		(property "Manufacturer_Part_Number" "ERJ-3EKF1692V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
