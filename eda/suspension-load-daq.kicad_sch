@@ -5328,7 +5328,7 @@
 					)
 				)
 			)
-			(property "Datasheet" "https://optoelectronics.liteon.com/upload/download/DS-22-99-0224/LTST-C190TBKT.PDF"
+			(property "Datasheet" "https://www.lcsc.com/product-detail/C125095.html"
 				(at 0 0 90)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5339,7 +5339,7 @@
 					)
 				)
 			)
-			(property "Description" "Blue 470 nm LED, 0603, typical VF 3.3 V"
+			(property "Description" "Yellow 590 nm LED, 0603, typical VF 2.1 V"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5361,7 +5361,7 @@
 					)
 				)
 			)
-			(property "Manufacturer_Part_Number" "LTST-C190TBKT"
+			(property "Manufacturer_Part_Number" "LTST-C190KSKT"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -12700,6 +12700,16 @@
 	)
 	(wire
 		(pts
+			(xy 393.7 345.44) (xy 378.46 345.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "21996a30-e004-5402-b680-2ab636c4e6a1")
+	)
+	(wire
+		(pts
 			(xy 361.95 187.96) (xy 383.54 187.96)
 		)
 		(stroke
@@ -12950,6 +12960,16 @@
 	)
 	(wire
 		(pts
+			(xy 464.82 345.44) (xy 449.58 345.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "30e3e8c9-286e-5e85-bda8-7fbcdac0ab72")
+	)
+	(wire
+		(pts
 			(xy 226.06 147.32) (xy 229.87 147.32)
 		)
 		(stroke
@@ -12977,16 +12997,6 @@
 			(type default)
 		)
 		(uuid "340561aa-f805-5d4d-a443-c5560fe07c62")
-	)
-	(wire
-		(pts
-			(xy 490.22 345.44) (xy 490.22 332.74)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "345d1a14-d184-549c-aa2d-6079fa460243")
 	)
 	(wire
 		(pts
@@ -13137,6 +13147,16 @@
 			(type default)
 		)
 		(uuid "3a580098-d488-52db-a62c-879a1fc0924a")
+	)
+	(wire
+		(pts
+			(xy 414.02 345.44) (xy 414.02 327.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3aae9568-3d6f-5055-a943-c88b56eedd18")
 	)
 	(wire
 		(pts
@@ -13497,6 +13517,16 @@
 			(type default)
 		)
 		(uuid "4f2c394a-f78c-5184-b6d7-e6b249136556")
+	)
+	(wire
+		(pts
+			(xy 500.38 345.44) (xy 485.14 345.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4f584e42-a251-58c2-bdd1-cd7e9c4be263")
 	)
 	(wire
 		(pts
@@ -14157,16 +14187,6 @@
 			(type default)
 		)
 		(uuid "7a9af638-027c-51b9-b7dd-20dcedd74c96")
-	)
-	(wire
-		(pts
-			(xy 383.54 345.44) (xy 383.54 332.74)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7b0a337c-d8ca-5900-8f3f-cb9260faad38")
 	)
 	(wire
 		(pts
@@ -15060,6 +15080,16 @@
 	)
 	(wire
 		(pts
+			(xy 485.14 345.44) (xy 485.14 327.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ade1d491-e74f-50a0-b289-08f637070bc3")
+	)
+	(wire
+		(pts
 			(xy 660.4 149.86) (xy 660.4 144.78)
 		)
 		(stroke
@@ -15230,6 +15260,16 @@
 	)
 	(wire
 		(pts
+			(xy 378.46 345.44) (xy 378.46 327.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b76d94dc-a088-51d6-a20e-a8763a534293")
+	)
+	(wire
+		(pts
 			(xy 703.58 185.42) (xy 703.58 209.55)
 		)
 		(stroke
@@ -15250,6 +15290,16 @@
 	)
 	(wire
 		(pts
+			(xy 429.26 345.44) (xy 414.02 345.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b8e19576-4c36-5cb5-bfc3-9e01eee16a32")
+	)
+	(wire
+		(pts
 			(xy 405.13 480.06) (xy 400.05 480.06)
 		)
 		(stroke
@@ -15257,16 +15307,6 @@
 			(type default)
 		)
 		(uuid "b9ba5ff5-9e4e-59d1-ae8a-3b121aba1038")
-	)
-	(wire
-		(pts
-			(xy 419.1 345.44) (xy 419.1 332.74)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b9e5083d-98f3-5477-9a4f-131909d785cc")
 	)
 	(wire
 		(pts
@@ -16470,13 +16510,13 @@
 	)
 	(wire
 		(pts
-			(xy 454.66 345.44) (xy 454.66 332.74)
+			(xy 449.58 345.44) (xy 449.58 327.66)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "fe6cb420-04ba-5b46-a21f-76f6d121b0fa")
+		(uuid "fe5d0ecd-9843-5e36-900a-55795e2e4610")
 	)
 	(wire
 		(pts
@@ -25170,6 +25210,95 @@
 	)
 	(symbol
 		(lib_id "VCC")
+		(at 414.02 327.66 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "05eec452-fbd9-5cfb-a5d3-5699e0ffbe51")
+		(property "Reference" "#PWR05eec452fbd95cfba5d35699e0ffbe51"
+			(at 414.02 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "V5_BUCK"
+			(at 414.02 323.85 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 414.02 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 414.02 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 414.02 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 414.02 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "afbfa881-c18a-570f-b867-4f15bc696152")
+		)
+		(instances
+			(project "suspension-load-daq"
+				(path "/513d9cc1-d27a-514d-a37c-2f1ca04dddfa"
+					(reference "#PWR05eec452fbd95cfba5d35699e0ffbe51")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "VCC")
 		(at 708.66 161.29 0)
 		(unit 1)
 		(body_style 1)
@@ -26171,7 +26300,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "18k 1%"
+		(property "Value" "16.9k 1%"
 			(at 342.9 636.905 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26204,7 +26333,7 @@
 				)
 			)
 		)
-		(property "Description" "18k 1%"
+		(property "Description" "16.9k 1%"
 			(at 340.36 636.27 0)
 			(hide yes)
 			(show_name no)
@@ -26455,7 +26584,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.2k"
+		(property "Value" "1k"
 			(at 375.92 636.905 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26488,7 +26617,7 @@
 				)
 			)
 		)
-		(property "Description" "2.2k"
+		(property "Description" "1k"
 			(at 373.38 636.27 0)
 			(hide yes)
 			(show_name no)
@@ -26747,7 +26876,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "LED BLUE"
+		(property "Value" "LED YELLOW"
 			(at 233.68 513.588 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26769,7 +26898,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://optoelectronics.liteon.com/upload/download/DS-22-99-0224/LTST-C190TBKT.PDF"
+		(property "Datasheet" "https://www.lcsc.com/product-detail/C125095.html"
 			(at 231.14 513.08 0)
 			(hide yes)
 			(show_name no)
@@ -26780,7 +26909,7 @@
 				)
 			)
 		)
-		(property "Description" "LED BLUE"
+		(property "Description" "LED YELLOW"
 			(at 231.14 513.08 0)
 			(hide yes)
 			(show_name no)
@@ -32166,7 +32295,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "18k 1%"
+		(property "Value" "16.9k 1%"
 			(at 325.12 636.905 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32199,7 +32328,7 @@
 				)
 			)
 		)
-		(property "Description" "18k 1%"
+		(property "Description" "16.9k 1%"
 			(at 322.58 636.27 0)
 			(hide yes)
 			(show_name no)
@@ -52039,6 +52168,95 @@
 	)
 	(symbol
 		(lib_id "VCC")
+		(at 449.58 327.66 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a5b29c14-47b8-5342-9926-5b6f1177151f")
+		(property "Reference" "#PWRa5b29c1447b8534299265b6f1177151f"
+			(at 449.58 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "V5_BUCK"
+			(at 449.58 323.85 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 449.58 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 449.58 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 449.58 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 449.58 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f8ee9b79-9c29-5964-8211-80ef380f8f69")
+		)
+		(instances
+			(project "suspension-load-daq"
+				(path "/513d9cc1-d27a-514d-a37c-2f1ca04dddfa"
+					(reference "#PWRa5b29c1447b8534299265b6f1177151f")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "VCC")
 		(at 424.18 337.82 0)
 		(unit 1)
 		(body_style 1)
@@ -58427,6 +58645,95 @@
 	)
 	(symbol
 		(lib_id "VCC")
+		(at 485.14 327.66 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c4e7bd41-43ab-5b33-a510-522b64d43481")
+		(property "Reference" "#PWRc4e7bd4143ab5b33a510522b64d43481"
+			(at 485.14 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "V5_BUCK"
+			(at 485.14 323.85 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 485.14 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 485.14 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 485.14 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 485.14 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4a4fa32d-8a0a-5dd7-9fa1-073a70bd2a6c")
+		)
+		(instances
+			(project "suspension-load-daq"
+				(path "/513d9cc1-d27a-514d-a37c-2f1ca04dddfa"
+					(reference "#PWRc4e7bd4143ab5b33a510522b64d43481")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "VCC")
 		(at 1083.31 171.45 0)
 		(unit 1)
 		(body_style 1)
@@ -59024,7 +59331,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "18k 1%"
+		(property "Value" "16.9k 1%"
 			(at 307.34 636.905 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -59057,7 +59364,7 @@
 				)
 			)
 		)
-		(property "Description" "18k 1%"
+		(property "Description" "16.9k 1%"
 			(at 304.8 636.27 0)
 			(hide yes)
 			(show_name no)
@@ -59395,7 +59702,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "18k 1%"
+		(property "Value" "16.9k 1%"
 			(at 289.56 636.905 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -59428,7 +59735,7 @@
 				)
 			)
 		)
-		(property "Description" "18k 1%"
+		(property "Description" "16.9k 1%"
 			(at 287.02 636.27 0)
 			(hide yes)
 			(show_name no)
@@ -60716,6 +61023,95 @@
 			(project "suspension-load-daq"
 				(path "/513d9cc1-d27a-514d-a37c-2f1ca04dddfa"
 					(reference "R79")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "VCC")
+		(at 378.46 327.66 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d43b7cfd-99e8-522f-a71b-c815a66a4448")
+		(property "Reference" "#PWRd43b7cfd99e8522fa71bc815a66a4448"
+			(at 378.46 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "V5_BUCK"
+			(at 378.46 323.85 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 378.46 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 378.46 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 378.46 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 378.46 327.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "277b3a1e-8b02-5ab4-80e8-1b1ad275022a")
+		)
+		(instances
+			(project "suspension-load-daq"
+				(path "/513d9cc1-d27a-514d-a37c-2f1ca04dddfa"
+					(reference "#PWRd43b7cfd99e8522fa71bc815a66a4448")
 					(unit 1)
 				)
 			)

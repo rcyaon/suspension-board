@@ -29,13 +29,13 @@ requirements per channel:
 - **noise:** ≤ 0.5 µV/V rms at 2 ksps, gain 128, about 0.3 µε on an axial bridge. the axial channels are the hard requirement.
 - **anti-alias:** differential RC ahead of the ADC (1 kΩ + 1 kΩ, 10 nF C0G), 1 nF C0G to ground on each input, 0.1 % resistors.
 - **flatness:** gain within 0.5 % flat to 500 Hz.
-- **shunt calibration:** 100 kΩ switched across one bridge arm by a FET, all channels from one MCU pin. that gives −0.874 mV/V on 350 Ω.
+- **shunt calibration:** 100 kΩ switched across one bridge arm by a FET, all channels from one MCU pin. that gives −0.874 mV/V on 350 Ω (−0.300 mV/V on 120 Ω).
 - **connector:** 4 wires (EXC+, EXC−, SIG+, SIG−) plus a QTR lead and shield, on one locking connector per channel.
 
 ### 4 aux analog inputs
 
 - **sensors:** any 3-wire ratiometric position sensor, read by the MCU's 12-bit ADC: a linear pot on the shock, a Hall-effect arm-angle sensor (e.g. TI DRV5055), a rotary ride-height sensor or a string pot. linear pots are not rated for mud and dust, so prefer sealed or contactless sensors for field runs (see `docs/baja-discord-notes.md`).
-- **5 V option:** a jumper selects 5 V supply for active sensors (brake pressure), with a divider position to bring 0–5 V down to ≤ 3.2 V.
+- **5 V option:** a jumper selects 5 V supply for active sensors (brake pressure), taken from the 5.0 V buck output (so not available on USB only), with a 16.9 kΩ divider position to bring 0–5 V down to ≤ 3.2 V.
 - **protection:** 10 kΩ series, and survives a 14.4 V short on the signal wire with ≤ 5 mA into the pin.
 - **bandwidth:** ≥ 200 Hz.
 
@@ -94,7 +94,7 @@ USB-C 5 V ───────────────────────�
 ```
 
 - **input:** 9–16 V vehicle supply. survives reverse battery and load-dump-type spikes. the buck is rated ≥ 36 V.
-- **USB only:** the board runs fully on USB alone (bench calibration, download), except CAN.
+- **USB only:** the board runs fully on USB alone (bench calibration, download), except CAN and the 5 V aux sensor supply.
 - **back-feed:** no back-feed between USB and the vehicle input.
 - **noise isolation:** the switching regulator never directly feeds anything analog. linear regulators after it.
 - **budget:** under 1.5 W from the vehicle with eight 350 Ω bridges excited.
@@ -124,12 +124,12 @@ USB-C 5 V ───────────────────────�
 |---|---|
 | inputs shorted, gain 128, 1953 sps | ≤ 1 µVrms per channel |
 | excitation, eight 350 Ω dummy bridges | 2.49 V ± 0.5 %, settled < 1 s |
-| shunt cal | −0.874 mV/V ± 1 % on each channel |
+| shunt cal | −0.874 mV/V ± 1 % on each channel (350 Ω gauges) |
 | one signal into all 8 channels | no inter-channel phase offset |
 | 30 min logging to SD | zero dropped samples |
 | 14.4 V on an aux signal pin | no damage, reading recovers |
 | reversed vehicle supply | no damage, no current |
-| USB-only power | all functions except CAN |
+| USB-only power | all functions except CAN and the 5 V aux sensor supply |
 
 ## open items
 
